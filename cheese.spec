@@ -1,12 +1,14 @@
 Name:           cheese
 Epoch:          2
 Version:        3.22.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Cheese
 Source0:        https://download.gnome.org/sources/%{name}/3.22/%{name}-%{version}.tar.xz
+# https://bugzilla.redhat.com/show_bug.cgi?id=1444760
+Patch0:         cheese-3.22.1-fix-device-commandline.patch
 
 BuildRequires:  chrpath
 BuildRequires:  desktop-file-utils
@@ -71,6 +73,7 @@ for writing applications that require a webcam display widget.
 
 %prep
 %setup -q
+%patch0 -p1
 
 
 %build
@@ -154,6 +157,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Thu Oct 19 2017 David King <dking@redhat.com> - 3.22.1-2
+- Fix a device argument crash (#1444760)
+
 * Wed Oct 19 2016 Kalev Lember <klember@redhat.com> - 2:3.22.1-1
 - Update to 3.22.1
 - Resolves: #1386826

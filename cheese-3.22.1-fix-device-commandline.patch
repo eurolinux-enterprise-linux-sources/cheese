@@ -1,0 +1,48 @@
+From c8c75796ff3e723d77bd68dec3fe91a072b36fc4 Mon Sep 17 00:00:00 2001
+From: Benjamin Berg <bberg@redhat.com>
+Date: Fri, 21 Apr 2017 11:59:39 +0200
+Subject: [PATCH 01/27] Correctly select the given camera device
+
+Due to a bug in the VAPI file the code would pass a string to the camera
+setup routine instead of a CameraDevice object. As the setup routine
+already has code to automatically select an appropriate device based on
+the name passing an argument is not even required.
+
+Note that the --device parameter might be somewhat confusing as it
+refers to the devices name and not to the /dev/videoX device file.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=777047
+---
+ src/cheese-application.vala | 2 +-
+ src/vapi/cheese-common.vapi | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/cheese-application.vala b/src/cheese-application.vala
+index 633a25eb..ee107395 100644
+--- a/src/cheese-application.vala
++++ b/src/cheese-application.vala
+@@ -203,7 +203,7 @@ public class Cheese.Application : Gtk.Application
+ 
+         try
+         {
+-            camera.setup (device);
++            camera.setup ();
+         }
+         catch (Error err)
+         {
+diff --git a/src/vapi/cheese-common.vapi b/src/vapi/cheese-common.vapi
+index a4c07a96..2ee13f18 100644
+--- a/src/vapi/cheese-common.vapi
++++ b/src/vapi/cheese-common.vapi
+@@ -48,7 +48,7 @@ namespace Cheese
+     public void                        toggle_effects_pipeline (bool active);
+     public void                        connect_effect_texture (Cheese.Effect effect, Clutter.Actor texture);
+     public void                        set_video_format (Cheese.VideoFormat format);
+-    public void                        setup (string udi) throws GLib.Error;
++    public void                        setup (Cheese.CameraDevice? device = null) throws GLib.Error;
+     public void                        start_video_recording (string filename);
+     public void                        stop ();
+     public void                        stop_video_recording ();
+-- 
+2.13.6
+
