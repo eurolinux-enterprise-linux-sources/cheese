@@ -42,7 +42,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -50,23 +50,24 @@
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
 
   <title>Vendo uma foto ou vídeo que você tirou</title>
 
-  <p>After you take a photo or record a video, it will appear in the photo
-  stream at the bottom of the window. You can right-click it and press
-  <gui style="menuitem">Open</gui> to open it in the photo viewer or video
-  player application.</p>
+  <p>Depois de tirar uma foto ou gravar um vídeo, ele aparecerá no painel de fotos na parte inferior da janela. Você pode clicar com o botão direito nele e pressionar a opção <gui style="menuitem">Abrir</gui> do menu de contexto para abri-lo no aplicativo visualizador de fotos ou reprodutor de vídeo.</p>
 
 <!-- TODO: This is a bug, it doesn't work right now.
   <p>If you want to see a bigger version of a photo, or to play a video,
   double-click it. This will open it in the default photo viewer or video
   player.</p>-->
 
-  <p>All of the photos and videos in the photo stream are saved in the
-  <file>Pictures/Webcam</file> or <file>Videos/Webcam</file> folders in your
-  user folder.</p>
+  <p>Todas as fotos e vídeos do painel de fotos são salvos nas pastas <file>Imagens/Webcam</file> ou <file>Vídeos/Webcam</file> da sua pasta de usuário.</p>
 
 </page>

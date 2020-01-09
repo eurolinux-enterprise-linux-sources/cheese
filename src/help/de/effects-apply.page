@@ -42,13 +42,25 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Tobias Endrigkeit</mal:name>
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -58,17 +70,14 @@
 
   <steps>
     <item>
-      <p>Click <gui style="button">Effects</gui>.</p>
+      <p>Klicken Sie auf <gui style="button">Effekte</gui>.</p>
     </item>
     <item>
-      <p>Select the effect you want to use by clicking one of the options or
-      select <gui>No Effect</gui> if you don't want to use one.</p>
+      <p>Wählen Sie den gewünschten Effekt aus, indem Sie auf eine der Optionen klicken oder wählen Sie <gui>Kein Effekt</gui>, wenn Sie keinen verwenden möchten.</p>
     </item>
   </steps>
 
-  <p><app>Cheese</app> offers 35 effects, of which only 9 are shown on the
-  first page. Click the back and forward arrows next to
-  <gui style="button">Effects</gui> to navigate to the other pages.</p>
+  <p><app>Cheese</app> bietet 35 Effekte an, wovon lediglich 9 auf der ersten Seite angezeigt werden. Klicken Sie auf den Vorwärts- und Rückwärtspfeil neben <gui style="button">Effekte</gui>, um die anderen Seiten anzuzeigen.</p>
 
   <figure>
     <title>Einige der Effekte, von links nach rechts: Sepia, Shagadelic, Sobel (erste Reihe), Wellenform, Strahlung, Wölbung (zweite Reihe)</title>

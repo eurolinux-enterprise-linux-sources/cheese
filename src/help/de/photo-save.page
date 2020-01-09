@@ -19,7 +19,7 @@
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
-    <desc>Save a photo or video to a different folder.</desc>
+    <desc>Ein Foto oder ein Video in einem anderen Ordner speichern.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Stefan Horning</mal:name>
@@ -42,7 +42,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -50,20 +50,26 @@
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Ein Foto oder ein Video speichern</title>
 
-  <p>By default, Cheese saves the photos and videos in the
-  <file>Pictures/Webcam</file> and <file>Videos/Webcam</file> folders in your
-  user folder.</p>
+  <p>Standardmäßig speichert Cheese die Fotos und Videos in den Unterordnern <file>Bilder/Webcam</file> und <file>Videos/Webcam</file> Ihres persönlichen Ordners.</p>
 
-  <p>To save an image to a different location, right-click the image in the
-  photo stream and click <gui>Save As…</gui>. Then, choose where you want to
-  save the image.</p>
+  <p>Um ein Foto an einem anderen Ort zu speichern, klicken Sie mit der rechten Maustaste auf das Bild in der Fotostrecke und wählen Sie <gui>Speichern unter …</gui>. Anschließend wählen Sie aus, wohin Sie das Bild speichern wollen.</p>
 
-  <p>A new copy of the image will be saved in the new location. The old version
-  will remain in the <file>Pictures/Webcam</file> or <file>Videos/Webcam</file>
-  folder.</p>
+  <p>Eine neue Kopie des Bildes wird am neuen Ort gespeichert. Die alte Version bleibt im Ordner <file>Bilder/Webcam</file> oder im Ordner <file>Videos/Webcam</file> bestehen.</p>
 
 </page>

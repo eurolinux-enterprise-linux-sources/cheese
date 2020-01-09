@@ -31,7 +31,7 @@ libcheese/cheese-enums.h: $(cheese_enum_headers)
 		--fhead "#include <glib-object.h>\n\n" \
 		--fhead "G_BEGIN_DECLS\n\n" \
 		--fprod "/* enumerations from @filename@ */\n" \
-		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n" \
+		--vhead "GType @enum_name@_get_type (void);\n" \
 		--vhead "#define CHEESE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
 		--ftail "G_END_DECLS\n\n" \
 		--ftail "#endif /* CHEESE_ENUMS_H_ */" \
@@ -395,13 +395,15 @@ appsicon24dir = $(iconthemedir)/24x24/apps
 appsicon32dir = $(iconthemedir)/32x32/apps
 appsicon48dir = $(iconthemedir)/48x48/apps
 appsicon256dir = $(iconthemedir)/256x256/apps
+appsiconsymbolicdir = $(iconthemedir)/symbolic/apps
 
-dist_appsicon16_DATA = data/icons/16x16/cheese.png
-dist_appsicon22_DATA = data/icons/22x22/cheese.png
-dist_appsicon24_DATA = data/icons/24x24/cheese.png
-dist_appsicon32_DATA = data/icons/32x32/cheese.png
-dist_appsicon48_DATA = data/icons/48x48/cheese.png
-dist_appsicon256_DATA = data/icons/256x256/cheese.png
+dist_appsicon16_DATA = data/icons/16x16/org.gnome.Cheese.png
+dist_appsicon22_DATA = data/icons/22x22/org.gnome.Cheese.png
+dist_appsicon24_DATA = data/icons/24x24/org.gnome.Cheese.png
+dist_appsicon32_DATA = data/icons/32x32/org.gnome.Cheese.png
+dist_appsicon48_DATA = data/icons/48x48/org.gnome.Cheese.png
+dist_appsicon256_DATA = data/icons/256x256/org.gnome.Cheese.png
+dist_appsiconsymbolic_DATA = data/icons/symbolic/org.gnome.Cheese-symbolic.svg
 
 update_icon_cache = gtk-update-icon-cache --ignore-theme-index --force
 
@@ -601,7 +603,7 @@ MAINTAINERCLEANFILES = \
 	omf.make \
 	xmldocs.make
 
-DISTCHECK_CONFIGURE_FLAGS = \
+AM_DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-appdata-check \
 	--enable-gtk-doc \
 	--enable-introspection \

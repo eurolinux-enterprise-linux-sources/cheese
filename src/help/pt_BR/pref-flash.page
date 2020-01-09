@@ -43,7 +43,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -51,15 +51,18 @@
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Desabilitando o flash</title>
 
-  <p>When you take a photo with Cheese, the computer screen briefly turns
-  white.</p>
+  <p>Quando você tira uma foto com o Cheese, a tela do computador pisca em branco. Isso fornece luz adicional.</p>
 
-  <p>To disable this feature, select
-  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
-  and uncheck <gui>Fire flash</gui>.</p>
+  <p>Para desabilitar esse recurso, selecione <guiseq><gui>Cheese</gui><gui>Preferências</gui><gui>Captura</gui></guiseq> e desmarque <gui>Disparar flash</gui>.</p>
 
 </page>

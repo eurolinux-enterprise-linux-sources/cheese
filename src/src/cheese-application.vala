@@ -111,7 +111,7 @@ public class Cheese.Application : Gtk.Application
                                       true);
 
             Environment.set_application_name (_("Cheese"));
-            Window.set_default_icon_name ("cheese");
+            Window.set_default_icon_name ("org.gnome.Cheese");
 
             this.add_accelerator ("space", "app.shoot", null);
 
@@ -539,7 +539,7 @@ public class Cheese.Application : Gtk.Application
             "copyright", "Copyright © 2011 - 2014 David King <amigadave@amigadave.com>\nCopyright © 2007 - 2011 daniel g. siegel <dgsiegel@gnome.org>",
             "documenters", documenters,
             "license-type", Gtk.License.GPL_2_0,
-            "logo-icon-name", Config.PACKAGE_TARNAME,
+            "logo-icon-name", "org.gnome.Cheese",
             "program-name", _("Cheese"),
             "translator-credits", _("translator-credits"),
             "website", Config.PACKAGE_URL,

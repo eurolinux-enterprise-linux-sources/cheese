@@ -26,6 +26,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <string.h>
+#include <glib/gi18n-lib.h>
 
 #include "cheese-fileutil.h"
 
@@ -39,13 +40,13 @@
  * for photos and videos.
  */
 
-struct _CheeseFileUtilPrivate
+typedef struct
 {
   gchar *video_path;
   gchar *photo_path;
   guint  burst_count;
   gchar *burst_raw_name;
-};
+} CheeseFileUtilPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (CheeseFileUtil, cheese_fileutil, G_TYPE_OBJECT)
 
@@ -63,9 +64,13 @@ cheese_fileutil_get_path_before_224 (CheeseFileUtil *fileutil);
 const gchar *
 cheese_fileutil_get_video_path (CheeseFileUtil *fileutil)
 {
+    CheeseFileUtilPrivate *priv;
+
   g_return_val_if_fail (CHEESE_IS_FILEUTIL (fileutil), NULL);
 
-  return fileutil->priv->video_path;
+    priv = cheese_fileutil_get_instance_private (fileutil);
+
+    return priv->video_path;
 }
 
 /**
@@ -79,9 +84,13 @@ cheese_fileutil_get_video_path (CheeseFileUtil *fileutil)
 const gchar *
 cheese_fileutil_get_photo_path (CheeseFileUtil *fileutil)
 {
+    CheeseFileUtilPrivate *priv;
+
   g_return_val_if_fail (CHEESE_IS_FILEUTIL (fileutil), NULL);
 
-  return fileutil->priv->photo_path;
+    priv = cheese_fileutil_get_instance_private (fileutil);
+
+    return priv->photo_path;
 }
 
 /*
@@ -121,7 +130,7 @@ cheese_fileutil_get_new_media_filename (CheeseFileUtil *fileutil, CheeseMediaMod
 
   g_return_val_if_fail (CHEESE_IS_FILEUTIL (fileutil), NULL);
 
-  priv = fileutil->priv;
+    priv = cheese_fileutil_get_instance_private (fileutil);
 
   datetime = g_date_time_new_now_local ();
 
@@ -155,7 +164,10 @@ cheese_fileutil_get_new_media_filename (CheeseFileUtil *fileutil, CheeseMediaMod
     case CHEESE_MEDIA_MODE_BURST:
       priv->burst_count++;
       if (strlen (priv->burst_raw_name) == 0)
+      {
+        g_free (priv->burst_raw_name);
         priv->burst_raw_name = g_strdup_printf ("%s%s%s", path, G_DIR_SEPARATOR_S, time_string);
+      }
 
       filename = g_strdup_printf ("%s_%d%s", priv->burst_raw_name, priv->burst_count, CHEESE_PHOTO_NAME_SUFFIX);
       break;
@@ -215,20 +227,22 @@ cheese_fileutil_reset_burst (CheeseFileUtil *fileutil)
 
   g_return_if_fail (CHEESE_IS_FILEUTIL (fileutil));
 
-  priv = fileutil->priv;
+    priv = cheese_fileutil_get_instance_private (fileutil);
 
   priv->burst_count    = 0;
-  priv->burst_raw_name = "";
+  g_free (priv->burst_raw_name);
+  priv->burst_raw_name = g_strdup ("");
 }
 
 static void
 cheese_fileutil_finalize (GObject *object)
 {
   CheeseFileUtil *fileutil = CHEESE_FILEUTIL (object);
-  CheeseFileUtilPrivate *priv = fileutil->priv;
+    CheeseFileUtilPrivate *priv = cheese_fileutil_get_instance_private (fileutil);;
 
   g_free (priv->video_path);
   g_free (priv->photo_path);
+  g_free (priv->burst_raw_name);
   G_OBJECT_CLASS (cheese_fileutil_parent_class)->finalize (object);
 }
 
@@ -243,12 +257,12 @@ cheese_fileutil_class_init (CheeseFileUtilClass *klass)
 static void
 cheese_fileutil_init (CheeseFileUtil *fileutil)
 {
-    CheeseFileUtilPrivate *priv = fileutil->priv = cheese_fileutil_get_instance_private (fileutil);
+    CheeseFileUtilPrivate *priv = cheese_fileutil_get_instance_private (fileutil);
 
     GSettings *settings;
 
     priv->burst_count = 0;
-    priv->burst_raw_name = "";
+    priv->burst_raw_name = g_strdup ("");
 
     settings = g_settings_new ("org.gnome.Cheese");
 
@@ -266,7 +280,7 @@ cheese_fileutil_init (CheeseFileUtil *fileutil)
         /* Get XDG. */
         if (video_path)
         {
-            priv->video_path = g_build_filename (video_path, "Webcam", NULL);
+            priv->video_path = g_build_filename (video_path, _("Webcam"), NULL);
         }
         else
         {
@@ -286,7 +300,7 @@ cheese_fileutil_init (CheeseFileUtil *fileutil)
         /* Get XDG. */
         if (photo_path)
         {
-            priv->photo_path = g_build_filename (photo_path, "Webcam", NULL);
+            priv->photo_path = g_build_filename (photo_path, _("Webcam"), NULL);
         }
         else
         {
@@ -306,7 +320,7 @@ cheese_fileutil_init (CheeseFileUtil *fileutil)
  * Returns: a new #CheeseFileUtil
  */
 CheeseFileUtil *
-cheese_fileutil_new ()
+cheese_fileutil_new (void)
 {
   static CheeseFileUtil *fileutil = NULL;
 

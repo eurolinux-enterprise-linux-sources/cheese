@@ -77,7 +77,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
 
     private Clutter.Stage viewport;
     private Clutter.Actor viewport_layout;
-    private Clutter.Texture video_preview;
+    private Clutter.Actor video_preview;
     private Clutter.BinLayout viewport_layout_manager;
     private Clutter.Text countdown_layer;
     private Clutter.Actor background_layer;
@@ -288,11 +288,11 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
             var error_dialog = new MessageDialog (this,
               Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
               Gtk.MessageType.ERROR, Gtk.ButtonsType.NONE,
-              "Could not delete %s", file.get_path ());
+              _("Could not delete %s"), file.get_path ());
 
             error_dialog.add_button (_("_Cancel"), Gtk.ResponseType.CANCEL);
-            error_dialog.add_button ("Skip", DeleteResponse.SKIP);
-            error_dialog.add_button ("Skip all", DeleteResponse.SKIP_ALL);
+            error_dialog.add_button (_("Skip"), DeleteResponse.SKIP);
+            error_dialog.add_button (_("Skip all"), DeleteResponse.SKIP_ALL);
 
             error_response = error_dialog.run ();
             if (error_response == DeleteResponse.SKIP_ALL) {
@@ -1029,7 +1029,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         {
             if (!effect.is_preview_connected ())
             {
-                Clutter.Texture texture = effect.get_data<Clutter.Texture> ("texture");
+                Clutter.Actor texture = effect.get_data<Clutter.Actor> ("texture");
                 camera.connect_effect_texture (effect, texture);
             }
             effect.enable_preview ();
@@ -1135,9 +1135,9 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       uint i = 0;
       foreach (var effect in effects_manager.effects)
       {
-        Clutter.Texture   texture = new Clutter.Texture ();
-        Clutter.BinLayout layout  = new Clutter.BinLayout (Clutter.BinAlignment.CENTER,
-                                                           Clutter.BinAlignment.CENTER);
+        Clutter.Actor texture = new Clutter.Actor ();
+        Clutter.BinLayout layout = new Clutter.BinLayout (Clutter.BinAlignment.CENTER,
+                                                          Clutter.BinAlignment.CENTER);
         var box = new Clutter.Actor ();
         box.set_layout_manager (layout);
         Clutter.Text      text = new Clutter.Text ();
@@ -1146,9 +1146,11 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         rect.opacity = 128;
         rect.background_color = Clutter.Color.from_string ("black");
 
-        texture.keep_aspect_ratio = true;
+        texture.content_gravity = Clutter.ContentGravity.RESIZE_ASPECT;
         box.add_child (texture);
         box.reactive = true;
+        box.min_height = 40;
+        box.min_width = 50;
         var tap = new Clutter.TapAction ();
         box.add_action (tap);
         tap.tap.connect (on_selected_effect_change);
@@ -1236,7 +1238,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
 
         viewport = viewport_widget.get_stage () as Clutter.Stage;
 
-        video_preview = clutter_builder.get_object ("video_preview") as Clutter.Texture;
+        video_preview = clutter_builder.get_object ("video_preview") as Clutter.Actor;
         viewport_layout = clutter_builder.get_object ("viewport_layout") as Clutter.Actor;
         viewport_layout_manager = clutter_builder.get_object ("viewport_layout_manager") as Clutter.BinLayout;
         countdown_layer = clutter_builder.get_object ("countdown_layer") as Clutter.Text;
@@ -1244,7 +1246,6 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         error_layer = clutter_builder.get_object ("error_layer") as Clutter.Text;
         timeout_layer = clutter_builder.get_object ("timeout_layer") as Clutter.Text;
 
-    video_preview.keep_aspect_ratio = true;
     video_preview.request_mode      = Clutter.RequestMode.HEIGHT_FOR_WIDTH;
     viewport.add_child (background_layer);
     viewport_layout.set_layout_manager (viewport_layout_manager);
@@ -1287,7 +1288,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     this.key_release_event.connect (on_key_release);
   }
 
-    public Clutter.Texture get_video_preview ()
+    public Clutter.Actor get_video_preview ()
     {
         return video_preview;
     }

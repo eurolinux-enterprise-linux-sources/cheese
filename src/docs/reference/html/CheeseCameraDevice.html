@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cheese Reference Manual: CheeseCameraDevice</title>
+<title>CheeseCameraDevice: Cheese Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cheese Reference Manual">
 <link rel="up" href="libcheese.html" title="libcheese">
 <link rel="prev" href="CheeseCamera.html" title="CheeseCamera">
 <link rel="next" href="CheeseCameraDeviceMonitor.html" title="CheeseCameraDeviceMonitor">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -75,20 +75,6 @@ mentioned in the release notes for the affected release.
 </td>
 </tr>
 <tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
-</td>
-<td class="function_name">
-<a class="link" href="CheeseCameraDevice.html#cheese-camera-device-get-uuid" title="cheese_camera_device_get_uuid ()">cheese_camera_device_get_uuid</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
-</td>
-<td class="function_name">
-<a class="link" href="CheeseCameraDevice.html#cheese-camera-device-get-device-node" title="cheese_camera_device_get_device_node ()">cheese_camera_device_get_device_node</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
 <td class="function_type">
 <a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat"><span class="returnvalue">CheeseVideoFormat</span></a> *
 </td>
@@ -113,7 +99,8 @@ mentioned in the release notes for the affected release.
 </td>
 </tr>
 <tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<td class="function_type">
+<span class="returnvalue">GstElement</span> *
 </td>
 <td class="function_name">
 <a class="link" href="CheeseCameraDevice.html#cheese-camera-device-get-src" title="cheese_camera_device_get_src ()">cheese_camera_device_get_src</a> <span class="c_punctuation">()</span>
@@ -133,25 +120,14 @@ mentioned in the release notes for the affected release.
 <tbody>
 <tr>
 <td class="property_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
-<td class="property_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice--device-node" title="The “device-node” property">device-node</a></td>
+<span class="type">GstDevice</span> *</td>
+<td class="property_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice--device" title="The “device” property">device</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice--name" title="The “name” property">name</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
-</tr>
-<tr>
-<td class="property_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
-<td class="property_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice--uuid" title="The “uuid” property">uuid</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
-</tr>
-<tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
-<td class="property_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice--v4l-api-version" title="The “v4l-api-version” property">v4l-api-version</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 </tbody>
@@ -166,21 +142,21 @@ mentioned in the release notes for the affected release.
 </colgroup>
 <tbody>
 <tr>
-<td class="datatype_keyword">struct</td>
-<td class="function_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice-struct" title="struct CheeseCameraDevice">CheeseCameraDevice</a></td>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="CheeseCameraDevice.html#CheeseCameraDevice-struct" title="CheeseCameraDevice">CheeseCameraDevice</a></td>
 </tr>
 <tr>
-<td class="datatype_keyword">struct</td>
-<td class="function_name"><a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat-struct" title="struct CheeseVideoFormat">CheeseVideoFormat</a></td>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat-struct" title="CheeseVideoFormat">CheeseVideoFormat</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="CheeseCameraDevice.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> CheeseVideoFormat
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
     <span class="lineart">╰──</span> CheeseCameraDevice
 </pre>
 </div>
@@ -188,7 +164,7 @@ mentioned in the release notes for the affected release.
 <a name="CheeseCameraDevice.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 CheeseCameraDevice implements
- <a href="https://developer.gnome.org/gio/unstable/GInitable.html">GInitable</a>.</p>
+ <a href="https://developer.gnome.org/gio/unstable/GInitable.html#GInitable-struct">GInitable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="CheeseCameraDevice.includes"></a><h2>Includes</h2>
@@ -204,16 +180,13 @@ CheeseCameraDevice implements
 <div class="refsect2">
 <a name="cheese-camera-device-new"></a><h3>cheese_camera_device_new ()</h3>
 <pre class="programlisting"><a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="returnvalue">CheeseCameraDevice</span></a> *
-cheese_camera_device_new (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uuid</code></em>,
-                          <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *device_node</code></em>,
-                          <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
-                          <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> v4l_api_version</code></em>,
+cheese_camera_device_new (<em class="parameter"><code><span class="type">GstDevice</span> *device</code></em>,
                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
-<p>Tries to create a new <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a> with the supplied parameters. If
+<p>Tries to create a new <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a> with the supplied device. If
 construction fails, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned, and <em class="parameter"><code>error</code></em>
  is set.</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.2.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-new.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -222,25 +195,8 @@ construction fails, <a href="https://developer.gnome.org/glib/unstable/glib-Stan
 </colgroup>
 <tbody>
 <tr>
-<td class="parameter_name"><p>uuid</p></td>
-<td class="parameter_description"><p>UUID of the device, as supplied by udev</p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>device_node</p></td>
-<td class="parameter_description"><p> path to the device node of the video capture
-device. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
-</tr>
-<tr>
-<td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p>human-readable name of the device, as supplied by udev</p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>v4l_api_version</p></td>
-<td class="parameter_description"><p>version of the Video4Linux API that the device uses. Currently
-either 1 or 2</p></td>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The GStreamer the device, as supplied by GstDeviceMonitor</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -252,9 +208,8 @@ either 1 or 2</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.2.6"></a><h4>Returns</h4>
+<a name="cheese-camera-device-new.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -265,7 +220,7 @@ cheese_camera_device_get_name (<em class="parameter"><code><a class="link" href=
 <p>Get a human-readable name for the device, as reported by udev, which is
 suitable for display to a user.</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.3.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-get-name.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -280,65 +235,8 @@ suitable for display to a user.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.3.6"></a><h4>Returns</h4>
+<a name="cheese-camera-device-get-name.returns"></a><h4>Returns</h4>
 <p> the human-readable name of the video capture device. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cheese-camera-device-get-uuid"></a><h3>cheese_camera_device_get_uuid ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
-cheese_camera_device_get_uuid (<em class="parameter"><code><a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a> *device</code></em>);</pre>
-<p>Get the UUID of the <em class="parameter"><code>device</code></em>
-, as reported by udev.</p>
-<div class="refsect3">
-<a name="id-1.3.5.12.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p>a <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.3.5.12.4.6"></a><h4>Returns</h4>
-<p> the UUID of the video capture device. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cheese-camera-device-get-device-node"></a><h3>cheese_camera_device_get_device_node ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
-cheese_camera_device_get_device_node (<em class="parameter"><code><a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a> *device</code></em>);</pre>
-<p>Get the path to the device node associated with the <em class="parameter"><code>device</code></em>
-.</p>
-<div class="refsect3">
-<a name="id-1.3.5.12.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p>a <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.3.5.12.5.6"></a><h4>Returns</h4>
-<p> the path to the device node of the video capture
-device. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -352,7 +250,7 @@ than 640 pixels and a framerate of greater than 15 FPS for this <em class="param
 . If
 no such format is found, get the highest available resolution instead.</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.6.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-get-best-format.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -367,7 +265,7 @@ no such format is found, get the highest available resolution instead.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.6.6"></a><h4>Returns</h4>
+<a name="cheese-camera-device-get-best-format.returns"></a><h4>Returns</h4>
 <p> the highest-resolution supported
 <a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat"><span class="type">CheeseVideoFormat</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -384,7 +282,7 @@ cheese_camera_device_get_caps_for_format
  on the <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.7.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-get-caps-for-format.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -406,7 +304,7 @@ cheese_camera_device_get_caps_for_format
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.7.6"></a><h4>Returns</h4>
+<a name="cheese-camera-device-get-caps-for-format.returns"></a><h4>Returns</h4>
 <p> the <span class="type">GstCaps</span> for the given <em class="parameter"><code>format</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -420,7 +318,7 @@ cheese_camera_device_get_format_list (<em class="parameter"><code><a class="link
 <p>Get the sorted list of <a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat"><span class="type">CheeseVideoFormat</span></a> that the <em class="parameter"><code>device</code></em>
  supports.</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.8.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-get-format-list.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -435,7 +333,7 @@ cheese_camera_device_get_format_list (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.8.6"></a><h4>Returns</h4>
+<a name="cheese-camera-device-get-format-list.returns"></a><h4>Returns</h4>
 <p> list of
 <a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat"><span class="type">CheeseVideoFormat</span></a>. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Cheese.VideoFormat][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
@@ -444,14 +342,12 @@ cheese_camera_device_get_format_list (<em class="parameter"><code><a class="link
 <hr>
 <div class="refsect2">
 <a name="cheese-camera-device-get-src"></a><h3>cheese_camera_device_get_src ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<pre class="programlisting"><span class="returnvalue">GstElement</span> *
 cheese_camera_device_get_src (<em class="parameter"><code><a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a> *device</code></em>);</pre>
-<p>Get the name of the source GStreamer element for the <em class="parameter"><code>device</code></em>
-. Currently,
-this will be either v4lsrc or v4l2src, depending on the version of the
-Video4Linux API that the device supports.</p>
+<p>Get the source GStreamer element for the <em class="parameter"><code>device</code></em>
+.</p>
 <div class="refsect3">
-<a name="id-1.3.5.12.9.5"></a><h4>Parameters</h4>
+<a name="cheese-camera-device-get-src.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -466,31 +362,31 @@ Video4Linux API that the device supports.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.3.5.12.9.6"></a><h4>Returns</h4>
-<p> the name of the source GStreamer element. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<a name="cheese-camera-device-get-src.returns"></a><h4>Returns</h4>
+<p> the source GStreamer element. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 </div>
 <div class="refsect1">
 <a name="CheeseCameraDevice.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
-<a name="CheeseCameraDevice-struct"></a><h3>struct CheeseCameraDevice</h3>
-<pre class="programlisting">struct CheeseCameraDevice;</pre>
+<a name="CheeseCameraDevice-struct"></a><h3>CheeseCameraDevice</h3>
+<pre class="programlisting">typedef struct _CheeseCameraDevice CheeseCameraDevice;</pre>
 <p>Use the accessor functions below.</p>
 </div>
 <hr>
 <div class="refsect2">
-<a name="CheeseVideoFormat-struct"></a><h3>struct CheeseVideoFormat</h3>
-<pre class="programlisting">struct CheeseVideoFormat {
+<a name="CheeseVideoFormat-struct"></a><h3>CheeseVideoFormat</h3>
+<pre class="programlisting">typedef struct {
   gint width;
   gint height;
-};
+} CheeseVideoFormat;
 </pre>
 <p>A description of the resolution, in pixels, of the format to capture with a
 <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice"><span class="type">CheeseCameraDevice</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.3.5.13.3.5"></a><h4>Members</h4>
+<a name="CheeseVideoFormat.members"></a><h4>Members</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
@@ -516,11 +412,10 @@ Video4Linux API that the device supports.</p>
 <div class="refsect1">
 <a name="CheeseCameraDevice.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
-<a name="CheeseCameraDevice--device-node"></a><h3>The <code class="literal">“device-node”</code> property</h3>
-<pre class="programlisting">  “device-node”              <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
-<p>Path to the device node of the video capture device.</p>
+<a name="CheeseCameraDevice--device"></a><h3>The <code class="literal">“device”</code> property</h3>
+<pre class="programlisting">  “device”                   <span class="type">GstDevice</span> *</pre>
+<p>GStreamer device object of the video capture device.</p>
 <p>Flags: Read / Write / Construct Only</p>
-<p>Default value: NULL</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -530,28 +425,9 @@ Video4Linux API that the device supports.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
-<hr>
-<div class="refsect2">
-<a name="CheeseCameraDevice--uuid"></a><h3>The <code class="literal">“uuid”</code> property</h3>
-<pre class="programlisting">  “uuid”                     <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
-<p>UUID of the video capture device.</p>
-<p>Flags: Read / Write / Construct Only</p>
-<p>Default value: NULL</p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="CheeseCameraDevice--v4l-api-version"></a><h3>The <code class="literal">“v4l-api-version”</code> property</h3>
-<pre class="programlisting">  “v4l-api-version”          <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
-<p>Version of the Video4Linux API that the device supports. Currently, either
-1 or 2 are supported.</p>
-<p>Flags: Read / Write / Construct Only</p>
-<p>Allowed values: [1,2]</p>
-<p>Default value: 2</p>
-</div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

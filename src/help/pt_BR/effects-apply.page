@@ -42,13 +42,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Rafael Ferreira</mal:name>
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -58,21 +64,17 @@
 
   <steps>
     <item>
-      <p>Click <gui style="button">Effects</gui>.</p>
+      <p>Clique no botão <gui>Efeitos</gui>.</p>
     </item>
     <item>
-      <p>Select the effect you want to use by clicking one of the options or
-      select <gui>No Effect</gui> if you don't want to use one.</p>
+      <p>Selecione o efeito que você quer usar ou selecione a opção <gui>Sem efeitos</gui> se você não quiser usar nenhum deles.</p>
     </item>
   </steps>
 
-  <p><app>Cheese</app> offers 35 effects, of which only 9 are shown on the
-  first page. Click the back and forward arrows next to
-  <gui style="button">Effects</gui> to navigate to the other pages.</p>
+  <p>O <app>Cheese</app> oferece 35 efeitos, dos quais apenas 9 são mostrados na primeira página. Clique em <gui>Efeitos seguintes</gui> e <gui>Efeitos anteriores</gui> para navegar para outras páginas.</p>
 
   <figure>
-    <title>Some of the effects, from left to right: Sepia, Shagadelic, Sobel
-    (first row), Waveform, X-Ray, Warp (second row)</title>
+    <title>Alguns dos efeitos, da esquerda para a direita, na primeira linha: Sépia, Psicodélico e Sobel. E na segunda linha: Formas de onda, Raio-X e Warp.</title>
     <media its:translate="no" type="image" src="figures/effects.png" width="529" height="264"/>
   </figure>
 

@@ -20,7 +20,7 @@
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
-    <desc>Abschalten des Aufleuchten des Bildschirms bei der Aufnahme eines Fotos.</desc>
+    <desc>Aufblitzen des Bildschirms bei der Aufnahme eines Fotos abschalten.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Stefan Horning</mal:name>
@@ -43,7 +43,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -51,15 +51,24 @@
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Den Blitz deaktivieren</title>
 
-  <p>When you take a photo with Cheese, the computer screen briefly turns
-  white.</p>
+  <p>Wenn Sie ein Foto mit Cheese aufnehmen, wird der Bildschirm Ihres Rechners für einen kurzen Moment weiß.</p>
 
-  <p>To disable this feature, select
-  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
-  and uncheck <gui>Fire flash</gui>.</p>
+  <p>Um dieses Funktionsmerkmal abzuschalten, klicken Sie auf <guiseq><gui>Cheese</gui><gui>Einstellungen</gui><gui>Aufnahme</gui></guiseq> und deaktivieren Sie <gui>Blitz auslösen</gui>.</p>
 
 </page>

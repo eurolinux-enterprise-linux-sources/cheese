@@ -44,7 +44,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -52,11 +52,17 @@
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Introdução</title>
 
-  <p>O <app>Cheese</app> é um aplicativo de webcam que permite a você tirar fotos e gravar vídeos usando sua webcam. Você pode tirar várias fotos sucessivas rapidamente usando o <link xref="burst-mode">modo <gui>Explosão</gui></link> e aplicando <link xref="effects-apply"><gui>Efeitos</gui>especiais</link> para adicionar um toque pessoal a elas.</p>
+  <p>O <app>Cheese</app> é um aplicativo de webcam que permite a você tirar fotos e gravar vídeos usando sua webcam. Você pode tirar várias fotos sucessivas rapidamente usando o <link xref="burst-mode">modo <gui>Contínuo</gui></link> e aplicando <link xref="effects-apply"><gui>Efeitos</gui>especiais</link> para adicionar um toque pessoal a elas.</p>
 
   <p>Por padrão, o <app>Cheese</app> inicia no modo <gui>Foto</gui>, pronto para <link xref="photo-take">tirar uma foto</link>. Você precisa alternar para o modo <gui>Vídeo</gui> para <link xref="video-record">gravar um vídeo</link>.</p>
 

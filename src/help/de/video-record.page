@@ -43,13 +43,25 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Tobias Endrigkeit</mal:name>
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -59,26 +71,19 @@
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Video</gui> mode. If you are, the
-      <gui style="button">Video</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Stellen Sie sicher, dass Sie sich im <gui>Video-Modus</gui> befinden. In diesem Fall ist der Knopf <gui style="button">Video</gui> auf der linken Seite des Bildschirms ausgewählt.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Record a video using a webcam</gui>
-      button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to start recording the video.</p>
+      <p>Klicken Sie auf <gui style="button">Aufnahme mit einer Webcam starten</gui> in der Mitte der unteren Leiste oder drücken Sie die <key>Leertaste</key>, um die Aufnahme von Ihrer Webcam zu starten.</p>
     </item>
     <item>
-     <p>To stop recording, press the same button again. You can also press the 
-     <key>Esc</key> or <key>Space</key> key to stop recording.</p>
+     <p>Um die Aufnahme zu beenden, klicken Sie den selben Knopf erneut. Sie können die Aufnahme auch mit den Tasten <key>Esc</key> oder <key>Leertaste</key> beenden.</p>
     </item>
   </steps>
 
-  <p>Videos are saved in the WebM (<file>.webm</file>) format.</p>
+  <p>Videos werden im Dateiformat WebM (<file>.webm</file>) gespeichert.</p>
 
-  <p>After you have stopped recording, the video will automatically appear in
-  the photo stream at the bottom of the <app>Cheese</app> window. From there,
-  you can <link xref="photo-view">open</link> or delete the video.</p>
+  <p>Nachdem Sie die Aufnahme gestoppt haben, erscheint das Video automatisch in der Fotostrecke am unteren Rand des <app>Cheese</app>-Fensters. Von dort aus können Sie das Video <link xref="photo-view">öffnen</link> oder löschen.</p>
 
   <p>Falls Probleme bei der Weitergabe eines Videos an andere Benutzer mit anderen Betriebssystemen auftreten (wie Windows oder Mac OS), dann sollten Sie das Video <link href="ghelp:gnome-help/video-sending">in ein anderes Format umwandeln</link>.</p>
 

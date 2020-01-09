@@ -1,14 +1,12 @@
 Name:           cheese
 Epoch:          2
-Version:        3.14.2
-Release:        5%{?dist}
+Version:        3.22.1
+Release:        1%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
-Group:          Amusements/Graphics
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Cheese
-#VCS: git:git://git.gnome.org/cheese
-Source0:        https://download.gnome.org/sources/%{name}/3.14/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.22/%{name}-%{version}.tar.xz
 
 BuildRequires:  chrpath
 BuildRequires:  desktop-file-utils
@@ -20,7 +18,7 @@ BuildRequires:  itstool
 BuildRequires:  libXtst-devel
 BuildRequires:  vala-devel
 BuildRequires:  pkgconfig(clutter-1.0)
-BuildRequires:  pkgconfig(clutter-gst-2.0)
+BuildRequires:  pkgconfig(clutter-gst-3.0)
 BuildRequires:  pkgconfig(clutter-gtk-1.0)
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
@@ -30,9 +28,9 @@ BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-bad-1.0)
-BuildRequires:  pkgconfig(gudev-1.0)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(x11)
+BuildRequires:  /usr/bin/appstream-util
 BuildRequires:  /usr/bin/xsltproc
 
 Requires: %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
@@ -46,7 +44,6 @@ videos from a webcam. It can also apply fancy graphical effects.
 
 %package camera-service
 Summary:        Webcam D-Bus service
-Group:          System Environment/Libraries
 License:        GPLv3+
 Requires:       %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
 
@@ -56,7 +53,6 @@ want to display a webcam dialog in their interface.
 
 %package libs
 Summary:        Webcam display and capture widgets
-Group:          System Environment/Libraries
 License:        GPLv2+
 
 %description libs
@@ -65,7 +61,6 @@ want to display a webcam in their interface.
 
 %package libs-devel
 Summary:        Development files for %{name}-libs
-Group:          Development/Libraries
 License:        GPLv2+
 Requires:       %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
 
@@ -84,7 +79,7 @@ make V=1 %{?_smp_mflags}
 
 
 %install
-make DESTDIR=%{buildroot} INSTALL="install -p" install
+%make_install
 
 rm -f %{buildroot}%{_libdir}/libcheese.{a,la}
 rm -f %{buildroot}%{_libdir}/libcheese-gtk.{a,la}
@@ -130,18 +125,19 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %doc AUTHORS README
 %{_bindir}/cheese
 %{_datadir}/applications/org.gnome.Cheese.desktop
-%{_datadir}/icons/hicolor/*/apps/cheese.png
+%{_datadir}/icons/hicolor/*/apps/org.gnome.Cheese.png
+%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Cheese-symbolic.svg
 %{_datadir}/appdata/org.gnome.Cheese.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Cheese.service
-%{_mandir}/man1/cheese.1.gz
+%{_mandir}/man1/cheese.1*
 
 %files camera-service
-%doc COPYING.GPL3
+%license COPYING.GPL3
 %{_libexecdir}/gnome-camera-service
 %{_datadir}/dbus-1/services/org.gnome.Camera.service
 
 %files -f %{name}.lang libs
-%doc COPYING
+%license COPYING
 %{_libdir}/libcheese.so.*
 %{_libdir}/libcheese-gtk.so.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Cheese.gschema.xml
@@ -158,6 +154,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Wed Oct 19 2016 Kalev Lember <klember@redhat.com> - 2:3.22.1-1
+- Update to 3.22.1
+- Resolves: #1386826
+
 * Fri May 15 2015 Matthias Clasen <mclasen@redhat.com> 3.14.2-5
 - Tighten inter-subpackage deps to pacify rpmdiff
 Related: #1174584

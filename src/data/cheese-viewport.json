@@ -1,9 +1,14 @@
 [
 {
   "id": "video_preview",
-  "type": "ClutterTexture",
+  "type": "ClutterActor",
   "child::x-align": "CLUTTER_BIN_ALIGNMENT_CENTER",
-  "child::y-align": "CLUTTER_BIN_ALIGNMENT_CENTER"
+  "child::y-align": "CLUTTER_BIN_ALIGNMENT_CENTER",
+  "content-gravity": "CLUTTER_CONTENT_GRAVITY_RESIZE_ASPECT",
+  "x-expand": true,
+  "y-expand": true,
+  "min-height":75,
+  "min-width":100
 },
 {
   "id": "background",

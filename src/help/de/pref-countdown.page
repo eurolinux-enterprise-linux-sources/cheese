@@ -20,7 +20,7 @@
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
-    <desc>Löschen Sie den Countdown, so dass Fotos unverzüglich aufgenommen werden.</desc>
+    <desc>Deaktivieren Sie den Countdown, so dass Fotos unverzüglich aufgenommen werden.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Stefan Horning</mal:name>
@@ -43,7 +43,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -51,9 +51,21 @@
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Disable the <gui>Countdown</gui></title>
+  <title>Den <gui>Countdown</gui> deaktivieren</title>
 
   <p>Standardmäßig zählt <app>Cheese</app> von 3 an rückwärts, bevor ein Foto aufgenommen wird. Sie können dieses Verhalten abschalten, indem Sie unter <guiseq><gui>Cheese</gui><gui>Einstellungen</gui><gui>Aufnahme</gui></guiseq> die Option <gui>Countdown</gui> deaktivieren.</p>
 

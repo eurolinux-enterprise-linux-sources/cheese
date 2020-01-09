@@ -7,11 +7,12 @@
 [type: gettext/glade]data/menus.ui
 data/org.gnome.Cheese.appdata.xml.in
 data/org.gnome.Cheese.desktop.in.in
-data/org.gnome.Cheese.gschema.xml
+[type: gettext/gsettings]data/org.gnome.Cheese.gschema.xml
 libcheese/cheese-avatar-chooser.c
 libcheese/cheese-avatar-widget.c
 libcheese/cheese-camera.c
 libcheese/cheese-camera-device.c
+libcheese/cheese-fileutil.c
 libcheese/cheese-widget.c
 src/cheese-application.vala
 src/cheese-countdown.vala

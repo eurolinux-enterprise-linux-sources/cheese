@@ -37,7 +37,6 @@ G_BEGIN_DECLS
 
 typedef struct _UmCropAreaClass UmCropAreaClass;
 typedef struct _UmCropArea UmCropArea;
-typedef struct _UmCropAreaPrivate UmCropAreaPrivate;
 
 /*
  * UmCropAreaClass:
@@ -59,7 +58,7 @@ struct _UmCropArea {
         GtkDrawingArea parent_instance;
 };
 
-GType      um_crop_area_get_type             (void) G_GNUC_CONST;
+GType      um_crop_area_get_type             (void);
 
 GtkWidget *um_crop_area_new                  (void);
 GdkPixbuf *um_crop_area_get_picture          (UmCropArea *area);

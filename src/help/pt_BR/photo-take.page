@@ -25,7 +25,7 @@
 
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
-    <desc>Usando a sua webcam para tirar fotos em vez de vídeos.</desc>
+    <desc>Usando a sua webcam para tirar fotos em vez de gravar vídeos.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Fabrício Godoy</mal:name>
@@ -48,7 +48,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -56,37 +56,36 @@
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Take photos</title>
+  <title>Tirando fotos</title>
 
   <p>Webcams podem ser usadas para tirar fotos, assim como vídeos. Para tirar uma foto:</p>
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Photo</gui> mode. If you are, the
-      <gui style="button">Photo</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Certifique-se de que você está no modo <gui>Foto</gui>. Se estiver, o botão <gui style="button">Foto</gui> estará selecionado na esquerda da tela.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Take a photo using a webcam</gui>
-      button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to take the photo.</p>
+      <p>Clique no botão <gui style="button">Tirar uma foto usando a webcam</gui> ou pressione a tecla <key>espaço</key> para disparar a foto.</p>
     </item>
     <item>
       <p>Será iniciada uma curta contagem regressiva, seguida de um flash, e a foto aparecerá na sequência de fotos.</p>
     </item>
   </steps>
 
-  <p>The photos in the photo stream are automatically saved in the
-  <file>Pictures/Webcam</file> folder in your home folder. They are saved
-  using the JPEG (<file>.jpg</file>) format.</p>
+  <p>As fotos no painel são salvas automaticamente na pasta <file>Imagens/Webcam</file> de sua pasta pessoal. Elas são salvas usando o formato JPEG (<file>.jpg</file>).</p>
 
   <p>Para cancelar a captura de uma foto depois de ter clicado em <gui>Tirar uma foto</gui>, pressione <key>Esc</key> antes que a contagem regressiva acabe.</p>
 
   <note>
-    <p>To take multiple photos in rapid succession, use
-    <link xref="burst-mode"><gui>Burst</gui> mode</link>.</p>
+    <p>Para tirar várias fotos sucessivas rapidamente, use o modo <link xref="burst-mode">Contínuo</link>.</p>
   </note>
 
 </page>

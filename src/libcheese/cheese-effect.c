@@ -42,12 +42,12 @@ enum
 
 static GParamSpec *properties[PROP_LAST];
 
-struct _CheeseEffectPrivate
+typedef struct
 {
   gchar *name;
   gchar *pipeline_desc;
   GstElement *control_valve;
-};
+} CheeseEffectPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (CheeseEffect, cheese_effect, G_TYPE_OBJECT)
 
@@ -55,7 +55,7 @@ static void
 cheese_effect_get_property (GObject *object, guint property_id,
                             GValue *value, GParamSpec *pspec)
 {
-  CheeseEffectPrivate *priv = CHEESE_EFFECT (object)->priv;
+    CheeseEffectPrivate *priv = cheese_effect_get_instance_private (CHEESE_EFFECT (object));
 
   switch (property_id)
   {
@@ -77,7 +77,7 @@ static void
 cheese_effect_set_property (GObject *object, guint property_id,
                             const GValue *value, GParamSpec *pspec)
 {
-  CheeseEffectPrivate *priv = CHEESE_EFFECT (object)->priv;
+    CheeseEffectPrivate *priv = cheese_effect_get_instance_private (CHEESE_EFFECT (object));
 
   switch (property_id)
   {
@@ -107,7 +107,7 @@ cheese_effect_finalize (GObject *object)
     CheeseEffectPrivate *priv;
 
     effect = CHEESE_EFFECT (object);
-    priv = effect->priv;
+    priv = cheese_effect_get_instance_private (effect);
 
     g_clear_pointer (&priv->name, g_free);
     g_clear_pointer (&priv->pipeline_desc, g_free);
@@ -179,9 +179,13 @@ cheese_effect_class_init (CheeseEffectClass *klass)
 const gchar *
 cheese_effect_get_name (CheeseEffect *effect)
 {
+    CheeseEffectPrivate *priv;
+
   g_return_val_if_fail (CHEESE_IS_EFFECT (effect), NULL);
 
-  return effect->priv->name;
+    priv = cheese_effect_get_instance_private (effect);
+
+    return priv->name;
 }
 
 /**
@@ -195,9 +199,13 @@ cheese_effect_get_name (CheeseEffect *effect)
 const gchar *
 cheese_effect_get_pipeline_desc (CheeseEffect *effect)
 {
+    CheeseEffectPrivate *priv;
+
   g_return_val_if_fail (CHEESE_IS_EFFECT (effect), NULL);
 
-  return effect->priv->pipeline_desc;
+    priv = cheese_effect_get_instance_private (effect);
+
+    return priv->pipeline_desc;
 }
 
 /**
@@ -211,9 +219,13 @@ cheese_effect_get_pipeline_desc (CheeseEffect *effect)
 gboolean
 cheese_effect_is_preview_connected (CheeseEffect *effect)
 {
+    CheeseEffectPrivate *priv;
+
   g_return_val_if_fail (CHEESE_IS_EFFECT (effect), FALSE);
 
-  return effect->priv->control_valve != NULL;
+    priv = cheese_effect_get_instance_private (effect);
+
+    return priv->control_valve != NULL;
 }
 
 /**
@@ -225,9 +237,13 @@ cheese_effect_is_preview_connected (CheeseEffect *effect)
 void
 cheese_effect_enable_preview (CheeseEffect *effect)
 {
+    CheeseEffectPrivate *priv;
+
   g_return_if_fail (CHEESE_IS_EFFECT (effect));
 
-  g_object_set (G_OBJECT (effect->priv->control_valve), "drop", FALSE, NULL);
+    priv = cheese_effect_get_instance_private (effect);
+
+    g_object_set (G_OBJECT (priv->control_valve), "drop", FALSE, NULL);
 }
 
 /**
@@ -239,15 +255,18 @@ cheese_effect_enable_preview (CheeseEffect *effect)
 void
 cheese_effect_disable_preview (CheeseEffect *effect)
 {
+    CheeseEffectPrivate *priv;
+
   g_return_if_fail (CHEESE_IS_EFFECT (effect));
 
-  g_object_set (G_OBJECT (effect->priv->control_valve), "drop", TRUE, NULL);
+    priv = cheese_effect_get_instance_private (effect);
+
+    g_object_set (G_OBJECT (priv->control_valve), "drop", TRUE, NULL);
 }
 
 static void
 cheese_effect_init (CheeseEffect *self)
 {
-  self->priv = cheese_effect_get_instance_private (self);
 }
 
 /**
@@ -397,7 +416,7 @@ cheese_effect_load_effects_from_subdirectory (const gchar* directory)
  * #CheeseEffect, or %NULL if no effects could be found
  */
 GList*
-cheese_effect_load_effects ()
+cheese_effect_load_effects (void)
 {
   const gchar * const *data_dirs, *dir;
   GList *effect_list = NULL, *l;

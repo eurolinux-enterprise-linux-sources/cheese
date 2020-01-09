@@ -38,6 +38,11 @@ const guint THUMB_VIEW_MINIMUM_HEIGHT = 100;
 
 const gchar CHEESE_OLD_VIDEO_NAME_SUFFIX[] = ".ogv";
 
+struct _CheeseThumbView
+{
+  GtkIconView parent;
+};
+
 typedef struct
 {
   GtkListStore *store;
@@ -52,7 +57,7 @@ typedef struct
   GQueue *thumbnails;
 } CheeseThumbViewPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (CheeseThumbView, cheese_thumb_view, GTK_TYPE_ICON_VIEW);
+G_DEFINE_TYPE_WITH_PRIVATE (CheeseThumbView, cheese_thumb_view, GTK_TYPE_ICON_VIEW)
 
 enum
 {

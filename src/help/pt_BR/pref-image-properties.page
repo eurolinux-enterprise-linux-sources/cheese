@@ -44,13 +44,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Rafael Ferreira</mal:name>
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -63,16 +69,15 @@
       <p>Selecione <guiseq><gui>Cheese</gui><gui>Preferências</gui><gui>Imagem</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Ajuste os deslizadores para encontrar as melhores configurações para a sua webcam.</p>
+      <p>Mova os ajustes deslizantes para encontrar melhores configurações para a sua webcam.</p>
     </item>
     <item>
-      <p>Click <gui>Close</gui> and check to see if the preview looks
-      better.</p>
+      <p>Clique em <gui>Fechar</gui> e veja se a imagem fica melhor.</p>
     </item>
   </steps>
 
   <figure>
-    <title>Diferentes opções em <gui>Propriedades da imagem</gui> (da esquerda para a direita): aplicar brilho, contraste, matiz e saturação</title>
+    <title>Diferentes opções nos ajustes da <gui>imagem</gui> (da esquerda para a direita): aplicar brilho, contraste, matiz e saturação</title>
     <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 

@@ -42,13 +42,19 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Rafael Ferreira</mal:name>
       <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Felipe Braga</mal:name>
+      <mal:email>fbobraga@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -58,16 +64,13 @@
 
   <steps>
     <item>
-      <p>Localize a foto ou vídeo que você quer excluir na sequência de fotos na parte inferior da janela do <app>Cheese</app>.</p>
+      <p>Localize a foto ou vídeo que você quer excluir do painel de fotos na parte inferior da janela do <app>Cheese</app>.</p>
     </item>
     <item>
-      <p>Right-click it and select <gui>Delete</gui>.<!-- Alternatively, click it
-      once to select it and press the <key>Delete</key> key.--></p>
+      <p>Clique com o botão direito do mouse e selecione <gui>Excluir</gui>.</p>
     </item>
     <item>
-      <p>You will be asked if you want to permanently delete it. Confirm by
-      clicking <gui>Delete</gui>; you will not be able to recover the photo
-      or video.</p>
+      <p>Será solicitada sua confirmação para exclui-la permanentemente. Clique em <gui>Excluir</gui> para confirmar; você não terá como recuperar a foto.</p>
     </item>
   </steps>
 

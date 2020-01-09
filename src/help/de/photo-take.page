@@ -48,7 +48,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -56,37 +56,42 @@
       <mal:email>tobiasendrigkeit@outlook.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Simon Linden</mal:name>
+      <mal:email>xhi2018@gmail.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Take photos</title>
+  <title>Fotos aufnehmen</title>
 
   <p>Mit Webcams können Sie sowohl Fotos als auch Videos aufnehmen. So nehmen Sie ein Foto auf:</p>
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Photo</gui> mode. If you are, the
-      <gui style="button">Photo</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Stellen Sie sicher, dass Sie sich im <gui>Foto-Modus</gui> befinden. In diesem Fall ist der Knopf <gui style="button">Foto</gui> auf der linken Seite des Bildschirms ausgewählt.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Take a photo using a webcam</gui>
-      button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to take the photo.</p>
+      <p>Klicken Sie in der Mitte des unteren Panels auf den Knopf <gui style="button">Ein Foto mit einer Webcam aufnehmen</gui> oder drücken Sie die <key>Leertaste</key>, um ein Foto aufzunehmen.</p>
     </item>
     <item>
       <p>Nach einem kurzen Countdown erscheint ein »Blitz«. Danach erscheint das Foto in der Fotostrecke.</p>
     </item>
   </steps>
 
-  <p>The photos in the photo stream are automatically saved in the
-  <file>Pictures/Webcam</file> folder in your home folder. They are saved
-  using the JPEG (<file>.jpg</file>) format.</p>
+  <p>Die Fotos in der Fotostrecke werden automatisch im Unterordner <file>Bilder/Webcam</file> Ihres persönlichen Ordners gespeichert. Das verwendete Dateiformat ist JPEG (<file>.jpg</file>).</p>
 
   <p>Um die Aufnahme eines Fotos abzubrechen, nachdem Sie auf <gui>Ein Foto aufnehmen</gui> geklickt haben, drücken Sie die <key>Esc</key>-Taste, bevor der Countdown abgelaufen ist.</p>
 
   <note>
-    <p>To take multiple photos in rapid succession, use
-    <link xref="burst-mode"><gui>Burst</gui> mode</link>.</p>
+    <p>Um mehrere Fotos in schneller Folge aufzunehmen, verwenden Sie den <link xref="burst-mode"><gui>Serienaufnahmemodus</gui></link>.</p>
   </note>
 
 </page>

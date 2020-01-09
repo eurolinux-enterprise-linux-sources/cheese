@@ -74,7 +74,7 @@ struct _CheeseCamera
 {
   /*< private >*/
   GObject parent;
-  CheeseCameraPrivate *priv;
+  void *unused;
 };
 
 /**
@@ -94,27 +94,27 @@ typedef enum
   CHEESE_CAMERA_ERROR_NO_DEVICE
 } CheeseCameraError;
 
-GType         cheese_camera_get_type (void) G_GNUC_CONST;
-CheeseCamera *cheese_camera_new (ClutterTexture *video_texture,
-                                 const gchar    *camera_device_node,
-                                 gint            x_resolution,
-                                 gint            y_resolution);
+GType         cheese_camera_get_type (void);
+CheeseCamera *cheese_camera_new (ClutterActor *video_texture,
+                                 const gchar  *name,
+                                 gint          x_resolution,
+                                 gint          y_resolution);
 
 const CheeseVideoFormat *cheese_camera_get_current_video_format (CheeseCamera *camera);
-void                     cheese_camera_setup (CheeseCamera *camera, const gchar *uuid, GError **error);
+void                     cheese_camera_setup (CheeseCamera *camera, CheeseCameraDevice *device, GError **error);
 void                     cheese_camera_play (CheeseCamera *camera);
 void                     cheese_camera_stop (CheeseCamera *camera);
 void                     cheese_camera_set_effect (CheeseCamera *camera, CheeseEffect *effect);
-void                     cheese_camera_connect_effect_texture (CheeseCamera   *camera,
-                                                               CheeseEffect   *effect,
-                                                               ClutterTexture *texture);
+void                     cheese_camera_connect_effect_texture (CheeseCamera *camera,
+                                                               CheeseEffect *effect,
+                                                               ClutterActor *texture);
 void                cheese_camera_start_video_recording (CheeseCamera *camera, const gchar *filename);
 void                cheese_camera_stop_video_recording (CheeseCamera *camera);
 gboolean            cheese_camera_take_photo (CheeseCamera *camera, const gchar *filename);
 gboolean            cheese_camera_take_photo_pixbuf (CheeseCamera *camera);
 CheeseCameraDevice *cheese_camera_get_selected_device (CheeseCamera *camera);
 GPtrArray *         cheese_camera_get_camera_devices (CheeseCamera *camera);
-void                cheese_camera_set_device_by_device_node (CheeseCamera *camera, const gchar *file);
+void                cheese_camera_set_device (CheeseCamera *camera, CheeseCameraDevice *device);
 void                cheese_camera_switch_camera_device (CheeseCamera *camera);
 GList *             cheese_camera_get_video_formats (CheeseCamera *camera);
 void                cheese_camera_set_video_format (CheeseCamera      *camera,

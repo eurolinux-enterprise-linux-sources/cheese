@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cheese Reference Manual: CheeseAvatarChooser</title>
+<title>CheeseAvatarChooser: Cheese Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cheese Reference Manual">
 <link rel="up" href="libcheese-gtk.html" title="libcheese-gtk">
 <link rel="prev" href="cheese-Initializing-libcheese-gtk.html" title="Initializing libcheese-gtk">
 <link rel="next" href="CheeseAvatarWidget.html" title="CheeseAvatarWidget">
-<meta name="generator" content="GTK-Doc V1.21.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -61,7 +61,7 @@ mentioned in the release notes for the affected release.
 <tbody>
 <tr>
 <td class="function_type">
-<a href="http://developer.gnome.org/gtk2/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *
+<a href="http://developer.gnome.org/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="CheeseAvatarChooser.html#cheese-avatar-chooser-new" title="cheese_avatar_chooser_new ()">cheese_avatar_chooser_new</a> <span class="c_punctuation">()</span>
@@ -102,20 +102,20 @@ mentioned in the release notes for the affected release.
 <col class="description">
 </colgroup>
 <tbody><tr>
-<td class="datatype_keyword">struct</td>
-<td class="function_name"><a class="link" href="CheeseAvatarChooser.html#CheeseAvatarChooser-struct" title="struct CheeseAvatarChooser">CheeseAvatarChooser</a></td>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="CheeseAvatarChooser.html#CheeseAvatarChooser-struct" title="CheeseAvatarChooser">CheeseAvatarChooser</a></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="CheeseAvatarChooser.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
     <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-        <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWidget.html">GtkWidget</a>
-            <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkContainer.html">GtkContainer</a>
-                <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkBin.html">GtkBin</a>
-                    <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWindow.html">GtkWindow</a>
-                        <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkDialog.html">GtkDialog</a>
+        <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
+            <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
+                <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkBin.html#GtkBin-struct">GtkBin</a>
+                    <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkWindow.html#GtkWindow-struct">GtkWindow</a>
+                        <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkDialog.html#GtkDialog-struct">GtkDialog</a>
                             <span class="lineart">╰──</span> CheeseAvatarChooser
 </pre>
 </div>
@@ -123,7 +123,7 @@ mentioned in the release notes for the affected release.
 <a name="CheeseAvatarChooser.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 CheeseAvatarChooser implements
- AtkImplementorIface and  <a href="http://developer.gnome.org/gtk2/GtkBuildable.html">GtkBuildable</a>.</p>
+ AtkImplementorIface and  <a href="http://developer.gnome.org/gtk3/GtkBuildable.html#GtkBuildable-struct">GtkBuildable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="CheeseAvatarChooser.includes"></a><h2>Includes</h2>
@@ -139,13 +139,12 @@ for use as an avatar.</p>
 <a name="CheeseAvatarChooser.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="cheese-avatar-chooser-new"></a><h3>cheese_avatar_chooser_new ()</h3>
-<pre class="programlisting"><a href="http://developer.gnome.org/gtk2/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *
+<pre class="programlisting"><a href="http://developer.gnome.org/gtk3/GtkWidget.html#GtkWidget-struct"><span class="returnvalue">GtkWidget</span></a> *
 cheese_avatar_chooser_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="CheeseAvatarChooser.html" title="CheeseAvatarChooser"><span class="type">CheeseAvatarChooser</span></a> dialogue.</p>
 <div class="refsect3">
-<a name="id-1.4.4.11.2.5"></a><h4>Returns</h4>
+<a name="cheese-avatar-chooser-new.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="CheeseAvatarChooser.html" title="CheeseAvatarChooser"><span class="type">CheeseAvatarChooser</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -156,7 +155,7 @@ cheese_avatar_chooser_get_picture (<em class="parameter"><code><a class="link" h
 <p>Returns the portion of image selected through the builtin cropping tool,
 after a picture has been captured on the webcam.</p>
 <div class="refsect3">
-<a name="id-1.4.4.11.3.5"></a><h4>Parameters</h4>
+<a name="cheese-avatar-chooser-get-picture.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -171,17 +170,16 @@ after a picture has been captured on the webcam.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.4.11.3.6"></a><h4>Returns</h4>
+<a name="cheese-avatar-chooser-get-picture.returns"></a><h4>Returns</h4>
 <p> a <span class="type">GdkPixbuf</span> object, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no picture has been taken yet</p>
-<p></p>
 </div>
 </div>
 </div>
 <div class="refsect1">
 <a name="CheeseAvatarChooser.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
-<a name="CheeseAvatarChooser-struct"></a><h3>struct CheeseAvatarChooser</h3>
-<pre class="programlisting">struct CheeseAvatarChooser;</pre>
+<a name="CheeseAvatarChooser-struct"></a><h3>CheeseAvatarChooser</h3>
+<pre class="programlisting">typedef struct _CheeseAvatarChooser CheeseAvatarChooser;</pre>
 <p>Use the accessor functions below.</p>
 </div>
 </div>
@@ -196,7 +194,6 @@ after a picture has been captured on the webcam.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>
