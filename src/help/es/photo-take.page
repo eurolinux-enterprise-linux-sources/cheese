@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,14 +22,12 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Usar su cámara web para hacer fotos en lugar de vídeos.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2011 - 2017</mal:years>
+      <mal:years>2011, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -40,28 +37,28 @@
     </mal:credit>
   </info>
 
-  <title>Hacer fotos</title>
+  <title>Hacer fotos usando una cámara web</title>
 
   <p>Las cámaras web se pueden usar para hacer fotos nítidas, así como vídeos. Para hacer una foto:</p>
 
   <steps>
     <item>
-      <p>Asegúrese de que está en el modo <gui>Foto</gui>. Si lo está, el botón <gui style="button">Foto</gui> estará seleccionado en la parte izquierda de la pantalla.</p>
+      <p>Asegúrese de que el modo <gui style="menuitem">Foto</gui> está seleccionado en el menú de <gui style="menu">Cheese</gui>.</p>
     </item>
     <item>
-      <p>Pulse el botón <gui style="button">Tomar una foto usando la cámara web</gui> en la parte central del panel inferior o pulse la tecla <key>Espacio</key> para hacer la foto.</p>
+      <p>Pulse <gui>Tomar una foto</gui>. Alternativamente, puede pulsar el botón de captura de la cámara web o la <key>barra espaciadora</key>.</p>
     </item>
     <item>
       <p>Se mostrará una pequeña cuenta atrás, seguida de un flash y después la foto aparecerá en la colección de imágenes.</p>
     </item>
   </steps>
 
-  <p>Las fotos en la colección de imágenes se guardan automáticamente en la carpeta <file>Imágenes/Webcam</file> en su carpeta personal. Se guardan usando el formato JPEG (<file>.jpg</file>).</p>
+  <p>Las fotos en la colección de imágenes se guardan automáticamente en la carpeta <file>Imágenes/Webcam</file> en su carpeta de usuario. Se guardan en el formato JPEG (<file>.jpg</file>).</p>
 
   <p>Para cancelar la toma de una foto después de que haya pulsado <gui>Tomar una foto</gui> pulse <key>Esc</key> antes de que finalice la cuenta atrás.</p>
 
   <note>
-    <p>Use el modo <link xref="burst-mode">ráfaga</link> para hacer múltiples fotos muy seguidas.</p>
+    <p>Use el <link xref="burst-mode">modo ráfaga</link> para tomar múltiples fotos muy seguidas.</p>
   </note>
 
 </page>

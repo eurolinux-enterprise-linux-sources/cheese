@@ -5,83 +5,63 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email its:translate="no">yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
-    <credit type="author copyright editor">
+    <credit type="editor">
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
-      <years>2011, 2013</years>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Fånga flera foton med en knapptryckning i <gui>Bildsekvens</gui>-läge. Ändra din pose mellan varje tagning!</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
+    <desc><gui>Burst mode</gui> takes several photos rapidly. Change your pose
+    in between each shot!</desc>
   </info>
 
-  <title>Ta foton i snabb följd</title>
+  <title>Take multiple photos in quick succession</title>
 
-  <p>Använd <gui>Bildsekvens</gui>-läge för att automatiskt ta flera foton i rad. Det är speciellt kul om du ändrar din pose mellan foton! För att använda <gui>Bildsekvens</gui>-läge:</p>
+  <p>You can use <gui>Burst mode</gui> to automatically take several photos in
+  one go, with a short pause between shots. It is particularly fun if you
+  change your pose in between photos! To use <gui>Burst mode</gui>:</p>
 
   <steps>
     <item>
-      <p>Säkerställ att du är i <gui>Bildsekvens</gui>-läge. Om du är det kommer <gui style="button">Bildsekvens</gui>-knappen att vara markerad på vänster sida av skärmen.</p>
+      <p>Click <gui>Burst</gui>, the <gui>Take a Photo</gui> button will now say
+      <gui>Take Multiple Photos</gui>.</p>
+      <p>Alternatively, click <guiseq><gui>Cheese</gui><gui>Burst</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Klicka på knappen <gui style="button">Ta flera foton med en webbkamera</gui> i mitten av bottenpanelen, eller tryck på <key>Blanksteg</key>-tangenten, för att börja ta foton.</p>
-      <p>Som standard kommer fyra foton att tas, med en sekunds fördröjning och en nedräkning mellan fotona.</p>
-    </item>
-    <item>
-      <p>För att stoppa inspelningen, tryck på samma knapp igen. Du kan också trycka på <key>Esc</key>- eller <key>Blanksteg</key>-tangenten för att stoppa inspelningen.</p>
+      <p>Click <gui>Take Multiple Photos</gui> or press the
+      <key>spacebar</key>.</p>
+      <p>By default, four photos will be taken, with a three second delay and a
+      countdown between photos.</p>
     </item>
   </steps>
+
+  <p>Press <key>Esc</key> if you want to stop <app>Cheese</app> from taking
+  photos at any point.</p>
 
 <section id="burst-preferences">
-  <title>Ändra <gui>Bildsekvens</gui>-inställningar</title>
-
-  <p>Du kan ändra hur många foton som kommer att tas i varje bildsekvens och längden på fördröjningen mellan fotona:</p>
-
+  <title>Change how many photos are taken and the delay between them</title>
+  <p>You can change how many photos will be taken in each burst and the length
+  of the delay between the photos:</p>
   <steps>
     <item>
-      <p>Välj <guiseq><gui style="menu">Cheese</gui><gui style="menuitem">Inställningar</gui><gui style="tab">Fånga</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Redigera inställningarna:</p>
-      <terms>
-        <item>
-          <title>Nedräkning</title>
-          <p>Nedräkning från tre innan fotot tas.</p>
-        </item>
-        <item>
-          <title>Avfyra blixt</title>
-          <p>Din skärm kommer att blixtra till när ett foto tas.</p>
-        </item>
-        <item>
-          <title>Antal foton</title>
-          <p>Antalet foton som kommer att tas i en enstaka bildsekvens.</p>
-        </item>
-        <item>
-          <title>Fördröjning mellan foton (sekunder)</title>
-          <p>Fördröjningen mellan två foton. Om du har <gui>Nedräkning</gui> aktiverat så måste denna fördröjning vara inställd på mer än fyra sekunder för att ha någon effekt.</p>
-          <!--<p>The delay between the last photo and the start of the next
-          countdown. If <gui>Countdown</gui> is disabled, this is the delay
-          between photos.</p>-->
-        </item>
-      </terms>
+      <p>Change the options under <gui>Burst mode</gui> and click <gui>Close</gui>.</p>
     </item>
   </steps>
 
+  <note>
+    <p>The delay is between the last photo taken and the start of the countdown
+    for the next photo, not between two photos.</p>
+  </note>
 </section>
 
 </page>

@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,9 +22,7 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Usando a sua webcam para tirar fotos em vez de gravar vídeos.</desc>
+    <desc>Usando a sua webcam para tirar fotos em vez de vídeos.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Fabrício Godoy</mal:name>
@@ -48,44 +45,34 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013, 2016</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Rafael Ferreira</mal:name>
-      <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Felipe Braga</mal:name>
-      <mal:email>fbobraga@gmail.com</mal:email>
-      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
-  <title>Tirando fotos</title>
+  <title>Tirando fotos com a webcam</title>
 
   <p>Webcams podem ser usadas para tirar fotos, assim como vídeos. Para tirar uma foto:</p>
 
   <steps>
     <item>
-      <p>Certifique-se de que você está no modo <gui>Foto</gui>. Se estiver, o botão <gui style="button">Foto</gui> estará selecionado na esquerda da tela.</p>
+      <p>Certifique-se de que o modo <gui style="menuitem">Foto</gui> está selecionado no menu do <gui style="menu">Cheese</gui></p>
     </item>
     <item>
-      <p>Clique no botão <gui style="button">Tirar uma foto usando a webcam</gui> ou pressione a tecla <key>espaço</key> para disparar a foto.</p>
+      <p>Click <gui>Take a Photo</gui>. Alternatively, you can press the
+      capture button on the webcam or the <key>Space</key> key.</p>
     </item>
     <item>
       <p>Será iniciada uma curta contagem regressiva, seguida de um flash, e a foto aparecerá na sequência de fotos.</p>
     </item>
   </steps>
 
-  <p>As fotos no painel são salvas automaticamente na pasta <file>Imagens/Webcam</file> de sua pasta pessoal. Elas são salvas usando o formato JPEG (<file>.jpg</file>).</p>
+  <p>As fotos na sequência de fotos são salvas automaticamente na pasta <file>/Imagens/Webcam</file> de sua pasta pessoal. Elas são salvas usando o formato JPEG (<file>.jpg</file>).</p>
 
   <p>Para cancelar a captura de uma foto depois de ter clicado em <gui>Tirar uma foto</gui>, pressione <key>Esc</key> antes que a contagem regressiva acabe.</p>
 
   <note>
-    <p>Para tirar várias fotos sucessivas rapidamente, use o modo <link xref="burst-mode">Contínuo</link>.</p>
+    <p>To take multiple photos in rapid succession, use
+    <link xref="burst-mode">burst mode</link>.</p>
   </note>
 
 </page>

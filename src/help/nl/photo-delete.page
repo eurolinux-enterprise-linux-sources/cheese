@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-delete" xml:lang="nl">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="nl">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Foto's en video's die u niet langer wilt bewaren verwijderen.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Remove photos and videos that you no longer want to keep.</desc>
   </info>
 
-  <title>Een foto of video verwijderen</title>
+  <title>Delete a photo or video</title>
 
-  <p>Als u een foto of video niet langer wilt behouden, kunt u deze permanent verwijderen:</p>
+  <p>If you no longer want a photo or video, you can permanently delete it:</p>
 
   <steps>
     <item>
-      <p>Zoek de foto of video die u wilt verwijderen in de fotoreeks aan de onderkant van het <app>Cheese</app>-scherm.</p>
+      <p>Find the photo or video that you want to delete in the photo stream at
+      the bottom of the <app>Cheese</app> window.</p>
     </item>
     <item>
-      <p>Rechtsklik erop en selecteer <gui>Verwijderen</gui>.</p>
+      <p>Right-click it and select <gui>Delete</gui>. Alternatively, click it
+      once to select it and press the <key>Delete</key> key.</p>
     </item>
     <item>
-      <p>U zult worden gevraagd of u het permanent wilt verwijderen. Bevestig dit door te klikken op <gui>Verwijderen</gui>; u zult de foto of video niet kunnen terughalen.</p>
+      <p>You will be asked if you want to permanently delete it. Confirm by
+      clicking <gui>Delete</gui>; you will not be able to recover the photo.</p>
     </item>
   </steps>
 
-  <p>Als u niet zeker bent of u de foto of video permanent wilt verwijderen, kunt u in plaats daarvan er rechts op klikken en <gui>In prullenbak gooien</gui> selecteren. Dit zal de foto of video naar de <gui>Prullenbak</gui> van de computer verplaatsen.</p>
-
+  <p>If you are not sure whether you want to permanently delete the photo or
+  video, you can right click it and select <gui>Move to Trash</gui> instead.
+  This will move it to the computer's <gui>Trash</gui> folder.</p>
   <note>
-    <p>Cheese heeft niet zijn eigen <gui>Prullenbak</gui> en u kunt de <gui>Prullenbak</gui> van uw computer niet benaderen vanuit <app>Cheese</app>.</p>
+    <p>Cheese does not have its own <gui>Trash</gui> folder and you cannot
+    access your computer's <gui>Trash</gui> folder from within <app>Cheese</app>.</p>
   </note>
 
 </page>

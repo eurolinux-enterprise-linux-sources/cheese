@@ -20,13 +20,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CHEESE_CAMERA_DEVICE_H_
-#define CHEESE_CAMERA_DEVICE_H_
+#ifndef __CHEESE_CAMERA_DEVICE_H__
+#define __CHEESE_CAMERA_DEVICE_H__
 
 #include <glib-object.h>
 #include <gst/gst.h>
 
 G_BEGIN_DECLS
+
+#define CHEESE_TYPE_CAMERA_DEVICE (cheese_camera_device_get_type ())
+#define CHEESE_CAMERA_DEVICE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), CHEESE_TYPE_CAMERA_DEVICE, \
+                                                                       CheeseCameraDevice))
+#define CHEESE_CAMERA_DEVICE_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST ((k), CHEESE_TYPE_CAMERA_DEVICE, \
+                                                                    CheeseCameraDeviceClass))
+#define CHEESE_IS_CAMERA_DEVICE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CHEESE_TYPE_CAMERA_DEVICE))
+#define CHEESE_IS_CAMERA_DEVICE_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CHEESE_TYPE_CAMERA_DEVICE))
+#define CHEESE_CAMERA_DEVICE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CHEESE_TYPE_CAMERA_DEVICE, \
+                                                                      CheeseCameraDeviceClass))
+
+typedef struct _CheeseCameraDevicePrivate CheeseCameraDevicePrivate;
+typedef struct _CheeseCameraDeviceClass CheeseCameraDeviceClass;
+typedef struct _CheeseCameraDevice CheeseCameraDevice;
+
+/**
+ * CheeseCameraDeviceClass:
+ *
+ * Use the accessor functions below.
+ */
+struct _CheeseCameraDeviceClass
+{
+  /*< private >*/
+  GObjectClass parent_class;
+};
 
 /**
  * CheeseCameraDevice:
@@ -37,10 +62,12 @@ struct _CheeseCameraDevice
 {
   /*< private >*/
   GObject parent;
-  void *unused;
+  CheeseCameraDevicePrivate *priv;
 };
 
 #define CHEESE_TYPE_VIDEO_FORMAT (cheese_video_format_get_type ())
+
+typedef struct _CheeseVideoFormat CheeseVideoFormat;
 
 /**
  * CheeseVideoFormat:
@@ -57,14 +84,14 @@ struct _CheeseVideoFormat
   gint height;
 };
 
-typedef struct _CheeseVideoFormat CheeseVideoFormat;
+GType cheese_video_format_get_type (void) G_GNUC_CONST;
 
-GType cheese_video_format_get_type (void);
+GType cheese_camera_device_get_type (void) G_GNUC_CONST;
 
-#define CHEESE_TYPE_CAMERA_DEVICE (cheese_camera_device_get_type ())
-G_DECLARE_FINAL_TYPE (CheeseCameraDevice, cheese_camera_device, CHEESE, CAMERA_DEVICE, GObject)
-
-CheeseCameraDevice *cheese_camera_device_new (GstDevice   *device,
+CheeseCameraDevice *cheese_camera_device_new (const gchar *uuid,
+                                              const gchar *device_node,
+                                              const gchar *name,
+                                              guint        v4l_api_version,
                                               GError     **error);
 
 GstCaps *cheese_camera_device_get_caps_for_format (CheeseCameraDevice *device,
@@ -73,8 +100,12 @@ CheeseVideoFormat *cheese_camera_device_get_best_format (CheeseCameraDevice *dev
 GList *            cheese_camera_device_get_format_list (CheeseCameraDevice *device);
 
 const gchar *cheese_camera_device_get_name (CheeseCameraDevice *device);
-GstElement * cheese_camera_device_get_src (CheeseCameraDevice *device);
+const gchar *cheese_camera_device_get_src (CheeseCameraDevice *device);
+const gchar *cheese_camera_device_get_uuid (CheeseCameraDevice *device);
+const gchar *cheese_camera_device_get_device_node (CheeseCameraDevice *device);
+
+
 
 G_END_DECLS
 
-#endif /* CHEESE_CAMERA_DEVICE_H_ */
+#endif /* __CHEESE_CAMERA_DEVICE_H__ */

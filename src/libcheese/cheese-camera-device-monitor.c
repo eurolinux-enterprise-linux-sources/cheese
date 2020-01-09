@@ -20,46 +20,64 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #ifdef HAVE_CONFIG_H
-  #include <config.h>
+  #include <cheese-config.h>
 #endif
 
 #include <glib-object.h>
 #include <string.h>
 
+#ifdef HAVE_UDEV
+  #define G_UDEV_API_IS_SUBJECT_TO_CHANGE 1
+  #include <gudev/gudev.h>
+#else
+  #include <fcntl.h>
+  #include <unistd.h>
+  #include <sys/ioctl.h>
+  #if USE_SYS_VIDEOIO_H > 0
+    #include <sys/types.h>
+    #include <sys/videoio.h>
+  #elif defined (__sun)
+    #include <sys/types.h>
+    #include <sys/videodev2.h>
+  #endif /* USE_SYS_VIDEOIO_H */
+#endif
+
 #include "cheese-camera-device-monitor.h"
 
 /**
  * SECTION:cheese-camera-device-monitor
- * @short_description: Simple object to enumerate video devices
+ * @short_description: Simple object to enumerate v4l devices
  * @stability: Unstable
  * @include: cheese/cheese-camera-device-monitor.h
  *
- * #CheeseCameraDeviceMonitor provides a basic interface for video device
+ * #CheeseCameraDeviceMonitor provides a basic interface for video4linux device
  * enumeration and hotplugging.
  *
- * It uses GstDeviceMonitor to list video devices. It is also capable to
+ * It uses either GUdev or some platform specific code to list video devices.
+ * It is also capable (right now in Linux only, with the udev backend) to
  * monitor device plugging and emit a CheeseCameraDeviceMonitor::added or
  * CheeseCameraDeviceMonitor::removed signal when an event happens.
  */
 
-struct _CheeseCameraDeviceMonitorPrivate
-{
-  GstDeviceMonitor *monitor;
-};
+G_DEFINE_TYPE (CheeseCameraDeviceMonitor, cheese_camera_device_monitor, G_TYPE_OBJECT)
 
-static void initable_iface_init       (GInitableIface      *initable_iface);
-static void async_initable_iface_init (GAsyncInitableIface *async_initable_iface);
-
-G_DEFINE_TYPE_WITH_CODE (CheeseCameraDeviceMonitor, cheese_camera_device_monitor,
-                         G_TYPE_OBJECT,
-                         G_ADD_PRIVATE (CheeseCameraDeviceMonitor)
-                         G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE, initable_iface_init)
-                         G_IMPLEMENT_INTERFACE (G_TYPE_ASYNC_INITABLE, async_initable_iface_init));
+#define CHEESE_CAMERA_DEVICE_MONITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o),                               \
+                                                                                  CHEESE_TYPE_CAMERA_DEVICE_MONITOR, \
+                                                                                  CheeseCameraDeviceMonitorPrivate))
 
 #define CHEESE_CAMERA_DEVICE_MONITOR_ERROR cheese_camera_device_monitor_error_quark ()
 
 GST_DEBUG_CATEGORY (cheese_device_monitor_cat);
 #define GST_CAT_DEFAULT cheese_device_monitor_cat
+
+struct _CheeseCameraDeviceMonitorPrivate
+{
+#ifdef HAVE_UDEV
+  GUdevClient *client;
+#else
+  guint filler;
+#endif /* HAVE_UDEV */
+};
 
 enum
 {
@@ -78,100 +96,167 @@ cheese_camera_device_monitor_error_quark (void)
   return g_quark_from_static_string ("cheese-camera-error-quark");
 }
 
+#ifdef HAVE_UDEV
+
+CheeseCameraDevice* cheese_camera_device_monitor_set_up_device(GUdevDevice *udevice);
+
 /*
  * cheese_camera_device_monitor_set_up_device:
- * @device: the device information from GStreamer
+ * @udevice: the device information from udev
  *
- * Creates a new #CheeseCameraDevice for the supplied @device.
+ * Creates a new #CheeseCameraDevice for the supplied @udevice.
  *
- * Returns: a new #CheeseCameraDevice, or %NULL if @device was not an
- * acceptable capture device
+ * Returns: a new #CheeseCameraDevice, or %NULL if @udevice was not a V4L
+ * capture device
  */
-static CheeseCameraDevice*
-cheese_camera_device_monitor_set_up_device (GstDevice *device)
+CheeseCameraDevice*
+cheese_camera_device_monitor_set_up_device (GUdevDevice *udevice)
 {
-  CheeseCameraDevice *newdev;
-  GError *error = NULL;
+  const char *device_file;
+  const char *product_name;
+  const char *vendor;
+  const char *product;
+  const char *bus;
+  GError      *error = NULL;
+  gint        vendor_id   = 0;
+  gint        product_id  = 0;
+  gint        v4l_version = 0;
+  CheeseCameraDevice *device;
 
-  newdev = cheese_camera_device_new (device, &error);
+  const gchar *devpath = g_udev_device_get_property (udevice, "DEVPATH");
 
-  if (newdev == NULL)
-    GST_WARNING ("Device initialization for %p failed: %s ",
-                 device,
+  GST_INFO ("Checking udev device '%s'", devpath);
+
+  bus = g_udev_device_get_property (udevice, "ID_BUS");
+  if (g_strcmp0 (bus, "usb") == 0)
+  {
+    vendor = g_udev_device_get_property (udevice, "ID_VENDOR_ID");
+    if (vendor != NULL)
+      vendor_id = g_ascii_strtoll (vendor, NULL, 16);
+    product = g_udev_device_get_property (udevice, "ID_MODEL_ID");
+    if (product != NULL)
+      product_id = g_ascii_strtoll (product, NULL, 16);
+    if (vendor_id == 0 || product_id == 0)
+    {
+      GST_WARNING ("Error getting vendor and product id");
+    }
+    else
+    {
+      GST_INFO ("Found device %04x:%04x, getting capabilities...", vendor_id, product_id);
+    }
+  }
+  else
+  {
+    GST_INFO ("Not an usb device, skipping vendor and model id retrieval");
+  }
+
+  device_file = g_udev_device_get_device_file (udevice);
+  if (device_file == NULL)
+  {
+    GST_WARNING ("Error getting V4L device");
+    return NULL;
+  }
+
+  /* vbi devices support capture capability too, but cannot be used,
+   * so detect them by device name */
+  if (strstr (device_file, "vbi"))
+  {
+    GST_INFO ("Skipping vbi device: %s", device_file);
+    return NULL;
+  }
+
+  v4l_version = g_udev_device_get_property_as_int (udevice, "ID_V4L_VERSION");
+  if (v4l_version == 2 || v4l_version == 1)
+  {
+    const char *caps;
+
+    caps = g_udev_device_get_property (udevice, "ID_V4L_CAPABILITIES");
+    if (caps == NULL || strstr (caps, ":capture:") == NULL)
+    {
+      GST_WARNING ("Device %s seems to not have the capture capability, (radio tuner?)"
+                   "Removing it from device list.", device_file);
+      return NULL;
+    }
+    product_name = g_udev_device_get_property (udevice, "ID_V4L_PRODUCT");
+  }
+  else if (v4l_version == 0)
+  {
+    GST_ERROR ("Fix your udev installation to include v4l_id, ignoring %s", device_file);
+    return NULL;
+  }
+  else
+  {
+    g_assert_not_reached ();
+  }
+
+  device = cheese_camera_device_new (devpath,
+                                     device_file,
+                                     product_name,
+                                     v4l_version,
+                                     &error);
+
+  if (device == NULL)
+    GST_WARNING ("Device initialization for %s failed: %s ",
+                 device_file,
                  (error != NULL) ? error->message : "Unknown reason");
 
-  return newdev;
+  return device;
 }
 
 /*
  * cheese_camera_device_monitor_added:
  * @monitor: a #CheeseCameraDeviceMonitor
- * @device: the device information, from GStreamer, for the device that was added
+ * @udevice: the device information, from udev, for the device that was added
  *
  * Emits the ::added signal.
  */
 static void
 cheese_camera_device_monitor_added (CheeseCameraDeviceMonitor *monitor,
-                                    GstDevice                 *device)
+                                    GUdevDevice               *udevice)
 {
-  CheeseCameraDevice *newdev = cheese_camera_device_monitor_set_up_device (device);
+  CheeseCameraDevice *device = cheese_camera_device_monitor_set_up_device (udevice);
   /* Ignore non-video devices, GNOME bug #677544. */
-  if (newdev) {
-    g_object_set_data (G_OBJECT (device), "cheese-camera-device", newdev);
-    g_signal_emit (monitor, monitor_signals[ADDED], 0, newdev);
-  }
+  if (device)
+    g_signal_emit (monitor, monitor_signals[ADDED], 0, device);
 }
 
 /*
  * cheese_camera_device_monitor_removed:
  * @monitor: a #CheeseCameraDeviceMonitor
- * @device: the device information, from GStreamer, for the device that was removed
+ * @udevice: the device information, from udev, for the device that was removed
  *
  * Emits the ::removed signal.
  */
 static void
 cheese_camera_device_monitor_removed (CheeseCameraDeviceMonitor *monitor,
-                                      GstDevice                 *device)
+                                      GUdevDevice               *udevice)
 {
-  CheeseCameraDevice *olddev;
-
-  olddev = g_object_get_data (G_OBJECT (device), "cheese-camera-device");
-  if (olddev)
-    g_signal_emit (monitor, monitor_signals[REMOVED], 0, olddev);
+  g_signal_emit (monitor, monitor_signals[REMOVED], 0,
+                 g_udev_device_get_property (udevice, "DEVPATH"));
 }
 
 /*
- * cheese_camera_device_monitor_bus_func:
- * @bus: a #GstBus
- * @message: the message posted on the bus
+ * cheese_camera_device_monitor_uevent_cb:
+ * @client: a #GUdevClient
+ * @action: the string representing the action type of the uevent
+ * @udevice: the #GUdevDevice to which the uevent refers
+ * @monitor: a #CheeseCameraDeviceMonitor
  *
- * Check if the message corresponds to device addition or removal, and if so,
+ * Check if the uevent corresponds to device addition or removal, and if so,
  * pass it on to cheese_camera_device_monitor_added() or
  * cheese_camera_device_monitor_removed() for emitting the ::added and
  * ::removed signals.
  */
-static gboolean
-cheese_camera_device_monitor_bus_func (GstBus     *bus,
-                                       GstMessage *message,
-                                       gpointer user_data)
+static void
+cheese_camera_device_monitor_uevent_cb (GUdevClient               *client,
+                                        const gchar               *action,
+                                        GUdevDevice               *udevice,
+                                        CheeseCameraDeviceMonitor *monitor)
 {
-  CheeseCameraDeviceMonitor *monitor = user_data;
-  GstDevice *device;
-
-  switch (GST_MESSAGE_TYPE (message))
-  {
-    case GST_MESSAGE_DEVICE_ADDED:
-      gst_message_parse_device_added (message, &device);
-      cheese_camera_device_monitor_added (monitor, device);
-      break;
-    case GST_MESSAGE_DEVICE_REMOVED:
-      gst_message_parse_device_removed (message, &device);
-      cheese_camera_device_monitor_removed (monitor, device);
-      break;
-    default:
-      break;
-  }
-  return G_SOURCE_CONTINUE;
+  if (g_str_equal (action, "remove"))
+    cheese_camera_device_monitor_removed (monitor, udevice);
+  else if (g_str_equal (action, "add"))
+    cheese_camera_device_monitor_added (monitor, udevice);
 }
 
 /*
@@ -187,7 +272,7 @@ static void
 cheese_camera_device_monitor_add_devices (gpointer data, gpointer user_data)
 {
   cheese_camera_device_monitor_added ((CheeseCameraDeviceMonitor *) user_data,
-    (GstDevice *) data);
+    (GUdevDevice *) data);
   g_object_unref (data);
 }
 
@@ -202,19 +287,14 @@ cheese_camera_device_monitor_add_devices (gpointer data, gpointer user_data)
 void
 cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor)
 {
-    CheeseCameraDeviceMonitorPrivate *priv;
   GList *devices;
 
-    g_return_if_fail (CHEESE_IS_CAMERA_DEVICE_MONITOR (monitor));
+  g_return_if_fail (CHEESE_IS_CAMERA_DEVICE_MONITOR (monitor)
+    || monitor->priv->client != NULL);
 
-    priv = cheese_camera_device_monitor_get_instance_private (monitor);
+  GST_INFO ("Probing devices with udev...");
 
-    g_return_if_fail (priv->monitor != NULL);
-
-  GST_INFO ("Probing devices with GStreamer monitor...");
-
-  devices = gst_device_monitor_get_devices (priv->monitor);
-
+  devices = g_udev_client_query_by_subsystem (monitor->priv->client, "video4linux");
   if (devices == NULL) GST_WARNING ("No device found");
 
   /* Initialize camera structures */
@@ -222,16 +302,86 @@ cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor)
   g_list_free (devices);
 }
 
+#else /* HAVE_UDEV */
+void
+cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor)
+{
+  #if 0
+  CheeseCameraDeviceMonitorPrivate *priv = monitor->priv;
+  struct v4l2_capability            v2cap;
+  struct video_capability           v1cap;
+  int                               fd, ok;
+
+  if ((fd = open (device_path, O_RDONLY | O_NONBLOCK)) < 0)
+  {
+    g_warning ("Failed to open %s: %s", device_path, strerror (errno));
+    return;
+  }
+  ok = ioctl (fd, VIDIOC_QUERYCAP, &v2cap);
+  if (ok < 0)
+  {
+    ok = ioctl (fd, VIDIOCGCAP, &v1cap);
+    if (ok < 0)
+    {
+      g_warning ("Error while probing v4l capabilities for %s: %s",
+                 device_path, strerror (errno));
+      close (fd);
+      return;
+    }
+    g_print ("Detected v4l device: %s\n", v1cap.name);
+    g_print ("Device type: %d\n", v1cap.type);
+    gstreamer_src = "v4lsrc";
+    product_name  = v1cap.name;
+  }
+  else
+  {
+    guint cap = v2cap.capabilities;
+    g_print ("Detected v4l2 device: %s\n", v2cap.card);
+    g_print ("Driver: %s, version: %d\n", v2cap.driver, v2cap.version);
+
+    /* g_print ("Bus info: %s\n", v2cap.bus_info); */ /* Doesn't seem anything useful */
+    g_print ("Capabilities: 0x%08X\n", v2cap.capabilities);
+    if (!(cap & V4L2_CAP_VIDEO_CAPTURE))
+    {
+      g_print ("Device %s seems to not have the capture capability, (radio tuner?)\n"
+               "Removing it from device list.\n", device_path);
+      close (fd);
+      return;
+    }
+    gstreamer_src = "v4l2src";
+    product_name  = (char *) v2cap.card;
+  }
+  close (fd);
+
+  GList *devices, *l;
+
+  g_print ("Probing devices with udev...\n");
+
+  if (priv->client == NULL)
+    return;
+
+  devices = g_udev_client_query_by_subsystem (priv->client, "video4linux");
+
+  /* Initialize camera structures */
+  for (l = devices; l != NULL; l = l->next)
+  {
+    cheese_camera_device_monitor_added (monitor, l->data);
+    g_object_unref (l->data);
+  }
+  g_list_free (devices);
+  #endif
+}
+
+#endif /* HAVE_UDEV */
+
 static void
 cheese_camera_device_monitor_finalize (GObject *object)
 {
-    CheeseCameraDeviceMonitorPrivate *priv;
+#ifdef HAVE_UDEV
+  CheeseCameraDeviceMonitorPrivate *priv = CHEESE_CAMERA_DEVICE_MONITOR (object)->priv;
 
-    priv = cheese_camera_device_monitor_get_instance_private (CHEESE_CAMERA_DEVICE_MONITOR (object));
-
-  gst_device_monitor_stop (priv->monitor);
-  g_clear_object (&priv->monitor);
-
+  g_clear_object (&priv->client);
+#endif /* HAVE_UDEV */
   G_OBJECT_CLASS (cheese_camera_device_monitor_parent_class)->finalize (object);
 }
 
@@ -265,7 +415,7 @@ cheese_camera_device_monitor_class_init (CheeseCameraDeviceMonitorClass *klass)
   /**
    * CheeseCameraDeviceMonitor::removed:
    * @monitor: the #CheeseCameraDeviceMonitor that emitted the signal
-   * @device: the #CheeseCameraDevice that was removed
+   * @uuid: UUID for the device on the system
    *
    * The ::removed signal is emitted when a camera is unplugged, or disabled on
    * the system.
@@ -275,108 +425,33 @@ cheese_camera_device_monitor_class_init (CheeseCameraDeviceMonitorClass *klass)
                                            G_STRUCT_OFFSET (CheeseCameraDeviceMonitorClass, removed),
                                            NULL, NULL,
                                            g_cclosure_marshal_VOID__STRING,
-                                           G_TYPE_NONE, 1, CHEESE_TYPE_CAMERA_DEVICE);
-}
+                                           G_TYPE_NONE, 1, G_TYPE_STRING);
 
-static gboolean
-initable_init (GInitable     *initable,
-               GCancellable  *cancellable,
-               GError       **error)
-{
-  CheeseCameraDeviceMonitor *monitor = CHEESE_CAMERA_DEVICE_MONITOR (initable);
-  CheeseCameraDeviceMonitorPrivate *priv = cheese_camera_device_monitor_get_instance_private (monitor);
-  GstBus *bus;
-  GstCaps *caps;
-
-  priv->monitor = gst_device_monitor_new ();
-
-  bus = gst_device_monitor_get_bus (priv->monitor);
-  gst_bus_add_watch (bus, cheese_camera_device_monitor_bus_func, monitor);
-  gst_object_unref (bus);
-
-  caps = gst_caps_new_empty_simple ("video/x-raw");
-  gst_device_monitor_add_filter (priv->monitor, "Video/Source", caps);
-  gst_caps_unref (caps);
-
-  gst_device_monitor_start (priv->monitor);
-
-  return TRUE;
-}
-
-static void
-initable_iface_init (GInitableIface *initable_iface)
-{
-  initable_iface->init = initable_init;
-}
-
-static void
-async_initable_iface_init (GAsyncInitableIface *async_initable_iface)
-{
-  /* Run GInitable code in thread. */
+  g_type_class_add_private (klass, sizeof (CheeseCameraDeviceMonitorPrivate));
 }
 
 static void
 cheese_camera_device_monitor_init (CheeseCameraDeviceMonitor *monitor)
 {
-  /* Let GInitable initialize it. */
+#ifdef HAVE_UDEV
+  CheeseCameraDeviceMonitorPrivate *priv = monitor->priv = CHEESE_CAMERA_DEVICE_MONITOR_GET_PRIVATE (monitor);
+  const gchar *const subsystems[] = {"video4linux", NULL};
+
+  priv->client = g_udev_client_new (subsystems);
+  g_signal_connect (G_OBJECT (priv->client), "uevent",
+                    G_CALLBACK (cheese_camera_device_monitor_uevent_cb), monitor);
+#endif /* HAVE_UDEV */
 }
 
 /**
  * cheese_camera_device_monitor_new:
  *
- * Returns a new #CheeseCameraDeviceMonitor object. The initialization may block.
- * See cheese_camera_device_monitor_new_async() for the asynchronous version.
+ * Returns a new #CheeseCameraDeviceMonitor object.
  *
  * Return value: a new #CheeseCameraDeviceMonitor object.
  **/
 CheeseCameraDeviceMonitor *
 cheese_camera_device_monitor_new (void)
 {
-  return g_initable_new (CHEESE_TYPE_CAMERA_DEVICE_MONITOR, NULL, NULL, NULL);
-}
-
-/**
- * cheese_camera_device_monitor_new_async:
- * @cancellable: a #GCancellable or NULL
- * @callback: a GAsyncReadyCallback to call when the initialization is finished
- * @user_data: user data to pass to callback
- *
- * Creates a new #CheeseCameraDeviceMonitor object asynchronously. Callback
- * will be called when it is done. Use cheese_camera_device_monitor_new_finish()
- * to get the result.
- *
- * See cheese_camera_device_monitor_new() for the synchronous version.
- **/
-void
-cheese_camera_device_monitor_new_async (GCancellable *cancellable,
-                                        GAsyncReadyCallback callback,
-                                        gpointer user_data)
-{
-  g_async_initable_new_async (CHEESE_TYPE_CAMERA_DEVICE_MONITOR, 0, cancellable, callback, user_data, NULL);
-}
-
-/**
- * cheese_camera_device_monitor_new_finish:
- * @result: the GAsyncResult from the callback
- * @error: return location for errors, or NULL to ignore
- *
- * Finishes creating a new #CheeseCameraDeviceMonitor object.
- *
- * Return value: a new #CheeseCameraDeviceMonitor object or NULL if error is set.
- **/
-CheeseCameraDeviceMonitor *
-cheese_camera_device_monitor_new_finish (GAsyncResult *result,
-                                         GError      **error)
-{
-  GObject *ret;
-  GObject *source;
-
-  source = g_async_result_get_source_object (result);
-  ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source), result, error);
-  g_object_unref (source);
-
-  if (ret != NULL)
-    return CHEESE_CAMERA_DEVICE_MONITOR (ret);
-  else
-    return NULL;
+  return g_object_new (CHEESE_TYPE_CAMERA_DEVICE_MONITOR, NULL);
 }

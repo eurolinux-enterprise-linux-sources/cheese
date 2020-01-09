@@ -3,9 +3,8 @@
 
   <info>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="candidate"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,15 +16,19 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>A resolución dun vídeo ou foto determina canto detalle pode ver dela, cambiándoa afectará tamén ao tamaño do ficheiro.</desc>
 
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Fran Dieguez</mal:name>
       <mal:email>frandieguez@gnome.org</mal:email>
-      <mal:years>2013.</mal:years>
+      <mal:years>2011,2012.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leandro Regueiro</mal:name>
+      <mal:email>leandro.regueiro@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
     </mal:credit>
   </info>
 
@@ -37,13 +40,14 @@
 
   <steps>
     <item>
-      <p>Seleccione <guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Cámara web</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
     </item>
     <item>
       <p>Seleccione unha resolución diferente desde a lista despregábel. Algunhas cámaras web só admiten unha resolución, polo que non terá elección.</p>
     </item>
     <item>
-      <p>Prema <gui>Pechar</gui>.</p>
+      <p>Press <gui>Close</gui>.</p>
     </item>
   </steps>
 

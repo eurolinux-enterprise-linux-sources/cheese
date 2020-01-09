@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,54 +18,50 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Justera mättnaden, kontrasten, ljusheten och nyansen för att få foton och videor att se bättre ut.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
+    <desc>Adjust the saturation, contrast, brightness and hue to make photos and videos look better.</desc>
   </info>
 
-  <title>Mina foton och videor ser dåliga ut</title>
+  <title>My photos and videos look wrong</title>
 
-  <p>Om dina foton eller videor är för mörka eller färgerna ser fel ut, prova att justera deras mättnad, kontrast, ljushet och nyans:</p>
+  <p>If your photos or videos are too dark or the colors seem to be wrong, try
+  adjusting their saturation, contrast, brightness and hue:</p>
 
   <steps>
     <item>
-      <p>Välj <guiseq><gui>Cheese</gui><gui>Inställningar</gui><gui>Bild</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Flytta skjutreglagen för att hitta de bästa inställningarna för din webbkamera.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Klicka på <gui>Stäng</gui> och kontrollera om förhandsvisningen ser bättre ut.</p>
+     <p>Click <gui>Close</gui> and check to see if the photos and videos look
+     better.</p>
     </item>
   </steps>
 
   <figure>
-    <title>Olika inställningar under <gui>Bildegenskaper</gui> (vänster till höger): applicera ljushet, kontrast, nyans och mättnad</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <title>Different options under <gui>Image properties</gui> (left to right):
+    applying brightness, contrast, hue and saturation</title>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Ljushet</title>
-      <p>Att öka ljusheten kommer att göra fotona och videorna ljusare. Men om du är i ett mörkt rum kan en ökad ljushet komma att göra att bilderna blir brusigare.</p>
+     <title>Brightness</title>
+     <p>Increasing the brightness will make the photos and videos lighter. However, if you are in a dark room, increasing the brightness might make the image look more noisy.</p>
     </item>
     <item>
-      <title>Kontrast</title>
-      <p>Att ställa in en högre kontrast kommer att öka skillnaden mellan mörkare och ljusare färger. Om bilden ser urtvättad ut, prova att öka kontrasten.</p>
+     <title>Contrast</title>
+     <p>Setting a higher contrast will increase the difference between darker and lighter colors. If the image looks washed out, try increasing the contrast.</p>
     </item>
     <item>
-      <title>Nyans</title>
-      <p>Att ändra nyans på bilden kommer att lägga till en ton på den. Om bilden ser ut som om den har fel färg (till exempel allt för gul), prova att ändra nyansen.</p>
+     <title>Hue</title>
+     <p>Changing the hue of the image will add a tint to it. If image seems to be the wrong color (for example, too yellow), try changing the hue.</p>
     </item>
     <item>
-      <title>Mättnad</title>
-      <p>Att reducera mättnaden kommer att göra bilden mindre färgstark. Om färger ser allt för intensiva ut, reducera mättnaden.</p>
+     <title>Saturation</title>
+     <p>Reducing the saturation makes the image less colorful. If colors seem too harsh, reduce the saturation.</p>
     </item>
   </terms>
 

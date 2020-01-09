@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,18 +17,15 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Zaustavitev belega mežika ob zajemanju fotografije</desc>
   </info>
 
   <title>Onemogočite bliskavko</title>
 
-  <p>When you take a photo with Cheese, the computer screen briefly turns
-  white.</p>
+  <p>Ko s Cheese zajamete fotografijo, se zaslon za kratek čas obarva belo. To zagotavlja dodatno svetlobo.</p>
 
   <p>To disable this feature, select
   <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
-  and uncheck <gui>Fire flash</gui>.</p>
+  and uncheck <gui>Fire Flash</gui>.</p>
 
 </page>

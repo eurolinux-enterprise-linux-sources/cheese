@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pref-image-properties" xml:lang="lv">
+
+  <info>
+    <link type="guide" xref="index#preferences"/>
+    <link type="guide" xref="index#problems"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Pielāgojiet krāsas piesātinājumu, kontrastu, gaišumu un nokrāsu, lai foto un video izskatītos labāk.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Mani foto un video izskatās nepareizi</title>
+
+  <p>Ja fotogrāfijas vai video ir pārāk tumši vai krāsa izskatās nepareizi, mēģiniet pielāgot to krāsas piesātinājumu, kontrastu, gaišumu un nokrāsu:</p>
+
+  <steps>
+    <item>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
+    </item>
+    <item>
+     <p>Move the sliders to find the best settings for your webcam.</p>
+    </item>
+    <item>
+     <p>Spiediet <gui>Aizvērt</gui> un pārbaudiet vai foto un video izskatās labāk.</p>
+    </item>
+  </steps>
+
+  <figure>
+    <title>Dažādas opcijas zem <gui>Attēla iestatījumi</gui> (no kreisās uz labo): piemērot gaišumu, kontrastu, nokrāsu un piesātinājumu</title>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
+  </figure>
+
+  <terms>
+    <item>
+     <title>Gaišums</title>
+     <p>Mainot gaišumu, foto un video kļūs tumšāki vai gaišāki. Kaut gan, ja esat tumšā istabā, gaišuma palielināšana var padarīt attēlu trokšņaināku.</p>
+    </item>
+    <item>
+     <title>Kontrasts</title>
+     <p>Lielāka kontrasta iestatīšana palielinās atšķirību starp tumšajām un gaišajām krāsām. Ja attēls izskatās izbalējis, mēģiniet palielināt kontrastu.</p>
+    </item>
+    <item>
+     <title>Nokrāsa</title>
+     <p>Nokrāsas maiņa piedos attēlam toni. Ja attēls izskatās nepareizajā krāsā (piemēram pārāk dzeltens), mēģiniet mainīt nokrāsu.</p>
+    </item>
+    <item>
+     <title>Piesātinājums</title>
+     <p>Piesātinājuma samazināšana padarīs foto mazāk krāsainu. Ja krāsas liekas pārāk asas, samaziniet piesātinājumu.</p>
+    </item>
+  </terms>
+
+</page>

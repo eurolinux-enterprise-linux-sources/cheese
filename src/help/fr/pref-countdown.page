@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,9 +17,7 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Désactiver le retardateur pour que les photos soient prises instantanément.</desc>
+    <desc>Enlever le compte à rebours pour que les photos soient prises instantanément.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Bruno Brouard</mal:name>
@@ -63,22 +60,13 @@
       <mal:email>mickael.albertus@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>naybnet</mal:name>
-      <mal:email>naybnet@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Alain Lojewski</mal:name>
-      <mal:email>allomervan@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
   </info>
 
-  <title>Désactivation du <gui>retardateur</gui></title>
+  <title>Désactivation du <gui>retardateur</gui> avant la prise des photos</title>
 
-  <p>Par défaut, <app>Cheese</app> affiche un compte à rebours de trois secondes avant de prendre une photo. Vous pouvez désactiver cette fonctionnalité en cliquant sur <guiseq><gui>Cheese</gui><gui>Préférences</gui><gui>Capture</gui></guiseq> et en décochant <gui>Retardateur</gui>.</p>
+  <p>By default, <app>Cheese</app> counts down from three before taking a
+  photo. You can disable this feature by selecting
+  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
+  and unchecking <gui>Countdown</gui>.</p>
 
 </page>

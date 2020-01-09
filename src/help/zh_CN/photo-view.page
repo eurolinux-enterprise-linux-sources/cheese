@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-view" xml:lang="zh-CN">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-view" xml:lang="zh-CN">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>照片和视频会自动出现在照片集中。</desc>
   
@@ -49,18 +45,10 @@
 
   <title>查看您拍摄的照片或视频</title>
 
-  <p>After you take a photo or record a video, it will appear in the photo
-  stream at the bottom of the window. You can right-click it and press
-  <gui style="menuitem">Open</gui> to open it in the photo viewer or video
-  player application.</p>
+  <p>您拍完照或录完视频后，照片或视频将出现在窗口底部的照片集里面。</p>
 
-<!-- TODO: This is a bug, it doesn't work right now.
-  <p>If you want to see a bigger version of a photo, or to play a video,
-  double-click it. This will open it in the default photo viewer or video
-  player.</p>-->
+  <p>如果您要看到照片的更大尺寸，或要播放录像，双击文件即可。该操作将通过默认图片浏览器或视频播放器打开它们。</p>
 
-  <p>All of the photos and videos in the photo stream are saved in the
-  <file>Pictures/Webcam</file> or <file>Videos/Webcam</file> folders in your
-  user folder.</p>
+  <p>照片集里所有的照片和视频都保存在主目录的<guiseq><gui>图片</gui><gui>Webcam</gui></guiseq> 或 <guiseq><gui>视频</gui><gui>Webcam</gui></guiseq>文件夹中。</p>
 
 </page>

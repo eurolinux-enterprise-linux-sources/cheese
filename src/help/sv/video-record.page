@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,37 +17,44 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Använd din webbkamera för att spela in korta filmer som du kan dela med vänner.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
+    <desc>Use your webcam to record short movies for sharing with friends.</desc>
   </info>
 
-  <title>Spela in en video</title>
+  <title>Record a video</title>
 
-  <p>För att spela in en video med din webbkamera:</p>
+  <p>To record a video using your webcam:</p>
 
   <steps>
     <item>
-      <p>Säkerställ att du är i <gui>Video</gui>-läge. Om du är det kommer <gui style="button">Video</gui>-knappen att vara markerad på vänster sida av skärmen.</p>
+      <p>Make sure that you are in <gui>Video mode</gui>. If you are, the button
+      in the middle of the window will say <gui style="button">Record a
+      Video</gui>.</p>
+      <p>You can switch to <gui>Video mode</gui> by clicking the button in the
+      main window or by selecting
+      <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Klicka på knappen <gui style="button">Spela in en video med en webbkamera</gui> i mitten av bottenpanelen, eller tryck på <key>Blanksteg</key>-tangenten, för att börja spela in videon.</p>
+      <p>Click <gui style="button">Record a Video</gui>, or press the
+      <key>Space</key> key. <app>Cheese</app> will start recording a video
+      using your webcam.</p>
     </item>
     <item>
-     <p>För att stoppa inspelningen, tryck på samma knapp igen. Du kan också trycka på <key>Esc</key>- eller <key>Blanksteg</key>-tangenten för att stoppa inspelningen.</p>
+     <p>To stop recording, click <gui>Stop Recording</gui> or press
+     <key>Esc</key>.</p>
     </item>
   </steps>
 
-  <p>Videor sparas i WebM-formatet (<file>.webm</file>).</p>
+  <p>Videos are saved in the Ogg Theora (<file>.ogv</file>) format.</p>
 
-  <p>Efter att du har avslutat inspelningen kommer videon automatiskt att visas i fotoströmmen längst ner i <app>Cheese</app>-fönstret. Därifrån kan du <link xref="photo-view">öppna</link> eller ta bort videon.</p>
+  <p>After you have stopped recording, the video will automatically appear in
+  the photo stream at the bottom of the <app>Cheese</app> window. From there,
+  you can <link xref="photo-view">play back the video</link>, upload it to a
+  social network, post it on your blog or YouTube channel, or share it with
+  friends by <link href="help:gnome-help/net-default-email">email</link>.</p>
 
-  <p>Om du får problem med att dela en video med personer som använder andra operativsystem (så som Windows eller Mac OS), kan du vara tvungen att <link href="help:gnome-help/video-sending">konvertera den till ett annat format</link>.</p>
+  <p>If you have problems sharing a video with people using other operating
+  systems (like Windows or Mac OS), you may need to
+  <link href="help:gnome-help/video-sending">convert it to a different
+  format</link>.</p>
 
 </page>

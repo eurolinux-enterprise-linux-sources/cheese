@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CHEESE_THUMB_VIEW_H_
-#define CHEESE_THUMB_VIEW_H_
+#ifndef __CHEESE_THUMB_VIEW_H__
+#define __CHEESE_THUMB_VIEW_H__
 
 #include <glib.h>
 #include <gtk/gtk.h>
@@ -28,9 +28,27 @@
 G_BEGIN_DECLS
 
 #define CHEESE_TYPE_THUMB_VIEW (cheese_thumb_view_get_type ())
-G_DECLARE_FINAL_TYPE (CheeseThumbView, cheese_thumb_view, CHEESE, THUMB_VIEW, GtkIconView)
+#define CHEESE_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), CHEESE_TYPE_THUMB_VIEW, CheeseThumbView))
+#define CHEESE_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), CHEESE_TYPE_THUMB_VIEW, \
+                                                                    CheeseThumbViewClass))
+#define CHEESE_IS_THUMB_VIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CHEESE_TYPE_THUMB_VIEW))
+#define CHEESE_IS_THUMB_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), CHEESE_TYPE_THUMB_VIEW))
+#define CHEESE_THUMB_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CHEESE_TYPE_THUMB_VIEW, \
+                                                                      CheeseThumbViewClass))
 
-GtkWidget *cheese_thumb_view_new (void);
+typedef struct
+{
+  GtkIconView parent;
+} CheeseThumbView;
+
+typedef struct
+{
+  GtkIconViewClass parent_class;
+} CheeseThumbViewClass;
+
+
+GType      cheese_thumb_view_get_type (void);
+GtkWidget *cheese_thumb_view_new ();
 
 GList *cheese_thumb_view_get_selected_images_list (CheeseThumbView *thumb_view);
 char * cheese_thumb_view_get_selected_image (CheeseThumbView *thumb_view);
@@ -42,4 +60,4 @@ void cheese_thumb_view_start_monitoring_video_path (CheeseThumbView *thumbview, 
 
 G_END_DECLS
 
-#endif /* CHEESE_THUMB_VIEW_H__ */
+#endif /* __CHEESE_THUMB_VIEW_H__ */

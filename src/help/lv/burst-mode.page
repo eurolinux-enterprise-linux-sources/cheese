@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="burst-mode" xml:lang="lv">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc><gui>Šalts režīms</gui> strauji uzņem vairākus foto. Mainiet savu pozu starp katru foto!</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ātri uzņemt vairākas fotogrāfijas pēc kārtas</title>
+
+  <p>Jūs varat izmantot <gui>Šalts režīmu</gui>, lai automātiski uzņemtu vairākas fotogrāfijas vienā piegājienā, ar īsu pauzi starp katru foto. Ir it īpaši jautri mainīt pozu starp katru foto! Lai izmantotu <gui>Šalts režīmu</gui>:</p>
+
+  <steps>
+    <item>
+      <p>Spiediet <gui>Šalts</gui>, tagad <gui>Uzņemt foto</gui> poga teiks <gui>Uzņemt vairākus foto</gui>.</p>
+      <p>Vai arī spiediet <guiseq><gui>Cheese</gui><gui>Šalts</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Spiediet <gui>Uzņemt vairākus foto</gui> vai <key>atstarpes taustiņš</key>.</p>
+      <p>Noklusējumā, četri foto tiks uzņemti ar trīs sekunžu aizturi starp katru no tiem.</p>
+    </item>
+  </steps>
+
+  <p>Spiediet <key>Esc</key> taustiņu, ja vēlaties apturēt <app>Cheese</app> no fotogrāfiju uzņemšanas jebkurā brīdī.</p>
+
+<section id="burst-preferences">
+  <title>Nomainīt, cik foto tiek uzņemti un aizkavi starp tiem</title>
+  <p>Jūs varat nomainīt, cik foto tiks uzņemti katrā šaltī un aizkaves garumu starp fotogrāfijām:</p>
+  <steps>
+    <item>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Nomainiet <gui>Šalts režīms</gui> iestatījumus un spiediet <gui>Aizvērt</gui>.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>Aizkave ir starp pēdējo uzņemto fotogrāfiju un nākošās fotogrāfijas atskaites sākumu, nevis starp divām fotogrāfijām.</p>
+  </note>
+</section>
+
+</page>

@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,8 +16,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Com treure el temporitzador de manera que les fotos es facin a l'instant.</desc>
   
@@ -47,7 +44,7 @@
     </mal:credit>
   </info>
 
-  <title>Disable the <gui>Countdown</gui></title>
+  <title>Com inhabilitar el <gui>Temporitzador</gui> abans de fer les fotos</title>
 
   <p>By default, <app>Cheese</app> counts down from three before taking a
   photo. You can disable this feature by selecting

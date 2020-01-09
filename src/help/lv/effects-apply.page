@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="lv">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Pievienojiet jautrus efektus savām fotogrāfijām un video, piemēram, sevis pārvēršana zaļā krāsā vai attēla izkropļošana, kā spoku mājas spogulī.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Piemērot efektus fotogrāfijām un video</title>
+
+  <p>Jūs varat piemērot jautrus, interesantus efektus savām fotogrāfijām un video:</p>
+  <steps>
+    <item><p>Spiediet <gui>Efekti</gui>.</p></item>
+    <item>
+     <p>Izvēlieties efektu, ko gribat lietot, nospiežot kādu no opcijām.</p>
+     <p>Ja vēlaties, jūs varat izvēlēties vairākus efektus vienlaicīgi. Piemēram, ja izvēlaties <gui>Halks</gui> un <gui>Kung-Fu</gui>, video tiks mainīts, lai tam būtu zaļš tonējums un tas rādītu atkārtotu attēlu.</p>
+    </item>
+    <item>
+     <p>Spiediet <gui>Efekti</gui>, lai paslēptu efektu izvēlni un atgrieztos parastajā skatā.</p>
+    </item>
+  </steps>
+
+  <p><app>Cheese</app> piedāvā 34 efektus, no kuriem tikai 9 tiek uzrādīti pirmajā lapā. Spiediet <gui>Nākamie efekti</gui> un <gui>Iepriekšējie efekti</gui>, lai pārslēgtos uz citām lapām.</p>
+
+  <figure>
+    <title>Daži no efektiem, no kreisās uz labo: izliekums, stūris un spogulis</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>Lai noņemtu visus efektus, spiediet <gui>Efekti</gui> un izvēlieties <gui>Bez efektiem</gui>.</p></note>
+
+</page>

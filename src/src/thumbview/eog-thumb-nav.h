@@ -16,11 +16,11 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef EOG_THUMB_NAV_H_
-#define EOG_THUMB_NAV_H_
+#ifndef __EOG_THUMB_NAV_H__
+#define __EOG_THUMB_NAV_H__
 
 #include "cheese-thumb-view.h"
 
@@ -30,8 +30,30 @@
 
 G_BEGIN_DECLS
 
+typedef struct _EogThumbNav EogThumbNav;
+typedef struct _EogThumbNavClass EogThumbNavClass;
+typedef struct _EogThumbNavPrivate EogThumbNavPrivate;
+
 #define EOG_TYPE_THUMB_NAV (eog_thumb_nav_get_type ())
-G_DECLARE_FINAL_TYPE (EogThumbNav, eog_thumb_nav, EOG, THUMB_NAV, GtkBox)
+#define EOG_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOG_TYPE_THUMB_NAV, EogThumbNav))
+#define EOG_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOG_TYPE_THUMB_NAV, EogThumbNavClass))
+#define EOG_IS_THUMB_NAV(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOG_TYPE_THUMB_NAV))
+#define EOG_IS_THUMB_NAV_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOG_TYPE_THUMB_NAV))
+#define EOG_THUMB_NAV_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOG_TYPE_THUMB_NAV, EogThumbNavClass))
+
+struct _EogThumbNav
+{
+  GtkBox base_instance;
+
+  EogThumbNavPrivate *priv;
+};
+
+struct _EogThumbNavClass
+{
+  GtkBoxClass parent_class;
+};
+
+GType eog_thumb_nav_get_type (void) G_GNUC_CONST;
 
 GtkWidget *eog_thumb_nav_new (GtkWidget *thumbview,
                               gboolean   show_buttons);
@@ -52,4 +74,4 @@ void eog_thumb_nav_set_policy (EogThumbNav  *nav,
 
 G_END_DECLS
 
-#endif /* EOG_THUMB_NAV_H__ */
+#endif /* __EOG_THUMB_NAV_H__ */

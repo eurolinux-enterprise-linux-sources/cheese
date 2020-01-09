@@ -21,51 +21,82 @@
 
 using Gtk;
 
-[GtkTemplate (ui = "/org/gnome/Cheese/cheese-prefs.ui")]
-public class Cheese.PreferencesDialog : Gtk.Dialog
+public class Cheese.PreferencesDialog : GLib.Object
 {
-    private Cheese.Camera camera;
+  private Cheese.Camera camera;
 
-    private GLib.Settings settings;
+  private GLib.Settings settings;
 
-    [GtkChild]
-    private Gtk.ComboBox photo_resolution_combo;
-    [GtkChild]
-    private Gtk.ComboBox video_resolution_combo;
-    [GtkChild]
-    private Gtk.ComboBox source_combo;
+  private Gtk.Dialog dialog;
 
-    private Gtk.ListStore camera_model;
+  private Gtk.ComboBox photo_resolution_combo;
+  private Gtk.ComboBox video_resolution_combo;
+  private Gtk.ComboBox source_combo;
 
-    [GtkChild]
-    private Gtk.Adjustment brightness_adjustment;
-    [GtkChild]
-    private Gtk.Adjustment contrast_adjustment;
-    [GtkChild]
-    private Gtk.Adjustment hue_adjustment;
-    [GtkChild]
-    private Gtk.Adjustment saturation_adjustment;
+  private Gtk.ListStore camera_model;
 
-    [GtkChild]
-    private Gtk.SpinButton burst_repeat_spin;
-    [GtkChild]
-    private Gtk.SpinButton burst_delay_spin;
+  private Gtk.Adjustment brightness_adjustment;
+  private Gtk.Adjustment contrast_adjustment;
+  private Gtk.Adjustment hue_adjustment;
+  private Gtk.Adjustment saturation_adjustment;
 
-    [GtkChild]
-    private Gtk.CheckButton countdown_check;
-    [GtkChild]
-    private Gtk.CheckButton flash_check;
+  private Gtk.Scale brightness_scale;
+  private Gtk.Scale contrast_scale;
+  private Gtk.Scale hue_scale;
+  private Gtk.Scale saturation_scale;
+
+  private Gtk.SpinButton burst_repeat_spin;
+  private Gtk.SpinButton burst_delay_spin;
+
+  private Gtk.CheckButton countdown_check;
+  private Gtk.CheckButton flash_check;
   
-    private MediaMode current_mode;
+  private MediaMode current_mode;
 
-public PreferencesDialog (Cheese.Camera camera)
-{
-    var gtk_settings = Gtk.Settings.get_default ();
-    Object (use_header_bar: gtk_settings.gtk_dialogs_use_header ? 1 : 0);
-
+  public PreferencesDialog (Cheese.Camera camera)
+  {
     this.camera = camera;
 
     settings = new GLib.Settings ("org.gnome.Cheese");
+
+    Gtk.Builder builder = new Gtk.Builder ();
+    try
+    {
+      builder.add_from_file (GLib.Path.build_filename (Config.PACKAGE_DATADIR, "cheese-prefs.ui"));
+    }
+    catch (Error err)
+    {
+      error ("Error: %s", err.message);
+    }
+
+    this.dialog = builder.get_object ("cheese_prefs_dialog") as Gtk.Dialog;
+
+    this.brightness_adjustment = builder.get_object ("brightness_adjustment") as Gtk.Adjustment;
+    this.contrast_adjustment = builder.get_object ("contrast_adjustment") as Gtk.Adjustment as Gtk.Adjustment as Gtk.Adjustment as Gtk.Adjustment;
+    this.hue_adjustment = builder.get_object ("hue_adjustment") as Gtk.Adjustment;
+    this.saturation_adjustment = builder.get_object ("saturation_adjustment") as Gtk.Adjustment;
+
+    /* Here instead of in cheese-prefs.ui because of https://bugzilla.gnome.org/show_bug.cgi?id=624443 */
+
+    this.brightness_scale = builder.get_object ("brightness_scale") as Gtk.Scale;
+    this.contrast_scale = builder.get_object ("contrast_scale") as Gtk.Scale;
+    this.hue_scale = builder.get_object ("hue_scale") as Gtk.Scale;
+    this.saturation_scale = builder.get_object ("saturation_scale") as Gtk.Scale;
+
+    this.brightness_scale.add_mark (0, Gtk.PositionType.BOTTOM, null);
+    this.contrast_scale.add_mark (1, Gtk.PositionType.BOTTOM, null);
+    this.hue_scale.add_mark (0, Gtk.PositionType.BOTTOM, null);
+    this.saturation_scale.add_mark (1, Gtk.PositionType.BOTTOM, null);
+
+    this.photo_resolution_combo = builder.get_object ("photo_resolution_combo_box") as Gtk.ComboBox;
+    this.video_resolution_combo = builder.get_object ("video_resolution_combo_box") as Gtk.ComboBox;
+    this.source_combo = builder.get_object ("camera_combo_box") as Gtk.ComboBox;
+
+    this.burst_repeat_spin = builder.get_object ("burst_repeat") as Gtk.SpinButton;
+    this.burst_delay_spin = builder.get_object ("burst_delay") as Gtk.SpinButton;
+
+    this.countdown_check = builder.get_object ("countdown") as Gtk.CheckButton;
+    this.flash_check = builder.get_object ("flash") as Gtk.CheckButton;
 
     setup_combo_box_models ();
     initialize_camera_devices ();
@@ -75,8 +106,9 @@ public PreferencesDialog (Cheese.Camera camera)
      * Connect signals only after all the widgets have been setup
      * Stops a bunch of unnecessary signals from being fired
      */
+    builder.connect_signals (this);
     camera.notify["num-camera-devices"].connect(this.on_camera_update_num_camera_devices);
-}
+  }
 
   /**
    * Set up combo box cell renderers.
@@ -101,14 +133,15 @@ public PreferencesDialog (Cheese.Camera camera)
   private void initialize_camera_devices ()
   {
     unowned GLib.PtrArray devices = camera.get_camera_devices ();
-    camera_model = new Gtk.ListStore (2, typeof (string), typeof (Cheese.CameraDevice));
+    camera_model = new ListStore (2, typeof (string), typeof (Cheese.CameraDevice));
 
     source_combo.model = camera_model;
-    source_combo.sensitive = false;
+    if (devices.len <= 1)
+      source_combo.sensitive = false;
 
     devices.foreach(add_camera_device);
 
-    settings.set_string ("camera", camera.get_selected_device ().get_name ());
+    settings.set_string ("camera", camera.get_selected_device ().get_device_node ());
     setup_resolutions_for_device (camera.get_selected_device ());
   }
 
@@ -119,8 +152,8 @@ public PreferencesDialog (Cheese.Camera camera)
    */
   private void setup_resolutions_for_device (Cheese.CameraDevice device)
   {
-    var formats = device.get_format_list ();
-    Gtk.ListStore resolution_model = new Gtk.ListStore (2, typeof (string),
+    unowned List<VideoFormat> formats = device.get_format_list ();
+    ListStore resolution_model = new ListStore (2, typeof (string),
         typeof (Cheese.VideoFormat));
 
     photo_resolution_combo.model = resolution_model;
@@ -160,33 +193,30 @@ public PreferencesDialog (Cheese.Camera camera)
     }
   }
 
-    /**
-     * Take the user preferences from GSettings.
-     */
-    private void initialize_values_from_settings ()
-    {
-      brightness_adjustment.value = settings.get_double ("brightness");
-      contrast_adjustment.value   = settings.get_double ("contrast");
-      hue_adjustment.value        = settings.get_double ("hue");
-      saturation_adjustment.value = settings.get_double ("saturation");
+  /**
+   * Take the user preferences from GSettings.
+   */
+  private void initialize_values_from_settings ()
+  {
+    brightness_adjustment.value = settings.get_double ("brightness");
+    contrast_adjustment.value   = settings.get_double ("contrast");
+    hue_adjustment.value        = settings.get_double ("hue");
+    saturation_adjustment.value = settings.get_double ("saturation");
 
-        settings.bind ("burst-repeat", burst_repeat_spin, "value",
-                       SettingsBindFlags.DEFAULT);
-      burst_delay_spin.value  = settings.get_int ("burst-delay") / 1000;
+    burst_repeat_spin.value = settings.get_int ("burst-repeat");
+    burst_delay_spin.value  = settings.get_int ("burst-delay") / 1000;
 
-        settings.bind ("countdown", countdown_check, "active",
-                       SettingsBindFlags.DEFAULT);
-        settings.bind ("flash", flash_check, "active",
-                       SettingsBindFlags.DEFAULT);
-    }
+    countdown_check.active = settings.get_boolean ("countdown");
+    flash_check.active = settings.get_boolean ("flash");
+  }
 
   /**
    * Update the active device to the active iter of the device combo box.
    *
    * @param combo the video device combo box
    */
-  [GtkCallback]
-  private void on_source_change (Gtk.ComboBox combo)
+  [CCode (instance_pos = -1)]
+  public void on_source_change (Gtk.ComboBox combo)
   {
     // TODO: Handle going from 1 to 0 devices, cleanly!
     return_if_fail (camera.num_camera_devices > 0);
@@ -196,10 +226,10 @@ public PreferencesDialog (Cheese.Camera camera)
 
     combo.get_active_iter (out iter);
     combo.model.get (iter, 1, out dev);
-    camera.set_device (dev);
+    camera.set_device_by_device_node (dev.get_device_node ());
     camera.switch_camera_device ();
     setup_resolutions_for_device (camera.get_selected_device ());
-    settings.set_string ("camera", dev.get_name ());
+    settings.set_string ("camera", dev.get_device_node ());
   }
 
   /**
@@ -208,12 +238,12 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param combo the photo resolution combo box
    */
-  [GtkCallback]
-  private void on_photo_resolution_change (Gtk.ComboBox combo)
+  [CCode (instance_pos = -1)]
+  public void on_photo_resolution_change (Gtk.ComboBox combo)
   {
     TreeIter iter;
 
-    Cheese.VideoFormat format;
+    unowned Cheese.VideoFormat format;
 
     combo.get_active_iter (out iter);
     combo.model.get (iter, 1, out format);
@@ -231,12 +261,12 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param combo the video resolution combo box
    */
-  [GtkCallback]
-  private void on_video_resolution_change (Gtk.ComboBox combo)
+  [CCode (instance_pos = -1)]
+  public void on_video_resolution_change (Gtk.ComboBox combo)
   {
     TreeIter iter;
 
-    Cheese.VideoFormat format;
+    unowned Cheese.VideoFormat format;
 
     combo.get_active_iter (out iter);
     combo.model.get (iter, 1, out format);
@@ -248,42 +278,81 @@ public PreferencesDialog (Cheese.Camera camera)
     settings.set_int ("video-y-resolution", format.height);
   }
 
-    /**
-    * Hide the dialog when it is closed, rather than deleting it.
-    */
-    [GtkCallback]
-    private bool on_delete ()
-    {
-        return this.hide_on_delete ();
-    }
+  /**
+   * Hide the dialog when it is closed, rather than deleting it.
+   *
+   * @param dialog the dialog on which the delete event was generated
+   */
+  [CCode (instance_pos = -1)]
+  public void on_delete (Gtk.Dialog dialog)
+  {
+    dialog.hide_on_delete ();
+  }
 
-    /**
-    * Hide the dialog when it is closed, rather than deleting it.
-    */
-    [GtkCallback]
-    private void on_dialog_close (Gtk.Button button)
-    {
-        this.hide ();
-    }
+  /**
+   * Hide the dialog when it is closed, rather than deleting it.
+   *
+   * @param button the close button
+   */
+  [CCode (instance_pos = -1)]
+  public void on_dialog_close (Gtk.Button button)
+  {
+    this.dialog.hide ();
+  }
 
-    /**
-    * Show the help for the preferences dialog.
-    *
-    * @param button the help button
-    */
-    [GtkCallback]
-    private void on_dialog_help (Gtk.Button button)
+  /**
+   * Show the help for the preferences dialog.
+   *
+   * @param button the help button
+   */
+  [CCode (instance_pos = -1)]
+  public void on_dialog_help (Gtk.Button button)
+  {
+    try
     {
-        try
-        {
-            Gtk.show_uri (this.get_screen (), "help:cheese/index#preferences",
-                          Gdk.CURRENT_TIME);
-        }
-        catch
-        {
-            warning ("%s", "Error showing help");
-        }
+      Gtk.show_uri (this.dialog.get_screen (), "help:cheese/index#preferences",
+        Gdk.CURRENT_TIME);
     }
+    catch
+    {
+      warning ("%s", "Error showing help");
+    }
+  }
+
+  /**
+   * Toggle the countdown GSetting when toggling the check button.
+   *
+   * @param checkbutton the countdown check button
+   */
+  [CCode (instance_pos = -1)]
+  public void on_countdown_toggle (Gtk.CheckButton checkbutton)
+  {
+    settings.set_boolean ("countdown", checkbutton.active);
+  }
+
+  /**
+   * Toggle the flash GSetting when toggling the check button.
+   *
+   * @param checkbutton the flash check button
+   */
+  [CCode (instance_pos = -1)]
+  public void on_flash_toggle (Gtk.CheckButton checkbutton)
+  {
+    settings.set_boolean ("flash", checkbutton.active);
+  }
+
+  /**
+   * Change the burst-repeat GSetting when changing the spin button.
+   *
+   * The burst repeat is the total number of photos to take in a single burst.
+   *
+   * @param spinbutton the burst-repeat spin button
+   */
+  [CCode (instance_pos = -1)]
+  public void on_burst_repeat_change (Gtk.SpinButton spinbutton)
+  {
+    settings.set_int ("burst-repeat", (int) spinbutton.value);
+  }
 
   /**
    * Change the burst-delay GSetting when changing the spin button.
@@ -293,8 +362,8 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param spinbutton the burst-delay spin button
    */
-  [GtkCallback]
-  private void on_burst_delay_change (Gtk.SpinButton spinbutton)
+  [CCode (instance_pos = -1)]
+  public void on_burst_delay_change (Gtk.SpinButton spinbutton)
   {
     settings.set_int ("burst-delay", (int) spinbutton.value * 1000);
   }
@@ -305,8 +374,8 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param adjustment the adjustment of the brightness Gtk.Scale
    */
-  [GtkCallback]
-  private void on_brightness_change (Gtk.Adjustment adjustment)
+  [CCode (instance_pos = -1)]
+  public void on_brightness_change (Gtk.Adjustment adjustment)
   {
     this.camera.set_balance_property ("brightness", adjustment.value);
     settings.set_double ("brightness", adjustment.value);
@@ -318,8 +387,8 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param adjustment the adjustment of the contrast Gtk.Scale
    */
-  [GtkCallback]
-  private void on_contrast_change (Gtk.Adjustment adjustment)
+  [CCode (instance_pos = -1)]
+  public void on_contrast_change (Gtk.Adjustment adjustment)
   {
     this.camera.set_balance_property ("contrast", adjustment.value);
     settings.set_double ("contrast", adjustment.value);
@@ -331,8 +400,8 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param adjustment the adjustment of the hue Gtk.Scale
    */
-  [GtkCallback]
-  private void on_hue_change (Gtk.Adjustment adjustment)
+  [CCode (instance_pos = -1)]
+  public void on_hue_change (Gtk.Adjustment adjustment)
   {
     this.camera.set_balance_property ("hue", adjustment.value);
     settings.set_double ("hue", adjustment.value);
@@ -344,8 +413,8 @@ public PreferencesDialog (Cheese.Camera camera)
    *
    * @param adjustment the adjustment of the saturation Gtk.Scale
    */
-  [GtkCallback]
-  private void on_saturation_change (Gtk.Adjustment adjustment)
+  [CCode (instance_pos = -1)]
+  public void on_saturation_change (Gtk.Adjustment adjustment)
   {
     this.camera.set_balance_property ("saturation", adjustment.value);
     settings.set_double ("saturation", adjustment.value);
@@ -387,7 +456,7 @@ public PreferencesDialog (Cheese.Camera camera)
         camera_model.get (iter, 1, out new_device, -1);
 
         // Found the device that was removed.
-        if (old_device != new_device)
+        if (strcmp (old_device.device_node, new_device.device_node) != 0)
         {
             remove_camera_device (iter, new_device, active_device);
             device_removed = true;
@@ -406,7 +475,7 @@ public PreferencesDialog (Cheese.Camera camera)
       }
     }
 
-    settings.set_string ("camera", camera.get_selected_device ().get_name ());
+    settings.set_string ("camera", camera.get_selected_device ().get_device_node ());
     setup_resolutions_for_device (camera.get_selected_device ());
   }
 
@@ -425,14 +494,11 @@ public PreferencesDialog (Cheese.Camera camera)
 
     camera_model.append (out iter);
     camera_model.set (iter,
-                      0, dev.get_name (),
+                      0, dev.get_name () + " (" + dev.get_device_node () + ")",
                       1, dev);
 
-    if (camera.get_selected_device () == dev)
+    if (camera.get_selected_device ().get_device_node () == dev.get_device_node ())
         source_combo.set_active_iter (iter);
-
-    if (camera_model.iter_n_children (null) > 1)
-      source_combo.sensitive = true;
   }
 
   /**
@@ -448,22 +514,14 @@ public PreferencesDialog (Cheese.Camera camera)
       unowned GLib.PtrArray devices = camera.get_camera_devices ();
 
       // Check if the camera that we want to remove, is the active one
-      if (device_node == active_device_node)
+      if (strcmp (device_node.device_node, active_device_node.device_node) == 0)
       {
         if (devices.len > 0)
           set_new_available_camera_device (iter);
         else
-          this.hide ();
+          this.dialog.hide();
       }
-
-#if VALA_0_36
-      camera_model.remove (ref iter);
-#else
       camera_model.remove (iter);
-#endif
-
-      if (camera_model.iter_n_children (null) <= 1)
-        source_combo.sensitive = false;
   }
 
   /**
@@ -484,7 +542,14 @@ public PreferencesDialog (Cheese.Camera camera)
     source_combo.set_active_iter (new_iter);
   }
 
-
+  /**
+   * Show the dialog.
+   */
+  public void show ()
+  {
+    this.dialog.show_all ();
+  }
+  
     /**
      * Set the current media mode (photo, video or burst).
      *

@@ -17,6 +17,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ * Boston, MA 02111-1307, USA.
+ *
  */
 
 #ifndef __TOTEM_ASPECT_FRAME_H__
@@ -51,10 +53,13 @@ G_BEGIN_DECLS
 
 typedef struct _TotemAspectFrame TotemAspectFrame;
 typedef struct _TotemAspectFrameClass TotemAspectFrameClass;
+typedef struct _TotemAspectFramePrivate TotemAspectFramePrivate;
 
 struct _TotemAspectFrame
 {
   ClutterActor parent;
+
+  TotemAspectFramePrivate *priv;
 };
 
 struct _TotemAspectFrameClass
@@ -62,20 +67,16 @@ struct _TotemAspectFrameClass
   ClutterActorClass parent_class;
 };
 
-GType           totem_aspect_frame_get_type     (void);
+GType           totem_aspect_frame_get_type    (void) G_GNUC_CONST;
 
-ClutterActor *  totem_aspect_frame_new          (void);
+ClutterActor *  totem_aspect_frame_new         (void);
 
-void            totem_aspect_frame_set_child    (TotemAspectFrame *frame,
-						 ClutterActor     *child);
+void            totem_aspect_frame_set_child   (TotemAspectFrame *frame,
+						ClutterActor     *child);
 
-void            totem_aspect_frame_set_expand   (TotemAspectFrame *frame,
-                                                 gboolean          expand);
-gboolean        totem_aspect_frame_get_expand   (TotemAspectFrame *frame);
-
-void            totem_aspect_frame_set_rotation (TotemAspectFrame *frame,
-						 gdouble           rotation);
-gdouble         totem_aspect_frame_get_rotation (TotemAspectFrame *frame);
+void            totem_aspect_frame_set_expand  (TotemAspectFrame *frame,
+                                                gboolean          expand);
+gboolean        totem_aspect_frame_get_expand  (TotemAspectFrame *frame);
 
 G_END_DECLS
 

@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,21 +17,21 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Hentikan layar yang mengedip putih ketika mengambil foto.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Andika Triwidada</mal:name>
       <mal:email>andika@gmail.com</mal:email>
-      <mal:years>2012, 2013, 2014</mal:years>
+      <mal:years>2012</mal:years>
     </mal:credit>
   </info>
 
   <title>Nonaktifkan lampu kilat</title>
 
-  <p>Ketika Anda mengambil foto memakai Cheese, layar komputer sekilas menjadi putih.</p>
+  <p>Ketika Anda mengambil foto memakai Cheese, layar komputer sekilas menjadi putih. Ini memberikan cahaya tambahan.</p>
 
-  <p>Untuk menonaktifkan fitur ini, pilih <guiseq><gui>Cheese</gui><gui>Preferensi</gui><gui>Tangkap</gui></guiseq> dan matikan contreng <gui>Nyalakan Lampu Kilat</gui>.</p>
+  <p>To disable this feature, select
+  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
+  and uncheck <gui>Fire Flash</gui>.</p>
 
 </page>

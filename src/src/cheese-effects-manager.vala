@@ -19,6 +19,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using GLib;
+
 internal class Cheese.EffectsManager : GLib.Object
 {
     public List<Effect> effects;
@@ -46,8 +48,6 @@ internal class Cheese.EffectsManager : GLib.Object
         /* Add identity effect as the first in the effect list. */
         if (effects.length () > 0)
         {
-            /* Translators: a description of an effect (to be applied to images
-             *              from the webcam) which does nothing. */
             Effect e = new Effect (_("No Effect"), "identity");
             effects.prepend (e);
         }
@@ -58,18 +58,7 @@ internal class Cheese.EffectsManager : GLib.Object
      */
     private void add_effect (string name, Effect effect)
     {
-        try
-        {
-            // Test effect to see if it can be created. Bug 702995.
-            Gst.parse_bin_from_description (effect.pipeline_desc, false, null,
-                                            Gst.ParseFlags.FATAL_ERRORS);
-            effects.insert_sorted (effect, sort_value);
-        }
-        catch (Error err)
-        {
-            debug ("Effect '%s' did not parse correctly, skipping: %s",
-                   effect.name, err.message);
-        }
+        effects.insert_sorted (effect, sort_value);
     }
 
     /**

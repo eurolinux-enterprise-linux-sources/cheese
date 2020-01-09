@@ -28,73 +28,73 @@ using Eog;
 using Gst;
 using CanberraGtk;
 
+[DBus(name = "org.freedesktop.PackageKit.Modify")]
+interface PkProxy : GLib.Object {
+        public abstract async void install_catalogs (uint xid, string[] catalog_files, string interaction) throws IOError;
+}
+
 const int FULLSCREEN_TIMEOUT_INTERVAL = 5 * 1000;
 const uint EFFECTS_PER_PAGE = 9;
+const string SENDTO_EXEC = "nautilus-sendto";
 
-[GtkTemplate (ui = "/org/gnome/Cheese/cheese-main-window.ui")]
 public class Cheese.MainWindow : Gtk.ApplicationWindow
 {
-    private const GLib.ActionEntry actions[] = {
-        { "file-open", on_file_open },
-        { "file-saveas", on_file_saveas },
-        { "file-trash", on_file_trash },
-        { "file-delete", on_file_delete },
-        { "effects-next", on_effects_next },
-        { "effects-previous", on_effects_previous }
-    };
-
     private MediaMode current_mode;
 
-    private Clutter.Script clutter_builder;
+  private Gtk.Builder    gtk_builder;
+  private Clutter.Script clutter_builder;
 
-    private Gtk.Builder header_bar_ui = new Gtk.Builder.from_resource ("/org/gnome/Cheese/headerbar.ui");
+  private GLib.Settings settings;
 
-    private Gtk.HeaderBar header_bar;
+  private Gtk.Widget       thumbnails;
+  private GtkClutter.Embed viewport_widget;
+  private Gtk.Grid          main_vbox;
+  private Eog.ThumbNav     thumb_nav;
+  private Cheese.ThumbView thumb_view;
+  private Gtk.Alignment    thumbnails_right;
+  private Gtk.Alignment    thumbnails_bottom;
+  private Gtk.Grid leave_fullscreen_button_container;
+  private Gtk.ToggleButton photo_toggle_button;
+  private Gtk.ToggleButton video_toggle_button;
+  private Gtk.ToggleButton burst_toggle_button;
+  private Gtk.Button       take_action_button;
+  private Gtk.Label        take_action_button_label;
+  private Gtk.Image        take_action_button_image;
+  private Gtk.ToggleButton effects_toggle_button;
+  private Gtk.Button       leave_fullscreen_button;
+  private Gtk.Grid buttons_area;
+  private Gtk.Menu         thumbnail_popup;
 
-    private GLib.Settings settings;
+  private Clutter.Stage     viewport;
+  private Clutter.Box       viewport_layout;
+  private Clutter.Texture   video_preview;
+  private Clutter.BinLayout viewport_layout_manager;
+  private Clutter.Text      countdown_layer;
+  private Clutter.Rectangle background_layer;
+  private Clutter.Text      error_layer;
+  private Clutter.Text      timeout_layer;
 
-    [GtkChild]
-    private GtkClutter.Embed viewport_widget;
-    [GtkChild]
-    private Gtk.Widget main_vbox;
-    private Eog.ThumbNav thumb_nav;
-    private Cheese.ThumbView thumb_view;
-    [GtkChild]
-    private Gtk.Box thumbnails_right;
-    [GtkChild]
-    private Gtk.Box thumbnails_bottom;
-    [GtkChild]
-    private Gtk.Widget leave_fullscreen_button_box;
-    [GtkChild]
-    private Gtk.Button take_action_button;
-    [GtkChild]
-    private Gtk.Image take_action_button_image;
-    [GtkChild]
-    private Gtk.ToggleButton effects_toggle_button;
-    [GtkChild]
-    private Gtk.Widget buttons_area;
-    private Gtk.Menu thumbnail_popup;
-
-    private Clutter.Stage viewport;
-    private Clutter.Actor viewport_layout;
-    private Clutter.Actor video_preview;
-    private Clutter.BinLayout viewport_layout_manager;
-    private Clutter.Text countdown_layer;
-    private Clutter.Actor background_layer;
-    private Clutter.Text error_layer;
-    private Clutter.Text timeout_layer;
-
-  private Clutter.Actor current_effects_grid;
+  private Clutter.Box current_effects_grid;
   private uint current_effects_page = 0;
-  private List<Clutter.Actor> effects_grids;
+  private List<Clutter.Box> effects_grids;
+
+  private HashTable<string, bool> action_sensitivities;
+  private Gtk.ToggleAction wide_mode_action;
+  private Gtk.Action       countdown_action;
+  private Gtk.Action       effects_page_prev_action;
+  private Gtk.Action       effects_page_next_action;
+  private Gtk.Action       share_action;
 
   private bool is_fullscreen;
   private bool is_wide_mode;
   private bool is_recording;       /* Video Recording Flag */
   private bool is_bursting;
   private bool is_effects_selector_active;
+  private bool is_camera_actions_sensitive;
   private bool action_cancelled;
-    private bool was_maximized;
+  private bool is_command_line_startup;
+
+  private Gtk.Button[] buttons;
 
   private Cheese.Camera   camera;
   private Cheese.FileUtil fileutil;
@@ -103,6 +103,8 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
   private Cheese.EffectsManager    effects_manager;
 
   private Cheese.Effect selected_effect;
+
+  private Cheese.ShareableMedia shareable_media;
 
   /**
    * Responses from the delete files confirmation dialog.
@@ -119,98 +121,52 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     public MainWindow (Gtk.Application application)
     {
         GLib.Object (application: application);
-
-        header_bar = header_bar_ui.get_object ("header_bar") as Gtk.HeaderBar;
-
-        Gtk.Settings settings = Gtk.Settings.get_default ();
-
-        if (settings.gtk_dialogs_use_header)
-        {
-            header_bar.visible = true;
-            this.set_titlebar (header_bar);
-        }
-    }
-
-    private void set_window_title (string title)
-    {
-        header_bar.set_title (title);
-        this.set_title (title);
-    }
-
-    private bool on_window_state_change_event (Gtk.Widget widget,
-                                               Gdk.EventWindowState event)
-    {
-        was_maximized = (((event.new_window_state - event.changed_mask)
-                          & Gdk.WindowState.MAXIMIZED) != 0);
-
-        window_state_event.disconnect (on_window_state_change_event);
-        return false;
-    }
-
-    private void do_thumb_view_popup_menu (Gtk.Widget widget,
-                                           uint button,
-                                           uint time)
-    {
-        thumbnail_popup.popup (null, widget, null, button, time);
-    }
-
-    private bool on_thumb_view_popup_menu (Gtk.Widget thumbview)
-    {
-        do_thumb_view_popup_menu (thumbview, 0, 0);
-
-        return true;
-    }
-
-    /**
-    * Popup a context menu when right-clicking on a thumbnail.
-    *
-    * @param iconview the thumbnail view that emitted the signal
-    * @param event the event
-    * @return false to allow further processing of the event, true to indicate
-    * that the event was handled completely
-    */
-    public bool on_thumbnail_button_press_event (Gtk.Widget iconview,
-                                                 Gdk.EventButton event)
-    {
-        Gtk.TreePath path;
-        path = thumb_view.get_path_at_pos ((int) event.x, (int) event.y);
-
-        if (path == null)
-        {
-            return false;
-        }
-
-        if (!thumb_view.path_is_selected (path))
-        {
-            thumb_view.unselect_all ();
-            thumb_view.select_path (path);
-            thumb_view.set_cursor (path, null, false);
-        }
-
-        if (event.type == Gdk.EventType.BUTTON_PRESS)
-        {
-            Gdk.Event* button_press = (Gdk.Event*)(event);
-
-            if (button_press->triggers_context_menu ())
-            {
-                do_thumb_view_popup_menu (thumb_view, event.button,
-                                          event.time);
-                return true;
-            }
-        }
-        else if (event.type == Gdk.EventType.2BUTTON_PRESS)
-        {
-            on_file_open ();
-            return true;
-        }
-
-        return false;
     }
 
   /**
-   * Open an image associated with a thumbnail in the default application.
+   * Popup a context menu when right-clicking on a thumbnail.
+   *
+   * @param iconview the thumbnail view that emitted the signal
+   * @param event the event
+   * @return false, to allow further processing of the event
    */
-  private void on_file_open ()
+  public bool on_thumbnail_mouse_button_press (Gtk.Widget      iconview,
+                                               Gdk.EventButton event)
+  {
+    Gtk.TreePath path;
+    path = thumb_view.get_path_at_pos ((int) event.x, (int) event.y);
+
+    if (path == null)
+      return false;
+
+    if (!thumb_view.path_is_selected (path))
+    {
+      thumb_view.unselect_all ();
+      thumb_view.select_path (path);
+      thumb_view.set_cursor (path, null, false);
+    }
+
+    if (event.type == Gdk.EventType.BUTTON_PRESS)
+    {
+      if (event.button == 3)
+	thumbnail_popup.popup (null, thumb_view, null, event.button, event.time);
+    }
+    else
+    if (event.type == Gdk.EventType.2BUTTON_PRESS)
+    {
+      on_file_open (null);
+    }
+
+    return false;
+  }
+
+  /**
+   * Open an image associated with a thumbnail in the default application.
+   *
+   * @param action the action that emitted the signal, or null
+   */
+  [CCode (instance_pos = -1)]
+  public void on_file_open (Gtk.Action ? action)
   {
     string filename, uri;
 
@@ -245,8 +201,11 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
    * Delete the requested image or images in the thumbview from storage.
    *
    * A confirmation dialog is shown to the user before deleting any files.
+   *
+   * @param action the action that emitted the signal
    */
-  private void on_file_delete ()
+  [CCode (instance_pos = -1)]
+  public void on_file_delete (Gtk.Action action)
   {
     int response;
     int error_response;
@@ -261,8 +220,8 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       GLib.ngettext("Are you sure you want to permanently delete the file?",
         "Are you sure you want to permanently delete %d files?",
         files_length), files_length);
-    confirmation_dialog.add_button (_("_Cancel"), Gtk.ResponseType.CANCEL);
-    confirmation_dialog.add_button (_("_Delete"), Gtk.ResponseType.ACCEPT);
+    confirmation_dialog.add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
+    confirmation_dialog.add_button (Gtk.Stock.DELETE, Gtk.ResponseType.ACCEPT);
     confirmation_dialog.format_secondary_text ("%s",
       GLib.ngettext("If you delete an item, it will be permanently lost",
         "If you delete the items, they will be permanently lost",
@@ -288,11 +247,11 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
             var error_dialog = new MessageDialog (this,
               Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
               Gtk.MessageType.ERROR, Gtk.ButtonsType.NONE,
-              _("Could not delete %s"), file.get_path ());
+              "Could not delete %s", file.get_path ());
 
-            error_dialog.add_button (_("_Cancel"), Gtk.ResponseType.CANCEL);
-            error_dialog.add_button (_("Skip"), DeleteResponse.SKIP);
-            error_dialog.add_button (_("Skip all"), DeleteResponse.SKIP_ALL);
+            error_dialog.add_button (Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL);
+            error_dialog.add_button ("Skip", DeleteResponse.SKIP);
+            error_dialog.add_button ("Skip all", DeleteResponse.SKIP_ALL);
 
             error_response = error_dialog.run ();
             if (error_response == DeleteResponse.SKIP_ALL) {
@@ -313,8 +272,11 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
    * Move the requested image in the thumbview to the trash.
    *
    * A confirmation dialog is shown to the user before moving the file.
+   *
+   * @param action the action that emitted the signal
    */
-  private void on_file_trash ()
+  [CCode (instance_pos = -1)]
+  public void on_file_move_to_trash (Gtk.Action action)
   {
     File file;
 
@@ -347,12 +309,136 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
   }
 
   /**
+   * Move all images in the thumbview to the trash.
+   *
+   * No confirmation dialog is shown to the user before moving the files!
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_file_move_to_trash_all (Gtk.Action action)
+  {
+    // TODO: Use asynchronous methods.
+    try {
+      var directory = File.new_for_path (fileutil.get_photo_path ());
+      var enumerator = directory.enumerate_children (FileAttribute.STANDARD_NAME, FileQueryInfoFlags.NONE);
+
+      // Trash photos.
+      trash_enumerated_files (directory.get_path (), enumerator);
+
+      directory  = File.new_for_path (fileutil.get_video_path ());
+      enumerator = directory.enumerate_children (FileAttribute.STANDARD_NAME, FileQueryInfoFlags.NONE);
+
+      // Trash videos.
+      trash_enumerated_files (directory.get_path (), enumerator);
+    } catch (Error error) {
+      warning ("Error while building file trash list: %s", error.message);
+    }
+  }
+
+  /**
+   * Send the enumerated files to the trash.
+   *
+   * @param directory the directory containing the enumerated files
+   * @param enumerator the enumeration of files to send to the trash
+   */
+  private void trash_enumerated_files (string directory, FileEnumerator enumerator)
+  {
+    try {
+      FileInfo file_info;
+
+      while ((file_info = enumerator.next_file (null)) != null)
+      {
+        var file_to_trash = File.new_for_path (GLib.Path.build_filename (directory, file_info.get_name ()));
+	file_to_trash.trash ();
+      }
+    } catch (Error error) {
+      warning ("Error while trashing files: %s", error.message);
+    }
+  }
+
+  /**
+   * Share the selected file(s) in the thumbview.
+   *
+   * A dialog is shown to the user, where the technology for sharing the
+   * image or video can be selected.
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_share_files (Gtk.Action action)
+  {
+    bool nautilus_sendto_installed = Environment.find_program_in_path (SENDTO_EXEC) != null;
+
+    if (!nautilus_sendto_installed)
+      install_packages ((obj, res) => {
+                        install_packages.end (res);
+                        get_window ().set_cursor (new Gdk.Cursor (Gdk.CursorType.LEFT_PTR));
+                       });
+    else
+      shareable_media.share_files (thumb_view.get_selected_images_list ());
+  }
+
+  /**
+   * Install nautilus-sendto runtime dependency.
+   *
+   */
+  private async void install_packages ()
+  {
+    get_window ().set_cursor (new Gdk.Cursor (Gdk.CursorType.WATCH));
+
+    try {
+      PkProxy pk_proxy = yield GLib.Bus.get_proxy (BusType.SESSION,
+                                                   "org.freedesktop.PackageKit",
+                                                   "/org/freedesktop/PackageKit");
+
+      const string CATALOG = "cheese.catalog";
+      string[] catalogs = { get_data_file_dir (CATALOG) };
+      yield pk_proxy.install_catalogs ((uint) Gdk.X11Window.get_xid (this.get_window ()),
+                                       catalogs,
+                                       ""); // Use interaction defaults.
+    } catch (IOError error) {
+      critical ("D-Bus error: %s\n", error.message);
+    }
+  }
+
+  /**
+   * Search system directories for the given filename, starting
+   * with the in-installation-time custom prefix first.
+   *
+   * @param filename the file whose path will be searched.
+   * @return the system path for the given filename.
+   */
+  private string get_data_file_dir (string filename) {
+    var system_data_dirs = Environment.get_system_data_dirs ();
+    string[] data_dirs = {};
+    data_dirs += Config.DATADIR;
+
+    foreach (var dir in system_data_dirs)
+      data_dirs += dir;
+
+    foreach (var dir in data_dirs) {
+      var absolute_path = GLib.Path.build_filename (dir, Config.PACKAGE_TARNAME,
+                                                    filename);
+      if (FileUtils.test (absolute_path, FileTest.EXISTS))
+        return absolute_path;
+    };
+
+    // Filename could not be found!
+    error ("Data file ‘%s’ could not be found in system data directories.",
+           filename);
+  }
+
+  /**
    * Save the selected file in the thumbview to an alternate storage location.
    *
    * A file chooser dialog is shown to the user, asking where the file should
    * be saved and the filename.
+   *
+   * @param action the action that emitted the signal.
    */
-  private void on_file_saveas ()
+  [CCode (instance_pos = -1)]
+  public void on_file_save_as (Gtk.Action action)
   {
     string            filename, basename;
     FileChooserDialog save_as_dialog;
@@ -365,8 +451,8 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     save_as_dialog = new FileChooserDialog (_("Save File"),
                                             this,
                                             Gtk.FileChooserAction.SAVE,
-                                            _("_Cancel"), Gtk.ResponseType.CANCEL,
-                                            _("Save"), Gtk.ResponseType.ACCEPT,
+                                            Gtk.Stock.CANCEL, Gtk.ResponseType.CANCEL,
+                                            Gtk.Stock.SAVE, Gtk.ResponseType.ACCEPT,
                                             null);
 
     save_as_dialog.do_overwrite_confirmation = true;
@@ -406,13 +492,38 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     save_as_dialog.destroy ();
   }
 
+  /**
+   * Toggle wide mode and save the preference to GSettings.
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_layout_wide_mode (ToggleAction action)
+  {
+    if (!is_command_line_startup)
+    {
+     /* Don't save to settings when using -w mode from command-line, so
+      * command-line options change the mode for one run only. */
+      settings.set_boolean ("wide-mode", action.active);
+    }
+    set_wide_mode (action.active);
+  }
+
     /**
-     * Toggle fullscreen mode.
+     * Toggle fullscreen mode and save the preference to GSettings.
      *
-     * @param fullscreen whether the window should be fullscreen
+     * @param fullscreen whether the window should be fullscreean
      */
+    [CCode (instance_pos = -1)]
     public void set_fullscreen (bool fullscreen)
     {
+        if (!is_command_line_startup)
+        {
+            /* Don't save to settings when using -f mode from command-line, so
+             * command-line options change the mode for one run only. */
+            settings.set_boolean ("fullscreen", fullscreen);
+        }
+
         set_fullscreen_mode (fullscreen);
     }
 
@@ -421,12 +532,8 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
      */
     private void enable_mode_change ()
     {
-        var mode = this.application.lookup_action ("mode") as SimpleAction;
-        mode.set_enabled (true);
-        var effects = this.application.lookup_action ("effects") as SimpleAction;
-        effects.set_enabled (true);
-        var preferences = this.application.lookup_action ("preferences") as SimpleAction;
-        preferences.set_enabled (true);
+        // FIXME: Set the mode action to be sensitive
+        // FIXME: Set the effects action to be sensitive.
     }
 
     /**
@@ -434,12 +541,8 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
      */
     private void disable_mode_change ()
     {
-        var mode = this.application.lookup_action ("mode") as SimpleAction;
-        mode.set_enabled (false);
-        var effects = this.application.lookup_action ("effects") as SimpleAction;
-        effects.set_enabled (false);
-        var preferences = this.application.lookup_action ("preferences") as SimpleAction;
-        preferences.set_enabled (false);
+        // FIXME: Set the mode action to be sensitive
+        // FIXME: Set the effects action to be insensitive.
     }
 
   /**
@@ -452,7 +555,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     if (camera == null)
       return;
 
-    var formats = camera.get_video_formats ();
+    unowned GLib.List<VideoFormat> formats = camera.get_video_formats ();
 
     if (formats == null)
       return;
@@ -485,6 +588,15 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     }
   }
 
+  /**
+   * Set the current media capture mode, and update the UI sensitivities.
+   *
+   * @param mode the new capture mode to set
+   */
+  private void set_mode (MediaMode mode)
+  {
+}
+
   private TimeoutSource fullscreen_timeout;
   /**
    * Clear the fullscreen activity timeout.
@@ -508,48 +620,42 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     fullscreen_timeout.attach (null);
     fullscreen_timeout.set_callback (() => {buttons_area.hide ();
                                             clear_fullscreen_timeout ();
-                                            this.fullscreen ();
                                             return true; });
   }
 
-    /**
-     * Show the UI in fullscreen if there is any mouse activity.
-     *
-     * Start a new timeout at the end of every mouse pointer movement. All
-     * timeouts will be cancelled, except one created during the last movement
-     * event. Show() is called even if the button is not hidden.
-     *
-     * @param viewport the widget to check for mouse activity on
-     * @param e the (unused) event
-     */
-    private bool fullscreen_motion_notify_callback (Gtk.Widget viewport,
-                                                    EventMotion e)
-    {
-        clear_fullscreen_timeout ();
-        this.unfullscreen ();
-        this.maximize ();
-        buttons_area.show ();
-        set_fullscreen_timeout ();
-        return true;
-    }
+  /**
+   * Show the UI in fullscreen if there is any mouse activity.
+   *
+   * Start a new timeout at the end of every mouse pointer movement. All
+   * timeouts will be cancelled, except one created during the last movement
+   * event. Show() is called even if the button is not hidden.
+   *
+   * @param viewport the widget to check for mouse activity on
+   * @param e the (unused) event
+   */
+  private bool fullscreen_motion_notify_callback (Gtk.Widget viewport, EventMotion e)
+  {
+    clear_fullscreen_timeout ();
+    buttons_area.show ();
+    set_fullscreen_timeout ();
+    return true;
+  }
 
   /**
    * Enable or disable fullscreen mode to the requested state.
    *
    * @param fullscreen_mode whether to enable or disable fullscreen mode
    */
-  private void set_fullscreen_mode (bool fullscreen)
+  private void set_fullscreen_mode (bool fullscreen_mode)
   {
     /* After the first time the window has been shown using this.show_all (),
-     * the value of leave_fullscreen_button_box.no_show_all should be set to false
-     * So that the next time leave_fullscreen_button_box.show_all () is called, the button is actually shown
+     * the value of leave_fullscreen_button_container.no_show_all should be set to false
+     * So that the next time leave_fullscreen_button_container.show_all () is called, the button is actually shown
      * FIXME: If this code can be made cleaner/clearer, please do */
 
-    is_fullscreen = fullscreen;
-    if (fullscreen)
+    is_fullscreen = fullscreen_mode;
+    if (fullscreen_mode)
     {
-            window_state_event.connect (on_window_state_change_event);
-
       if (is_wide_mode)
       {
         thumbnails_right.hide ();
@@ -558,9 +664,15 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       {
         thumbnails_bottom.hide ();
       }
-      leave_fullscreen_button_box.no_show_all = false;
-      leave_fullscreen_button_box.show_all ();
+      leave_fullscreen_button_container.no_show_all = false;
+      leave_fullscreen_button_container.show_all ();
 
+      /* Make all buttons look 'flat' */
+      foreach (Gtk.Button b in buttons)
+      {
+        if (b.get_name () != "take_action_button")
+          b.relief = Gtk.ReliefStyle.NONE;
+      }
       this.fullscreen ();
       viewport_widget.motion_notify_event.connect (fullscreen_motion_notify_callback);
       set_fullscreen_timeout ();
@@ -575,7 +687,14 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       {
         thumbnails_bottom.show_all ();
       }
-      leave_fullscreen_button_box.hide ();
+      leave_fullscreen_button_container.hide ();
+
+      /* Make all buttons look, uhm, Normal */
+      foreach (Gtk.Button b in buttons)
+      {
+        if (b.get_name () != "take_action_button")
+          b.relief = Gtk.ReliefStyle.NORMAL;
+      }
 
       /* Stop timer so buttons_area does not get hidden after returning from
        * fullscreen mode */
@@ -584,15 +703,6 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       buttons_area.show ();
       viewport_widget.motion_notify_event.disconnect (fullscreen_motion_notify_callback);
       this.unfullscreen ();
-
-            if (was_maximized)
-            {
-                this.maximize ();
-            }
-            else
-            {
-                this.unmaximize ();
-            }
     }
   }
 
@@ -601,7 +711,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
    *
    * @param wide_mode whether to enable or disable wide mode
    */
-  public void set_wide_mode (bool wide_mode)
+  private void set_wide_mode (bool wide_mode)
   {
     is_wide_mode = wide_mode;
 
@@ -616,33 +726,27 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     {
       thumb_view.set_vertical (true);
       thumb_nav.set_vertical (true);
-      if (thumbnails_bottom.get_children () != null)
+      if (thumbnails_bottom.get_child () != null)
       {
         thumbnails_bottom.remove (thumb_nav);
       }
       thumbnails_right.add (thumb_nav);
-
-            if (!is_fullscreen)
-            {
-                thumbnails_right.show_all ();
-                thumbnails_bottom.hide ();
-            }
+      thumbnails_right.show_all ();
+      thumbnails_right.resize_children ();
+      thumbnails_bottom.hide ();
     }
     else
     {
       thumb_view.set_vertical (false);
       thumb_nav.set_vertical (false);
-      if (thumbnails_right.get_children () != null)
+      if (thumbnails_right.get_child () != null)
       {
         thumbnails_right.remove (thumb_nav);
       }
       thumbnails_bottom.add (thumb_nav);
-
-            if (!is_fullscreen)
-            {
-                thumbnails_bottom.show_all ();
-                thumbnails_right.hide ();
-            }
+      thumbnails_bottom.show_all ();
+      thumbnails_bottom.resize_children ();
+      thumbnails_right.hide ();
     }
 
     /* handy trick to keep the window to the desired size while not
@@ -671,6 +775,17 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     this.background_layer.set_size (viewport.width, viewport.height);
     this.timeout_layer.set_position (video_preview.width/3 + viewport.width/2,
                                 viewport.height-20);
+  }
+
+  /**
+   * Toggle whether the countdown is active.
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_countdown_toggle (ToggleAction action)
+  {
+    settings.set_boolean ("countdown", action.active);
   }
 
   /**
@@ -746,38 +861,6 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     }
   }
 
-    /**
-     * Cancel the current action (if any)
-     */
-    private bool cancel_running_action ()
-    {
-        if ((current_countdown != null && current_countdown.running)
-            || is_bursting || is_recording)
-        {
-            action_cancelled = true;
-
-            switch (current_mode)
-            {
-                case MediaMode.PHOTO:
-                    current_countdown.stop ();
-                    finish_countdown_callback ();
-                    break;
-                case MediaMode.BURST:
-                    toggle_photo_bursting (false);
-                    break;
-                case MediaMode.VIDEO:
-                    toggle_video_recording (false);
-                    break;
-            }
-
-            action_cancelled = false;
-
-            return true;
-        }
-
-        return false;
-    }
-
   /**
    * Cancel the current activity if the escape key is pressed.
    *
@@ -791,13 +874,28 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     key = Gdk.keyval_name (event.keyval);
     if (strcmp (key, "Escape") == 0)
     {
-      if (cancel_running_action ())
+      if ((current_countdown != null && current_countdown.running) || is_bursting || is_recording)
       {
-        return false;
+        action_cancelled = true;
+        switch (current_mode)
+        {
+          case MediaMode.PHOTO:
+           current_countdown.stop ();
+           finish_countdown_callback ();
+           break;
+          case MediaMode.BURST:
+            toggle_photo_bursting (false);
+            break;
+          case MediaMode.VIDEO:
+            toggle_video_recording (false);
+            break;
+        }
+        action_cancelled = false;
       }
-      else if (is_effects_selector_active)
+      else
+      if (is_effects_selector_active)
       {
-        effects_toggle_button.set_active (false);
+        // FIXME: Set the effects action to be inactive.
       }
     }
     return false;
@@ -817,8 +915,9 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
        * update_timeout_layer returns true.
        */
       Timeout.add_seconds (1, update_timeout_layer);
+      take_action_button_label.label = "<b>" + _("Stop _Recording") + "</b>";
       take_action_button.tooltip_text = _("Stop recording");
-      take_action_button_image.set_from_icon_name ("media-playback-stop-symbolic", Gtk.IconSize.BUTTON);
+      take_action_button_image.set_from_stock (Gtk.Stock.MEDIA_STOP, Gtk.IconSize.BUTTON);
       this.is_recording = true;
       this.disable_mode_change ();
     }
@@ -832,8 +931,9 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
        *   + The user is currently not recording.
        */
       timeout_layer.text = "00:00:00";
+      take_action_button_label.label = "<b>" + _("_Record a Video") + "</b>";
       take_action_button.tooltip_text = _("Record a video");
-      take_action_button_image.set_from_icon_name ("camera-web-symbolic", Gtk.IconSize.BUTTON);
+      take_action_button_image.set_from_stock (Gtk.Stock.MEDIA_RECORD, Gtk.IconSize.BUTTON);
       this.is_recording = false;
       this.enable_mode_change ();
     }
@@ -867,6 +967,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       is_bursting = true;
       this.disable_mode_change ();
       // FIXME: Set the effects action to be inactive.
+      take_action_button_label.label  = "<b>" + _("Stop _Taking Pictures") + "</b>";
       take_action_button.tooltip_text = _("Stop taking pictures");
       burst_take_photo ();
 
@@ -890,6 +991,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
 
       is_bursting = false;
       this.enable_mode_change ();
+      take_action_button_label.label  = "<b>" + _("Take Multiple Photos") + "</b>";
       take_action_button.tooltip_text = _("Take multiple photos");
       burst_count = 0;
       fileutil.reset_burst ();
@@ -901,6 +1003,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
      * Take a photo or burst of photos, or record a video, based on the current
      * capture mode.
      */
+    [CCode (instance_pos = -1)]
     public void shoot ()
     {
         switch (current_mode)
@@ -920,82 +1023,64 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     }
 
     /**
-     * Show an error.
-     *
-     * @param error the error to display, or null to hide the error layer
-     */
-    public void show_error (string? error)
-    {
-        if (error != null)
-        {
-            current_effects_grid.hide ();
-            video_preview.hide ();
-            error_layer.text = error;
-            error_layer.show ();
-        }
-        else
-        {
-            error_layer.hide ();
-
-            if (is_effects_selector_active)
-            {
-                current_effects_grid.show ();
-            }
-            else
-            {
-                video_preview.show ();
-            }
-        }
-    }
-
-    /**
      * Toggle the display of the effect selector.
      *
      * @param effects whether effects should be enabled
      */
+    [CCode (instance_pos = -1)]
     public void set_effects (bool effects)
     {
         toggle_effects_selector (effects);
+        // FIXME: Set the mode action to be inverse sensitivity to effects.
     }
 
   /**
    * Change the selected effect, as a new one was selected.
    *
-   * @param tap unused
-   * @param source the actor (with associated effect) that was selected
+   * @param source unused
+   * @param event unused
+   * @return false, to allow further event processing
    */
-  public void on_selected_effect_change (Clutter.TapAction tap,
-                                         Clutter.Actor source)
+  public bool on_selected_effect_change (Clutter.Actor source,
+                                         Clutter.ButtonEvent event)
   {
     /* Disable the effects selector after selecting an effect. */
-    effects_toggle_button.set_active (false);
+    toggle_effects_selector(false);
 
     selected_effect = source.get_data ("effect");
     camera.set_effect (selected_effect);
     settings.set_string ("selected-effect", selected_effect.name);
+    // FIXME: Set the effects action to be inactive.
+    return false;
   }
 
-    /**
-     * Navigate back one page of effects.
-     */
-    private void on_effects_previous ()
+  /**
+   * Navigate back one page of effects.
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_prev_effects_page (Gtk.Action action)
+  {
+    if (current_effects_page != 0)
     {
-        if (is_previous_effects_page ())
-        {
-            activate_effects_page ((int)current_effects_page - 1);
-        }
+      activate_effects_page ((int)current_effects_page - 1);
     }
+  }
 
-    /**
-     * Navigate forward one page of effects.
-     */
-    private void on_effects_next ()
+  /**
+   * Navigate forward one page of effects.
+   *
+   * @param action the action that emitted the signal
+   */
+  [CCode (instance_pos = -1)]
+  public void on_next_effects_page (Gtk.Action action)
+  {
+    if (current_effects_page != (effects_manager.effects.length () / EFFECTS_PER_PAGE))
     {
-        if (is_next_effects_page ())
-        {
-            activate_effects_page ((int)current_effects_page + 1);
-        }
+      activate_effects_page ((int)current_effects_page + 1);
     }
+  }
 
   /**
    * Switch to the supplied page of effects.
@@ -1009,17 +1094,12 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     current_effects_page = number;
     if (viewport_layout.get_children ().index (current_effects_grid) != -1)
     {
-      viewport_layout.remove_child (current_effects_grid);
+      viewport_layout.remove ((Clutter.Actor) current_effects_grid);
     }
     current_effects_grid = effects_grids.nth_data (number);
-    current_effects_grid.opacity = 0;
-    viewport_layout.add_child (current_effects_grid);
-    current_effects_grid.save_easing_state ();
-    current_effects_grid.set_easing_mode (Clutter.AnimationMode.LINEAR);
-    current_effects_grid.set_easing_duration (500);
-    current_effects_grid.opacity = 255;
-    current_effects_grid.restore_easing_state ();
-
+    current_effects_grid.set ("opacity", 0);
+    viewport_layout.add ((Clutter.Actor) current_effects_grid);
+    current_effects_grid.animate (Clutter.AnimationMode.LINEAR, 1000, "opacity", 255);
 
     uint i = 0;
     foreach (var effect in effects_manager.effects)
@@ -1029,7 +1109,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         {
             if (!effect.is_preview_connected ())
             {
-                Clutter.Actor texture = effect.get_data<Clutter.Actor> ("texture");
+                Clutter.Texture texture = effect.get_data<Clutter.Texture> ("texture");
                 camera.connect_effect_texture (effect, texture);
             }
             effect.enable_preview ();
@@ -1048,60 +1128,55 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     setup_effects_page_switch_sensitivity ();
   }
 
-    /**
-     * Control the sensitivity of the effects page navigation buttons.
-     */
-    private void setup_effects_page_switch_sensitivity ()
-    {
-        var effects_next = this.lookup_action ("effects-next") as SimpleAction;
-        var effects_previous = this.lookup_action ("effects-previous") as SimpleAction;
+  /**
+   * Control the sensitivity of the effects page navigation buttons.
+   */
+  private void setup_effects_page_switch_sensitivity ()
+  {
+    effects_page_prev_action.sensitive = (is_effects_selector_active && current_effects_page != 0);
+    effects_page_next_action.sensitive =
+      (is_effects_selector_active && current_effects_page != effects_manager.effects.length () / EFFECTS_PER_PAGE);
+  }
 
-        effects_next.set_enabled (is_effects_selector_active
-                                  && is_next_effects_page ());
-        effects_previous.set_enabled (is_effects_selector_active
-                                      && is_previous_effects_page ());
+  /**
+   * Toggle the visibility of the effects selector.
+   *
+   * @param active whether the selector should be active
+   */
+  private void toggle_effects_selector (bool active)
+  {
+    is_effects_selector_active = active;
+    if (active)
+    {
+      video_preview.hide ();
+
+      if (effects_grids.length () == 0)
+      {
+        error_layer.text = _("No effects found");
+        error_layer.show ();
+      }
+      else
+      {
+        current_effects_grid.show ();
+        activate_effects_page ((int)current_effects_page);
+      }
+    }
+    else
+    {
+      if (effects_grids.length () == 0)
+      {
+        error_layer.hide ();
+      }
+      else
+      {
+        current_effects_grid.hide ();
+      }
+      video_preview.show ();
     }
 
-    private bool is_next_effects_page ()
-    {
-        // Calculate the number of effects visible up to the current page.
-        return (current_effects_page + 1) * EFFECTS_PER_PAGE < effects_manager.effects.length ();
-    }
-
-    private bool is_previous_effects_page ()
-    {
-        return current_effects_page != 0;
-    }
-
-    /**
-     * Toggle the visibility of the effects selector.
-     *
-     * @param active whether the selector should be active
-     */
-    private void toggle_effects_selector (bool active)
-    {
-        is_effects_selector_active = active;
-
-        if (effects_grids.length () == 0)
-        {
-            show_error (active ? _("No effects found") : null);
-        }
-        else if (active)
-        {
-            video_preview.hide ();
-            current_effects_grid.show ();
-            activate_effects_page ((int)current_effects_page);
-        }
-        else
-        {
-            current_effects_grid.hide ();
-            video_preview.show ();
-        }
-
-        camera.toggle_effects_pipeline (active);
-        setup_effects_page_switch_sensitivity ();
-        update_header_bar_title ();
-    }
+    camera.toggle_effects_pipeline (active);
+    setup_effects_page_switch_sensitivity ();
+  }
 
   /**
    * Create the effects selector.
@@ -1114,7 +1189,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
       effects_manager.load_effects ();
 
       /* Must initialize effects_grids before returning, as it is dereferenced later, bug 654671. */
-      effects_grids = new List<Clutter.Actor> ();
+      effects_grids = new List<Clutter.Box> ();
 
       if (effects_manager.effects.length () == 0)
       {
@@ -1124,58 +1199,51 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
 
       foreach (var effect in effects_manager.effects)
       {
-          Clutter.GridLayout grid_layout = new GridLayout ();
-          var grid = new Clutter.Actor ();
-          grid.set_layout_manager (grid_layout);
+          Clutter.TableLayout table_layout = new TableLayout ();
+          Clutter.Box grid = new Clutter.Box (table_layout);
           effects_grids.append (grid);
-          grid_layout.set_column_spacing (10);
-          grid_layout.set_row_spacing (10);
+          table_layout.set_column_spacing (10);
+          table_layout.set_row_spacing (10);
       }
 
       uint i = 0;
       foreach (var effect in effects_manager.effects)
       {
-        Clutter.Actor texture = new Clutter.Actor ();
-        Clutter.BinLayout layout = new Clutter.BinLayout (Clutter.BinAlignment.CENTER,
-                                                          Clutter.BinAlignment.CENTER);
-        var box = new Clutter.Actor ();
-        box.set_layout_manager (layout);
+        Clutter.Texture   texture = new Clutter.Texture ();
+        Clutter.BinLayout layout  = new Clutter.BinLayout (Clutter.BinAlignment.CENTER,
+                                                           Clutter.BinAlignment.CENTER);
+        Clutter.Box       box  = new Clutter.Box (layout);
         Clutter.Text      text = new Clutter.Text ();
-        var rect = new Clutter.Actor ();
+        Clutter.Rectangle rect = new Clutter.Rectangle ();
 
         rect.opacity = 128;
-        rect.background_color = Clutter.Color.from_string ("black");
+        rect.color   = Clutter.Color.from_string ("black");
 
-        texture.content_gravity = Clutter.ContentGravity.RESIZE_ASPECT;
-        box.add_child (texture);
+        texture.keep_aspect_ratio = true;
+        box.pack ((Clutter.Actor) texture, null, null);
         box.reactive = true;
-        box.min_height = 40;
-        box.min_width = 50;
-        var tap = new Clutter.TapAction ();
-        box.add_action (tap);
-        tap.tap.connect (on_selected_effect_change);
         box.set_data ("effect", effect);
         effect.set_data ("texture", texture);
+
+        box.button_release_event.connect (on_selected_effect_change);
 
         text.text  = effect.name;
         text.color = Clutter.Color.from_string ("white");
 
         rect.height = text.height + 5;
-        rect.x_align = Clutter.ActorAlign.FILL;
-        rect.y_align = Clutter.ActorAlign.END;
-        rect.x_expand = true;
-        rect.y_expand = true;
-        box.add_child (rect);
+        box.pack ((Clutter.Actor) rect,
+                  "x-align", Clutter.BinAlignment.FILL,
+                  "y-align", Clutter.BinAlignment.END, null);
 
-        text.x_align = Clutter.ActorAlign.CENTER;
-        text.y_align = Clutter.ActorAlign.END;
-        text.x_expand = true;
-        text.y_expand = true;
-        box.add_child (text);
+        box.pack ((Clutter.Actor) text,
+                  "x-align", Clutter.BinAlignment.CENTER,
+                  "y-align", Clutter.BinAlignment.END, null);
 
-        var grid_layout = effects_grids.nth_data (i / EFFECTS_PER_PAGE).layout_manager as GridLayout;
-        grid_layout.attach (box, ((int)(i % EFFECTS_PER_PAGE)) % 3,
-                            ((int)(i % EFFECTS_PER_PAGE)) / 3, 1, 1);
+        Clutter.TableLayout table_layout = (Clutter.TableLayout) effects_grids.nth_data (i / EFFECTS_PER_PAGE).layout_manager;
+        table_layout.pack ((Clutter.Actor) box,
+                           ((int)(i % EFFECTS_PER_PAGE)) % 3,
+                           ((int)(i % EFFECTS_PER_PAGE)) / 3);
+        table_layout.set_expand (box, false, false);
 
         i++;
       }
@@ -1185,12 +1253,78 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
     }
   }
 
+  /**
+   * Toggle the sensitvity of the camera actions.
+   *
+   * @param active whether the camera actions should be sensitive
+   */
+  public void toggle_camera_actions_sensitivities (bool active)
+  {
+      is_camera_actions_sensitive = active;
+      if (active)
+      {
+          var keys = action_sensitivities.get_keys ();
+          foreach (var key in keys)
+          {
+              Gtk.Action action = gtk_builder.get_object (key) as Gtk.Action;
+              action.sensitive = action_sensitivities.get (key);
+          }
+      }
+      else
+      {
+          action_sensitivities = new HashTable<string, bool> (GLib.str_hash,
+                                                              GLib.direct_equal);
+          GLib.SList<weak GLib.Object> objects = gtk_builder.get_objects ();
+          foreach (GLib.Object obj in objects)
+          {
+              if (obj is Gtk.Action)
+              {
+                  Gtk.Action action = (Gtk.Action)obj;
+                  action_sensitivities.set (action.name, action.sensitive);
+              }
+          }
+
+          /* Keep only these actions sensitive. */
+          string [] active_actions = { "quit",
+                                       "help_contents",
+                                       "about",
+                                       "open",
+                                       "save_as",
+                                       "move_to_trash",
+                                       "delete",
+                                       "move_all_to_trash"};
+
+          /* Gross hack because Vala's `in` operator doesn't really work */
+          bool flag;
+          foreach (GLib.Object obj in objects)
+          {
+              flag = false;
+              if (obj is Gtk.Action)
+              {
+                  Gtk.Action action = (Gtk.Action)obj;
+                  foreach (string s in active_actions)
+                  {
+                      if (action.name == s)
+                      {
+                          flag = true;
+                      }
+                  }
+                  if (!flag)
+                      ((Gtk.Action)obj).sensitive = false;
+              }
+          }
+      }
+  }
+
     /**
      * Update the UI when the camera starts playing.
      */
     public void camera_state_change_playing ()
     {
-        show_error (null);
+        if (!is_camera_actions_sensitive)
+        {
+            toggle_camera_actions_sensitivities (true);
+        }
 
         Effect effect = effects_manager.get_effect (settings.get_string ("selected-effect"));
         if (effect != null)
@@ -1199,96 +1333,152 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         }
     }
 
-    /**
-     * Report an error as the camerabin switched to the NULL state.
-     */
-    public void camera_state_change_null ()
+  /**
+   * Set wide mode active when started from the command line (and do not change
+   * the GSetting).
+   */
+  public void set_startup_wide_mode ()
+  {
+    if (is_wide_mode)
     {
-        cancel_running_action ();
-
-        if (!error_layer.visible)
-        {
-            show_error (_("There was an error playing video from the webcam"));
-        }
+      /* Cheese was already in wide mode, avoid setting it again. */
+      return;
     }
+
+    is_command_line_startup = true;
+    wide_mode_action.set_active (true);
+    is_command_line_startup = false;
+  }
+
+  /**
+   * Set fullscreen mode active when started from the command line (and do not
+   * change the GSetting).
+   */
+  public void set_startup_fullscreen_mode ()
+  {
+    is_command_line_startup = true;
+    set_fullscreen (true);
+    is_command_line_startup = false;
+  }
 
   /**
    * Load the UI from the GtkBuilder description.
    */
   public void setup_ui ()
   {
-        clutter_builder = new Clutter.Script ();
+    gtk_builder     = new Gtk.Builder ();
+    clutter_builder = new Clutter.Script ();
     fileutil        = new FileUtil ();
     flash           = new Flash (this);
     settings        = new GLib.Settings ("org.gnome.Cheese");
 
-        var menu = application.get_menu_by_id ("thumbview-menu");
-        thumbnail_popup = new Gtk.Menu.from_model (menu);
+    try {
+      gtk_builder.add_from_file (GLib.Path.build_filename (Config.PACKAGE_DATADIR, "cheese-actions.ui"));
+      gtk_builder.add_from_file (GLib.Path.build_filename (Config.PACKAGE_DATADIR, "cheese-main-window.ui"));
+      gtk_builder.connect_signals (this);
 
-        this.add_action_entries (actions, this);
+      clutter_builder.load_from_file (GLib.Path.build_filename (Config.PACKAGE_DATADIR, "cheese-viewport.json"));
+    } catch (Error err)
+    {
+      error ("Error: %s", err.message);
+    }
 
-        try
-        {
-            clutter_builder.load_from_resource ("/org/gnome/Cheese/cheese-viewport.json");
-        }
-        catch (Error err)
-        {
-            error ("Error: %s", err.message);
-        }
+    main_vbox                         = gtk_builder.get_object ("mainbox_normal") as Gtk.Grid;
+    thumbnails                        = gtk_builder.get_object ("thumbnails") as Gtk.Widget;
+    viewport_widget                   = gtk_builder.get_object ("viewport") as GtkClutter.Embed;
+    viewport                          = viewport_widget.get_stage () as Clutter.Stage;
+    thumbnails_right                  = gtk_builder.get_object ("thumbnails_right") as Gtk.Alignment;
+    thumbnails_bottom                 = gtk_builder.get_object ("thumbnails_bottom") as Gtk.Alignment;
+    leave_fullscreen_button_container = gtk_builder.get_object ("leave_fullscreen_button_bin") as Gtk.Grid;
+    photo_toggle_button               = gtk_builder.get_object ("photo_toggle_button") as Gtk.ToggleButton;
+    video_toggle_button               = gtk_builder.get_object ("video_toggle_button") as Gtk.ToggleButton;
+    burst_toggle_button               = gtk_builder.get_object ("burst_toggle_button") as Gtk.ToggleButton;
+    take_action_button                = gtk_builder.get_object ("take_action_button") as Gtk.Button;
+    take_action_button_label          = gtk_builder.get_object ("take_action_button_internal_label") as Gtk.Label;
+    take_action_button_image          = gtk_builder.get_object ("take_action_button_internal_image") as Gtk.Image;
+    effects_toggle_button             = gtk_builder.get_object ("effects_toggle_button") as Gtk.ToggleButton;
+    leave_fullscreen_button           = gtk_builder.get_object ("leave_fullscreen_button") as Gtk.Button;
+    buttons_area = gtk_builder.get_object ("buttons_area") as Gtk.Grid;
+    thumbnail_popup                   = gtk_builder.get_object ("thumbnail_popup") as Gtk.Menu;
 
-        viewport = viewport_widget.get_stage () as Clutter.Stage;
+    countdown_action         = gtk_builder.get_object ("countdown") as Gtk.Action;
+    wide_mode_action         = gtk_builder.get_object ("wide_mode") as Gtk.ToggleAction;
+    effects_page_next_action = gtk_builder.get_object ("effects_page_next") as Gtk.Action;
+    effects_page_prev_action = gtk_builder.get_object ("effects_page_prev") as Gtk.Action;
+    share_action             = gtk_builder.get_object ("share") as Gtk.Action;
 
-        video_preview = clutter_builder.get_object ("video_preview") as Clutter.Actor;
-        viewport_layout = clutter_builder.get_object ("viewport_layout") as Clutter.Actor;
-        viewport_layout_manager = clutter_builder.get_object ("viewport_layout_manager") as Clutter.BinLayout;
-        countdown_layer = clutter_builder.get_object ("countdown_layer") as Clutter.Text;
-        background_layer = clutter_builder.get_object ("background") as Clutter.Actor;
-        error_layer = clutter_builder.get_object ("error_layer") as Clutter.Text;
-        timeout_layer = clutter_builder.get_object ("timeout_layer") as Clutter.Text;
+    shareable_media = new Cheese.ShareableMedia (this);
 
+    /* Array contains all 'buttons', for easier manipulation
+     * IMPORTANT: IF ANOTHER BUTTON IS ADDED UNDER THE VIEWPORT, ADD IT TO THIS ARRAY */
+    buttons = {photo_toggle_button,
+               video_toggle_button,
+               burst_toggle_button,
+               take_action_button,
+               effects_toggle_button,
+               leave_fullscreen_button};
+
+    video_preview           = clutter_builder.get_object ("video_preview") as Clutter.Texture;
+    viewport_layout         = clutter_builder.get_object ("viewport_layout") as Clutter.Box;
+    viewport_layout_manager = clutter_builder.get_object ("viewport_layout_manager") as Clutter.BinLayout;
+    countdown_layer         = clutter_builder.get_object ("countdown_layer") as Clutter.Text;
+    background_layer        = clutter_builder.get_object ("background") as Clutter.Rectangle;
+    error_layer             = clutter_builder.get_object ("error_layer") as Clutter.Text;
+    timeout_layer           = clutter_builder.get_object ("timeout_layer") as Clutter.Text;
+
+    video_preview.keep_aspect_ratio = true;
     video_preview.request_mode      = Clutter.RequestMode.HEIGHT_FOR_WIDTH;
-    viewport.add_child (background_layer);
+    viewport.add_actor (background_layer);
     viewport_layout.set_layout_manager (viewport_layout_manager);
 
-    viewport.add_child (viewport_layout);
-    viewport.add_child (timeout_layer);
+    viewport.add_actor (viewport_layout);
+    viewport.add_actor (timeout_layer);
 
     viewport.allocation_changed.connect (on_stage_resize);
 
     thumb_view = new Cheese.ThumbView ();
     thumb_nav  = new Eog.ThumbNav (thumb_view, false);
-        thumbnail_popup.attach_to_widget (thumb_view, null);
-        thumb_view.popup_menu.connect (on_thumb_view_popup_menu);
 
-        Gtk.CssProvider css;
-        try
-        {
-            var file = File.new_for_uri ("resource:///org/gnome/Cheese/cheese.css");
-            css = new Gtk.CssProvider ();
-            css.load_from_file (file);
-        }
-        catch (Error e)
-        {
-            // TODO: Use parsing-error signal.
-            error ("Error parsing CSS: %s\n", e.message);
-        }
+    Gtk.CssProvider css;
+    try
+    {
+      css = new Gtk.CssProvider();
+      css.load_from_path (GLib.Path.build_filename (Config.PACKAGE_DATADIR, "cheese.css"));
+    }
+    catch (Error e)
+    {
+      stdout.printf ("Error: %s\n", e.message);
+    }
 
     Gtk.StyleContext.add_provider_for_screen (screen, css, STYLE_PROVIDER_PRIORITY_USER);
 
-    thumb_view.button_press_event.connect (on_thumbnail_button_press_event);
+    thumb_view.button_press_event.connect (on_thumbnail_mouse_button_press);
+
+    this.add (main_vbox);
+    main_vbox.show_all ();
 
     /* needed for the sizing tricks in set_wide_mode (allocation is 0
      * if the widget is not realized */
     viewport_widget.realize ();
 
-    set_wide_mode (false);
+    /* call set_active instead of our set_wide_mode so that the toggle
+     * action state is updated */
+    wide_mode_action.set_active (settings.get_boolean ("wide-mode"));
 
+    /* apparently set_active doesn't emit toggled nothing has
+     * changed, do it manually */
+    if (!settings.get_boolean ("wide-mode"))
+      wide_mode_action.toggled ();
+
+    set_mode (MediaMode.PHOTO);
     setup_effects_selector ();
+
+    toggle_camera_actions_sensitivities (false);
 
     this.key_release_event.connect (on_key_release);
   }
 
-    public Clutter.Actor get_video_preview ()
+    public Clutter.Texture get_video_preview ()
     {
         return video_preview;
     }
@@ -1312,54 +1502,30 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
         current_mode = mode;
 
         set_resolution (current_mode);
-        update_header_bar_title ();
+
         timeout_layer.hide ();
 
         switch (current_mode)
         {
             case MediaMode.PHOTO:
-                take_action_button.tooltip_text = _("Take a photo using a webcam");
+                take_action_button_label.label = "<b>" + _("_Take a Photo") + "</b>";
+                take_action_button.tooltip_text = _("Take a photo");
                 break;
 
             case MediaMode.VIDEO:
-                take_action_button.tooltip_text = _("Record a video using a webcam");
+                take_action_button_label.label = "<b>" + _("_Record a Video") + "</b>";
+                take_action_button.tooltip_text = _("Record a video");
                 timeout_layer.text = "00:00:00";
                 timeout_layer.show ();
                 break;
 
             case MediaMode.BURST:
-                take_action_button.tooltip_text = _("Take multiple photos using a webcam");
+                take_action_button_label.label = "<b>" + _("Take _Multiple Photos") + "</b>";
+                take_action_button.tooltip_text = _("Take multiple photos");
                 break;
         }
     }
 
-     /**
-     * Set the header bar title.
-     */
-    private void update_header_bar_title ()
-    {
-        if (is_effects_selector_active)
-        {
-            set_window_title (_("Choose an Effect"));
-        }
-        else
-        {
-            switch (current_mode)
-            {
-                case MediaMode.PHOTO:
-                    set_window_title (_("Take a Photo"));
-                    break;
-
-                case MediaMode.VIDEO:
-                    set_window_title (_("Record a Video"));
-                    break;
-
-                case MediaMode.BURST:
-                    set_window_title (_("Take Multiple Photos"));
-                    break;
-            }
-        }
-    }
     /**
      * Set the camera.
      *

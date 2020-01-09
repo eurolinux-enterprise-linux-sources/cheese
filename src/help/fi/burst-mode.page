@@ -5,90 +5,63 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email its:translate="no">yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
-    <credit type="author copyright editor">
+    <credit type="editor">
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
-      <years>2011, 2013</years>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Capture several photos with one button press in <gui>Burst</gui> mode. Change your pose in between each shot!</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sami Jaktholm</mal:name>
-      <mal:email>sjakthol@outlook.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
+    <desc><gui>Burst mode</gui> takes several photos rapidly. Change your pose
+    in between each shot!</desc>
   </info>
 
-  <title>Take photos in quick succession</title>
+  <title>Take multiple photos in quick succession</title>
 
-  <p><gui>Sarjakuvatila</gui> mahdollistaa useiden kuvien ottamisen automaattisesti. Tämä on erityisen hauskaa, jos kuvien välillä muuttaa poseerausta! <gui>Sarjakuvatilan</gui> voi ottaa käyttöön seuraavasti:</p>
+  <p>You can use <gui>Burst mode</gui> to automatically take several photos in
+  one go, with a short pause between shots. It is particularly fun if you
+  change your pose in between photos! To use <gui>Burst mode</gui>:</p>
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Burst</gui> mode. If you are, the
-      <gui style="button">Burst</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Click <gui>Burst</gui>, the <gui>Take a Photo</gui> button will now say
+      <gui>Take Multiple Photos</gui>.</p>
+      <p>Alternatively, click <guiseq><gui>Cheese</gui><gui>Burst</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Take multiple photos using a
-      webcam</gui> button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to start taking photos.</p>
-      <p>Oletuksena otetaan neljä kuvaa yhden sekunnin välein.</p>
-    </item>
-    <item>
-      <p>To stop recording, press the same button again. You can also press the
-      <key>Esc</key> or <key>Space</key> key to stop recording.</p>
+      <p>Click <gui>Take Multiple Photos</gui> or press the
+      <key>spacebar</key>.</p>
+      <p>By default, four photos will be taken, with a three second delay and a
+      countdown between photos.</p>
     </item>
   </steps>
+
+  <p>Press <key>Esc</key> if you want to stop <app>Cheese</app> from taking
+  photos at any point.</p>
 
 <section id="burst-preferences">
-  <title><gui>Sarjakuvatilan</gui> asetusten muuttaminen</title>
-
-  <p>Sarjakuvatilassa otettavien kuvien määrää ja niiden ottamisen väliin jäävää aikaa voi muuttaa:</p>
-
+  <title>Change how many photos are taken and the delay between them</title>
+  <p>You can change how many photos will be taken in each burst and the length
+  of the delay between the photos:</p>
   <steps>
     <item>
-      <p>Valitse <guiseq><gui style="menu">Muikku</gui><gui style="menuitem">Asetukset</gui><gui style="tab">Ota kuva</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Muuta asetuksia:</p>
-      <terms>
-        <item>
-          <title>Lähtölaskenta</title>
-          <p>Suorita kolmesta alkava lähtölaskenta ennen kuvan ottamista.</p>
-        </item>
-        <item>
-          <title>Laukaise salama</title>
-          <p>Ruutu välähtää, kun kuva otetaan.</p>
-        </item>
-        <item>
-          <title>Valokuvien määrä</title>
-          <p>Sarjakuvatilassa yhdellä kertaa otettavien valokuvien määrä.</p>
-        </item>
-        <item>
-          <title>Viive valokuvien välissä (sekuntia)</title>
-          <p>The delay between two photos. If you have the <gui>Countdown</gui>
-          enabled, then this delay needs to be set to over four seconds for it
-          to have any effect.</p>
-          <!--<p>The delay between the last photo and the start of the next
-          countdown. If <gui>Countdown</gui> is disabled, this is the delay
-          between photos.</p>-->
-        </item>
-      </terms>
+      <p>Change the options under <gui>Burst mode</gui> and click <gui>Close</gui>.</p>
     </item>
   </steps>
 
+  <note>
+    <p>The delay is between the last photo taken and the start of the countdown
+    for the next photo, not between two photos.</p>
+  </note>
 </section>
 
 </page>

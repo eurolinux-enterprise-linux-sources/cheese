@@ -3,9 +3,8 @@
 
   <info>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="candidate"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,33 +16,32 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <desc>The resolution of a video or photo determines how much detail you can
+    see in it, changing it will affect the file size.</desc>
 
-    <desc>De resolutie van een video of foto bepaalt hoeveel details u erin kunt zien. Het wijzigen hiervan zal invloed hebben op de bestandsgrootte.</desc>
-
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
   </info>
 
-  <title>Verander de opname-resolutie van uw webcam</title>
+  <title>Change the capture resolution of your webcam</title>
 
-  <p>Een hogere resolutie levert meestal foto's van betere kwaliteit op, maar foto's en video's met een hogere resolutie nemen meer ruimte op uw harde schijf in. Vooral video's met een hoge resolutie nemen veel ruimte in.</p>
+  <p>Higher resolution generally means better quality images, but photos and
+  videos with higher resolution take up more space on your hard disk. High
+  resolution videos, in particular, take up a lot of space.</p>
 
-  <p>Als u wilt dat uw foto's minder schijfruimte innemen, verminder dan de resolutie van uw webcam. Als u foto's met hogere kwaliteit wilt, verhoog dan de resolutie. Om de webcam-resolutie te wijzigen:</p>
+  <p>If you want your images to take up less disk space, reduce the resolution
+  of your webcam. If you want better quality images, increase the resolution. To
+  change the webcam resolution:</p>
 
   <steps>
     <item>
-      <p>Selecteer <guiseq><gui>Cheese</gui><gui>Voorkeuren</gui><gui>Webcam</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Kies een andere resolutie uit de keuzelijst. Sommige webcams laten slechts één resolutie toe, dus misschien heeft u geen keuze.</p>
+      <p>Choose a different resolution from the drop-down list. Some webcams
+      only support one resolution, so you may not have a choice.</p>
     </item>
     <item>
-      <p>Klip op <gui>Sluiten</gui>.</p>
+      <p>Press <gui>Close</gui>.</p>
     </item>
   </steps>
 

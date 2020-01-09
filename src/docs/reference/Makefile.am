@@ -54,7 +54,8 @@ IGNORE_HFILES= \
 	totem-aspect-frame.h \
 	cheese-enums.h \
 	cheese-widget-private.h \
-	um-crop-area.h
+	um-crop-area.h \
+	cheese-marshal.h
 
 # Images to copy into HTML directory.
 # e.g. HTML_IMAGES=$(top_srcdir)/gtk/stock-icons/stock_about_24.png
@@ -87,6 +88,7 @@ include $(top_srcdir)/gtk-doc.make
 # e.g. EXTRA_DIST += version.xml.in
 
 if ENABLE_GTK_DOC
+TESTS_ENVIRONMENT = cd $(builddir) &&
 TESTS = $(GTKDOC_CHECK)
 endif
 

@@ -1,256 +1,78 @@
 # translation of cheese-help.master.po to Español
 # Jorge Gonzalez <jorgegonz@svn.gnome.org>, 2009.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2017.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: cheese-help.master\n"
-"POT-Creation-Date: 2017-06-28 17:20+0000\n"
-"PO-Revision-Date: 2017-07-26 09:58+0200\n"
+"POT-Creation-Date: 2013-04-15 21:41+0000\n"
+"PO-Revision-Date: 2013-04-18 13:12+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: es <gnome-es-list@gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.6\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011 - 2017\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2011"
 
-#. (itstool) path: credit/name
-#: C/burst-mode.page:14 C/effects-apply.page:13 C/index.page:12
-#: C/introduction.page:15 C/photo-delete.page:13 C/photo-save.page:13
-#: C/photo-take.page:19 C/photo-view.page:13 C/pref-countdown.page:14
-#: C/pref-flash.page:14 C/pref-image-properties.page:15
-#: C/pref-resolution.page:13 C/video-record.page:14
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:25(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/cheese.png' md5='e801510f287b3db068beb2daf8989124'"
+msgstr ""
+"external ref='figures/cheese.png' md5='e801510f287b3db068beb2daf8989124'"
+
+#: C/index.page:9(credit/name) C/burst-mode.page:13(credit/name)
+#: C/effects-apply.page:9(credit/name) C/introduction.page:14(credit/name)
+#: C/photo-delete.page:10(credit/name) C/photo-save.page:10(credit/name)
+#: C/photo-take.page:18(credit/name) C/photo-view.page:10(credit/name)
+#: C/pref-countdown.page:13(credit/name) C/pref-flash.page:13(credit/name)
+#: C/pref-image-properties.page:14(credit/name)
+#: C/pref-resolution.page:12(credit/name) C/video-record.page:13(credit/name)
 msgid "Julita Inca"
 msgstr "Julita Inca"
 
-#. (itstool) path: credit/years
-#: C/burst-mode.page:16 C/effects-apply.page:15 C/index.page:14
-#: C/introduction.page:17 C/photo-delete.page:15 C/photo-save.page:15
-#: C/photo-take.page:21 C/photo-view.page:15 C/pref-countdown.page:16
-#: C/pref-flash.page:16 C/pref-image-properties.page:17
-#: C/pref-resolution.page:15 C/video-record.page:16
+#: C/index.page:11(credit/years) C/burst-mode.page:15(credit/years)
+#: C/effects-apply.page:11(credit/years) C/introduction.page:16(credit/years)
+#: C/photo-delete.page:12(credit/years) C/photo-save.page:12(credit/years)
+#: C/photo-take.page:20(credit/years) C/photo-view.page:12(credit/years)
+#: C/pref-countdown.page:15(credit/years) C/pref-flash.page:15(credit/years)
+#: C/pref-image-properties.page:16(credit/years)
+#: C/pref-resolution.page:14(credit/years)
+#: C/video-record.page:15(credit/years)
 msgid "2011"
 msgstr "2011"
 
-#. (itstool) path: credit/name
-#: C/burst-mode.page:19 C/effects-apply.page:18 C/index.page:17
-#: C/introduction.page:20 C/photo-delete.page:18 C/photo-save.page:18
-#: C/photo-take.page:24 C/photo-view.page:18 C/pref-countdown.page:19
-#: C/pref-flash.page:19 C/pref-fullscreen.page:12
-#: C/pref-image-properties.page:20 C/pref-resolution.page:18
-#: C/video-record.page:19
+#: C/index.page:15(credit/name) C/burst-mode.page:18(credit/name)
+#: C/effects-apply.page:14(credit/name) C/introduction.page:19(credit/name)
+#: C/photo-delete.page:15(credit/name) C/photo-save.page:15(credit/name)
+#: C/photo-take.page:23(credit/name) C/photo-view.page:15(credit/name)
+#: C/pref-countdown.page:18(credit/name) C/pref-flash.page:18(credit/name)
+#: C/pref-fullscreen.page:9(credit/name)
+#: C/pref-image-properties.page:19(credit/name)
+#: C/pref-resolution.page:17(credit/name) C/video-record.page:18(credit/name)
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
-#. (itstool) path: credit/years
-#: C/burst-mode.page:21
-msgid "2011, 2013"
-msgstr "2011, 2013"
-
-#. (itstool) path: info/desc
-#: C/burst-mode.page:26
-msgid ""
-"Capture several photos with one button press in <gui>Burst</gui> mode. "
-"Change your pose in between each shot!"
-msgstr ""
-"Haga varias fotos pulsando sólo un botón en modo <gui>Ráfaga</gui>. Cambie "
-"su postura entre ellas."
-
-#. (itstool) path: page/title
-#: C/burst-mode.page:29
-msgid "Take photos in quick succession"
-msgstr "Hacer fotos en una rápida sucesión"
-
-#. (itstool) path: page/p
-#: C/burst-mode.page:31
-msgid ""
-"Use <gui>Burst</gui> mode to automatically take several photos in a row. It "
-"is particularly fun if you change your pose in between photos! To use "
-"<gui>Burst</gui> mode:"
-msgstr ""
-"Puede usar el modo <gui>Ráfaga</gui> para tomar automáticamente varias fotos "
-"de una vez. Es particularmente divertido si cambia su pose entre las fotos. "
-"Para usar el modo <gui>Ráfaga</gui>:"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:37
-msgid ""
-"Make sure that you are in <gui>Burst</gui> mode. If you are, the <gui style="
-"\"button\">Burst</gui> button will be selected on the left side of the "
-"screen."
-msgstr ""
-"Asegúrese de que está en modo <gui>Ráfaga</gui>. Si lo está, el botón <gui "
-"style=\"button\">Ráfaga</gui> estará seleccionado en la parte izquierda de "
-"la pantalla."
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:42
-msgid ""
-"Click the <gui style=\"button\">Take multiple photos using a webcam</gui> "
-"button in the middle of the bottom panel, or press the <key>Space</key> key, "
-"to start taking photos."
-msgstr ""
-"Pulse el botón <gui style=\"button\">Tomar múltiples fotos usando una cámara "
-"web</gui> en el medio del panel inferior o pulse la tecla <key>Espacio</key> "
-"para empezar a hacer las fotos."
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:45
-msgid ""
-"By default, four photos will be taken, with a one second delay and a "
-"countdown between photos."
-msgstr ""
-"Se tomarán cuatro fotos de forma predeterminada, con un retardo de un "
-"segundo entre cada foto."
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:49 C/video-record.page:45
-msgid ""
-"To stop recording, press the same button again. You can also press the "
-"<key>Esc</key> or <key>Space</key> key to stop recording."
-msgstr ""
-"Para detener la grabación, pulse el mismo botón otra vez. También puede "
-"pulsar las teclas <key>Esc</key> o <key>Space</key> para detener la "
-"grabación."
-
-#. (itstool) path: section/title
-#: C/burst-mode.page:55
-msgid "Change <gui>Burst</gui> preferences"
-msgstr "Cambiar las preferencias de la <gui>Ráfaga</gui>"
-
-#. (itstool) path: section/p
-#: C/burst-mode.page:57
-msgid ""
-"You can change how many photos will be taken in each burst and the length of "
-"the delay between the photos:"
-msgstr ""
-"Puede cambiar cúantas fotos se toman un cada ráfaga y el tiempo de retardo "
-"entre las fotos:"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:62
-msgid ""
-"Select <guiseq><gui style=\"menu\">Cheese</gui><gui style=\"menuitem"
-"\">Preferences</gui><gui style=\"tab\">Capture</gui></guiseq>."
-msgstr ""
-"Seleccione <guiseq><gui style=\"menu\">Cheese</gui><gui style=\"menuitem"
-"\">Preferencias</gui><gui style=\"tab\">Capturar</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:66
-msgid "Edit the preference settings:"
-msgstr "Editar la configuración de las preferencias:"
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:69
-msgid "Countdown"
-msgstr "Cuenta atrás"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:70
-msgid "Countdown from three before the photo is taken."
-msgstr "Cuenta atrás antes de hacer la foto."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:73
-msgid "Fire flash"
-msgstr "Disparar flash"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:74
-msgid "Your screen will flash when a photo is taken."
-msgstr "Su pantalla parpadeará cuando se tome una foto."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:77
-msgid "Number of photos"
-msgstr "Número de fotos"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:78
-msgid "The number of photos that will be taken in a single burst."
-msgstr "El número de fotos que se harán en una única ráfaga."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:81
-msgid "Delay between photos (seconds)"
-msgstr "Retardo entre fotos (segundos)"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:82
-msgid ""
-"The delay between two photos. If you have the <gui>Countdown</gui> enabled, "
-"then this delay needs to be set to over four seconds for it to have any "
-"effect."
-msgstr ""
-"El retardo entre dos fotos. Si tiene activada la <gui>Cuenta atrás</gui> el "
-"retardo se debe configurar por encima de 4 segundos para que haga efecto."
-
-#. (itstool) path: info/desc
-#: C/effects-apply.page:24
-msgid ""
-"Add fun effects to your photos and videos, like turning yourself green or "
-"distorting the picture like a funhouse mirror."
-msgstr ""
-"Y efectos divertidos a sus fotos y vídeos, como volverse verde o "
-"distorsionar la imagen como un espejo de feria."
-
-#. (itstool) path: page/title
-#: C/effects-apply.page:28
-msgid "Apply effects to photos and videos"
-msgstr "Aplicar efectos a fotos y vídeos"
-
-#. (itstool) path: page/p
-#: C/effects-apply.page:30
-msgid "You can apply fun, interesting effects to your photos and videos:"
-msgstr "Puede aplicar efectos interesantes y divertidos a sus fotos y vídeos:"
-
-#. (itstool) path: item/p
-#: C/effects-apply.page:34
-msgid "Click <gui style=\"button\">Effects</gui>."
-msgstr "Pulse <gui style=\"button\">Efectos</gui>."
-
-#. (itstool) path: item/p
-#: C/effects-apply.page:37
-msgid ""
-"Select the effect you want to use by clicking one of the options or select "
-"<gui>No Effect</gui> if you don't want to use one."
-msgstr ""
-"Seleccione el efecto que quiere usar pulsando una de las opciones o "
-"seleccione <gui>Sin efecto</gui> si no quiere usar ninguno."
-
-#. (itstool) path: page/p
-#: C/effects-apply.page:42
-msgid ""
-"<app>Cheese</app> offers 35 effects, of which only 9 are shown on the first "
-"page. Click the back and forward arrows next to <gui style=\"button"
-"\">Effects</gui> to navigate to the other pages."
-msgstr ""
-"<app>Cheese</app> ofrece 35 efectos, de los que sólo 9 se muestran en esta "
-"página. Pulse en las flechas que hay junto a <gui style=\"button\">Efectos</"
-"gui> para navegar por el resto de páginas."
-
-#. (itstool) path: figure/title
-#: C/effects-apply.page:47
-msgid ""
-"Some of the effects, from left to right: Sepia, Shagadelic, Sobel (first "
-"row), Waveform, X-Ray, Warp (second row)"
-msgstr ""
-"Algunos de los efectos, de izquierda a derecha: sepia, shagadelic, sobel "
-"(primera columna), forma de onda, rayos X, warp (segunda fila)"
-
-#. (itstool) path: info/desc
-#: C/index.page:23
+#: C/index.page:19(info/desc)
 msgid ""
 "Cheese lets you take photos and videos using your webcam. You can even add "
 "special effects!"
@@ -258,38 +80,211 @@ msgstr ""
 "Cheese le permite hacer fotografías y grabar vídeos usando su cámara web. "
 "También puede añadir efectos especiales."
 
-#. (itstool) path: page/title
-#: C/index.page:28
-msgid "<_:media-1/> Cheese Webcam Application"
-msgstr "<_:media-1/> Aplicación de cámara web Cheese"
+#: C/index.page:24(page/title)
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/cheese.png\" width="
+"\"40\" height=\"40\"> </media> Cheese Webcam Application"
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/cheese.png\" width="
+"\"40\" height=\"40\"> </media> Fotomatón de cámara web Cheese"
 
-#. (itstool) path: section/title
-#: C/index.page:33
+#: C/index.page:31(section/title)
 msgid "Main features"
 msgstr "Características principales"
 
-#. (itstool) path: section/title
-#: C/index.page:37
+#: C/index.page:35(section/title)
 msgid "Preferences"
 msgstr "Preferencias"
 
-#. (itstool) path: section/title
-#: C/index.page:41
+#: C/index.page:39(section/title)
 msgid "Common problems and questions"
 msgstr "Problemas comunes y preguntas"
 
-#. (itstool) path: info/desc
-#: C/introduction.page:26
+#: C/burst-mode.page:22(info/desc)
+msgid ""
+"<gui>Burst mode</gui> takes several photos rapidly. Change your pose in "
+"between each shot!"
+msgstr ""
+"El <gui>Modo ráfaga</gui> toma varias fotos seguidas. Cambie su postura "
+"entre ellas."
+
+#: C/burst-mode.page:26(page/title)
+msgid "Take multiple photos in quick succession"
+msgstr "Tomar varias fotos muy seguidas"
+
+#: C/burst-mode.page:28(page/p)
+msgid ""
+"You can use <gui>Burst mode</gui> to automatically take several photos in "
+"one go, with a short pause between shots. It is particularly fun if you "
+"change your pose in between photos! To use <gui>Burst mode</gui>:"
+msgstr ""
+"Puede usar el <gui>Modo ráfaga</gui> para tomar automáticamente varias fotos "
+"de una vez, con una pequeña pausa entre cada toma. Es particularmente "
+"divertido si cambiar su pose entre las fotos. Para usar el <gui>Modo ráfaga</"
+"gui>:"
+
+#: C/burst-mode.page:34(item/p)
+msgid ""
+"Click <gui>Burst</gui>, the <gui>Take a Photo</gui> button will now say "
+"<gui>Take Multiple Photos</gui>."
+msgstr ""
+"Pulse <gui>Ráfaga</gui>, el botón <gui>Tomar una foto</gui> cambiará a "
+"<gui>Tomar múltiples fotos</gui>."
+
+#: C/burst-mode.page:36(item/p)
+msgid ""
+"Alternatively, click <guiseq><gui>Cheese</gui><gui>Burst</gui></guiseq>."
+msgstr ""
+"Alternativamente, pulse <guiseq><gui>Cheese</gui><gui>Ráfaga</gui></guiseq>."
+
+#: C/burst-mode.page:39(item/p)
+msgid "Click <gui>Take Multiple Photos</gui> or press the <key>spacebar</key>."
+msgstr ""
+"Pulse <gui>Tomar múltiples fotos</gui> o pulse la <key>barra espaciadora</"
+"key>."
+
+#: C/burst-mode.page:41(item/p)
+msgid ""
+"By default, four photos will be taken, with a three second delay and a "
+"countdown between photos."
+msgstr ""
+"Se tomarán cuatro fotos de forma predeterminada, con un retardo de tres "
+"segundos entre cada cuenta atrás que verá antes de que se tome cada foto."
+
+#: C/burst-mode.page:46(page/p)
+msgid ""
+"Press <key>Esc</key> if you want to stop <app>Cheese</app> from taking "
+"photos at any point."
+msgstr ""
+"En cualquier momento, pulse <key>Esc</key> si quiere que <app>Cheese</app> "
+"deje de tomar fotos."
+
+#: C/burst-mode.page:50(section/title)
+msgid "Change how many photos are taken and the delay between them"
+msgstr "Cambiar cuántas fotos se toman y el retardo entre ellas"
+
+#: C/burst-mode.page:51(section/p)
+msgid ""
+"You can change how many photos will be taken in each burst and the length of "
+"the delay between the photos:"
+msgstr ""
+"Puede cambiar cúantas fotos se toman un cada ráfaga y el tiempo de retardo "
+"entre las fotos:"
+
+#: C/burst-mode.page:55(item/p)
+#| msgid "Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq>"
+msgid ""
+"Select <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></"
+"guiseq>."
+msgstr ""
+"Seleccione <guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Capturar</"
+"gui></guiseq>."
+
+#: C/burst-mode.page:59(item/p)
+msgid ""
+"Change the options under <gui>Burst mode</gui> and click <gui>Close</gui>."
+msgstr ""
+"Cambiae las opciones bajo <gui>Modo ráfaga</gui> y pulse <gui>Cerrar</gui>."
+
+#: C/burst-mode.page:64(note/p)
+msgid ""
+"The delay is between the last photo taken and the start of the countdown for "
+"the next photo, not between two photos."
+msgstr ""
+"El retardo es entre la última foto tomada y el comienzo de la cuenta atrás "
+"para la siguiente foto, no entre las dos fotos."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/effects-apply.page:45(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/effects.png' md5='27139b3d1500c8caac548fab39e05c28'"
+msgstr ""
+"external ref='figures/effects.png' md5='27139b3d1500c8caac548fab39e05c28'"
+
+#: C/effects-apply.page:18(info/desc)
+msgid ""
+"Add fun effects to your photos and videos, like turning yourself green or "
+"distorting the picture like a funhouse mirror."
+msgstr ""
+"Y efectos divertidos a sus fotos y vídeos, como volverse verde o "
+"distorsionar la imagen como un espejo de feria."
+
+#: C/effects-apply.page:22(page/title)
+msgid "Apply effects to photos and videos"
+msgstr "Aplicar efectos a fotos y vídeos"
+
+#: C/effects-apply.page:24(page/p)
+msgid "You can apply fun, interesting effects to your photos and videos:"
+msgstr "Puede aplicar efectos interesantes y divertidos a sus fotos y vídeos:"
+
+#: C/effects-apply.page:26(item/p)
+msgid "Click <gui>Effects</gui>."
+msgstr "Pulse <gui>Efectos</gui>."
+
+#: C/effects-apply.page:28(item/p)
+msgid "Select the effect you want to use by clicking one of the options."
+msgstr "Seleccione el efecto que quiere usar pulsando una de las opciones."
+
+#: C/effects-apply.page:29(item/p)
+msgid ""
+"If you like, you can select multiple effects. For example, if you select "
+"<gui>Hulk</gui> and <gui>Kung-Fu</gui>, the video will be altered to have a "
+"green shade and will show a repeated image."
+msgstr ""
+"Si quiere, puede seleccionar múltiples efectos. Por ejemplo, si selecciona "
+"<gui>Hulk</gui> y <gui>Kung-Fu</gui>, el vídeo se alterará para tener una "
+"sombra verde y mostrará una imagen repetida."
+
+#: C/effects-apply.page:34(item/p)
+msgid ""
+"Click <gui>Effects</gui> to hide the effects menu and return to the normal "
+"view."
+msgstr ""
+"Pulse <gui>Efectos</gui> para ocultar el menú de efectos y volver a la vista "
+"normal."
+
+#: C/effects-apply.page:39(page/p)
+msgid ""
+"<app>Cheese</app> offers 34 effects, of which only 9 are shown on the first "
+"page. Click <gui>Next Effects</gui> and <gui>Previous Effects</gui> to "
+"navigate to the other pages."
+msgstr ""
+"<app>Cheese</app> ofrece 34 efectos, de los que sólo 9 se muestran en esta "
+"página. Pulse <gui>Siguientes efectos</gui> y <gui>Efectos anteriores</gui> "
+"para navegar por el resto de páginas."
+
+#: C/effects-apply.page:44(figure/title)
+msgid "Some of the effects, from left to right: Bulge, Edge and Mirror"
+msgstr ""
+"Algunos de los efectos, de izquierda a derecha: bulto, contornos y espejo"
+
+#: C/effects-apply.page:48(note/p)
+msgid ""
+"To deselect all effects, click <gui>Effects</gui> and select <gui>No Effect</"
+"gui>."
+msgstr ""
+"Pulse <gui>Efectos</gui> y seleccione <gui>Sin efectos</gui> para desactivar "
+"todos los efectos."
+
+#: C/introduction.page:23(info/desc)
 msgid "Introduction to the <app>Cheese</app> webcam application."
 msgstr "Introducción a la aplicación de cámara web <app>Cheese</app>."
 
-#. (itstool) path: page/title
-#: C/introduction.page:29
+#: C/introduction.page:26(page/title)
 msgid "Introduction"
 msgstr "Introducción"
 
-#. (itstool) path: page/p
-#: C/introduction.page:31
+#: C/introduction.page:28(page/p)
+#| msgid ""
+#| "<app>Cheese</app> is a webcam application that lets you take photos and "
+#| "record videos using your webcam. You can take multiple photos in quick "
+#| "succession using the <link xref=\"pref-burst-mode\"><gui>Burst</gui> "
+#| "mode</link> and apply <link xref=\"effects-apply\">special <gui>Effects</"
+#| "gui></link> to add a personal touch to them."
 msgid ""
 "<app>Cheese</app> is a webcam application that lets you take photos and "
 "record videos using your webcam. You can take multiple photos in quick "
@@ -299,12 +294,11 @@ msgid ""
 msgstr ""
 "<app>Cheese</app> es una aplicación de cámara web que le permite hacer fotos "
 "y grabar vídeos usando su cámara web. Puede tomar varias fotos de forma "
-"seguida (usando el modo <link xref=\"burst-mode\"><gui>Ráfaga</gui></link>) "
+"seguida (usando el <link xref=\"burst-mode\">modo <gui>Ráfaga</gui></link>) "
 "y le permite aplicar <link xref=\"apply-effects\"><gui>Efectos</gui> "
-"especiales</link> para añadirles un toque personal."
+"especiales</link> que añaden un toque personal a sus fotos y vídeos."
 
-#. (itstool) path: page/p
-#: C/introduction.page:37
+#: C/introduction.page:34(page/p)
 msgid ""
 "By default, <app>Cheese</app> starts in <gui>Photo</gui> mode, ready to "
 "<link xref=\"photo-take\">take a photo</link>. You need to switch to "
@@ -315,8 +309,7 @@ msgstr ""
 "cambiar al modo <gui>Vídeo</gui> para <link xref=\"record-video\">grabar un "
 "vídeo</link>."
 
-#. (itstool) path: page/p
-#: C/introduction.page:41
+#: C/introduction.page:38(page/p)
 msgid ""
 "<app>Cheese</app> works with most webcams, but some older webcams may not be "
 "supported."
@@ -324,33 +317,19 @@ msgstr ""
 "<app>Cheese</app> funciona con la mayoría de cámaras web, pero algunos "
 "modelos antiguos puede no estar soportados."
 
-#. (itstool) path: p/link
-#: C/legal.xml:5
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Licencia Creative Commons Compartir Igual-Atribución 3.0 sin soporte"
-
-#. (itstool) path: license/p
-#: C/legal.xml:4
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
-
-#. (itstool) path: info/desc
-#: C/photo-delete.page:24
+#: C/photo-delete.page:19(info/desc)
 msgid "Remove photos and videos that you no longer want to keep."
 msgstr "Quitar fotos y vídeos que ya no quiera tener."
 
-#. (itstool) path: page/title
-#: C/photo-delete.page:27
+#: C/photo-delete.page:22(page/title)
 msgid "Delete a photo or video"
 msgstr "Eliminar una foto o vídeo"
 
-#. (itstool) path: page/p
-#: C/photo-delete.page:29
+#: C/photo-delete.page:24(page/p)
 msgid "If you no longer want a photo or video, you can permanently delete it:"
 msgstr "Si ya no quiere una foto o un vídeo puede eliminarla permanentemente:"
 
-#. (itstool) path: item/p
-#: C/photo-delete.page:33
+#: C/photo-delete.page:28(item/p)
 msgid ""
 "Find the photo or video that you want to delete in the photo stream at the "
 "bottom of the <app>Cheese</app> window."
@@ -358,22 +337,24 @@ msgstr ""
 "Busque la foto o vídeo que quiere eliminar en la colección de fotos en la "
 "parte inferior de la ventana de <app>Cheese</app>."
 
-#. (itstool) path: item/p
-#: C/photo-delete.page:37
-msgid "Right-click it and select <gui>Delete</gui>."
-msgstr "Pulse con el botón derecho y seleccione <gui>Eliminar</gui>."
+#: C/photo-delete.page:32(item/p)
+msgid ""
+"Right-click it and select <gui>Delete</gui>. Alternatively, click it once to "
+"select it and press the <key>Delete</key> key."
+msgstr ""
+"Pulse con el botón derecho del ratón y seleccione <gui>Eliminar</gui>. "
+"Alternativamente, pulse sobre ella una vez para seleccionarla y pulse "
+"después la tecla <key>Supr</key>."
 
-#. (itstool) path: item/p
-#: C/photo-delete.page:41
+#: C/photo-delete.page:36(item/p)
 msgid ""
 "You will be asked if you want to permanently delete it. Confirm by clicking "
-"<gui>Delete</gui>; you will not be able to recover the photo or video."
+"<gui>Delete</gui>; you will not be able to recover the photo."
 msgstr ""
 "Se le preguntará si quiere eliminarla permanentemente. Confírmelo pulsando "
-"<gui>Eliminar</gui>; no podrá recuperar la foto o el vídeo."
+"<gui>Eliminar</gui>; no podrá recuperar la foto."
 
-#. (itstool) path: page/p
-#: C/photo-delete.page:47
+#: C/photo-delete.page:41(page/p)
 msgid ""
 "If you are not sure whether you want to permanently delete the photo or "
 "video, you can right click it and select <gui>Move to Trash</gui> instead. "
@@ -384,8 +365,7 @@ msgstr ""
 "papelera</gui> en su lugar. Esto lo moverá a la carpeta de <gui>Papelera</"
 "gui> del equipo."
 
-#. (itstool) path: note/p
-#: C/photo-delete.page:52
+#: C/photo-delete.page:45(note/p)
 msgid ""
 "Cheese does not have its own <gui>Trash</gui> folder and you cannot access "
 "your computer's <gui>Trash</gui> folder from within <app>Cheese</app>."
@@ -393,96 +373,89 @@ msgstr ""
 "Cheese no tiene su propia carpeta de <gui>Papelera</gui> y no puede acceder "
 "a la carpeta de <gui>Papelera</gui> de su equipo desde <app>Cheese</app>."
 
-#. (itstool) path: info/desc
-#: C/photo-save.page:24
-msgid "Save a photo or video to a different folder."
+#: C/photo-save.page:19(info/desc)
+msgid "Save a photo or video in a different folder."
 msgstr "Guardar una foto o un vídeo en una carpeta diferente."
 
-#. (itstool) path: page/title
-#: C/photo-save.page:27
+#: C/photo-save.page:22(page/title)
 msgid "Save a photo or video"
 msgstr "Guardar una foto o un vídeo"
 
-#. (itstool) path: page/p
-#: C/photo-save.page:29
-#| msgid ""
-#| "By default, Cheese saves the photos and videos in the <file>Pictures/"
-#| "Webcam</file> and <file>Videos/Webcam</file> folders in your user folder."
+#: C/photo-save.page:24(page/p)
 msgid ""
-"By default, Cheese saves the photos and videos in the <file>Webcam</file> "
-"folder in your user's <file>Photo</file> or <file>Videos</file> folder of "
-"your home folder."
+"By default, Cheese saves the photos and videos in the <guiseq><gui>Pictures</"
+"gui><gui>Webcam</gui></guiseq> and <guiseq><gui>Videos</gui><gui>Webcam</"
+"gui></guiseq> folders in your user folder."
 msgstr ""
-"De manera predeterminada, Cheese guarda las fotos y vídeos en las carpetas "
-"<file>Webcam</file> en las carpetas <file>Fotos</file> o <file>Vídeos</file> "
-"dentro de su carpeta personal."
+"De forma predeterminada Cheese guarda las fotos y vídeos en las carpetas "
+"<guiseq><gui>Imágenes</gui><gui>Webcam</gui></guiseq> y <guiseq><gui>Vídeos</"
+"gui><gui>Webcam</gui></guiseq> dentro de su carpeta de usuario."
 
-#. (itstool) path: page/p
-#: C/photo-save.page:33
+#: C/photo-save.page:29(page/p)
 msgid ""
 "To save an image to a different location, right-click the image in the photo "
-"stream and click <gui>Save As…</gui>. Then, choose where you want to save "
-"the image."
+"stream and click <gui>Save As</gui>. Then, choose where you want to save the "
+"image."
 msgstr ""
 "Para guardar una imagen en una ubicación diferente pulse con el botón "
-"derecho del ratón sobre la colección de imágenes y pulse <gui>Guardar como…</"
+"derecho del ratón sobre la colección de imágenes y pulse <gui>Guardar como</"
 "gui>. Después, elija dónde quiere guardar la imagen."
 
-#. (itstool) path: page/p
-#: C/photo-save.page:37
-#| msgid ""
-#| "A new copy of the image will be saved in the new location. The old "
-#| "version will remain in the <file>Pictures/Webcam</file> or <file>Videos/"
-#| "Webcam</file> folder."
+#: C/photo-save.page:33(page/p)
+msgid ""
+"Alternatively, open the folder where you want to keep the image using the "
+"file manager, then drag it from the photo stream into that folder."
+msgstr ""
+"Alternativamente abra una carpeta donde quiere guardar la imagen usando el "
+"gestor de archivos, después arrástrela de la colección de imágenes a esa "
+"carpeta."
+
+#: C/photo-save.page:36(page/p)
 msgid ""
 "A new copy of the image will be saved in the new location. The old version "
-"will remain in the <file>Webcam</file> folder."
+"will remain in the <guiseq><gui>Pictures</gui><gui>Webcam</gui></guiseq> or "
+"<guiseq><gui>Videos</gui><gui>Webcam</gui></guiseq> folder."
 msgstr ""
 "Se guardará una copia nueva de la imagen en la nueva ubicación. La versión "
-"anterior seguirá permaneciendo en la carpeta <file>Webcam</file>."
+"anterior seguirá permaneciendo en la carpeta <guiseq><gui>Imágenes</"
+"gui><gui>Webcam</gui></guiseq> or <guiseq><gui>Vídeos</gui><gui>Webcam</"
+"gui></guiseq>."
 
-#. (itstool) path: info/desc
-#: C/photo-take.page:30
+#: C/photo-take.page:27(info/desc)
 msgid "Use your webcam to take photos instead of videos."
 msgstr "Usar su cámara web para hacer fotos en lugar de vídeos."
 
-#. (itstool) path: page/title
-#: C/photo-take.page:33
-msgid "Take photos"
-msgstr "Hacer fotos"
+#: C/photo-take.page:30(page/title)
+msgid "Take photos using a webcam"
+msgstr "Hacer fotos usando una cámara web"
 
-#. (itstool) path: page/p
-#: C/photo-take.page:35
+#: C/photo-take.page:32(page/p)
 msgid ""
 "Webcams can be used to take still photos as well as videos. To take a photo:"
 msgstr ""
 "Las cámaras web se pueden usar para hacer fotos nítidas, así como vídeos. "
 "Para hacer una foto:"
 
-#. (itstool) path: item/p
-#: C/photo-take.page:40
+#: C/photo-take.page:37(item/p)
 msgid ""
-"Make sure that you are in <gui>Photo</gui> mode. If you are, the <gui style="
-"\"button\">Photo</gui> button will be selected on the left side of the "
-"screen."
+"Make sure that the mode <gui style=\"menuitem\">Photo</gui> is selected in "
+"the <gui style=\"menu\">Cheese</gui> menu."
 msgstr ""
-"Asegúrese de que está en el modo <gui>Foto</gui>. Si lo está, el botón <gui "
-"style=\"button\">Foto</gui> estará seleccionado en la parte izquierda de la "
-"pantalla."
+"Asegúrese de que el modo <gui style=\"menuitem\">Foto</gui> está "
+"seleccionado en el menú de <gui style=\"menu\">Cheese</gui>."
 
-#. (itstool) path: item/p
-#: C/photo-take.page:45
+#: C/photo-take.page:41(item/p)
+#| msgid ""
+#| "Click <gui>Take a Photo</gui>. Alternatively, you can press the capture "
+#| "button on the webcam or the <key>spacebar</key>."
 msgid ""
-"Click the <gui style=\"button\">Take a photo using a webcam</gui> button in "
-"the middle of the bottom panel, or press the <key>Space</key> key, to take "
-"the photo."
+"Click <gui>Take a Photo</gui>. Alternatively, you can press the capture "
+"button on the webcam or the <key>Space</key> key."
 msgstr ""
-"Pulse el botón <gui style=\"button\">Tomar una foto usando la cámara web</"
-"gui> en la parte central del panel inferior o pulse la tecla <key>Espacio</"
-"key> para hacer la foto."
+"Pulse <gui>Tomar una foto</gui>. Alternativamente, puede pulsar el botón de "
+"captura de la cámara web o la <key>barra espaciadora</key>."
 
-#. (itstool) path: item/p
-#: C/photo-take.page:50
+#: C/photo-take.page:45(item/p)
 msgid ""
 "There will be a short countdown, followed by a flash, and the photo will "
 "appear in the photo stream."
@@ -490,19 +463,17 @@ msgstr ""
 "Se mostrará una pequeña cuenta atrás, seguida de un flash y después la foto "
 "aparecerá en la colección de imágenes."
 
-#. (itstool) path: page/p
-#: C/photo-take.page:55
+#: C/photo-take.page:50(page/p)
 msgid ""
-"The photos in the photo stream are automatically saved in the <file>Pictures/"
-"Webcam</file> folder in your home folder. They are saved using the JPEG "
-"(<file>.jpg</file>) format."
+"The photos in the photo stream are automatically saved in the <file>/"
+"Pictures/Webcam</file> folder in your home folder. They are saved using the "
+"JPEG (<file>.jpg</file>) format."
 msgstr ""
 "Las fotos en la colección de imágenes se guardan automáticamente en la "
-"carpeta <file>Imágenes/Webcam</file> en su carpeta personal. Se guardan "
-"usando el formato JPEG (<file>.jpg</file>)."
+"carpeta <file>Imágenes/Webcam</file> en su carpeta de usuario. Se guardan en "
+"el formato JPEG (<file>.jpg</file>)."
 
-#. (itstool) path: page/p
-#: C/photo-take.page:59
+#: C/photo-take.page:54(page/p)
 msgid ""
 "To cancel taking a photo after you have clicked <gui>Take a Photo</gui>, "
 "press <key>Esc</key> before the countdown finishes."
@@ -510,64 +481,69 @@ msgstr ""
 "Para cancelar la toma de una foto después de que haya pulsado <gui>Tomar una "
 "foto</gui> pulse <key>Esc</key> antes de que finalice la cuenta atrás."
 
-#. (itstool) path: note/p
-#: C/photo-take.page:63
+#: C/photo-take.page:58(note/p)
+#| msgid ""
+#| "To take multiple photos in rapid succession, use <link xref=\"pref-burst-"
+#| "mode\">burst mode</link>."
 msgid ""
 "To take multiple photos in rapid succession, use <link xref=\"burst-mode"
-"\"><gui>Burst</gui> mode</link>."
+"\">burst mode</link>."
 msgstr ""
-"Use el modo <link xref=\"burst-mode\">ráfaga</link> para hacer múltiples "
+"Use el <link xref=\"burst-mode\">modo ráfaga</link> para tomar múltiples "
 "fotos muy seguidas."
 
-#. (itstool) path: info/desc
-#: C/photo-view.page:24
+#: C/photo-view.page:19(info/desc)
 msgid "Photos and videos will automatically appear in the photo stream."
 msgstr ""
 "Las fotos y los vídeos aparecerán automáticamente en la colección de "
 "imágenes."
 
-#. (itstool) path: page/title
-#: C/photo-view.page:29
+#: C/photo-view.page:23(page/title)
 msgid "View a photo or video that you took"
 msgstr "Ver una foto o un vídeo que hizo"
 
-#. (itstool) path: page/p
-#: C/photo-view.page:31
+#: C/photo-view.page:25(page/p)
 msgid ""
 "After you take a photo or record a video, it will appear in the photo stream "
-"at the bottom of the window. You can right-click it and press <gui style="
-"\"menuitem\">Open</gui> to open it in the photo viewer or video player "
-"application."
+"at the bottom of the window."
 msgstr ""
-"Después de hacer una foto o e grabar un vídeo, esta aparecerá en la "
-"colección de fotos en la parte inferior de la ventana. Puede pulsarla con el "
-"botón derecho y elegir <gui style=\"menuitem\">Abrir</gui> para abrirla en "
-"el visor de fotos o en el reproductor de vídeo."
+"Aparecerá en la colección de fotos en la parte inferior de la ventana "
+"después de tomar una foto o grabar un vídeo."
 
-#. (itstool) path: page/p
-#: C/photo-view.page:41
+#: C/photo-view.page:28(page/p)
+msgid ""
+"If you want to see a bigger version of a photo, or to play a video, double-"
+"click it. This will open it in the default photo viewer or video player."
+msgstr ""
+"Si quiere ver una versión más grande de una foto o reproducir un vídeo pulse "
+"dos veces sobre él o ella. Esto la abrirá en el visor predeterminado de "
+"fotos o en el reproductor de vídeo."
+
+#: C/photo-view.page:31(page/p)
 msgid ""
 "All of the photos and videos in the photo stream are saved in the "
-"<file>Pictures/Webcam</file> or <file>Videos/Webcam</file> folders in your "
-"user folder."
+"<guiseq><gui>Pictures</gui><gui>Webcam</gui></guiseq> or "
+"<guiseq><gui>Videos</gui><gui>Webcam</gui></guiseq> folders in your user "
+"folder."
 msgstr ""
 "Todas las fotos y vídeos de la colección de fotos se guardan en las carpetas "
-"<file>Imágenes/Webcam</file> o <file>Vídeos/Webcam</file> en su carpeta "
-"personal."
+"<guiseq><gui>Imágenes</gui><gui>Webcam</gui></guiseq> o <guiseq><gui>Vídeos</"
+"gui><gui>Webcam</gui></guiseq> en su carpeta de usuario."
 
-#. (itstool) path: info/desc
-#: C/pref-countdown.page:25
+#: C/pref-countdown.page:22(info/desc)
 msgid "Remove the countdown so that photos are taken instantly."
 msgstr ""
 "Quitar la cuenta atrás, de modo que las fotos se hacen instantáneamente."
 
-#. (itstool) path: page/title
-#: C/pref-countdown.page:28
-msgid "Disable the <gui>Countdown</gui>"
-msgstr "Desactivar la <gui>Cuenta atrás</gui>"
+#: C/pref-countdown.page:25(page/title)
+msgid "Disable the <gui>Countdown</gui> before photos are taken"
+msgstr "Desactivar la <gui>Cuenta atrás</gui> antes de que se tomen las fotos"
 
-#. (itstool) path: page/p
-#: C/pref-countdown.page:30
+#: C/pref-countdown.page:27(page/p)
+#| msgid ""
+#| "By default, <app>Cheese</app> counts down from three before taking a "
+#| "photo. You can disable this feature by clicking <guiseq><gui>Edit</gui> "
+#| "<gui>Preferences</gui></guiseq> and unchecking <gui>Countdown</gui>."
 msgid ""
 "By default, <app>Cheese</app> counts down from three before taking a photo. "
 "You can disable this feature by selecting <guiseq><gui>Cheese</"
@@ -577,76 +553,82 @@ msgstr ""
 "De manera predeterminada <app>Cheese</app> cuenta hacia atrás desde tres "
 "antes de tomar una foto. Puede desactivar esta característica pulsando "
 "<guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Capturar</gui></"
-"guiseq>, y desmarcando la casilla de <gui>Cuenta atrás</gui>."
+"guiseq>, y desmarcando <gui>Cuenta atrás</gui>."
 
-#. (itstool) path: info/desc
-#: C/pref-flash.page:25
+#: C/pref-flash.page:22(info/desc)
 msgid "Stop the screen from flashing white when taking a photo."
 msgstr "Evitar que la pantalla emita destellos blancos al tomar una foto."
 
-#. (itstool) path: page/title
-#: C/pref-flash.page:28
+#: C/pref-flash.page:25(page/title)
 msgid "Disable the flash"
 msgstr "Desactivar el flash"
 
-#. (itstool) path: page/p
-#: C/pref-flash.page:30
+#: C/pref-flash.page:27(page/p)
 msgid ""
-"When you take a photo with Cheese, the computer screen briefly turns white."
+"When you take a photo with Cheese, the computer screen briefly turns white. "
+"This provides additional light."
 msgstr ""
-"Cuando hace una foto con Cheese la pantalla del equipo se volverá blanca un "
-"momento."
+"Cuando toma una foto con Cheese la pantalla del equipo se volverá blanca un "
+"tiempo. Esto proporciona luz adicional."
 
-#. (itstool) path: page/p
-#: C/pref-flash.page:33
+#: C/pref-flash.page:30(page/p)
+#| msgid ""
+#| "To disable this feature, click <guiseq><gui>Edit</gui><gui>Preferences</"
+#| "gui></guiseq> and uncheck <gui>Fire Flash</gui>."
 msgid ""
 "To disable this feature, select <guiseq><gui>Cheese</gui><gui>Preferences</"
-"gui><gui>Capture</gui></guiseq> and uncheck <gui>Fire flash</gui>."
+"gui><gui>Capture</gui></guiseq> and uncheck <gui>Fire Flash</gui>."
 msgstr ""
 "Para desactivar esta característica seleccione <guiseq><gui>Cheese</"
 "gui><gui>Preferencias</gui><gui>Capturar</gui></guiseq> y desmarque "
-"<gui>Disparar flash</gui>."
+"<gui>Flash</gui>."
 
-#. (itstool) path: info/desc
-#: C/pref-fullscreen.page:18
+#: C/pref-fullscreen.page:13(info/desc)
 msgid "Enable and disable fullscreen mode"
 msgstr "Activar y desactivar el modo pantalla completa:"
 
-#. (itstool) path: page/title
-#: C/pref-fullscreen.page:21
+#: C/pref-fullscreen.page:16(page/title)
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#. (itstool) path: page/p
-#: C/pref-fullscreen.page:23
-msgid "To enable or disable the fullscreen mode:"
-msgstr "Para activar o desactivar el modo a pantalla completa:"
+#: C/pref-fullscreen.page:18(page/p)
+msgid "To enable the fullscreen mode:"
+msgstr "Para activar el modo pantalla completa:"
 
-#. (itstool) path: item/p
-#: C/pref-fullscreen.page:26
+#: C/pref-fullscreen.page:21(item/p)
 msgid "Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq>"
 msgstr ""
 "Seleccione <guiseq><gui>Cheese</gui><gui>Pantalla completa</gui></guiseq>."
 
-#. (itstool) path: page/p
-#: C/pref-fullscreen.page:29
-msgid ""
-"If you cannot see the <gui style=\"menu\">Cheese</gui> menu in fullscreen "
-"mode, move your mouse or tap your touchscreen."
-msgstr ""
-"Si no puede ver el menú de <gui style=\"menu\">Cheese</gui> en el modo a "
-"pantalla completa, mueva el ratón o toque la pantalla."
+#: C/pref-fullscreen.page:24(page/p)
+msgid "To disable the fullscreen mode:"
+msgstr "Para desactivar el modo pantalla completa:"
 
-#. (itstool) path: note/p
-#: C/pref-fullscreen.page:33
-msgid ""
-"You can also enable and disable fullscreen mode by pressing <key>F11</key>."
-msgstr ""
-"También puede activar y desactivar el modo a pantalla completa pulsando "
-"<key>F11</key>."
+#: C/pref-fullscreen.page:27(item/p)
+msgid "Select <gui>Leave Fullscreen</gui>"
+msgstr "Seleccione <gui>Salir de pantalla completa</gui>"
 
-#. (itstool) path: info/desc
-#: C/pref-image-properties.page:26
+#: C/pref-fullscreen.page:31(note/p)
+msgid ""
+"You can also enable and disable fullscreen mode by pressing <key>F11</key>"
+msgstr ""
+"También puede activar y desactivar el modo pantalla completa pulsando "
+"<key>F11</key>"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/pref-image-properties.page:48(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/image-properties.png' "
+"md5='70c32a1dd7c9a20dabef58d0789f2a5a'"
+msgstr ""
+"external ref='figures/image-properties.png' "
+"md5='70c32a1dd7c9a20dabef58d0789f2a5a'"
+
+#: C/pref-image-properties.page:23(info/desc)
 msgid ""
 "Adjust the saturation, contrast, brightness and hue to make photos and "
 "videos look better."
@@ -654,13 +636,11 @@ msgstr ""
 "Ajuste la saturación, el contraste, el brillo y el tono para que las fotos y "
 "vídeos se vean mejor."
 
-#. (itstool) path: page/title
-#: C/pref-image-properties.page:29
+#: C/pref-image-properties.page:26(page/title)
 msgid "My photos and videos look wrong"
 msgstr "Mis fotos y vídeos están mal"
 
-#. (itstool) path: page/p
-#: C/pref-image-properties.page:31
+#: C/pref-image-properties.page:28(page/p)
 msgid ""
 "If your photos or videos are too dark or the colors seem to be wrong, try "
 "adjusting their saturation, contrast, brightness and hue:"
@@ -668,8 +648,8 @@ msgstr ""
 "Si sus fotos o vídeos están demasiado oscuros o los colores son erróneos, "
 "intente ajustar su saturación, contraste, brillo y tono:"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:36
+#: C/pref-image-properties.page:33(item/p)
+#| msgid "Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq>"
 msgid ""
 "Select <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></"
 "guiseq>."
@@ -677,19 +657,20 @@ msgstr ""
 "Seleccione <guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Imagen</"
 "gui></guiseq>."
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:40
+#: C/pref-image-properties.page:37(item/p)
+#| msgid ""
+#| "Under <gui>Image properties</gui>, change the sliders to find the best "
+#| "settings for your webcam."
 msgid "Move the sliders to find the best settings for your webcam."
 msgstr ""
 "Mueva los deslizadores para buscar la mejor configuración para su cámara web."
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:43
-msgid "Click <gui>Close</gui> and check to see if the preview looks better."
-msgstr "Pulse <gui>Cerrar</gui> y compruebe si ve la vista previa mejor."
+#: C/pref-image-properties.page:40(item/p)
+msgid ""
+"Click <gui>Close</gui> and check to see if the photos and videos look better."
+msgstr "Pulse <gui>Cerrar</gui> y compruebe si ve las fotos y vídeos mejor."
 
-#. (itstool) path: figure/title
-#: C/pref-image-properties.page:49
+#: C/pref-image-properties.page:46(figure/title)
 msgid ""
 "Different options under <gui>Image properties</gui> (left to right): "
 "applying brightness, contrast, hue and saturation"
@@ -697,13 +678,11 @@ msgstr ""
 "Diferentes opciones bajo <gui>Propiedades de la imagen</gui> (de izquierda a "
 "derecha): aplicar brillo, contraste, tono y saturación"
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:56
+#: C/pref-image-properties.page:53(item/title)
 msgid "Brightness"
 msgstr "Brillo"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:57
+#: C/pref-image-properties.page:54(item/p)
 msgid ""
 "Increasing the brightness will make the photos and videos lighter. However, "
 "if you are in a dark room, increasing the brightness might make the image "
@@ -713,13 +692,11 @@ msgstr ""
 "si está en una habitación oscura, aumentar el brillo hará que la imagen "
 "tenga más ruido."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:62
+#: C/pref-image-properties.page:57(item/title)
 msgid "Contrast"
 msgstr "Contraste"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:63
+#: C/pref-image-properties.page:58(item/p)
 msgid ""
 "Setting a higher contrast will increase the difference between darker and "
 "lighter colors. If the image looks washed out, try increasing the contrast."
@@ -728,13 +705,11 @@ msgstr ""
 "más oscuros y más claros. Si la imagen parece que está lavada, pruebe a "
 "aumentar el contraste."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:68
+#: C/pref-image-properties.page:61(item/title)
 msgid "Hue"
 msgstr "Tono"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:69
+#: C/pref-image-properties.page:62(item/p)
 msgid ""
 "Changing the hue of the image will add a tint to it. If image seems to be "
 "the wrong color (for example, too yellow), try changing the hue."
@@ -743,13 +718,11 @@ msgstr ""
 "tiene los colores incorrectos (por ejemplo, muy amarilla) pruebe a cambiar "
 "el tono."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:73
+#: C/pref-image-properties.page:65(item/title)
 msgid "Saturation"
 msgstr "Saturación"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:74
+#: C/pref-image-properties.page:66(item/p)
 msgid ""
 "Reducing the saturation makes the image less colorful. If colors seem too "
 "harsh, reduce the saturation."
@@ -757,8 +730,7 @@ msgstr ""
 "Reducir la saturación hace que la imagen tenga menos color. Si los colores "
 "son muy duros, reduzca la saturación."
 
-#. (itstool) path: info/desc
-#: C/pref-resolution.page:24
+#: C/pref-resolution.page:21(info/desc)
 msgid ""
 "The resolution of a video or photo determines how much detail you can see in "
 "it, changing it will affect the file size."
@@ -766,13 +738,11 @@ msgstr ""
 "La resolución de un vídeo o una foto está determinada por la cantidad de "
 "detalle que puede ver en ella, cambiarla afectará al tamaño de archivo."
 
-#. (itstool) path: page/title
-#: C/pref-resolution.page:29
+#: C/pref-resolution.page:26(page/title)
 msgid "Change the capture resolution of your webcam"
 msgstr "Cambiar la resolución de captura de su cámara web"
 
-#. (itstool) path: page/p
-#: C/pref-resolution.page:31
+#: C/pref-resolution.page:28(page/p)
 msgid ""
 "Higher resolution generally means better quality images, but photos and "
 "videos with higher resolution take up more space on your hard disk. High "
@@ -782,8 +752,7 @@ msgstr ""
 "las fotos y vídeos con más resolución también ocupan más espacio en su disco "
 "duro. En particular, los vídeos de alta resolución ocupan mucho espacio."
 
-#. (itstool) path: page/p
-#: C/pref-resolution.page:35
+#: C/pref-resolution.page:32(page/p)
 msgid ""
 "If you want your images to take up less disk space, reduce the resolution of "
 "your webcam. If you want better quality images, increase the resolution. To "
@@ -793,8 +762,8 @@ msgstr ""
 "resolución de su cámara web. Si quiere una mejor calidad de imágenes, "
 "aumente la resolución. Para cambiar la resolución de la cámara web:"
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:41
+#: C/pref-resolution.page:38(item/p)
+#| msgid "Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq>"
 msgid ""
 "Select <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></"
 "guiseq>."
@@ -802,8 +771,7 @@ msgstr ""
 "Seleccione <guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Cámara web</"
 "gui></guiseq>."
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:45
+#: C/pref-resolution.page:42(item/p)
 msgid ""
 "Choose a different resolution from the drop-down list. Some webcams only "
 "support one resolution, so you may not have a choice."
@@ -811,67 +779,84 @@ msgstr ""
 "Elija una diferente resolución de la lista desplegable. Algunas cámaras web "
 "sólo soportan una resolución, así que puede que no tenga opción."
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:49
+#: C/pref-resolution.page:46(item/p)
+#| msgid "Click <gui>Close</gui>."
 msgid "Press <gui>Close</gui>."
 msgstr "Pulse <gui>Cerrar</gui>."
 
-#. (itstool) path: info/desc
-#: C/video-record.page:25
+#: C/video-record.page:22(info/desc)
 msgid "Use your webcam to record short movies for sharing with friends."
 msgstr "Use su cámara web para grabar cortos para compartirlos con sus amigos."
 
-#. (itstool) path: page/title
-#: C/video-record.page:29
+#: C/video-record.page:25(page/title)
 msgid "Record a video"
 msgstr "Grabar un vídeo"
 
-#. (itstool) path: page/p
-#: C/video-record.page:31
+#: C/video-record.page:27(page/p)
 msgid "To record a video using your webcam:"
 msgstr "Para grabar un vídeo usando su cámara web:"
 
-#. (itstool) path: item/p
-#: C/video-record.page:35
+#: C/video-record.page:31(item/p)
+#| msgid ""
+#| "Make sure that you are in <gui>Video mode</gui>. If you are, the button "
+#| "in the middle of the window will say <gui>Start Recording</gui>."
 msgid ""
-"Make sure that you are in <gui>Video</gui> mode. If you are, the <gui style="
-"\"button\">Video</gui> button will be selected on the left side of the "
-"screen."
+"Make sure that you are in <gui>Video mode</gui>. If you are, the button in "
+"the middle of the window will say <gui style=\"button\">Record a Video</gui>."
 msgstr ""
-"Asegúrese de que está en el modo <gui>Vídeo</gui>. Si lo está, el botón <gui "
-"style=\"button\">Vídeo</gui> estará seleccionado en la parte izquierda de la "
-"pantalla."
+"Asegúrese de que está en el <gui>Modo vídeo</gui>. Si lo está, el botón en "
+"el medio de la ventana dirá <gui style=\"button\">Grabar un vídeo</gui>."
 
-#. (itstool) path: item/p
-#: C/video-record.page:40
+#: C/video-record.page:34(item/p)
+#| msgid ""
+#| "You can switch to <gui>Video mode</gui> by clicking the button in the "
+#| "main window or by clicking <guiseq><gui>Cheese</gui><gui>Video</gui></"
+#| "guiseq>."
 msgid ""
-"Click the <gui style=\"button\">Record a video using a webcam</gui> button "
-"in the middle of the bottom panel, or press the <key>Space</key> key, to "
-"start recording the video."
+"You can switch to <gui>Video mode</gui> by clicking the button in the main "
+"window or by selecting <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>."
 msgstr ""
-"Pulse el botón <gui style=\"button\">Grabar un vídeo usando la cámara web</"
-"gui> en la parte central del panel inferior, o pulse la tecla <key>Espacio</"
-"key> para empezar a grabar el vídeo."
+"Puede cambiar al <gui>Modo vídeo</gui> pulsando en botón en la ventana "
+"principal o pulsando <guiseq><gui>Cheese</gui><gui>Vídeo</gui></guiseq>."
 
-#. (itstool) path: page/p
-#: C/video-record.page:50
-msgid "Videos are saved in the WebM (<file>.webm</file>) format."
-msgstr "Los vídeos se guardan en el formato WebM (<file>.webm</file>)."
+#: C/video-record.page:39(item/p)
+#| msgid ""
+#| "Click <gui>Start Recording</gui>, or press the <key>spacebar</key>. "
+#| "<app>Cheese</app> will start recording from your webcam."
+msgid ""
+"Click <gui style=\"button\">Record a Video</gui>, or press the <key>Space</"
+"key> key. <app>Cheese</app> will start recording a video using your webcam."
+msgstr ""
+"Pulse <gui style=\"button\">Grabar un vídeo</gui> o pulse la <key>Barra "
+"espaciadora</key>. <app>Cheese</app> comenzará a grabar usando su cámara web."
 
-#. (itstool) path: page/p
-#: C/video-record.page:52
+#: C/video-record.page:44(item/p)
+msgid ""
+"To stop recording, click <gui>Stop Recording</gui> or press <key>Esc</key>."
+msgstr ""
+"Para parar la grabación pulse <gui>Detener grabación</gui> o pulse <key>Esc</"
+"key>."
+
+#: C/video-record.page:49(page/p)
+msgid "Videos are saved in the Ogg Theora (<file>.ogv</file>) format."
+msgstr "Los vídeos se guardan en el formato Ogg Theora (<file>.ogv</file>)."
+
+#: C/video-record.page:51(page/p)
 msgid ""
 "After you have stopped recording, the video will automatically appear in the "
 "photo stream at the bottom of the <app>Cheese</app> window. From there, you "
-"can <link xref=\"photo-view\">open</link> or delete the video."
+"can <link xref=\"photo-view\">play back the video</link>, upload it to a "
+"social network, post it on your blog or YouTube channel, or share it with "
+"friends by <link href=\"help:gnome-help/net-default-email\">email</link>."
 msgstr ""
 "Después de que detener la grabación, el vídeo aparecerá automáticamente en "
 "la colección de imágenes en la parte inferior de la ventana de <app>Cheese</"
-"app>. Desde allí puede <link xref=\"photo-view\">abrir</link> o eliminar el "
-"vídeo."
+"app>. Desde allí puede <link xref=\"view-photo\">reproducir el vídeo</link>, "
+"subirlo a una red social, publicarlo en su blog o canal de YouTube o "
+"compartirlo con sus amigos enviándoselo por <link href=\"help:gnome-help/net-"
+"default-email\">correo electrónico</link>."
 
-#. (itstool) path: page/p
-#: C/video-record.page:56
+#: C/video-record.page:57(page/p)
 msgid ""
 "If you have problems sharing a video with people using other operating "
 "systems (like Windows or Mac OS), you may need to <link href=\"help:gnome-"
@@ -881,142 +866,6 @@ msgstr ""
 "sistemas operativos (como Windows o Mac OS) puede necesitar <link href="
 "\"ghelp:gnome-help/#video-sending\">convertirlo a un formato diferente</"
 "link>."
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/effects.png' md5='4b44c90de3523b77e9f4bf32d83c9009'"
-#~ msgstr ""
-#~ "external ref='figures/effects.png' md5='4b44c90de3523b77e9f4bf32d83c9009'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/image-properties.png' "
-#~ "md5='70c32a1dd7c9a20dabef58d0789f2a5a'"
-#~ msgstr ""
-#~ "external ref='figures/image-properties.png' "
-#~ "md5='70c32a1dd7c9a20dabef58d0789f2a5a'"
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Cheese</gui> <gui style=\"menuitem"
-#~ "\">Burst</gui></guiseq>."
-#~ msgstr ""
-#~ "Seleccione <guiseq><gui style=\"menu\">Cheese</gui> <gui style=\"menuitem"
-#~ "\">Ráfaga</gui></guiseq>."
-
-#~ msgid ""
-#~ "Press <key>Esc</key> if you want to stop <app>Cheese</app> from taking "
-#~ "photos at any point."
-#~ msgstr ""
-#~ "En cualquier momento, pulse <key>Esc</key> si quiere que <app>Cheese</"
-#~ "app> deje de tomar fotos."
-
-#~ msgid ""
-#~ "The delay between the last photo and the start of the next countdown. If "
-#~ "<gui>Countdown</gui> is disabled, this is the delay between photos."
-#~ msgstr ""
-#~ "El retardo es entre la última foto tomada y el comienzo de la cuenta "
-#~ "atrás para la siguiente foto, no entre las dos fotos. Si la <gui>Cuenta "
-#~ "atrás</gui> está desactivada, esto es el retardo entre las fotos."
-
-#~ msgid ""
-#~ "If you like, you can select multiple effects. For example, if you select "
-#~ "<gui>Hulk</gui> and <gui>Kung-Fu</gui>, the video will be altered to have "
-#~ "a green shade and will show a repeated image."
-#~ msgstr ""
-#~ "Si quiere, puede seleccionar múltiples efectos. Por ejemplo, si "
-#~ "selecciona <gui>Hulk</gui> y <gui>Kung-Fu</gui>, el vídeo se alterará "
-#~ "para tener una sombra verde y mostrará una imagen repetida."
-
-#~ msgid ""
-#~ "Click <gui>Effects</gui> to hide the effects menu and return to the "
-#~ "normal view."
-#~ msgstr ""
-#~ "Pulse <gui>Efectos</gui> para ocultar el menú de efectos y volver a la "
-#~ "vista normal."
-
-#~ msgid ""
-#~ "To deselect all effects, click <gui>Effects</gui> and select <gui>No "
-#~ "Effect</gui>."
-#~ msgstr ""
-#~ "Pulse <gui>Efectos</gui> y seleccione <gui>Sin efectos</gui> para "
-#~ "desactivar todos los efectos."
-
-#~ msgid ""
-#~ "Right-click it and select <gui>Delete</gui>. Alternatively, click it once "
-#~ "to select it and press the <key>Delete</key> key."
-#~ msgstr ""
-#~ "Pulse con el botón derecho del ratón y seleccione <gui>Eliminar</gui>. "
-#~ "Alternativamente, pulse sobre ella una vez para seleccionarla y pulse "
-#~ "después la tecla <key>Supr</key>."
-
-#~ msgid ""
-#~ "Alternatively, open the folder where you want to keep the image using the "
-#~ "file manager, then drag it from the photo stream into that folder."
-#~ msgstr ""
-#~ "Alternativamente abra una carpeta donde quiere guardar la imagen usando "
-#~ "el gestor de archivos, después arrástrela de la colección de imágenes a "
-#~ "esa carpeta."
-
-#~ msgid "Take photos using a webcam"
-#~ msgstr "Hacer fotos usando una cámara web"
-
-#~ msgid ""
-#~ "Make sure that the mode <gui style=\"menuitem\">Photo</gui> is selected "
-#~ "in the <gui style=\"menu\">Cheese</gui> menu."
-#~ msgstr ""
-#~ "Asegúrese de que el modo <gui style=\"menuitem\">Foto</gui> está "
-#~ "seleccionado en el menú de <gui style=\"menu\">Cheese</gui>."
-
-#~ msgid ""
-#~ "Click <gui>Take a Photo</gui>. Alternatively, you can press the capture "
-#~ "button on the webcam or the <key>Space</key> key."
-#~ msgstr ""
-#~ "Pulse en <gui>Tomar una foto</gui>. Alternativamente, puede pulsar el "
-#~ "botón de captura de la cámara web o la <key>barra espaciadora</key>."
-
-#~ msgid ""
-#~ "If you want to see a bigger version of a photo, or to play a video, "
-#~ "double-click it. This will open it in the default photo viewer or video "
-#~ "player."
-#~ msgstr ""
-#~ "Si quiere ver una versión más grande de una foto o reproducir un vídeo "
-#~ "pulse dos veces sobre él o ella. Esto la abrirá en el visor "
-#~ "predeterminado de fotos o en el reproductor de vídeo."
-
-#~ msgid "To enable the fullscreen mode:"
-#~ msgstr "Para activar el modo pantalla completa:"
-
-#~ msgid "Select <gui>Leave Fullscreen</gui>"
-#~ msgstr "Seleccione <gui>Salir de pantalla completa</gui>"
-
-#~ msgid ""
-#~ "You can switch to <gui>Video mode</gui> by clicking the button in the "
-#~ "main window or by selecting <guiseq><gui>Cheese</gui><gui>Video</gui></"
-#~ "guiseq>."
-#~ msgstr ""
-#~ "Puede cambiar al <gui>Modo vídeo</gui> pulsando en botón en la ventana "
-#~ "principal o seleccionando <guiseq><gui>Cheese</gui><gui>Vídeo</gui></"
-#~ "guiseq>."
-
-#~ msgid ""
-#~ "To stop recording, click <gui>Stop Recording</gui> or press <key>Esc</"
-#~ "key>."
-#~ msgstr ""
-#~ "Para parar la grabación pulse <gui>Detener grabación</gui> o pulse "
-#~ "<key>Esc</key>."
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/cheese.png' md5='e801510f287b3db068beb2daf8989124'"
-#~ msgstr ""
-#~ "external ref='figures/cheese.png' md5='e801510f287b3db068beb2daf8989124'"
-
-#~ msgid ""
-#~ "<media type=\"image\" mime=\"image/png\" src=\"figures/cheese.png\" width="
-#~ "\"40\" height=\"40\"> </media> Cheese Webcam Application"
-#~ msgstr ""
-#~ "<media type=\"image\" mime=\"image/png\" src=\"figures/cheese.png\" width="
-#~ "\"40\" height=\"40\"> </media> Fotomatón de cámara web Cheese"
 
 #~ msgid ""
 #~ "Change the position of the photo stream so that the webcam video feed is "
@@ -1069,30 +918,15 @@ msgstr ""
 #~ "<key>F11</key>. Para salir del modo a pantalla completa pulse <key>F11</"
 #~ "key>."
 
-#~ msgid ""
-#~ "Click <gui>Burst</gui>, the <gui>Take a Photo</gui> button will now say "
-#~ "<gui>Take Multiple Photos</gui>."
-#~ msgstr ""
-#~ "Pulse <gui>Ráfaga</gui>, el botón <gui>Tomar una foto</gui> cambiará a "
-#~ "<gui>Tomar múltiples fotos</gui>."
-
-#~ msgid ""
-#~ "Alternatively, click <guiseq><gui>Cheese</gui><gui>Burst</gui></guiseq>."
-#~ msgstr ""
-#~ "Alternativamente, pulse <guiseq><gui>Cheese</gui><gui>Ráfaga</gui></"
-#~ "guiseq>."
-
-#~ msgid "Change how many photos are taken and the delay between them"
-#~ msgstr "Cambiar cuántas fotos se toman y el retardo entre ellas"
-
 #~ msgid "Click <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>."
 #~ msgstr "Pulse <guiseq><gui>Editar</gui><gui>Preferencias</gui></guiseq>."
 
 #~ msgid ""
-#~ "Change the options under <gui>Burst mode</gui> and click <gui>Close</gui>."
+#~ "Make sure that you're in <gui>Photo mode</gui>. If you are, the button in "
+#~ "the main window will say <gui>Take a Photo</gui>."
 #~ msgstr ""
-#~ "Cambiae las opciones bajo <gui>Modo ráfaga</gui> y pulse <gui>Cerrar</"
-#~ "gui>."
+#~ "Asegúrese de que está en el <gui>Modo foto</gui>. Si lo está, el botón de "
+#~ "la ventana principal dirá <gui>Tomar una foto</gui>."
 
 #~ msgid ""
 #~ "To switch to <gui>Photo mode</gui>, click the small photo button in the "
@@ -1572,6 +1406,9 @@ msgstr ""
 #~ msgid "Cheese fullscreen screenshot"
 #~ msgstr "Captura de pantalla de Cheese a pantalla completa"
 
+#~ msgid "Taking a photo"
+#~ msgstr "Tomar una foto"
+
 #~ msgid "To take a photo with Cheese, be sure to be in the “Photo” mode."
 #~ msgstr ""
 #~ "Para tomar una fotografía en Cheese, asegúrese de estar en el modo «Foto»."
@@ -1687,6 +1524,9 @@ msgstr ""
 #~ "qué resolución de imagen debe tener. Use los deslizadores para jugar con "
 #~ "los valores de brillo, contraste, saturación y tono, y encontrar los "
 #~ "mejores para su cámara web."
+
+#~ msgid "Cheese preferences screenshot"
+#~ msgstr "Captura de pantalla de las preferencias de Cheese"
 
 #~ msgid ""
 #~ "The parameters for the burst mode can be set in the preferences dialog as "
@@ -1873,8 +1713,8 @@ msgstr ""
 #~ "Puede que haya establecido «<literal>ximagesink</literal>» (<guilabel>X "
 #~ "Window System (No Xv)</guilabel>) como la salida de vídeo. Esto significa "
 #~ "que su CPU está realizando todo el trabajo. Cámbielo a "
-#~ "«<literal>xvimagesink</literal>» (<guilabel>X Window System (X11/XShm/"
-#~ "Xv)</guilabel>) para que la tarjeta gráfica haga el trabajo."
+#~ "«<literal>xvimagesink</literal>» (<guilabel>X Window System (X11/XShm/Xv)</"
+#~ "guilabel>) para que la tarjeta gráfica haga el trabajo."
 
 #~ msgid ""
 #~ "To change this setting, run the <command>gstreamer-properties</command> "
@@ -1900,8 +1740,8 @@ msgstr ""
 #~ msgstr ""
 #~ "Este es un problema con las tarjetas gráficas ATI, aunque hay una "
 #~ "solución. Cambie la salida de vídeo a personalizada e introduzca lo "
-#~ "siguiente: \"<literal>ffmpegcolorspace ! video/x-raw-yuv,"
-#~ "format=(fourcc)YV12 ! ffmpegcolorspace ! xvimagesink</literal>\"."
+#~ "siguiente: \"<literal>ffmpegcolorspace ! video/x-raw-yuv,format=(fourcc)"
+#~ "YV12 ! ffmpegcolorspace ! xvimagesink</literal>\"."
 
 #~ msgid ""
 #~ "To change this setting, run the <command>gstreamer-properties</command> "
@@ -2091,10 +1931,10 @@ msgstr ""
 #~ "with as many details as possible. For Ubuntu, please use the <ulink url="
 #~ "\"http://ubuntuforums.org/\" type=\"http\">Ubuntu Forums</ulink>."
 #~ msgstr ""
-#~ "Como Cheese usa el «backend» de GStreamer, probablemente GStreamer no "
-#~ "está detectando la cámara web (o GStreamer está corrupto). Contacte con "
-#~ "el soporte del sistema operativo en particular que está ejecutando con "
-#~ "todos los detalles posibles. Para Ubuntu consulte los <ulink url=\"http://"
+#~ "Como Cheese usa el «backend» de GStreamer, probablemente GStreamer no está "
+#~ "detectando la cámara web (o GStreamer está corrupto). Contacte con el "
+#~ "soporte del sistema operativo en particular que está ejecutando con todos "
+#~ "los detalles posibles. Para Ubuntu consulte los <ulink url=\"http://"
 #~ "ubuntuforums.org/\" type=\"http\">foros de Ubuntu</ulink>."
 
 #~ msgid "Which cameras are supported?"

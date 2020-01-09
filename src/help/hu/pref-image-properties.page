@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,14 +18,12 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Módosítsa a telítettséget, kontrasztot, fényerőt és árnyalatot a fényképek és videók jobb megjelenítéséért.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Kelemen Gábor</mal:name>
       <mal:email>kelemeng at gnome dot hu</mal:email>
-      <mal:years>2011, 2012, 2013, 2014.</mal:years>
+      <mal:years>2011, 2012, 2013.</mal:years>
     </mal:credit>
   </info>
 
@@ -36,37 +33,37 @@
 
   <steps>
     <item>
-      <p>Válassza a <guiseq><gui>Csííz</gui><gui>Beállítások</gui><gui>Kép</gui></guiseq> menüpontot.</p>
+     <p>Válassza a <guiseq><gui>Csííz</gui><gui>Beállítások</gui><gui>Kép</gui></guiseq> menüpontot.</p>
     </item>
     <item>
-      <p>Mozgassa a csúszkákat a webkamerájához legmegfelelőbb beállítások megtalálása érdekében.</p>
+     <p>Mozgassa a csúszkákat a webkamerájához legmegfelelőbb beállítások megtalálása érdekében.</p>
     </item>
     <item>
-      <p>Nyomja meg a <gui>Bezárás</gui> gombot, és ellenőrizze, hogy az előnézet jobban néz-e ki.</p>
+     <p>Nyomja meg a <gui>Bezárás</gui> gombot, és ellenőrizze, hogy a fényképek és videók jobban néznek-e ki.</p>
     </item>
   </steps>
 
   <figure>
     <title>A <gui>Kép tulajdonságai</gui> alatti különböző beállítások (balról jobbra): fényerő, kontraszt, árnyalat és telítettség</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Fényerő</title>
-      <p>A fényerő növelése világosabbá teszi a fényképeket és videókat. Ha azonban sötét szobában tartózkodik, a fényerő növelése a képet zajosabbá teszi.</p>
+     <title>Fényerő</title>
+     <p>A fényerő növelése világosabbá teszi a fényképeket és videókat. Ha azonban sötét szobában tartózkodik, a fényerő növelése a képet zajosabbá teszi.</p>
     </item>
     <item>
-      <title>Kontraszt</title>
-      <p>A nagyobb kontraszt hatására a sötétebb és világosabb színek közti különbség nőni fog. Ha a kép kifakultnak tűnik, akkor próbálja meg növelni a kontrasztot.</p>
+     <title>Kontraszt</title>
+     <p>A nagyobb kontraszt hatására a sötétebb és világosabb színek közti különbség nőni fog. Ha a kép kifakultnak tűnik, akkor próbálja meg növelni a kontrasztot.</p>
     </item>
     <item>
-      <title>Árnyalat</title>
-      <p>Az árnyalat megváltoztatásakor a kép egy színt kap. Ha a kép színei hibásnak tűnnek (például túl sárgának), akkor próbálja meg megváltoztatni az árnyalatot.</p>
+     <title>Árnyalat</title>
+     <p>Az árnyalat megváltoztatásakor a kép egy színt kap. Ha a kép színei hibásnak tűnnek (például túl sárgának), akkor próbálja meg megváltoztatni az árnyalatot.</p>
     </item>
     <item>
-      <title>Telítettség</title>
-      <p>A telítettség csökkentése a képet kevésbé színessé teszi. Ha a színek túl élénkek, akkor próbálja meg csökkenteni a telítettséget.</p>
+     <title>Telítettség</title>
+     <p>A telítettség csökkentése a képet kevésbé színessé teszi. Ha a színek túl élénkek, akkor próbálja meg csökkenteni a telítettséget.</p>
     </item>
   </terms>
 

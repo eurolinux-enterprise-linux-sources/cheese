@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="lv">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Atbrīvoties no foto un video, ko vairs nevēlaties paturēt.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Dzēst fotogrāfijas vai video</title>
+
+  <p>Ja vairs nevēlaties kādu fotogrāfiju vai video, jūs varat to neatgriezeniski dzēst:</p>
+
+  <steps>
+    <item>
+      <p>Atrodiet fotogrāfiju vai video, ko vēlaties dzēst, foto plūsmā <app>Cheese</app> loga apakšā.</p>
+    </item>
+    <item>
+      <p>Spiediet uz tā ar labo peles taustiņu un izvēlieties <gui>Dzēst</gui>. Var arī spiest uz tā vienreiz un nospiest taustiņu <key>Dzēst</key>.</p>
+    </item>
+    <item>
+      <p>Jums jautās vai vēlaties to neatgriezeniski dzēst. Apstipriniet, spiežot <gui>Dzēst</gui>; jūs nevarēsiet atgūt fotogrāfiju.</p>
+    </item>
+  </steps>
+
+  <p>Ja neesat pārliecināts vai vēlaties neatgriezeniski dzēst fotogrāfiju vai video, varat spiest uz tā ar peles labo taustiņu un izvēlēties <gui>Pārvietot uz miskasti</gui>.Šāda rīcība pārvietos to uz datora <gui>Miskaste</gui> mapi.</p>
+  <note>
+    <p>Cheese nav pašam sava <gui>Miskastes</gui> mape un jums nav pieejas datora <gui>Miskaste</gui> mapei no <app>Cheese</app> lietotnes.</p>
+  </note>
+
+</page>

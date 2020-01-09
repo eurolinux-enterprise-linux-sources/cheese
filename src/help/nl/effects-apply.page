@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="effects-apply" xml:lang="nl">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="nl">
   <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
-
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Leuke effecten toevoegen aan uw foto's en video's, zoals uzelf groen maken of het vervormen van de foto als een lachspiegel.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Add fun effects to your photos and videos, like turning yourself green
+    or distorting the picture like a funhouse mirror.</desc>
   </info>
 
-  <title>Effecten toepassen op foto's en video's</title>
+  <title>Apply effects to photos and videos</title>
 
-  <p>U kunt grappige en interessante effecten toepassen op uw foto's en video's:</p>
-
+  <p>You can apply fun, interesting effects to your photos and videos:</p>
   <steps>
+    <item><p>Click <gui>Effects</gui>.</p></item>
     <item>
-      <p>Klik op <gui style="button">Effecten</gui>.</p>
+     <p>Select the effect you want to use by clicking one of the options.</p>
+     <p>If you like, you can select multiple effects. For example, if you select
+     <gui>Hulk</gui> and <gui>Kung-Fu</gui>, the video will be altered to have a
+     green shade and will show a repeated image.</p>
     </item>
     <item>
-      <p>Selecteer het effect dat u wilt door één van de opties aan te klikken of selecteer <gui>Geen effect</gui> als u er geen wilt gebruiken.</p>
+     <p>Click <gui>Effects</gui> to hide the effects menu and return to the
+     normal view.</p>
     </item>
   </steps>
 
-  <p><app>Cheese</app> biedt 35 effecten aan, waarvan er 9 worden getoond op de eerste pagina. Klik op de vorige- en volgende-knoppen naast <gui style="button">Effecten</gui> om naar de andere pagina's te bladeren.</p>
+  <p><app>Cheese</app> offers 34 effects, of which only 9 are shown on the first
+  page. Click <gui>Next Effects</gui> and <gui>Previous Effects</gui> to
+  navigate to the other pages.</p>
 
   <figure>
-    <title>Enkele van de effecten, van links naar rechts: Sepia-tint, Bedwelmen, Sobel (eerste rij), Golfvormig, Röntgen, Vervormen (tweede rij)</title>
-    <media its:translate="no" type="image" src="figures/effects.png" width="529" height="264"/>
+    <title>Some of the effects, from left to right: Bulge, Edge and Mirror</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
   </figure>
+
+  <note style="tip"><p>To deselect all effects, click <gui>Effects</gui> and
+  select <gui>No Effect</gui>.</p></note>
 
 </page>

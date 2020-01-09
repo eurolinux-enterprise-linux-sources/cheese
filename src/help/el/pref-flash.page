@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,24 +17,22 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Σταματήστε το αναβόσβημα στην οθόνη όταν τραβάτε μια φωτογραφία.</desc>
+    <desc>Σταματήστε την οθόνη από το να αναβοσβήνει όταν τραβάτε μια φωτογραφία.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:name>  Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2013, 2014</mal:years>
+      <mal:years>2013</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name> Ευστάθιος Ιωσηφίδης</mal:name>
+      <mal:name>  Ευστάθιος Ιωσηφίδης</mal:name>
       <mal:email>diamond_gr@freemail.gr</mal:email>
       <mal:years>2011</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:name>  Θάνος Τρυφωνίδης</mal:name>
       <mal:email>tomtryf@gmail.com</mal:email>
       <mal:years>2012</mal:years>
     </mal:credit>
@@ -43,8 +40,8 @@
 
   <title>Απενεργοποίηση του φλας</title>
 
-  <p>Όταν τραβάτε μια φωτογραφία με το Cheese, η οθόνη του υπολογιστή στιγμιαία γίνεται άσπρη.</p>
+  <p>Όταν τραβάτε μια φωτογραφία με το Cheese, η οθόνη του υπολογιστή στιγμιαία γίνεται άσπρη. Αυτό παρέχει περισσότερο φως.</p>
 
-  <p>Για να απενεργοποιήσετε αυτό το χαρακτηριστικό, επιλέξτε <guiseq><gui>Cheese</gui><gui>Προτιμήσεις</gui><gui>Λήψη</gui></guiseq> και αποεπιλέξτε την <gui>Ενεργοποίηση φλας</gui>.</p>
+  <p>Για να απενεργοποιήσετε αυτό το χαρακτηριστικό, επιλέξτε <guiseq><gui>Cheese</gui><gui>Προτιμήσεις</gui><gui>Λήψη</gui></guiseq> και ξεσημειώστε το <gui>Ενεργοποιήση φλας</gui>.</p>
 
 </page>

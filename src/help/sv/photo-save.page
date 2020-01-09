@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-save" xml:lang="sv">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-save" xml:lang="sv">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="review"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-25" status="review"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Spara ett foto eller en video till en annan mapp.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
+    <desc>Save a photo or video in a different folder.</desc>
   </info>
 
-  <title>Spara ett foto eller en video</title>
+  <title>Save a photo or video</title>
 
-  <p>Som standard sparar Cheese foton och videor i mappen <file>Webbkamera</file> i mapparna <file>Foton</file> och <file>Video</file> i hemmappen för din användare.</p>
+  <p>By default, Cheese saves the photos and videos in the
+  <guiseq><gui>Pictures</gui><gui>Webcam</gui></guiseq> and
+  <guiseq><gui>Videos</gui><gui>Webcam</gui></guiseq> folders in your user
+  folder.</p>
 
-  <p>För att spara en bild på en annan plats, högerklicka på bilden i fotoströmmen och klicka på <gui>Spara som…</gui>. Välj sedan var du vill spara bilden.</p>
+  <p>To save an image to a different location, right-click the image in the
+  photo stream and click <gui>Save As</gui>. Then, choose where you want to save
+  the image.</p>
 
-  <p>En ny kopia av bilden kommer att sparas på den nya platsen. Den gamla versionen kommer att förbli i <file>Webbkamera</file>-mappen.</p>
+  <p>Alternatively, open the folder where you want to keep the image using the
+  file manager, then drag it from the photo stream into that folder.</p>
+
+  <p>A new copy of the image will be saved in the new location. The old version
+  will remain in the <guiseq><gui>Pictures</gui><gui>Webcam</gui></guiseq> or
+  <guiseq><gui>Videos</gui><gui>Webcam</gui></guiseq> folder.</p>
 
 </page>

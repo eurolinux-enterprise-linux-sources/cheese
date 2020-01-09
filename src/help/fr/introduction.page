@@ -7,7 +7,6 @@
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.6" date="2012-05-09" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,9 +18,7 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Introduction à l'application webcam de <app>Cheese</app>.</desc>
+    <desc>Introduction à l'application webcam <app>Cheese</app>.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Bruno Brouard</mal:name>
@@ -64,25 +61,17 @@
       <mal:email>mickael.albertus@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>naybnet</mal:name>
-      <mal:email>naybnet@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Alain Lojewski</mal:name>
-      <mal:email>allomervan@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
   </info>
 
   <title>Introduction</title>
 
-  <p><app>Cheese</app> est une application webcam qui vous permet de prendre des photos et d'enregistrer des vidéos avec votre webcam. Vous pouvez prendre une succession rapide de photos en utilisant le <link xref="burst-mode">mode <gui>rafale</gui></link> et appliquer des <link xref="effects-apply"><gui>Effets</gui> spéciaux</link> pour leur donner une touche personnelle.</p>
+  <p><app>Cheese</app> is a webcam application that lets you take photos and
+  record videos using your webcam. You can take multiple photos in quick
+  succession using the <link xref="burst-mode"><gui>Burst</gui> mode</link> and
+  apply <link xref="effects-apply">special <gui>Effects</gui></link> to add a
+  personal touch to them.</p>
 
-  <p>Par défaut, <app>Cheese</app> démarre en mode <gui>photo</gui>, prêt à <link xref="photo-take">prendre une photo</link>. Vous devez basculer en mode <gui>vidéo</gui> pour <link xref="video-record">enregistrer une vidéo</link>.</p>
+  <p>Par défaut, <app>Cheese</app> démarre en mode <gui>photo</gui>, prêt à <link xref="photo-take">prendre une photo</link>. Vous devez basculer en mode <gui>vidéo</gui> pour <link xref="video-record">faire une vidéo</link>.</p>
 
   <p><app>Cheese</app> fonctionne avec la plupart des webcams, mais il se peut que certaines webcams plus anciennes ne soient pas prises en charge.</p>
 

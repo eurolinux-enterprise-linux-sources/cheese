@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-save" xml:lang="ca">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-save" xml:lang="ca">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="review"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-25" status="review"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Save a photo or video to a different folder.</desc>
+    <desc>Deseu una foto o un vídeo a una carpeta diferent.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Joan Duran</mal:name>
@@ -48,15 +44,12 @@
 
   <title>Deseu una foto o un vídeo</title>
 
-  <p>By default, Cheese saves the photos and videos in the
-  <file>Webcam</file> folder in your user's <file>Photo</file>
-  or <file>Videos</file> folder of your home folder.</p>
+  <p>Per defecte, el Cheese desa les fotos i els vídeos a les carpetes <guiseq><gui>Imatges</gui><gui>Webcam</gui></guiseq> i <guiseq><gui>Vídeos</gui><gui>Webcam</gui></guiseq> de la vostra carpeta d'usuari.</p>
 
-  <p>To save an image to a different location, right-click the image in the
-  photo stream and click <gui>Save As…</gui>. Then, choose where you want to
-  save the image.</p>
+  <p>Per desar una imatge a una ubicació diferent, feu clic amb el botó secundari a la seqüència d'imatges i després a <gui>Anomena i desa</gui>. Llavors trieu on voleu desar-la.</p>
 
-  <p>A new copy of the image will be saved in the new location. The old version
-  will remain in the <file>Webcam</file> folder.</p>
+  <p>També podeu obrir la carpeta on voleu desar la imatge amb el gestor de fitxers i arrossegueu-hi la imatge des de la seqüència d'imatges.</p>
+
+  <p>Una còpia nova de la imatge es desarà a la ubicació nova. La versió antiga es mantindrà a la carpeta <guiseq><gui>Imatges</gui><gui>Webcam</gui></guiseq> o <guiseq><gui>Vídeos</gui><gui>Webcam</gui></guiseq>.</p>
 
 </page>

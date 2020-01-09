@@ -1,41 +1,34 @@
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.64])
 AC_INIT([Cheese],
-        [3.28.0],
+        [3.8.2],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=cheese],
         [cheese],
-        [https://wiki.gnome.org/Apps/Cheese])
+        [http://projects.gnome.org/cheese/])
 
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADERS([cheese-config.h])
 AC_CONFIG_SRCDIR([configure.ac])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.12 -Wall -Wno-portability dist-xz no-define no-dist-gzip nostdinc subdir-objects])
+AM_INIT_AUTOMAKE([1.11 -Wall -Wno-portability dist-xz no-define no-dist-gzip nostdinc subdir-objects])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
-
-dnl https://github.com/cgwalters/build-api
-dnl We don't support separate builddir when building from git
-echo \#buildapi-variable-no-builddir >/dev/null
 
 # Check for programs
 AC_PROG_CC
 AM_PROG_CC_C_O
-AC_PROG_SED
-AM_PROG_VALAC([0.25.2])
+AM_PROG_VALAC([0.18.0])
 
 # Initialize libtool
 LT_PREREQ([2.2])
 LT_INIT([disable-static])
 
-# Find an appropriate libm, for fmod()
-LT_LIB_M
-
 PKG_PROG_PKG_CONFIG([0.24])
 
-AC_SUBST([CHEESE_WFLAGS], ["-Wall"])
+AC_SUBST([CHEESE_WFLAGS], ["-Wall -DGSEAL_ENABLE"])
 
+GNOME_MAINTAINER_MODE_DEFINES
 GNOME_COMPILE_WARNINGS([maximum])
 
 #*******************************************************************************
@@ -48,15 +41,14 @@ GNOME_COMPILE_WARNINGS([maximum])
 # - If binary compatibility has been broken (eg removed or changed interfaces)
 #   change to C+1:0:0
 # - If the interface is the same as the previous version, change to C:R+1:A
-AC_SUBST([LIBCHEESE_LT_VERSION], [8:10:0])
-AC_SUBST([LIBCHEESE_GTK_LT_VERSION], [26:0:1])
+AC_SUBST([LIBCHEESE_LT_VERSION], [7:9:0])
+AC_SUBST([LIBCHEESE_GTK_LT_VERSION], [23:9:0])
 
 #*******************************************************************************
 # Internationalization
 #*******************************************************************************
 AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [GETTEXT package name])
-AX_REQUIRE_DEFINED([IT_PROG_INTLTOOL])
 IT_PROG_INTLTOOL([0.50.0])
 
 #*******************************************************************************
@@ -64,17 +56,45 @@ IT_PROG_INTLTOOL([0.50.0])
 #*******************************************************************************
 
 
-GLIB_REQUIRED="glib-2.0 >= 2.39.90"
-GTK_REQUIRED="gtk+-3.0 >= 3.13.4"
+GLIB_REQUIRED="glib-2.0 >= 2.28.0"
+GOBJECT_REQUIRED="gobject-2.0 >= 2.28.0"
+GIO_REQUIRED="gio-2.0 >= 2.28.0"
+GTK_REQUIRED="gtk+-3.0 >= 3.4.4"
+GDK_REQUIRED="gdk-3.0 >= 3.3.6"
 GDK_PIXBUF_REQUIRED="gdk-pixbuf-2.0"
-GSTREAMER_REQUIRED="gstreamer-pbutils-1.0 gstreamer-plugins-bad-1.0 >= 1.4"
-LIBGNOMEDESKTOP_REQUIRED="gnome-desktop-3.0"
-CLUTTER_REQUIRED="clutter-1.0 >= 1.13.2"
-CLUTTERGTK_REQUIRED="clutter-gtk-1.0"
-CLUTTERGST_REQUIRED="clutter-gst-3.0 >= 3.0.0"
+LIBGNOMEDESKTOP_REQUIRED="gnome-desktop-3.0 >= 2.91.6"
+GSTREAMER_VERSION=0.11.0
+GSTREAMER_REQUIRED="gstreamer-plugins-base-1.0 >= $GSTREAMER_VERSION gstreamer-1.0 >= $GSTREAMER_VERSION gstreamer-pbutils-1.0 >= $GSTREAMER_VERSION"
+GSTREAMER_PLUGINS_BAD_VERSION=0.11.0
+GSTREAMER_PLUGINS_BAD_REQUIRED="gstreamer-plugins-bad-1.0 >= $GSTREAMER_PLUGINS_BAD_VERSION"
+CAIRO_REQUIRED="cairo >= 1.10.0"
+PANGOCAIRO_REQUIRED="pangocairo >= 1.28.0"
+LIBRSVG_REQUIRED="librsvg-2.0 >= 2.32.0"
+CLUTTER_REQUIRED="clutter-1.0 >= 1.10.0"
+CLUTTERGTK_REQUIRED="clutter-gtk-1.0 >= 0.91.8"
+CLUTTERGST_REQUIRED="clutter-gst-2.0 >= 1.9.0"
 LIBCANBERRA_REQUIRED="libcanberra-gtk3 >= 0.26"
 X11_REQUIRED="x11"
 GNOME_VIDEO_EFFECTS_REQUIRED="gnome-video-effects"
+
+# Libtool requires this, but it is only expanded once anyway.
+AC_CANONICAL_HOST
+
+AC_MSG_CHECKING([host operating system])
+AS_CASE([$host_os],
+  [*linux-*], [AC_MSG_RESULT([Linux])
+    UDEV_REQUIRED="gudev-1.0"],
+  [AC_MSG_RESULT([unsupported operating system])])
+
+AC_MSG_CHECKING([for gudev-1.0])
+AS_IF([test -n "$UDEV_REQUIRED"],
+  [PKG_CHECK_EXISTS([$UDEV_REQUIRED],
+    [AC_MSG_RESULT([found])
+     AC_DEFINE([HAVE_UDEV], [], [Enable gudev support])],
+    [AC_MSG_ERROR([$UDEV_REQUIRED not found])])],
+  [AC_MSG_RESULT([not needed])])
+
+AC_CHECK_HEADERS([sys/videoio.h])
 
 AC_CHECK_HEADER([X11/extensions/XTest.h],
   [AC_CHECK_LIB([Xtst], [XTestFakeKeyEvent],
@@ -83,24 +103,28 @@ AM_CONDITIONAL([HAVE_XTEST], test "x$ac_cv_lib_Xtst_XTestFakeKeyEvent" = "xyes")
 
 PKG_CHECK_MODULES([CHEESE],
   [$GLIB_REQUIRED
+  $GIO_REQUIRED
   $X11_REQUIRED
+  $GOBJECT_REQUIRED
   $GDK_PIXBUF_REQUIRED
   $GSTREAMER_REQUIRED
+  $GSTREAMER_PLUGINS_BAD_REQUIRED
   $LIBGNOMEDESKTOP_REQUIRED
+  $CAIRO_REQUIRED
+  $PANGOCAIRO_REQUIRED
   $CLUTTER_REQUIRED
-  $CLUTTERGST_REQUIRED])
+  $CLUTTERGST_REQUIRED
+  $UDEV_REQUIRED])
 
 PKG_CHECK_MODULES([CHEESE_GTK],
-  [$GTK_REQUIRED
+  [$GIO_REQUIRED
+   $GTK_REQUIRED
+   $GDK_REQUIRED
+   $LIBRSVG_REQUIRED
    $CLUTTERGTK_REQUIRED
-   $LIBCANBERRA_REQUIRED])
-
-PKG_CHECK_EXISTS([$GNOME_VIDEO_EFFECTS_REQUIRED],
-                 [],
-                 [AC_MSG_WARN([The $GNOME_VIDEO_EFFECTS_REQUIRED package is required at runtime for effects])])
-
-# GLib programs.
-AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
+   $LIBCANBERRA_REQUIRED
+   $UDEV_REQUIRED
+   $GNOME_VIDEO_EFFECTS_REQUIRED])
 
 # Recommend some runtime GStreamer plugins.
 AC_PATH_PROGS([GST_INSPECT], [gst-inspect-1.0], [notfound])
@@ -115,6 +139,24 @@ AS_IF([test "x$GST_INSPECT" = "xnotfound"],
        [AC_MSG_RESULT([not found])
         AC_MSG_WARN([$gst_runtime_plugin was not found. It needs to be installed before Cheese is run])])
    done])
+
+# Check for nautilus-sendto runtime dependency.
+NAUTILUS_SENDTO_DEP_MSG="This is a runtime dependency just needed for using the sharing functionality in Cheese."
+NAUTILUS_SENDTO_REQUIRED=2.91.0
+AC_PATH_PROGS([NAUTILUS_SENDTO], [nautilus-sendto], [notfound])
+AS_IF([test "x$NAUTILUS_SENDTO" = "xnotfound"],
+  [AC_MSG_WARN([Unable to find nautilus-sendto >= $NAUTILUS_SENDTO_REQUIRED in the path. $NAUTILUS_SENDTO_DEP_MSG])],
+  [NAUTILUS_SENDTO_SYSTEM=`nautilus-sendto --version 2>/dev/null | $SED 's/nautilus-sendto //'`
+   AS_IF([echo $NAUTILUS_SENDTO_SYSTEM | $GREP 'version' >/dev/null],
+     [AC_MSG_WARN([Unable to check the version of nautilus-sendto, it is \
+probably too old. At least $NAUTILUS_SENDTO_REQUIRED is required. \
+$NAUTILUS_SENDTO_DEP_MSG])],
+      [AS_VERSION_COMPARE([$NAUTILUS_SENDTO_SYSTEM], [$NAUTILUS_SENDTO_REQUIRED],
+         [NS_VERSION_COMPARE=0], [NS_VERSION_COMPARE=1], [NS_VERSION_COMPARE=1])
+       AS_IF([test $NS_VERSION_COMPARE = 0],
+         [AC_MSG_WARN([Unable to find nautilus-sendto >= \
+$NAUTILUS_SENDTO_REQUIRED in the path. The current installed version is \
+$NAUTILUS_SENDTO_SYSTEM. $NAUTILUS_SENDTO_DEP_MSG])])])])
 
 # Check for GLib testing utilities.
 AC_PATH_PROG([GTESTER], [gtester], [notfound])
@@ -155,11 +197,9 @@ AS_IF([test "x$GLIB_MKENUMS" = "x"],
   [AC_SUBST([GLIB_MKENUMS])
    AC_MSG_RESULT([$GLIB_MKENUMS])])
 
-AX_REQUIRE_DEFINED([GOBJECT_INTROSPECTION_CHECK])
 GOBJECT_INTROSPECTION_CHECK([0.6.7])
 
 # API documentation
-AX_REQUIRE_DEFINED([GTK_DOC_CHECK])
 GTK_DOC_CHECK([1.14], [--flavour no-tmpl])
 
 # Manpage, generated with gtk-doc and xsltproc from DocBook XML.
@@ -185,12 +225,7 @@ AS_IF([test "x$enable_man" != "xno"],
 AM_CONDITIONAL([ENABLE_MAN], [test "x$have_manutils" = "xyes"])
 
 # Mallard help
-AX_REQUIRE_DEFINED([YELP_HELP_INIT])
 YELP_HELP_INIT
-
-# AppData
-AX_REQUIRE_DEFINED([APPSTREAM_XML])
-APPSTREAM_XML
 
 GLIB_GSETTINGS
 #*******************************************************************************
@@ -201,7 +236,7 @@ docs/reference/Makefile
 docs/reference/version.xml
 data/cheese.pc
 data/cheese-gtk.pc
-data/org.gnome.Cheese.desktop.in
+data/cheese.desktop.in
 help/Makefile
 po/Makefile.in
 ])

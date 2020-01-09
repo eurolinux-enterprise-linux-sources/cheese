@@ -6,7 +6,6 @@ includedir=@includedir@
 Name: cheese-gtk
 Description: Cheese webcam widgets
 Version: @PACKAGE_VERSION@
-Requires.private: libcanberra-gtk3 clutter-gtk-1.0 cheese
-Requires: gtk+-3.0
+Requires.private: gtk+-x11-3.0 gstreamer-1.0 gstreamer-plugins-base-1.0 libcanberra-gtk3 clutter-gtk-1.0 cheese
 Libs: -L${libdir} -lcheese-gtk
 Cflags: -I${includedir}/cheese

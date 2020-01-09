@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -14,13 +13,11 @@
       <years>2011</years>
     </credit>
     <credit type="author editor">
-      <name>Ekaterina Gerasimova</name>
+      <name>Jekaterina Gerassimowa</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Deaktivieren Sie den Countdown, so dass Fotos unverzüglich aufgenommen werden.</desc>
+    <desc>Löschen Sie den Countdown, so dass Fotos unverzüglich aufgenommen werden.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Stefan Horning</mal:name>
@@ -39,34 +36,13 @@
       <mal:email>c72578@yahoo.de</mal:email>
       <mal:years>2009</mal:years>
     </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Christian Kirbach</mal:name>
-      <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013, 2015,2017</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Tobias Endrigkeit</mal:name>
-      <mal:email>tobiasendrigkeit@outlook.com</mal:email>
-      <mal:years>2013</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Bernd Homuth</mal:name>
-      <mal:email>dev@hmt.im</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Simon Linden</mal:name>
-      <mal:email>xhi2018@gmail.com</mal:email>
-      <mal:years>2015</mal:years>
-    </mal:credit>
   </info>
 
-  <title>Den <gui>Countdown</gui> deaktivieren</title>
+  <title>Den <gui>Countdown</gui> vor der Aufnahme von Fotos deaktivieren</title>
 
-  <p>Standardmäßig zählt <app>Cheese</app> von 3 an rückwärts, bevor ein Foto aufgenommen wird. Sie können dieses Verhalten abschalten, indem Sie unter <guiseq><gui>Cheese</gui><gui>Einstellungen</gui><gui>Aufnahme</gui></guiseq> die Option <gui>Countdown</gui> deaktivieren.</p>
+  <p>By default, <app>Cheese</app> counts down from three before taking a
+  photo. You can disable this feature by selecting
+  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
+  and unchecking <gui>Countdown</gui>.</p>
 
 </page>

@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="effects-apply" xml:lang="ca">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="ca">
   <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
-
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Afegiu efectes especials a les fotos i als vídeos, com per exemple tornar-vos de color verd o distorsionar la foto com si es tractés d'un mirall de fira.</desc>
   
@@ -49,25 +44,24 @@
   <title>Feu servir efectes especials a les fotos i als vídeos</title>
 
   <p>Podeu aplicar efectes divertits i interessants a les fotos i als vídeos:</p>
-
   <steps>
+    <item><p>Feu clic a <gui>Efectes</gui>.</p></item>
     <item>
-      <p>Click <gui style="button">Effects</gui>.</p>
+     <p>Seleccioneu l'efecte que voleu utilitzar fent clic en una de les opcions.</p>
+     <p>Si voleu, podeu seleccionar diversos efectes. Per exemple, si seleccioneu <gui>Hulk</gui> i <gui>Kung-Fu</gui>, el vídeo passarà a ser una ombra verda i es mostrarà com una imatge repetida.</p>
     </item>
     <item>
-      <p>Select the effect you want to use by clicking one of the options or
-      select <gui>No Effect</gui> if you don't want to use one.</p>
+     <p>Feu clic a <gui>Efectes</gui> perquè s'amagui el menú d'efectes i tornar a la vista normal.</p>
     </item>
   </steps>
 
-  <p><app>Cheese</app> offers 35 effects, of which only 9 are shown on the
-  first page. Click the back and forward arrows next to
-  <gui style="button">Effects</gui> to navigate to the other pages.</p>
+  <p>El <app>Cheese</app> ofereix 34 efectes, dels quals només 9 es mostren a la primera pàgina. Feu clic a <gui>Efectes següents</gui> i a <gui>Efectes anteriors</gui> per veure les altres pàgines.</p>
 
   <figure>
-    <title>Some of the effects, from left to right: Sepia, Shagadelic, Sobel
-    (first row), Waveform, X-Ray, Warp (second row)</title>
-    <media its:translate="no" type="image" src="figures/effects.png" width="529" height="264"/>
+    <title>Alguns dels efectes, d'esquerra a dreta: protuberàncies, vores i mirall</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
   </figure>
+
+  <note style="tip"><p>Per desseleccionar tots els efectes, feu clic a <gui>Efectes</gui> i seleccioneu <gui>Sense efectes</gui>.</p></note>
 
 </page>

@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,14 +17,12 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Pakai webcam Anda untuk merekam film pendek untuk dibagikan dengan teman.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Andika Triwidada</mal:name>
       <mal:email>andika@gmail.com</mal:email>
-      <mal:years>2012, 2013, 2014</mal:years>
+      <mal:years>2012</mal:years>
     </mal:credit>
   </info>
 
@@ -35,19 +32,26 @@
 
   <steps>
     <item>
-      <p>Pastikan bawah Anda dalam mode <gui>Video</gui>. Bila ya, tombol <gui style="button">Video</gui> akan dipilih di sisi kiri layar.</p>
+      <p>Make sure that you are in <gui>Video mode</gui>. If you are, the button
+      in the middle of the window will say <gui style="button">Record a
+      Video</gui>.</p>
+      <p>You can switch to <gui>Video mode</gui> by clicking the button in the
+      main window or by selecting
+      <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Klik <gui style="button">Rekam video memakai webcam</gui> di tengah panel bawah, atau tekan <key>Spasi</key>. untuk mulai merekam suatu video.</p>
+      <p>Click <gui style="button">Record a Video</gui>, or press the
+      <key>Space</key> key. <app>Cheese</app> will start recording a video
+      using your webcam.</p>
     </item>
     <item>
-     <p>Untuk mengakhiri perekaman, tekan lagi tombol yang sama. Anda juga dapat menekan tombol <key>Esc</key> atau <key>Spasi</key> untuk berhenti merekam.</p>
+     <p>Untuk berhenti merekam, klik <gui>Berhenti Merekam</gui> atau tekan <key>Esc</key>.</p>
     </item>
   </steps>
 
-  <p>Video disimpan dalam format WebM (<file>.webm</file>).</p>
+  <p>Video disimpan dalam format Ogg Theora (<file>.ogv</file>).</p>
 
-  <p>Setelah Anda berhenti merekam, video akan otomatis muncul di stream foto di bagian bawah jendela <app>Cheese</app>. Dari sana, Anda dapat <link xref="photo-view">membuka</link> atau menghapus video.</p>
+  <p>Setelah Anda berhenti merekam, video akan otomatis muncul di stream foto di bagian bawah jendela <app>Cheese</app>. Dari sana, Anda dapat <link xref="photo-view">memutar video tersebut</link>, mengunggahnya ke jejaring sosial, mengirimkannya ke blog Anda atau kanal YouTube, atau berbagi dengan teman melalui <link href="help:gnome-help/net-default-email">surel</link>.</p>
 
   <p>Bila Anda mengalami masalah berbagi video dengan pengguna sistem operasi lain (seperti Windows atau Mac OS), mungkin Anda perlu <link href="help:gnome-help/video-sending">mengubahnya ke format lain</link>.</p>
 

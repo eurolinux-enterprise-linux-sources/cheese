@@ -7,7 +7,6 @@
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.6" date="2012-05-09" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,23 +18,22 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Introductie van de webcamtoepassing <app>Cheese</app>.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Introduction to the <app>Cheese</app> webcam application.</desc>
   </info>
 
   <title>Introductie</title>
 
-  <p><app>Cheese</app> is een webcamtoepassing waarmee u foto's en video's kunt maken met uw webcam. U kunt meerdere foto's achtereenvolgens maken door gebruik te maken van de <link xref="burst-mode"><gui>Burst</gui>-modus</link> en <link xref="effects-apply">speciale <gui>Effecten</gui></link> toepassen om er een persoonlijk tintje aan te geven.</p>
+  <p><app>Cheese</app> is a webcam application that lets you take photos and
+  record videos using your webcam. You can take multiple photos in quick
+  succession using the <link xref="burst-mode"><gui>Burst</gui> mode</link> and
+  apply <link xref="effects-apply">special <gui>Effects</gui></link> to add a
+  personal touch to them.</p>
 
-  <p>Standaard start <app>Cheese</app> in de <gui>Foto</gui>-modus, klaar om <link xref="photo-take">een foto te nemen</link>. Om <link xref="video-record">een video op te nemen</link> dient u over te schakelen naar de <gui>Video</gui>-modus.</p>
+  <p>By default, <app>Cheese</app> starts in <gui>Photo</gui> mode, ready to
+  <link xref="photo-take">take a photo</link>. You need to switch to
+  <gui>Video</gui> mode to <link xref="video-record">record a video</link>.</p>
 
-  <p><app>Cheese</app> werkt met de meeste webcams, maar sommige oudere webcams worden niet ondersteund.</p>
+  <p><app>Cheese</app> works with most webcams, but some older webcams may not
+  be supported.</p>
 
 </page>

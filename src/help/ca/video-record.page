@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,8 +16,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Com utilitzar la càmera web per enregistrar pel·lícules curtes per compartir-les amb els amics.</desc>
   
@@ -53,26 +50,26 @@
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Video</gui> mode. If you are, the
-      <gui style="button">Video</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Make sure that you are in <gui>Video mode</gui>. If you are, the button
+      in the middle of the window will say <gui style="button">Record a
+      Video</gui>.</p>
+      <p>You can switch to <gui>Video mode</gui> by clicking the button in the
+      main window or by selecting
+      <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Record a video using a webcam</gui>
-      button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to start recording the video.</p>
+      <p>Click <gui style="button">Record a Video</gui>, or press the
+      <key>Space</key> key. <app>Cheese</app> will start recording a video
+      using your webcam.</p>
     </item>
     <item>
-     <p>To stop recording, press the same button again. You can also press the 
-     <key>Esc</key> or <key>Space</key> key to stop recording.</p>
+     <p>Per aturar l'enregistrament, feu clic a <gui>Atura l'enregistrament</gui> o premeu <key>Esc</key>.</p>
     </item>
   </steps>
 
-  <p>Videos are saved in the WebM (<file>.webm</file>) format.</p>
+  <p>Els vídeos es desen en format Ogg Theora (<file>.ogv</file>).</p>
 
-  <p>After you have stopped recording, the video will automatically appear in
-  the photo stream at the bottom of the <app>Cheese</app> window. From there,
-  you can <link xref="photo-view">open</link> or delete the video.</p>
+  <p>Després d'aturar l'enregistrament, el vídeo apareixerà automàticament en la seqüència d'imatges al peu de la finestra del <app>Cheese</app>. Des d'aquí, podeu <link xref="photo-view">reproduir-lo</link>, pujar-lo a una xarxa social, publicar-lo al vostre bloc o canal del YouTube, o compartir-lo amb els amics per <link href="ghelp:gnome-help/net-defaul-email">correu electrònic</link>.</p>
 
   <p>Si teniu problemes per compartir un vídeo amb algú que utilitzi altres sistemes operatius (com Windows o Mac OS), pot ser us caldrà <link href="ghelp:gnome-help/video-sending">convertir-lo a un altre format</link>.</p>
 

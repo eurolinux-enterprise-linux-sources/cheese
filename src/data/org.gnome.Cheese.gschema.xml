@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="cheese">
+<schemalist>
   <schema id='org.gnome.Cheese' path='/org/gnome/cheese/'>
     <key type='b' name='countdown'>
       <summary>Use a countdown</summary>
@@ -15,8 +15,8 @@
     </key>
 
     <key type='b' name='flash'>
-      <summary>Fire flash before taking a photo</summary>
-      <description>Set to true to fire a flash before taking a photo</description>
+      <summary>Fire flash before taking a picture</summary>
+      <description>Set to true to fire a flash when taking a picture</description>
       <default>true</default>
     </key>
 
@@ -61,43 +61,55 @@
     </key>
 
     <key type='d' name='brightness'>
-      <summary>Image brightness</summary>
-      <description>Adjusts the brightness of the image coming from the camera</description>
+      <summary>Picture brightness</summary>
+      <description>Adjusts the brightness of the picture coming from the camera</description>
       <default>0</default>
       <range min='-1' max='1'/>
     </key>
 
     <key type='d' name='contrast'>
-      <summary>Image contrast</summary>
-      <description>Adjusts the contrast of the image coming from the camera</description>
+      <summary>Picture contrast</summary>
+      <description>Adjusts the contrast of the picture coming from the camera</description>
       <default>1.0</default>
       <range min='0' max='2'/>
     </key>
 
     <key type='d' name='saturation'>
-      <summary>Image saturation</summary>
-      <description>Adjusts the saturation of the image coming from the camera</description>
+      <summary>Picture saturation</summary>
+      <description>Adjusts the saturation of the picture coming from the camera</description>
       <default>1</default>
       <range min='0' max='2'/>
     </key>
 
     <key type='d' name='hue'>
-      <summary>Image hue</summary>
-      <description>Adjusts the hue (color tint) of the image coming from the camera</description>
+      <summary>Picture hue</summary>
+      <description>Adjusts the hue (color tint) of the picture coming from the camera</description>
       <default>0</default>
       <range min='-1' max='1'/>
     </key>
 
     <key type='s' name='video-path'>
-      <summary>Video path</summary>
-      <description>Defines the path where the videos are stored. If empty, “XDG_VIDEOS_DIR/Webcam” will be used.</description>
+      <summary>Video Path</summary>
+      <description>Defines the path where the videos are stored. If empty, "XDG_VIDEO/Webcam" will be used.</description>
       <default>''</default>
     </key>
 
     <key type='s' name='photo-path'>
-      <summary>Photo path</summary>
-      <description>Defines the path where the photos are stored. If empty, “XDG_PICTURES_DIR/Webcam” will be used.</description>
+      <summary>Photo Path</summary>
+      <description>Defines the path where the photos are stored. If empty, "XDG_PHOTO/Webcam" will be used.</description>
       <default>''</default>
+    </key>
+
+    <key type='b' name='wide-mode'>
+      <summary>Whether to start in wide mode</summary>
+      <description>If set to true, Cheese will start up in wide mode, with the image collection placed on the right-hand side. Useful with small screens.</description>
+      <default>false</default>
+    </key>
+
+    <key type='b' name='fullscreen'>
+      <summary>Whether to start in fullscreen</summary>
+      <description>If set to true, Cheese will start up in fullscreen mode.</description>
+      <default>false</default>
     </key>
 
     <key type='i' name='burst-delay'>
@@ -107,7 +119,7 @@
       <range min='500' max='10000'/>
     </key>
 
-    <key type='i' name='burst-repeat'>
+     <key type='i' name='burst-repeat'>
       <summary>Number of photos in burst mode</summary>
       <description>The number of photos to take in a single burst.</description>
       <default>4</default>

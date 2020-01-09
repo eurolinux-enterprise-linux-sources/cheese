@@ -20,7 +20,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-  #include "config.h"
+  #include "cheese-config.h"
 #endif
 
 #include <glib.h>
@@ -38,10 +38,10 @@ const guint THUMB_VIEW_MINIMUM_HEIGHT = 100;
 
 const gchar CHEESE_OLD_VIDEO_NAME_SUFFIX[] = ".ogv";
 
-struct _CheeseThumbView
-{
-  GtkIconView parent;
-};
+#define CHEESE_THUMB_VIEW_GET_PRIVATE(o) \
+  (G_TYPE_INSTANCE_GET_PRIVATE ((o), CHEESE_TYPE_THUMB_VIEW, CheeseThumbViewPrivate))
+
+G_DEFINE_TYPE (CheeseThumbView, cheese_thumb_view, GTK_TYPE_ICON_VIEW);
 
 typedef struct
 {
@@ -56,8 +56,6 @@ typedef struct
   guint idle_id;
   GQueue *thumbnails;
 } CheeseThumbViewPrivate;
-
-G_DEFINE_TYPE_WITH_PRIVATE (CheeseThumbView, cheese_thumb_view, GTK_TYPE_ICON_VIEW)
 
 enum
 {
@@ -100,7 +98,7 @@ cheese_thumb_view_idle_append_item (gpointer data)
   if (item == NULL) return FALSE;
 
   thumb_view = item->thumb_view;
-  priv = cheese_thumb_view_get_instance_private (thumb_view);
+  priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
 
   GnomeDesktopThumbnailFactory *factory = priv->factory;
@@ -191,13 +189,13 @@ cheese_thumb_view_idle_append_item (gpointer data)
 static void
 cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   GtkTreeIter   iter;
   GtkIconTheme *icon_theme;
   GdkPixbuf    *pixbuf = NULL;
   GtkTreePath  *path;
-  char         *filename, *basename;
+  char         *filename, *basename, *col_filename;
   GError       *error = NULL;
   gboolean      skip  = FALSE;
   GFileInfo    *info;
@@ -207,13 +205,6 @@ cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
 
   info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_SIZE, 0, NULL,
                             NULL);
-  if (!info)
-  {
-    /* This is normal since photos first get created with a tmpname, ie:
-     * "2013-06-13-113155.jpg.DQRGYW" and then moved to their final name,
-     * we will get another append_item call for the final name. */
-    return;
-  }
   size = g_file_info_get_size (info);
   g_object_unref (info);
 
@@ -233,19 +224,13 @@ cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
 
   if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->store), &iter))
   {
-    gchar *col_filename;
-
     /* check if the selected item is the first, else go through the store */
     gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter, THUMBNAIL_URL_COLUMN, &col_filename, -1);
-    /* FIXME: col_filename is in GLib filename encoding, not ASCII. */
     if (g_ascii_strcasecmp (col_filename, filename))
     {
       while (gtk_tree_model_iter_next (GTK_TREE_MODEL (priv->store), &iter))
       {
-        g_free (col_filename);
-
         gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter, THUMBNAIL_URL_COLUMN, &col_filename, -1);
-        /* FIXME: col_filename is in GLib filename encoding, not ASCII. */
         if (!g_ascii_strcasecmp (col_filename, filename))
         {
           skip = TRUE;
@@ -262,20 +247,15 @@ cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
 
     if (skip) return;
   }
-  else
+
+  if (priv->multiplex_thumbnail_generator)
   {
-    g_free (filename);
+    char *f;
+
+    f      = g_strdup_printf ("%s/pixmaps/cheese-%i.svg", PACKAGE_DATADIR, g_random_int_range (1, 4));
+    pixbuf = gdk_pixbuf_new_from_file (f, NULL);
+    g_free (f);
   }
-
-    if (priv->multiplex_thumbnail_generator)
-    {
-        gchar *f;
-
-        f = g_strdup_printf ("/org/gnome/Cheese/pixmaps/cheese-%i.svg",
-                             g_random_int_range (1, 4));
-        pixbuf = gdk_pixbuf_new_from_resource (f, NULL);
-        g_free (f);
-    }
   else
   {
     icon_theme = gtk_icon_theme_get_default ();
@@ -306,7 +286,6 @@ cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
   path = gtk_tree_model_get_path (GTK_TREE_MODEL (priv->store), &iter);
   gtk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumb_view), path,
                                 TRUE, 1.0, 0.5);
-  gtk_tree_path_free (path);
 
   if (pixbuf) g_object_unref (pixbuf);
 
@@ -325,54 +304,41 @@ cheese_thumb_view_append_item (CheeseThumbView *thumb_view, GFile *file)
 void
 cheese_thumb_view_remove_item (CheeseThumbView *thumb_view, GFile *file)
 {
-    CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
-    gchar *filename;
-    GtkTreeIter iter;
-    gboolean found = FALSE;
+  char       *path;
+  GtkTreeIter iter;
+  char       *filename;
+  gboolean    found = FALSE;
 
-    filename = g_file_get_path (file);
+  filename = g_file_get_path (file);
 
-    if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->store), &iter))
+  if (!gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->store), &iter))
+  {
+    /* a single item was on the thumbview but it's been already removed */
+    return;
+  }
+
+  /* check if the selected item is the first, else go through the store */
+  gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter, THUMBNAIL_URL_COLUMN, &path, -1);
+  if (g_ascii_strcasecmp (path, filename))
+  {
+    while (gtk_tree_model_iter_next (GTK_TREE_MODEL (priv->store), &iter))
     {
-        gchar *col_filename;
-
-        gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter,
-                            THUMBNAIL_URL_COLUMN, &col_filename, -1);
-
-        /* FIXME: col_filename is in GLib filename encoding, not ASCII. */
-        if (g_ascii_strcasecmp (col_filename, filename))
-        {
-            while (gtk_tree_model_iter_next (GTK_TREE_MODEL (priv->store),
-                                             &iter))
-            {
-                g_free (col_filename);
-
-                gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter,
-                                    THUMBNAIL_URL_COLUMN, &col_filename, -1);
-
-                /* FIXME: col_filename is in GLib filename encoding, not ASCII. */
-                if (!g_ascii_strcasecmp (col_filename, filename))
-                {
-                    found = TRUE;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            found = TRUE;
-        }
-
-            g_free (col_filename);
-            g_free (filename);
+      gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter, THUMBNAIL_URL_COLUMN, &path, -1);
+      if (!g_ascii_strcasecmp (path, filename))
+      {
+        found = TRUE;
+        break;
+      }
     }
-    else
-    {
-        /* A single item was in the thumbview but it's been already removed. */
-        g_free (filename);
-        return;
-    }
+  }
+  else
+  {
+    found = TRUE;
+  }
+  g_free (path);
+  g_free (filename);
 
   if (!found) return;
 
@@ -422,7 +388,7 @@ cheese_thumb_view_monitor_cb (GFileMonitor     *file_monitor,
       char *photo_name;
       GFile *photo_file;
 
-      priv = cheese_thumb_view_get_instance_private (thumb_view);
+      priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
       path_photos = cheese_fileutil_get_photo_path (priv->fileutil);
       filename = g_file_get_path (file);
       if (!strcmp(path_photos, filename))
@@ -440,8 +406,6 @@ cheese_thumb_view_monitor_cb (GFileMonitor     *file_monitor,
         }
         g_dir_close (dir_photos);
       }
-
-      g_free (filename);
       break;
     }
 
@@ -578,7 +542,7 @@ cheese_thumb_view_get_n_selected (CheeseThumbView *thumbview)
 static void
 cheese_thumb_view_fill (CheeseThumbView *thumb_view)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   GDir       *dir_videos, *dir_photos;
   const char *path_videos, *path_photos;
@@ -645,7 +609,7 @@ static void
 cheese_thumb_view_finalize (GObject *object)
 {
   CheeseThumbView        *thumb_view = CHEESE_THUMB_VIEW (object);
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv       = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   g_object_unref (priv->store);
   g_object_unref (priv->fileutil);
@@ -664,6 +628,8 @@ cheese_thumb_view_class_init (CheeseThumbViewClass *klass)
 
   object_class->constructed = cheese_thumb_view_constructed;
   object_class->finalize = cheese_thumb_view_finalize;
+
+  g_type_class_add_private (klass, sizeof (CheeseThumbViewPrivate));
 }
 
 static void
@@ -672,7 +638,7 @@ cheese_thumb_view_row_inserted_cb (GtkTreeModel    *tree_model,
                                    GtkTreeIter     *iter,
                                    CheeseThumbView *thumb_view)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   priv->n_items++;
   if (!priv->vertical)
@@ -686,7 +652,7 @@ cheese_thumb_view_row_deleted_cb (GtkTreeModel    *tree_model,
                                   GtkTreePath     *path,
                                   CheeseThumbView *thumb_view)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   priv->n_items--;
   if (priv->n_items == 0)
@@ -700,7 +666,7 @@ cheese_thumb_view_row_deleted_cb (GtkTreeModel    *tree_model,
 static void
 cheese_thumb_view_init (CheeseThumbView *thumb_view)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   priv->video_file_monitor = NULL;
   priv->photo_file_monitor = NULL;
@@ -738,10 +704,8 @@ static void
 cheese_thumb_view_constructed (GObject *object)
 {
   CheeseThumbView *thumb_view = CHEESE_THUMB_VIEW (object);
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
   
-  G_OBJECT_CLASS (cheese_thumb_view_parent_class)->constructed (object);
-
   gtk_icon_view_set_model (GTK_ICON_VIEW (thumb_view), GTK_TREE_MODEL (priv->store));
 
   gtk_widget_set_size_request (GTK_WIDGET (thumb_view),
@@ -780,22 +744,19 @@ cheese_thumb_view_new ()
 void
 cheese_thumb_view_set_vertical (CheeseThumbView *thumb_view, gboolean vertical)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   priv->vertical = vertical;
   if (!priv->vertical && priv->n_items)
     gtk_icon_view_set_columns(GTK_ICON_VIEW (thumb_view), priv->n_items);
   else
     gtk_icon_view_set_columns(GTK_ICON_VIEW (thumb_view), 1);
-
-  gtk_widget_set_hexpand (GTK_WIDGET (thumb_view), !vertical);
-  gtk_widget_set_vexpand (GTK_WIDGET (thumb_view), vertical);
 }
 
 void
 cheese_thumb_view_start_monitoring_photo_path (CheeseThumbView *thumb_view, const char *path_photos)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   if (priv->photo_file_monitor != NULL)
     return;
@@ -814,7 +775,7 @@ cheese_thumb_view_start_monitoring_photo_path (CheeseThumbView *thumb_view, cons
 void
 cheese_thumb_view_start_monitoring_video_path (CheeseThumbView *thumb_view, const char *path_videos)
 {
-  CheeseThumbViewPrivate *priv = cheese_thumb_view_get_instance_private (thumb_view);
+  CheeseThumbViewPrivate *priv = CHEESE_THUMB_VIEW_GET_PRIVATE (thumb_view);
 
   if (priv->video_file_monitor != NULL)
     return;

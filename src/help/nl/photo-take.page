@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,39 +22,39 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Uw webcam gebruiken om foto's te nemen in plaats van video's.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Use your webcam to take photos instead of videos.</desc>
   </info>
 
-  <title>Foto's nemen</title>
+  <title>Take photos using a webcam</title>
 
-  <p>Webcams kunnen worden gebruikt om zowel foto's als video's (op) te nemen. Om een foto te nemen:</p>
+  <p>Webcams can be used to take still photos as well as videos. To take a
+  photo:</p>
 
   <steps>
     <item>
-      <p>Zorg ervoor dat u in de <gui>Foto</gui>-modus bent. Als dit het geval is, zal de <gui style="button">Foto</gui>-knop worden geselecteerd aan de linkerkant van het scherm.</p>
+      <p>Make sure that the mode <gui style="menuitem">Photo</gui> is selected
+      in the <gui style="menu">Cheese</gui> menu.</p>
     </item>
     <item>
-      <p>Klik op de knop <gui style="button">Foto nemen met behulp van een webcam</gui> in het midden van het onderste paneel, of druk op de <key>Spatiebalk</key>, om de foto te nemen.</p>
+      <p>Click <gui>Take a Photo</gui>. Alternatively, you can press the
+      capture button on the webcam or the <key>Space</key> key.</p>
     </item>
     <item>
-      <p>Er zal een korte afteltijd zijn, gevolgd door een flits, en de foto zal verschijnen in de fotoreeks.</p>
+      <p>There will be a short countdown, followed by a flash, and the photo
+      will appear in the photo stream.</p>
     </item>
   </steps>
 
-  <p>De foto's in de fotoreeks worden automatisch opgeslagen in de map <file>Afbeeldingen/Webcam</file> in uw persoonlijke map. Deze worden opgeslagen in het JPEG-formaat (<file>.jpg</file>).</p>
+  <p>The photos in the photo stream are automatically saved in the
+  <file>/Pictures/Webcam</file> folder in your home folder. They are saved
+  using the JPEG (<file>.jpg</file>) format.</p>
 
-  <p>Als u toch geen foto wilt maken nadat u op <gui>Foto nemen</gui> heeft geklikt, drukt u op <key>Esc</key> voordat het aftellen eindigt.</p>
+  <p>To cancel taking a photo after you have clicked <gui>Take a Photo</gui>,
+  press <key>Esc</key> before the countdown finishes.</p>
 
   <note>
-    <p>Gebruik de <link xref="burst-mode"><gui>Burst</gui>-modus</link> om snel meerdere foto's na elkaar te maken.</p>
+    <p>To take multiple photos in rapid succession, use
+    <link xref="burst-mode">burst mode</link>.</p>
   </note>
 
 </page>

@@ -2,239 +2,183 @@
 # Cheese Spanish translation
 # Copyright (C) 2007 daniel g. siegel <dgsiegel@gnome.org>
 # This file is distributed under the same license as cheese
-# 
+#
 # Ricardo González Castro <rick@jinlabs.com>, 2007.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
-# 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010-2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: cheese.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=cheese&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-12-08 21:58+0000\n"
-"PO-Revision-Date: 2016-12-20 15:26+0100\n"
+"POT-Creation-Date: 2012-10-29 16:16+0000\n"
+"PO-Revision-Date: 2012-12-16 21:00+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: es <gnome-es-list@gnome.org>\n"
-"Language: es\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/cheese-actions.ui.h:1
+msgid "Share…"
+msgstr "Compartir…"
+
+#: ../data/cheese-actions.ui.h:2
+msgid "Save _As…"
+msgstr "Guardar _como…"
+
+#: ../data/cheese-actions.ui.h:3
+msgid "Move to _Trash"
+msgstr "Mover a la _papelera"
+
+#: ../data/cheese-actions.ui.h:4
+msgid "Move _All to Trash"
+msgstr "Mo_ver todos a la papelera"
+
+#: ../data/cheese-actions.ui.h:5
+msgid "_Wide Mode"
+msgstr "Modo _ancho"
+
+#: ../data/cheese-actions.ui.h:6
+msgid "P_revious Effects"
+msgstr "Efectos anterio_res"
+
+#: ../data/cheese-actions.ui.h:7
+msgid "Ne_xt Effects"
+msgstr "Siguientes e_fectos"
 
 #: ../data/cheese-main-window.ui.h:1
 msgid "Photo mode"
 msgstr "Modo foto"
 
 #: ../data/cheese-main-window.ui.h:2
-msgid "Photo"
-msgstr "Foto"
-
-#: ../data/cheese-main-window.ui.h:3
 msgid "Video mode"
 msgstr "Modo vídeo"
 
-#: ../data/cheese-main-window.ui.h:4
-msgid "Video"
-msgstr "Video"
-
-#: ../data/cheese-main-window.ui.h:5
+#: ../data/cheese-main-window.ui.h:3
 msgid "Photo burst mode"
 msgstr "Modo ráfaga de fotos"
 
+#: ../data/cheese-main-window.ui.h:4 ../libcheese/cheese-avatar-chooser.c:263
+#: ../src/cheese-window.vala:1504
+msgid "Take a photo"
+msgstr "Tomar una foto"
+
+#: ../data/cheese-main-window.ui.h:5 ../src/cheese-window.vala:1503
+msgid "_Take a Photo"
+msgstr "_Tomar una foto"
+
 #: ../data/cheese-main-window.ui.h:6
-msgid "Burst"
-msgstr "Ráfaga"
+msgid "Previous"
+msgstr "Anterior"
 
-#: ../data/cheese-main-window.ui.h:7 ../src/cheese-window.vala:1321
-msgid "Take a photo using a webcam"
-msgstr "Tomar una foto usando una cámara web"
-
-#: ../data/cheese-main-window.ui.h:8
-msgid "Navigate to the previous page of effects"
-msgstr "Navegar a la página de efectos anterior"
-
-#: ../data/cheese-main-window.ui.h:9
+#: ../data/cheese-main-window.ui.h:7
 msgid "Effects"
 msgstr "Efectos"
 
-#: ../data/cheese-main-window.ui.h:10
+#: ../data/cheese-main-window.ui.h:8 ../src/cheese-main.vala:107
 msgid "_Effects"
 msgstr "Efecto_s"
 
-#: ../data/cheese-main-window.ui.h:11
-msgid "Navigate to the next page of effects"
-msgstr "Navegar a la siguiente página de efectos"
+#: ../data/cheese-main-window.ui.h:9
+msgid "Next"
+msgstr "Siguiente"
 
-#: ../data/cheese-main-window.ui.h:12
-msgid "Leave fullscreen mode and go back to windowed mode"
-msgstr "Salir del modo a pantalla completa y volver al modo ventana"
+#: ../data/cheese-main-window.ui.h:10
+msgid "Leave fullscreen"
+msgstr "Salir de pantalla completa"
+
+#: ../data/cheese-main-window.ui.h:11
+msgid "_Leave Fullscreen"
+msgstr "_Salir de pantalla completa"
 
 #: ../data/cheese-prefs.ui.h:1
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../data/cheese-prefs.ui.h:2 ../data/menus.ui.h:3
-msgid "_Help"
-msgstr "Ay_uda"
-
-#: ../data/cheese-prefs.ui.h:3
-msgid "_Close"
-msgstr "_Cerrar"
-
-#: ../data/cheese-prefs.ui.h:4
+#: ../data/cheese-prefs.ui.h:2
 msgid "Device"
 msgstr "Dispositivo"
 
-#: ../data/cheese-prefs.ui.h:5
+#: ../data/cheese-prefs.ui.h:3
 msgid "Photo resolution"
 msgstr "Resolución de la foto"
 
-#: ../data/cheese-prefs.ui.h:6
+#: ../data/cheese-prefs.ui.h:4
 msgid "Video resolution"
 msgstr "Resolución del vídeo"
 
-#: ../data/cheese-prefs.ui.h:7 ../libcheese/cheese-fileutil.c:283
-#: ../libcheese/cheese-fileutil.c:303
+#: ../data/cheese-prefs.ui.h:5
 msgid "Webcam"
 msgstr "Cámara web"
 
-#: ../data/cheese-prefs.ui.h:8
+#: ../data/cheese-prefs.ui.h:6
 msgid "Brightness"
 msgstr "Brillo"
 
-#: ../data/cheese-prefs.ui.h:9
+#: ../data/cheese-prefs.ui.h:7
 msgid "Saturation"
 msgstr "Saturación"
 
-#: ../data/cheese-prefs.ui.h:10
+#: ../data/cheese-prefs.ui.h:8
 msgid "Hue"
 msgstr "Tono"
 
-#: ../data/cheese-prefs.ui.h:11
+#: ../data/cheese-prefs.ui.h:9
 msgid "Contrast"
 msgstr "Contraste"
 
-#: ../data/cheese-prefs.ui.h:12
+#: ../data/cheese-prefs.ui.h:10
 msgid "Image"
 msgstr "Imagen"
 
-#: ../data/cheese-prefs.ui.h:13
+#: ../data/cheese-prefs.ui.h:11
 msgid "Shutter"
 msgstr "Obturador"
 
-#: ../data/cheese-prefs.ui.h:14
+#: ../data/cheese-prefs.ui.h:12
 msgid "_Countdown"
 msgstr "_Cuenta atrás"
 
-#: ../data/cheese-prefs.ui.h:15
-msgid "Fire _flash"
-msgstr "_Disparar flash"
+#: ../data/cheese-prefs.ui.h:13
+msgid "Fire _Flash"
+msgstr "_Disparo del flash"
 
-#: ../data/cheese-prefs.ui.h:16
+#: ../data/cheese-prefs.ui.h:14
 msgid "Burst mode"
 msgstr "Modo ráfaga"
 
-#: ../data/cheese-prefs.ui.h:17
+#: ../data/cheese-prefs.ui.h:15
 msgid "Number of photos"
 msgstr "Número de fotos"
 
-#: ../data/cheese-prefs.ui.h:18
+#: ../data/cheese-prefs.ui.h:16
 msgid "Delay between photos (seconds)"
-msgstr "Retardo entre fotos (segundos)"
+msgstr "Retraso entre fotos (segundos)"
 
-#: ../data/cheese-prefs.ui.h:19
+#: ../data/cheese-prefs.ui.h:17
 msgid "Capture"
 msgstr "Capturar"
 
-#: ../data/headerbar.ui.h:1 ../libcheese/cheese-avatar-chooser.c:85
-#: ../src/cheese-window.vala:1350
-msgid "Take a Photo"
-msgstr "Tomar una foto"
-
-#: ../data/menus.ui.h:1
-msgid "_Fullscreen"
-msgstr "Pantalla _completa"
-
-#: ../data/menus.ui.h:2
-msgid "P_references"
-msgstr "P_referencias"
-
-#: ../data/menus.ui.h:4
-msgid "_About"
-msgstr "Acerca _de"
-
-#: ../data/menus.ui.h:5
-msgid "_Quit"
-msgstr "_Salir"
-
-#: ../data/menus.ui.h:6
-msgid "Open"
-msgstr "Abrir"
-
-#: ../data/menus.ui.h:7
-msgid "Save _As…"
-msgstr "Guardar _como…"
-
-#: ../data/menus.ui.h:8
-msgid "Move to _Trash"
-msgstr "Mover a la _papelera"
-
-#: ../data/menus.ui.h:9
-msgid "Delete"
-msgstr "Eliminar"
-
-#. Both taken from the desktop file.
-#: ../data/org.gnome.Cheese.appdata.xml.in.h:2
-#: ../data/org.gnome.Cheese.desktop.in.in.h:1
-#: ../src/cheese-application.vala:113 ../src/cheese-application.vala:543
+#: ../data/cheese.desktop.in.in.h:1 ../src/cheese-main.vala:81
+#: ../src/cheese-main.vala:489
 msgid "Cheese"
 msgstr "Cheese"
 
-#: ../data/org.gnome.Cheese.appdata.xml.in.h:3
-#: ../data/org.gnome.Cheese.desktop.in.in.h:4
-#: ../src/cheese-application.vala:538
+#: ../data/cheese.desktop.in.in.h:2
+msgid "Cheese Webcam Booth"
+msgstr "Fotomatón de cámara web Cheese"
+
+#: ../data/cheese.desktop.in.in.h:3 ../src/cheese-main.vala:484
 msgid "Take photos and videos with your webcam, with fun graphical effects"
 msgstr ""
 "Tome fotografías y vídeos con su cámara web, con divertidos efectos gráficos"
 
-#: ../data/org.gnome.Cheese.appdata.xml.in.h:4
-msgid ""
-"Cheese uses your webcam to take photos and videos, applies fancy special "
-"effects and lets you share the fun with others."
-msgstr ""
-"Cheese usa su cámara web para hacer fotos y vídeos, aplica efectos "
-"especiales divertidos y le permite compartir su diversión con los demás."
-
-#: ../data/org.gnome.Cheese.appdata.xml.in.h:5
-msgid ""
-"Take multiple photos in quick succession with burst mode. Use the countdown "
-"to give yourself time to strike a pose, and wait for the flash!"
-msgstr ""
-"Haga varias fotos en una rápida sucesión con el modo ráfaga. Use la cuenta "
-"atrás para que le de tiempo a colocarse y espere al flash."
-
-#: ../data/org.gnome.Cheese.appdata.xml.in.h:6
-msgid ""
-"Under the hood, Cheese uses GStreamer to apply fancy effects to photos and "
-"videos. With Cheese it is easy to take photos of you, your friends, pets or "
-"whatever you want and share them with others."
-msgstr ""
-"Internamente, Cheese usa GStreamer para aplicar efectos fantásticos a ls "
-"fotos y los vídeos. Con Cheese es fácil hacerse fotos, hacerlas a sus "
-"amigos, sus mascotas o lo que quiera compartir con otros."
-
-#: ../data/org.gnome.Cheese.desktop.in.in.h:2
-msgid "Webcam Booth"
-msgstr "Fotomatón de cámara web"
-
-#: ../data/org.gnome.Cheese.desktop.in.in.h:3
-msgid "Cheese Webcam Booth"
-msgstr "Fotomatón de cámara web Cheese"
-
-#: ../data/org.gnome.Cheese.desktop.in.in.h:5
+#: ../data/cheese.desktop.in.in.h:4
 msgid "photo;video;webcam;"
 msgstr "foto;vídeo;cámara web;"
 
@@ -255,11 +199,11 @@ msgid "The duration of the countdown before taking a photo, in seconds"
 msgstr "La duración de la cuenta atrás antes de tomar una foto, en segundos"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:5
-msgid "Fire flash before taking a photo"
+msgid "Fire flash before taking a picture"
 msgstr "Disparar el flash antes de tomar una foto"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:6
-msgid "Set to true to fire a flash before taking a photo"
+msgid "Set to true to fire a flash when taking a picture"
 msgstr "Establecer a cierto para disparar el flash al tomar una foto"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:7
@@ -314,72 +258,86 @@ msgid "The height of the video captured from the camera, in pixels"
 msgstr "La altura del vídeo capturado por la cámara, en píxeles"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:19
-msgid "Image brightness"
+msgid "Picture brightness"
 msgstr "Brillo de la imagen"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:20
-msgid "Adjusts the brightness of the image coming from the camera"
+msgid "Adjusts the brightness of the picture coming from the camera"
 msgstr "Ajusta el brillo de la imagen que proviene de la cámara"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:21
-msgid "Image contrast"
+msgid "Picture contrast"
 msgstr "Contraste de la imagen"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:22
-msgid "Adjusts the contrast of the image coming from the camera"
+msgid "Adjusts the contrast of the picture coming from the camera"
 msgstr "Ajusta el contraste de la imagen que proviene de la cámara"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:23
-msgid "Image saturation"
+msgid "Picture saturation"
 msgstr "Saturación de la imagen"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:24
-msgid "Adjusts the saturation of the image coming from the camera"
-msgstr "Ajusta la saturación de la imagen que proviene de la cámara"
+msgid "Adjusts the saturation of the picture coming from the camera"
+msgstr "Ajusta el nivel de saturación de la imagen que proviene de la cámara"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:25
-msgid "Image hue"
+msgid "Picture hue"
 msgstr "Tono de la imagen"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:26
-msgid "Adjusts the hue (color tint) of the image coming from the camera"
+msgid "Adjusts the hue (color tint) of the picture coming from the camera"
 msgstr "Ajusta el tono de la imagen que proviene de la cámara"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:27
-msgid "Video path"
+msgid "Video Path"
 msgstr "Ruta de los vídeos"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:28
-#| msgid ""
-#| "Defines the path where the videos are stored. If empty, \"XDG_VIDEOS_DIR/"
-#| "Webcam\" will be used."
 msgid ""
-"Defines the path where the videos are stored. If empty, “XDG_VIDEOS_DIR/"
-"Webcam” will be used."
+"Defines the path where the videos are stored. If empty, \"XDG_VIDEO/Webcam\" "
+"will be used."
 msgstr ""
-"Define la ruta donde se almacenan los vídeos. Si está vacío se usará "
-"\"XDG_VIDEOS_DIR/Webcam\"."
+"Define la ruta donde se almacenarán los vídeos. Si está vacío se usará "
+"\"XDG_VIDEO/Webcam\"."
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:29
-msgid "Photo path"
+msgid "Photo Path"
 msgstr "Ruta de las fotos"
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:30
-#| msgid ""
-#| "Defines the path where the photos are stored. If empty, "
-#| "\"XDG_PICTURES_DIR/Webcam\" will be used."
 msgid ""
-"Defines the path where the photos are stored. If empty, “XDG_PICTURES_DIR/"
-"Webcam” will be used."
+"Defines the path where the photos are stored. If empty, \"XDG_PHOTO/Webcam\" "
+"will be used."
 msgstr ""
-"Define la ruta donde se almacenan las fotos, si está vacío se usará "
-"\"XDG_PICTURES_DIR/Webcam\"."
+"Define la ruta donde se almacenarán las fotos, si está vacío se usará "
+"\"XDG_PHOTO/Webcam\"."
 
 #: ../data/org.gnome.Cheese.gschema.xml.h:31
+msgid "Whether to start in wide mode"
+msgstr "Indica si se debe iniciar en modo ancho"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:32
+msgid ""
+"If set to true, Cheese will start up in wide mode, with the image collection "
+"placed on the right-hand side. Useful with small screens."
+msgstr ""
+"Si está activado, Cheese se iniciará en modo ancho con la colección de "
+"imágenes ubicada en la parte derecha. Útil para pantallas pequeñas."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:33
+msgid "Whether to start in fullscreen"
+msgstr "Indica si se debe iniciar en modo a pantalla completa"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:34
+msgid "If set to true, Cheese will start up in fullscreen mode."
+msgstr "Si es cierto, Cheese se iniciará en modo a pantalla completa."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:35
 msgid "Time between photos in burst mode"
 msgstr "Tiempo entre fotos en el modo ráfaga"
 
-#: ../data/org.gnome.Cheese.gschema.xml.h:32
+#: ../data/org.gnome.Cheese.gschema.xml.h:36
 msgid ""
 "The length of time, in milliseconds, to delay between taking each photo in a "
 "burst sequence of photos. If the burst delay is less than the countdown "
@@ -390,36 +348,52 @@ msgstr ""
 "que la duración de la cuenta atrás, se usará la duración de la cuenta atrás "
 "en su lugar."
 
-#: ../data/org.gnome.Cheese.gschema.xml.h:33
+#: ../data/org.gnome.Cheese.gschema.xml.h:37
 msgid "Number of photos in burst mode"
 msgstr "Número de fotos en el modo ráfaga"
 
-#: ../data/org.gnome.Cheese.gschema.xml.h:34
+#: ../data/org.gnome.Cheese.gschema.xml.h:38
 msgid "The number of photos to take in a single burst."
 msgstr "El número de fotos que tomar en una sola ráfaga."
 
-#: ../libcheese/cheese-avatar-chooser.c:80 ../src/cheese-window.vala:264
-#: ../src/cheese-window.vala:293 ../src/cheese-window.vala:368
-msgid "_Cancel"
-msgstr "_Cancelar"
-
-#: ../libcheese/cheese-avatar-chooser.c:82
-msgid "_Select"
-msgstr "_Seleccionar"
-
-#: ../libcheese/cheese-avatar-widget.c:128 ../src/cheese-window.vala:692
+#: ../libcheese/cheese-avatar-chooser.c:138 ../src/cheese-window.vala:807
 msgid "Shutter sound"
 msgstr "Sonido del obturador"
 
-#: ../libcheese/cheese-avatar-widget.c:270
-msgid "_Take Another Picture"
-msgstr "Tomar o_tra foto"
+#: ../libcheese/cheese-avatar-chooser.c:260
+msgid "Select"
+msgstr "Seleccionar"
 
-#: ../libcheese/cheese-camera.c:432 ../libcheese/cheese-camera.c:1613
+#: ../libcheese/cheese-avatar-chooser.c:281
+msgid "_Take a photo"
+msgstr "_Tomar una foto"
+
+#: ../libcheese/cheese-avatar-chooser.c:294
+msgid "_Discard photo"
+msgstr "_Descartar foto"
+
+#: ../libcheese/cheese-camera-device.c:401
+msgid "Device capabilities not supported"
+msgstr "No se soportan las capacidades del dispositivo"
+
+#: ../libcheese/cheese-camera-device.c:430
+#, c-format
+msgid "Failed to initialize device %s for capability probing"
+msgstr "Falló al inicializar el dispositivo %s para probar sus capacidades"
+
+#: ../libcheese/cheese-camera-device.c:619
+msgid "Unknown device"
+msgstr "Dispositivo desconocido"
+
+#: ../libcheese/cheese-camera-device.c:642
+msgid "Cancellable initialization not supported"
+msgstr "No se soporta la inicialización cancelable"
+
+#: ../libcheese/cheese-camera.c:453 ../libcheese/cheese-camera.c:1567
 msgid "One or more needed GStreamer elements are missing: "
 msgstr "Faltan uno o más elementos necesarios de GStreamer: "
 
-#: ../libcheese/cheese-camera.c:1555
+#: ../libcheese/cheese-camera.c:1527
 #, c-format
 msgid "No device found"
 msgstr "No se encontró ningún dispositivo"
@@ -429,49 +403,93 @@ msgstr "No se encontró ningún dispositivo"
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
 #.
-#: ../libcheese/cheese-camera.c:1848
+#: ../libcheese/cheese-camera.c:1802
 #, c-format
 msgctxt "time format"
 msgid "%02i:%02i:%02i"
 msgstr "%02i:%02i:%02i"
 
-#: ../libcheese/cheese-camera-device.c:537
-msgid "Device capabilities not supported"
-msgstr "No se soportan las capacidades del dispositivo"
+#: ../src/cheese-effects-manager.vala:50
+msgid "No Effect"
+msgstr "Sin efectos"
 
-#: ../libcheese/cheese-camera-device.c:668
-msgid "Unknown device"
-msgstr "Dispositivo desconocido"
-
-#: ../libcheese/cheese-camera-device.c:687
-msgid "Cancellable initialization not supported"
-msgstr "No se soporta la inicialización cancelable"
-
-#: ../src/cheese-application.vala:53
+#: ../src/cheese-main.vala:51
 msgid "Start in wide mode"
 msgstr "Iniciar en modo ancho"
 
-#: ../src/cheese-application.vala:56
+#: ../src/cheese-main.vala:52
 msgid "Device to use as a camera"
 msgstr "Dispositivo que usar como cámara"
 
-#: ../src/cheese-application.vala:56
+#: ../src/cheese-main.vala:52
 msgid "DEVICE"
 msgstr "DISPOSITIVO"
 
-#: ../src/cheese-application.vala:58
+#: ../src/cheese-main.vala:53
 msgid "Output version information and exit"
 msgstr "Mostrar información de la versión y salir"
 
-#: ../src/cheese-application.vala:60
+#: ../src/cheese-main.vala:54
 msgid "Start in fullscreen mode"
 msgstr "Iniciar en modo a pantalla completa"
 
-#: ../src/cheese-application.vala:310
-msgid "Webcam in use"
-msgstr "Cámara web en uso"
+#: ../src/cheese-main.vala:92
+msgid "_Shoot"
+msgstr "_Disparar"
 
-#: ../src/cheese-application.vala:544
+#: ../src/cheese-main.vala:96
+msgid "Mode:"
+msgstr "Modo:"
+
+#: ../src/cheese-main.vala:97
+msgid "_Photo"
+msgstr "_Foto"
+
+#: ../src/cheese-main.vala:98
+msgid "_Video"
+msgstr "_Vídeo"
+
+#: ../src/cheese-main.vala:99
+msgid "_Burst"
+msgstr "_Ráfaga"
+
+#: ../src/cheese-main.vala:102
+msgid "_Fullscreen"
+msgstr "Pantalla _completa"
+
+#: ../src/cheese-main.vala:110
+msgid "P_references"
+msgstr "P_referencias"
+
+#: ../src/cheese-main.vala:113
+msgid "_About"
+msgstr "Acerca _de"
+
+#: ../src/cheese-main.vala:114
+msgid "_Help"
+msgstr "Ay_uda"
+
+#: ../src/cheese-main.vala:117
+msgid "_Quit"
+msgstr "_Salir"
+
+#: ../src/cheese-main.vala:177
+msgid "- Take photos and videos from your webcam"
+msgstr ": Tomar fotografías y vídeos con su cámara web"
+
+#: ../src/cheese-main.vala:189
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options.\n"
+msgstr ""
+"Ejecutar «%s --help» para ver una lista completa de opciones de línea de "
+"comandos disponibles.\n"
+
+#: ../src/cheese-main.vala:204
+#, c-format
+msgid "Another instance of Cheese is currently running\n"
+msgstr "Ya se está ejecutando otra instancia del Cheese\n"
+
+#: ../src/cheese-main.vala:490
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2012\n"
@@ -479,199 +497,87 @@ msgstr ""
 "Ricardo González Castro <rick@jinlabs.com>, 2007\n"
 "Diego Escalante Urrelo <diegoe@gnome.org>, 2007"
 
-#: ../src/cheese-application.vala:546
+#: ../src/cheese-main.vala:492
 msgid "Cheese Website"
 msgstr "Página web de Cheese"
 
-#. Translators: a description of an effect (to be applied to images
-#. *              from the webcam) which does nothing.
-#: ../src/cheese-effects-manager.vala:51
-msgid "No Effect"
-msgstr "Sin efectos"
-
-#: ../src/cheese-window.vala:236
+#: ../src/cheese-window.vala:192
 #, c-format
 msgid "Could not open %s"
 msgstr "No se pudo abrir %s"
 
-#: ../src/cheese-window.vala:261
+#: ../src/cheese-window.vala:220
 #, c-format
 msgid "Are you sure you want to permanently delete the file?"
 msgid_plural "Are you sure you want to permanently delete %d files?"
 msgstr[0] "¿Está seguro de que quiere eliminar permanentemente el archivo?"
 msgstr[1] "¿Está seguro de que quiere eliminar permanentemente %d archivos?"
 
-#: ../src/cheese-window.vala:265
-msgid "_Delete"
-msgstr "_Eliminar"
-
-#: ../src/cheese-window.vala:267
+#: ../src/cheese-window.vala:226
 msgid "If you delete an item, it will be permanently lost"
 msgid_plural "If you delete the items, they will be permanently lost"
 msgstr[0] "Si elimina un elemento se perderá permanentemente"
 msgstr[1] "Si elimina los elementos se perderán permanentemente"
 
-#: ../src/cheese-window.vala:291
-#, c-format
-msgid "Could not delete %s"
-msgstr "No se pudo eliminar %s"
-
-#: ../src/cheese-window.vala:294
-msgid "Skip"
-msgstr "Omitir"
-
-#: ../src/cheese-window.vala:295
-msgid "Skip all"
-msgstr "Omitir todo"
-
-#: ../src/cheese-window.vala:340
+#: ../src/cheese-window.vala:302
 #, c-format
 msgid "Could not move %s to trash"
 msgstr "No se pudo mover %s a la papelera"
 
 #. Nothing selected.
-#: ../src/cheese-window.vala:365
+#: ../src/cheese-window.vala:451
 msgid "Save File"
 msgstr "Guardar archivo"
 
-#: ../src/cheese-window.vala:369
-msgid "Save"
-msgstr "Guardar"
-
-#: ../src/cheese-window.vala:399
+#: ../src/cheese-window.vala:485
 #, c-format
 msgid "Could not save %s"
 msgstr "No se pudo guardar %s"
 
-#: ../src/cheese-window.vala:820
+#: ../src/cheese-window.vala:918
+msgid "Stop _Recording"
+msgstr "_Detener grabación"
+
+#: ../src/cheese-window.vala:919
 msgid "Stop recording"
 msgstr "Detener grabación"
 
-#: ../src/cheese-window.vala:835
+#: ../src/cheese-window.vala:934 ../src/cheese-window.vala:1508
+#| msgid "Record a Video"
+msgid "_Record a Video"
+msgstr "_Grabar un vídeo"
+
+#: ../src/cheese-window.vala:935 ../src/cheese-window.vala:1509
 msgid "Record a video"
 msgstr "Grabar un vídeo"
 
 #. FIXME: Set the effects action to be inactive.
-#: ../src/cheese-window.vala:870
+#: ../src/cheese-window.vala:970
+msgid "Stop _Taking Pictures"
+msgstr "Dejar de _tomar imágenes"
+
+#: ../src/cheese-window.vala:971
 msgid "Stop taking pictures"
 msgstr "Dejar de tomar imágenes"
 
-#: ../src/cheese-window.vala:893
-msgid "Take multiple photos"
-msgstr "Tomar múltiples fotos"
-
-#: ../src/cheese-window.vala:1087
-msgid "No effects found"
-msgstr "No se encontró ningún efecto"
-
-#: ../src/cheese-window.vala:1211
-msgid "There was an error playing video from the webcam"
-msgstr "Hubo un error al reproducir el vídeo de la cámara web"
-
-#: ../src/cheese-window.vala:1325
-msgid "Record a video using a webcam"
-msgstr "Grabar un vídeo usando una cámara web"
-
-#: ../src/cheese-window.vala:1331
-msgid "Take multiple photos using a webcam"
-msgstr "Tomar varias fotos usando una cámara web"
-
-#: ../src/cheese-window.vala:1343
-msgid "Choose an Effect"
-msgstr "Elegir un efecto"
-
-#: ../src/cheese-window.vala:1354
-msgid "Record a Video"
-msgstr "Grabar un vídeo"
-
-#: ../src/cheese-window.vala:1358
+#: ../src/cheese-window.vala:994
 msgid "Take Multiple Photos"
 msgstr "Tomar múltiples fotos"
 
-#~ msgid "Failed to initialize device %s for capability probing"
-#~ msgstr "Falló al inicializar el dispositivo %s para probar sus capacidades"
+#: ../src/cheese-window.vala:995 ../src/cheese-window.vala:1516
+msgid "Take multiple photos"
+msgstr "Tomar múltiples fotos"
 
-#~ msgid "- Take photos and videos from your webcam"
-#~ msgstr ": Tomar fotografías y vídeos con su cámara web"
+#: ../src/cheese-window.vala:1147
+msgid "No effects found"
+msgstr "No se encontró ningún efecto"
 
-#~ msgid ""
-#~ "Run '%s --help' to see a full list of available command line options."
-#~ msgstr ""
-#~ "Ejecute «%s --help» para ver una lista completa de opciones de línea de "
-#~ "comandos disponibles."
+#: ../src/cheese-window.vala:1515
+msgid "Take _Multiple Photos"
+msgstr "Tomar _múltiples fotos"
 
-#~ msgid "_Take a Photo"
-#~ msgstr "_Tomar una foto"
-
-#~ msgid "_Leave Fullscreen"
-#~ msgstr "_Salir de pantalla completa"
-
-#~ msgid "_Shoot"
-#~ msgstr "_Disparar"
-
-#~ msgid "Mode:"
-#~ msgstr "Modo:"
-
-#~ msgid "Stop _Recording"
-#~ msgstr "_Detener grabación"
-
-#~ msgid "Stop _Taking Pictures"
-#~ msgstr "Dejar de _tomar imágenes"
-
-#~ msgid "Take _Multiple Photos"
-#~ msgstr "Tomar _múltiples fotos"
-
-#~ msgid "_Discard photo"
-#~ msgstr "_Descartar foto"
-
-#~ msgid "P_revious Effects"
-#~ msgstr "Efectos anterio_res"
-
-#~ msgid "Ne_xt Effects"
-#~ msgstr "Siguientes e_fectos"
-
-#~ msgid "Move _All to Trash"
-#~ msgstr "Mo_ver todos a la papelera"
-
-#~ msgid "_Wide Mode"
-#~ msgstr "Modo _ancho"
-
-#~ msgid "Whether to start in wide mode"
-#~ msgstr "Indica si se debe iniciar en modo ancho"
-
-#~ msgid ""
-#~ "If set to true, Cheese will start up in wide mode, with the image "
-#~ "collection placed on the right-hand side. Useful with small screens."
-#~ msgstr ""
-#~ "Si está activado, Cheese se iniciará en modo ancho con la colección de "
-#~ "imágenes ubicada en la parte derecha. Útil para pantallas pequeñas."
-
-#~ msgid "Whether to start in fullscreen"
-#~ msgstr "Indica si se debe iniciar en modo a pantalla completa"
-
-#~ msgid "If set to true, Cheese will start up in fullscreen mode."
-#~ msgstr "Si es cierto, Cheese se iniciará en modo a pantalla completa."
-
-#~ msgid "Another instance of Cheese is currently running\n"
-#~ msgstr "Ya se está ejecutando otra instancia del Cheese\n"
-
-#~ msgid "Share…"
-#~ msgstr "Compartir…"
-
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Next"
-#~ msgstr "Siguiente"
-
-#~ msgid "Leave fullscreen"
-#~ msgstr "Salir de pantalla completa"
-
-#~ msgid "Picture hue"
-#~ msgstr "Tono de la imagen"
-
-#~ msgid "_Take a photo"
-#~ msgstr "_Tomar una foto"
+#~ msgid "Take a Photo"
+#~ msgstr "Tomar una foto"
 
 #~ msgid "_Cheese"
 #~ msgstr "_Cheese"
@@ -684,6 +590,10 @@ msgstr "Tomar múltiples fotos"
 
 #~ msgid "<b>Shutter</b>"
 #~ msgstr "<b>Obturador</b>"
+
+#~| msgid "Could not save %s"
+#~ msgid "Could not delete %s"
+#~ msgstr "No se pudo eliminar %s"
 
 #~ msgid "Image properties"
 #~ msgstr "Propiedades de la imagen"
@@ -723,6 +633,12 @@ msgstr "Tomar múltiples fotos"
 #~| msgid "Video resolution"
 #~ msgid "Video width resolution"
 #~ msgstr "Resolución de la anchura del vídeo"
+
+#~ msgid "_Delete"
+#~ msgstr "_Eliminar"
+
+#~ msgid "_Open"
+#~ msgstr "_Abrir"
 
 #~ msgid "_Preferences"
 #~ msgstr "Prefere_ncias"
@@ -833,6 +749,12 @@ msgstr "Tomar múltiples fotos"
 
 #~ msgid "Please refer to the help for further information."
 #~ msgstr "Para obtener más información consulte la ayuda."
+
+#~ msgid "_Skip"
+#~ msgstr "_Saltar"
+
+#~ msgid "S_kip All"
+#~ msgstr "Sal_tar todo"
 
 #~ msgid "Delete _All"
 #~ msgstr "Borrar _todo"

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" style="task" id="index" xml:lang="lv">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Cheese lets you take photos and videos using your webcam. You can
+    even add special effects!</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>
+    <media type="image" mime="image/png" src="figures/cheese.png" width="40" height="40">
+    </media>
+    Cheese Webcam Application
+  </title>
+ 
+  <section id="main">
+    <title>Galvenās iespējas</title>
+  </section>
+
+  <section id="preferences" style="2column">
+    <title>Iestatījumi</title>
+  </section>
+
+  <section id="problems">
+    <title>Bieži sastopamas problēmas un jautājumi</title>
+  </section>
+</page>

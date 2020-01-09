@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#include "cheese-config.h"
 
 #include <stdlib.h>
 
@@ -41,6 +41,8 @@ avatar_chooser (void)
     g_assert (chooser != NULL);
 
     /* Check that all the child widgets were successfully instantiated. */
+    g_assert (gtk_test_find_widget (chooser, "Take a photo", GTK_TYPE_BUTTON)
+        != NULL);
     select_button = gtk_test_find_widget (chooser, "Select", GTK_TYPE_BUTTON);
     g_assert (select_button != NULL);
     g_assert (GTK_IS_BUTTON (select_button));
@@ -96,6 +98,7 @@ static void widget (void)
 
 int main (int argc, gchar *argv[])
 {
+    gdk_threads_init ();
     gtk_test_init (&argc, &argv, NULL);
     if (!cheese_gtk_init (&argc, &argv))
         return EXIT_FAILURE;

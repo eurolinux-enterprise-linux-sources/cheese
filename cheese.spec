@@ -1,37 +1,104 @@
 Name:           cheese
 Epoch:          2
-Version:        3.28.0
-Release:        1%{?dist}
+Version:        3.8.2
+Release:        7%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
+Group:          Amusements/Graphics
 License:        GPLv2+
-URL:            https://wiki.gnome.org/Apps/Cheese
-Source0:        https://download.gnome.org/sources/%{name}/3.28/%{name}-%{version}.tar.xz
+URL:            http://projects.gnome.org/cheese/
+#VCS: git:git://git.gnome.org/cheese
+Source0:        http://download.gnome.org/sources/cheese/3.8/%{name}-%{version}.tar.xz
 
-BuildRequires:  chrpath
-BuildRequires:  desktop-file-utils
-BuildRequires:  docbook-dtds
-BuildRequires:  docbook-style-xsl
-BuildRequires:  gettext
-BuildRequires:  intltool
-BuildRequires:  itstool
-BuildRequires:  libXtst-devel
-BuildRequires:  vala
-BuildRequires:  pkgconfig(clutter-1.0)
-BuildRequires:  pkgconfig(clutter-gst-3.0)
-BuildRequires:  pkgconfig(clutter-gtk-1.0)
-BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
-BuildRequires:  pkgconfig(gio-2.0)
-BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(gnome-desktop-3.0) >= 3.27.90
-BuildRequires:  pkgconfig(gobject-introspection-1.0)
-BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
-BuildRequires:  pkgconfig(gstreamer-plugins-bad-1.0)
-BuildRequires:  pkgconfig(libcanberra-gtk3)
-BuildRequires:  pkgconfig(x11)
-BuildRequires:  /usr/bin/appstream-util
-BuildRequires:  /usr/bin/xsltproc
+# HdG: since I hit a couple of issues in cheese, and cheese needed some loving
+# in general I ended up doing a whole lot of *bugfix* patches for cheese,
+# fixing various performance / device compatibility issues, but also things
+# like needing to press some buttons twice before they work, etc.
+# See here for a bug for tracking the upstreaming of this patchset:
+# https://bugzilla.gnome.org/show_bug.cgi?id=702264
+Patch1:         0001-cheese-camera-Add-a-capsfilter-to-our-video-source-b.patch
+Patch2:         0002-cheese-camera-remove-extranous-csp_post_balance-vide.patch
+Patch3:         0003-cheese-camera-Set-image-and-video-capture-caps.patch
+Patch4:         0004-cheese-camera-Fix-the-no-video-after-switching-resol.patch
+Patch5:         0005-cheese-camera-2-minor-error-handling-cleanups.patch
+Patch6:         0006-cheese-camera-Fix-video-source-memleak-when-switchin.patch
+Patch7:         0007-cheese-camera-Remove-unused-enum.patch
+Patch8:         0008-cheese-camera-device-Fix-compiler-warning.patch
+Patch9:         0009-cheese-camera-device-Fix-memleak-in-get_best_format.patch
+Patch10:        0010-cheese-camera-device-Keep-track-of-highest-available.patch
+Patch11:        0011-cheese-camera-device-Add-cheese_camera_device_find_f.patch
+Patch12:        0012-cheese-camera-device-limit-caps-to-the-maximum-frame.patch
+Patch13:        0013-cheese-camera-device-get_caps_for_format-simplify-th.patch
+Patch14:        0014-cheese-camera-device-Make-get_best_format-smarter.patch
+Patch15:        0015-cheese-camera-device-Plug-some-memory-leaks.patch
+Patch16:        0016-cheese-camera-Drop-unused-preview_caps.patch
+Patch17:        0017-cheese-camera-Do-not-add-videoconvert-elements-aroun.patch
+Patch18:        0018-cheese-camera-Check-for-the-current-effect-being-the.patch
+Patch19:        0019-cheese-camera-Don-t-block-the-main-valve-while-recor.patch
+Patch20:        0020-cheese-camera-Downscale-image-for-effects-preview-pi.patch
+Patch21:        0021-cheese-window-Fix-de-activation-of-effects-button.patch
+Patch22:        0022-cheese-window-Make-mode-toggle-and-effects-button-in.patch
+Patch23:        0023-libcheese-Add-_init_with_args-init-function-variants.patch
+Patch24:        0024-cheese-Use-cheese_gtk_init_with_args.patch
+Patch25:        0025-cheese-Remove-last-remnants-of-the-old-menu-code.patch
+Patch26:        0026-cheese-Protect-set_wide_mode-set_fullscreen-against-.patch
+Patch27:        0027-cheese-Get-rid-of-special-set_startup_foo-functions.patch
+Patch28:        0028-cheese-Fix-the-need-to-press-F11-twice-after-startin.patch
+Patch29:        0029-cheese-Make-widemode-controllable-from-the-app-menu.patch
+Patch30:        0030-cheese-Move-reading-of-widemode-setting-to-cheese-ma.patch
+Patch31:        0031-cheese-Fix-reading-of-fullscreen-setting-from-config.patch
+Patch32:        0032-cheese-Don-t-show-thumbnails-when-toggling-widemode-.patch
+Patch33:        0033-cheese-Fix-updating-of-device-selection-combo-sensit.patch
+Patch34:        0034-cheese-Fix-assert-failures-when-taking-a-photo.patch
+Patch35:        0035-cheese-flash-Fix-the-flash-no-longer-being-white.patch
+Patch36:        0036-cheese-camera-Set-the-effects-valve-to-closed-when-c.patch
+Patch37:        0037-cheese-Move-disabling-of-shoot-button-to-cheese-wind.patch
+Patch38:        0038-cheese-Use-shoot-action-for-webcam-button.patch
+Patch39:        0039-cheese-window-Add-cancel_running_action-method.patch
+Patch40:        0040-cheese-window-Fix-toggle_camera_actions_sensitivitie.patch
+Patch41:        0041-cheese-window-Add-show_error-method.patch
+Patch42:        0042-cheese-preferences-Add-camera_changed-method.patch
+Patch43:        0043-cheese_camera_get_camera_devices-Allow-calling-befor.patch
+Patch44:        0044-cheese-Move-camera_setup-to-cheese-preferences.patch
+Patch45:        0045-cheese-Properly-deal-with-going-from-0-1-devices.patch
+Patch46:        0046-cheese-Avoid-unnecessary-calls-to-switch_camera_devi.patch
+Patch47:        0047-on_camera_update_num_camera_devices-Remove-unnecessa.patch
+Patch48:        0048-cheese-preferences-Simplify-remove_camera_device.patch
+Patch49:        0049-cheese-preferences-Cleanly-handle-going-from-1-0-dev.patch
+Patch50:        0050-cheese-Don-t-allow-changing-the-camera-and-or-its-re.patch
+Patch51:        0051-cheese-Leave-shoot-button-disabled-when-the-effects-.patch
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=678447
+# Patch2: 0002-Setup-vp8enc-in-a-way-suitable-for-realtime-encoding.patch
+
+BuildRequires: gtk3-devel >= 3.0.0
+BuildRequires: gstreamer1-devel
+BuildRequires: gstreamer1-plugins-bad-free-devel
+BuildRequires: gstreamer1-plugins-base-devel
+BuildRequires: cairo-devel >= 1.4.0
+BuildRequires: librsvg2-devel >= 2.18.0
+BuildRequires: evolution-data-server-devel
+BuildRequires: libXxf86vm-devel
+BuildRequires: libXtst-devel
+BuildRequires: desktop-file-utils
+BuildRequires: gettext
+BuildRequires: intltool
+BuildRequires: libgudev1-devel
+BuildRequires: libcanberra-devel
+BuildRequires: clutter-devel
+BuildRequires: clutter-gtk-devel
+BuildRequires: clutter-gst2-devel
+BuildRequires: libmx-devel
+BuildRequires: vala-devel
+BuildRequires: pkgconfig(gee-1.0)
+BuildRequires: gnome-video-effects
+BuildRequires: gnome-desktop3-devel
+BuildRequires: chrpath
+BuildRequires: itstool
+# 3.8.2 tarball misses man page
+BuildRequires: libxslt
+BuildRequires: docbook-style-xsl
+BuildRequires: /usr/bin/convert
 
 Requires: %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
 Requires: gstreamer1-plugins-good
@@ -44,9 +111,8 @@ videos from a webcam. It can also apply fancy graphical effects.
 
 %package libs
 Summary:        Webcam display and capture widgets
+Group:          System Environment/Libraries
 License:        GPLv2+
-# Camera service was removed upstream in 3.25.90
-Obsoletes: cheese-camera-service < 2:3.25.90
 
 %description libs
 This package contains libraries needed for applications that
@@ -54,6 +120,7 @@ want to display a webcam in their interface.
 
 %package libs-devel
 Summary:        Development files for %{name}-libs
+Group:          Development/Libraries
 License:        GPLv2+
 Requires:       %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
 
@@ -61,31 +128,81 @@ Requires:       %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
 This package contains the libraries and header files that are needed
 for writing applications that require a webcam display widget.
 
-
 %prep
 %setup -q
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
+%patch10 -p1
+%patch11 -p1
+%patch12 -p1
+%patch13 -p1
+%patch14 -p1
+%patch15 -p1
+%patch16 -p1
+%patch17 -p1
+%patch18 -p1
+%patch19 -p1
+%patch20 -p1
+%patch21 -p1
+%patch22 -p1
+%patch23 -p1
+%patch24 -p1
+%patch25 -p1
+%patch26 -p1
+%patch27 -p1
+%patch28 -p1
+%patch29 -p1
+%patch30 -p1
+%patch31 -p1
+%patch32 -p1
+%patch33 -p1
+%patch34 -p1
+%patch35 -p1
+%patch36 -p1
+%patch37 -p1
+%patch38 -p1
+%patch39 -p1
+%patch40 -p1
+%patch41 -p1
+%patch42 -p1
+%patch43 -p1
+%patch44 -p1
+%patch45 -p1
+%patch46 -p1
+%patch47 -p1
+%patch48 -p1
+%patch49 -p1
+%patch50 -p1
+%patch51 -p1
 
 
 %build
-%configure --disable-static
-make V=1 %{?_smp_mflags}
+%configure --disable-static --enable-man
+make %{?_smp_mflags}
 
 
 %install
-%make_install
+make install DESTDIR=$RPM_BUILD_ROOT
 
-rm -f %{buildroot}%{_libdir}/libcheese.{a,la}
-rm -f %{buildroot}%{_libdir}/libcheese-gtk.{a,la}
+rm -f $RPM_BUILD_ROOT%{_libdir}/libcheese.{a,la}
+rm -f $RPM_BUILD_ROOT%{_libdir}/libcheese-gtk.{a,la}
+
+desktop-file-install --delete-original --vendor=""    \
+    --dir=$RPM_BUILD_ROOT%{_datadir}/applications     \
+    --add-category X-AudioVideoImport                 \
+    $RPM_BUILD_ROOT%{_datadir}/applications/cheese.desktop
 
 %find_lang %{name} --with-gnome
 
-chrpath --delete %{buildroot}%{_bindir}/cheese
-chrpath --delete %{buildroot}%{_libdir}/libcheese-gtk.so.*
-
-
-%check
-desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Cheese.desktop
-
+chrpath --delete $RPM_BUILD_ROOT%{_bindir}/cheese
+chrpath --delete $RPM_BUILD_ROOT%{_libdir}/libcheese-gtk.so.*
 
 %post
 touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
@@ -97,10 +214,8 @@ if [ $1 -eq 0 ]; then
   gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 fi
 
-
 %posttrans
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
-
 
 %post libs
 /sbin/ldconfig
@@ -108,24 +223,22 @@ if [ $1 -eq 1 ] ; then
     glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 fi
 
-
 %postun libs
 /sbin/ldconfig
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
-
 %files
 %doc AUTHORS README
 %{_bindir}/cheese
-%{_datadir}/applications/org.gnome.Cheese.desktop
-%{_datadir}/icons/hicolor/*/apps/org.gnome.Cheese.png
-%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Cheese-symbolic.svg
-%{_datadir}/appdata/org.gnome.Cheese.appdata.xml
-%{_datadir}/dbus-1/services/org.gnome.Cheese.service
-%{_mandir}/man1/cheese.1*
+%{_datadir}/applications/cheese.desktop
+%{_datadir}/cheese
+%{_datadir}/icons/hicolor/*/apps/cheese.png
+%{_datadir}/icons/hicolor/*/actions/*.png
+%{_datadir}/icons/hicolor/scalable/actions/*.svg
+%{_mandir}/man1/cheese.1.gz
 
 %files -f %{name}.lang libs
-%license COPYING
+%doc COPYING
 %{_libdir}/libcheese.so.*
 %{_libdir}/libcheese-gtk.so.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Cheese.gschema.xml
@@ -140,40 +253,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_libdir}/pkgconfig/cheese-gtk.pc
 %{_datadir}/gir-1.0/Cheese-3.0.gir
 
-
 %changelog
-* Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 2:3.28.0-1
-- Update to 3.28.0
-- Resolves: #1567170
-
-* Thu Oct 19 2017 David King <dking@redhat.com> - 3.22.1-2
-- Fix a device argument crash (#1444760)
-
-* Wed Oct 19 2016 Kalev Lember <klember@redhat.com> - 2:3.22.1-1
-- Update to 3.22.1
-- Resolves: #1386826
-
-* Fri May 15 2015 Matthias Clasen <mclasen@redhat.com> 3.14.2-5
-- Tighten inter-subpackage deps to pacify rpmdiff
-Related: #1174584
-
-* Wed May 13 2015 Debarshi Ray <rishi@fedoraproject.org> 3.14.2-4
-- Restore desktop file validation
-  Related: #1174584
-
-* Wed May 13 2015 Debarshi Ray <rishi@fedoraproject.org> 3.14.2-3
-- Rebuild for cogl update
-- Disable desktop file validation
-  Related: #1174584
-
-* Thu May 07 2015 Ray Strode <rstrode@redhat.com> 3.14.2-2
-- Rebuild for gnome-desktop update
-  Related: #1174584
-
-* Mon Mar 23 2015 Richard Hughes <rhughes@redhat.com> - 2:3.14.2-1
-- Update to 3.14.2
-- Resolves: #1174584
-
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2:3.8.2-7
 - Mass rebuild 2014-01-24
 

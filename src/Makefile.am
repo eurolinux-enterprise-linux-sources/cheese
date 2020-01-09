@@ -31,13 +31,18 @@ libcheese/cheese-enums.h: $(cheese_enum_headers)
 		--fhead "#include <glib-object.h>\n\n" \
 		--fhead "G_BEGIN_DECLS\n\n" \
 		--fprod "/* enumerations from @filename@ */\n" \
-		--vhead "GType @enum_name@_get_type (void);\n" \
+		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n" \
 		--vhead "#define CHEESE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
 		--ftail "G_END_DECLS\n\n" \
 		--ftail "#endif /* CHEESE_ENUMS_H_ */" \
 		$(cheese_enum_headers) > $@
 
 AM_CPPFLAGS = \
+	-DDATADIR=\"$(datadir)\" \
+	-DPREFIX=\""$(prefix)"\" \
+	-DSYSCONFDIR=\""$(sysconfdir)"\" \
+	-DLIBDIR=\""$(libdir)"\" \
+	-DPACKAGE_DATADIR=\""$(pkgdatadir)"\" \
 	-DPACKAGE_LOCALEDIR=\""$(datadir)/locale"\" \
 	-DGNOME_DESKTOP_USE_UNSTABLE_API=1 \
 	-I$(top_builddir) \
@@ -46,11 +51,10 @@ AM_CPPFLAGS = \
 	$(CHEESE_WFLAGS) \
 	$(WARN_CFLAGS)
 
-AM_VALAFLAGS = \
-	--target-glib=2.38 \
+VALAFLAGS = \
+	--target-glib=2.32 \
 	--thread \
 	--vapidir $(top_srcdir)/src/vapi \
-	--gresources $(top_srcdir)/data/org.gnome.Cheese.gresource.xml \
 	--pkg config \
 	--pkg posix \
 	--pkg gtk+-3.0 \
@@ -82,7 +86,6 @@ libcheese_gtk_la_CPPFLAGS = \
 
 libcheese_gtk_la_LIBADD = \
 	libcheese.la \
-	$(LIBM) \
 	$(CHEESE_LIBS) \
 	$(CHEESE_GTK_LIBS)
 
@@ -94,7 +97,6 @@ libcheese_gtk_la_LDFLAGS = \
 
 libcheese_gtk_la_SOURCES = \
 	libcheese/cheese-avatar-chooser.c \
-	libcheese/cheese-avatar-widget.c \
 	libcheese/totem-aspect-frame.c \
 	libcheese/cheese-flash.c \
 	libcheese/cheese-gtk.c \
@@ -104,7 +106,6 @@ libcheese_gtk_la_SOURCES = \
 noinst_libcheese_gtk_headers = \
 	libcheese/totem-aspect-frame.h \
 	libcheese/cheese-avatar-chooser.h \
-	libcheese/cheese-avatar-widget.h \
 	libcheese/cheese-flash.h \
 	libcheese/cheese-widget.h \
 	libcheese/cheese-widget-private.h \
@@ -147,7 +148,6 @@ noinst_libcheese_headers = \
 # FIXME when we have a .pc file, and sonames
 cheesedir = $(includedir)/cheese
 cheese_HEADERS = \
-	libcheese/cheese-avatar-widget.h \
 	libcheese/cheese-avatar-chooser.h \
 	libcheese/cheese-camera.h \
 	libcheese/cheese-camera-device.h \
@@ -174,7 +174,11 @@ Cheese_3_0_gir_FILES = \
 	$(noinst_libcheese_headers) \
 	libcheese/cheese-enums.h
 Cheese_3_0_gir_INCLUDES = \
+	GObject-2.0 \
+	GLib-2.0 \
 	Gst-1.0 \
+	GstBase-1.0 \
+	cairo-1.0 \
 	Clutter-1.0 \
 	GdkPixbuf-2.0
 Cheese_3_0_gir_LIBS = libcheese.la
@@ -187,40 +191,19 @@ typelibdir = $(libdir)/girepository-1.0
 typelib_DATA = Cheese-3.0.typelib
 endif
 
-noinst_resource_files = \
-	data/cheese.css \
-	data/cheese-viewport.json \
-	data/cheese-main-window.ui \
-	data/cheese-prefs.ui \
-	data/headerbar.ui \
-	data/menus.ui \
-	data/pixmaps/cheese-1.svg \
-	data/pixmaps/cheese-2.svg \
-	data/pixmaps/cheese-3.svg \
-	data/pixmaps/thumbnail-frame.png
-
-src/cheese-resource.c src/cheese-resource.h: data/org.gnome.Cheese.gresource.xml Makefile $(noinst_resource_files)
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/data --generate --c-name cheese $<
-
 bin_PROGRAMS = cheese
-
-nodist_cheese_SOURCES = \
-	src/cheese-resource.c
 
 # cheese-main.vala must go at the end of the Vala sources.
 cheese_SOURCES = \
-	src/cheese-application.vala \
 	src/cheese-countdown.vala \
 	src/cheese-effects-manager.vala \
 	src/cheese-preferences.vala \
 	src/cheese-window.vala \
 	src/cheese-main.vala \
+	src/cheese-shareable-media.vala \
 	src/thumbview/cheese-thumb-view.c \
 	src/thumbview/cheese-thumbnail.c \
 	src/thumbview/eog-thumb-nav.c
-
-nodist_cheese_HEADERS = \
-	src/cheese-resource.h
 
 noinst_HEADERS = \
 	src/thumbview/cheese-thumb-view.h \
@@ -235,7 +218,7 @@ cheese_CPPFLAGS = \
 	-I$(top_srcdir)/libcheese \
 	-I$(top_srcdir)/src
 
-cheese_CFLAGS = -export-dynamic -w
+cheese_CFLAGS = -export-dynamic
 
 cheese_LDADD = \
 	libcheese.la \
@@ -305,24 +288,18 @@ tests_test_webcam_button_LDADD = $(XTEST_LIBS)
 
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
-desktop_in_files = data/org.gnome.Cheese.desktop.in
+desktop_in_files = data/cheese.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
-@APPSTREAM_XML_RULES@
-@INTLTOOL_XML_RULE@
-appstream_in_files = data/org.gnome.Cheese.appdata.xml.in
-appstream_XML = $(appstream_in_files:.appdata.xml.in=.appdata.xml)
-
-data/org.gnome.Cheese.service: data/org.gnome.Cheese.service.in
-	$(AM_V_GEN)$(SED) -e "s|[@]bindir[@]|$(bindir)|" $< > $@
-
-servicedir = $(datadir)/dbus-1/services
-service_in_files = \
-       data/org.gnome.Cheese.service.in
-service_DATA = $(service_in_files:.service.in=.service)
-
-@GSETTINGS_RULES@
 gsettings_SCHEMAS = data/org.gnome.Cheese.gschema.xml
+@GSETTINGS_RULES@
+
+dist_pkgdata_DATA = \
+	data/cheese.css \
+	data/cheese-actions.ui \
+	data/cheese-main-window.ui \
+	data/cheese-prefs.ui \
+	data/cheese-viewport.json
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \
@@ -337,15 +314,45 @@ appsicon24dir = $(iconthemedir)/24x24/apps
 appsicon32dir = $(iconthemedir)/32x32/apps
 appsicon48dir = $(iconthemedir)/48x48/apps
 appsicon256dir = $(iconthemedir)/256x256/apps
-appsiconsymbolicdir = $(iconthemedir)/symbolic/apps
 
-dist_appsicon16_DATA = data/icons/16x16/org.gnome.Cheese.png
-dist_appsicon22_DATA = data/icons/22x22/org.gnome.Cheese.png
-dist_appsicon24_DATA = data/icons/24x24/org.gnome.Cheese.png
-dist_appsicon32_DATA = data/icons/32x32/org.gnome.Cheese.png
-dist_appsicon48_DATA = data/icons/48x48/org.gnome.Cheese.png
-dist_appsicon256_DATA = data/icons/256x256/org.gnome.Cheese.png
-dist_appsiconsymbolic_DATA = data/icons/symbolic/org.gnome.Cheese-symbolic.svg
+actionsicon16dir = $(iconthemedir)/16x16/actions
+actionsicon22dir = $(iconthemedir)/22x22/actions
+actionsicon24dir = $(iconthemedir)/24x24/actions
+actionsicon32dir = $(iconthemedir)/32x32/actions
+actionsicon48dir = $(iconthemedir)/48x48/actions
+actionsiconscalabledir = $(iconthemedir)/scalable/actions
+
+dist_appsicon16_DATA = data/icons/16x16/cheese.png
+dist_appsicon22_DATA = data/icons/22x22/cheese.png
+dist_appsicon24_DATA = data/icons/24x24/cheese.png
+dist_appsicon32_DATA = data/icons/32x32/cheese.png
+dist_appsicon48_DATA = data/icons/48x48/cheese.png
+dist_appsicon256_DATA = data/icons/256x256/cheese.png
+
+dist_actionsicon16_DATA = \
+	data/icons/16x16/actions/browse-webcam-effects.png \
+	data/icons/16x16/actions/cheese-take-burst.png \
+	data/icons/16x16/actions/cheese-take-photo.png
+dist_actionsicon22_DATA = \
+	data/icons/22x22/actions/browse-webcam-effects.png \
+	data/icons/22x22/actions/cheese-take-burst.png \
+	data/icons/22x22/actions/cheese-take-photo.png
+dist_actionsicon24_DATA = \
+	data/icons/24x24/actions/browse-webcam-effects.png \
+	data/icons/24x24/actions/cheese-take-burst.png \
+	data/icons/24x24/actions/cheese-take-photo.png
+dist_actionsicon32_DATA = \
+	data/icons/32x32/actions/browse-webcam-effects.png \
+	data/icons/32x32/actions/cheese-take-burst.png \
+	data/icons/32x32/actions/cheese-take-photo.png
+dist_actionsicon48_DATA = \
+	data/icons/48x48/actions/browse-webcam-effects.png \
+	data/icons/48x48/actions/cheese-take-burst.png \
+	data/icons/48x48/actions/cheese-take-photo.png
+dist_actionsiconscalable_DATA = \
+	data/icons/scalable/actions/browse-webcam-effects.svg \
+	data/icons/scalable/actions/cheese-take-burst.svg \
+	data/icons/scalable/actions/cheese-take-photo.svg
 
 update_icon_cache = gtk-update-icon-cache --ignore-theme-index --force
 
@@ -360,6 +367,18 @@ install-update-icon-cache:
 uninstall-update-icon-cache:
 	$(AM_V_at)$(POST_UNINSTALL)
 	test -n "$(DESTDIR)" || $(update_icon_cache) "$(iconthemedir)"
+
+pixmapsdir = $(pkgdatadir)/pixmaps
+dist_pixmaps_DATA = \
+	data/pixmaps/thumbnail-frame.png \
+	data/pixmaps/camera-icon.svg \
+	data/pixmaps/cheese-1.svg \
+	data/pixmaps/cheese-2.svg \
+	data/pixmaps/cheese-3.svg
+
+catalogdir = $(pkgdatadir)
+dist_catalog_DATA = \
+	data/cheese.catalog
 
 # Tests.
 check_PROGRAMS = \
@@ -414,7 +433,7 @@ test-report perf-report full-report: $(check_PROGRAMS)
 	  echo '  <version>$(PACKAGE_VERSION)</version>' >> $@.xml ; \
 	  echo "  <revision>$$REVISION</revision>" >> $@.xml ; \
 	  echo '</info>' >> $@.xml ; \
-	  $(SED) '1,1s/^<?xml\b[^>?]*?>//' < test-log.xml >> $@.xml ; \
+	  sed '1,1s/^<?xml\b[^>?]*?>//' < test-log.xml >> $@.xml ; \
 	  rm test-log.xml ; \
 	  echo >> $@.xml ; \
 	  echo '</report-collection>' >> $@.xml ; \
@@ -440,14 +459,14 @@ lcov: full-report
 lcov-clean:
 	$(AM_V_at)$(LCOV) --directory $(top_builddir) -z
 	$(AM_V_at)rm -rf cheese-lcov.info cheese-lcov
-	$(AM_V_at)find . -name '*.gcda' -exec rm -f {} +
+	$(AM_V_at)find -name '*.gcda' -exec rm -f {} +
 else # !CHEESE_ENABLE_LCOV
 lcov:
 	$(AM_V_at)echo "Code coverage reporting not available"
 
 lcov-clean:
 	$(AM_V_at)rm -rf cheese-lcov.info cheese-lcov
-	$(AM_V_at)find . -name '*.gcda' -exec rm -f {} +
+	$(AM_V_at)find -name '*.gcda' -exec rm -f {} +
 endif
 
 # gtk-doc
@@ -461,10 +480,8 @@ all-local: $(bin_PROGRAMS)
 check-local: test
 	cd $(gtkdoc_builddir) && $(MAKE) $(AM_MAKEFlAGS) check
 clean-local: lcov-clean
-	cd $(gtkdoc_builddir) && if test -e Makefile ; then \
-		$(MAKE) $(AM_MAKEFLAGS) clean ; \
-	fi
-	find . -name '*.gcno' -exec rm -f {} +
+	cd $(gtkdoc_builddir) && $(MAKE) $(AM_MAKEFLAGS) clean
+	find -name '*.gcno' -exec rm -f {} +
 distclean-local:
 	cd $(gtkdoc_builddir) && $(MAKE) $(AM_MAKEFLAGS) distclean
 docs: $(lib_LTLIBRARIES)
@@ -484,18 +501,17 @@ dist-hook: git-changelog-hook
 
 dist_noinst_DATA = \
 	ChangeLog.pre-git \
-	$(appstream_in_files) \
 	$(desktop_in_files) \
 	$(gsettings_SCHEMAS) \
-	$(noinst_resource_files) \
 	$(service_in_files) \
-	data/org.gnome.Cheese.gresource.xml \
-	build-aux/test-driver \
 	$(gtkdoc_srcdir)/cheese-docs.xml \
 	$(gtkdoc_srcdir)/cheese-sections.txt \
 	$(gtkdoc_srcdir)/cheese.xml \
 	$(gtkdoc_srcdir)/version.xml.in \
 	gtk-doc.make \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in \
 	$(noinst_libcheese_headers) \
 	$(noinst_libcheese_gtk_headers) \
 	libcheese/cheese-gtk.symbols \
@@ -510,18 +526,17 @@ dist_noinst_SCRIPTS = \
 	autogen.sh
 
 CLEANFILES = \
-	$(appstream_XML) \
 	$(desktop_DATA) \
 	$(pkgconfig_DATA) \
 	$(enum_data) \
 	$(gir_DATA) \
-	$(service_DATA) \
-	$(typelib_DATA) \
-	src/cheese-resource.c \
-	src/cheese-resource.h
+	$(typelib_DATA)
 
 DISTCLEANFILES = \
 	libcheese_la_vala.stamp \
+	intltool-extract \
+	intltool-merge \
+	intltool-update \
 	po/.intltool-merge-cache
 
 MAINTAINERCLEANFILES = \
@@ -532,7 +547,6 @@ MAINTAINERCLEANFILES = \
 	build-aux/install-sh \
 	build-aux/ltmain.sh \
 	build-aux/missing \
-	build-aux/test-driver \
 	aclocal.m4 \
 	config.h.n \
 	$(gsettings_SCHEMAS:.xml=.valid) \
@@ -540,11 +554,7 @@ MAINTAINERCLEANFILES = \
 	omf.make \
 	xmldocs.make
 
-AM_DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-appdata-check \
-	--enable-gtk-doc \
-	--enable-introspection \
-	--enable-man
+DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-introspection --enable-man
 
 CHANGELOG_START = 2.26.0
 

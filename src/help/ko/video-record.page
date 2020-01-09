@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,43 +17,44 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>친구들과 공유할 짧은 동영상을 녹화하는데 웹카메라를 사용하세요.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Youngbin Han</mal:name>
-      <mal:email>sukso96100@gmail.com</mal:email>
-      <mal:years>2015.</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Changwoo Ryu</mal:name>
-      <mal:email>cwryu@debian.org</mal:email>
-      <mal:years>2017.</mal:years>
-    </mal:credit>
+    <desc>Use your webcam to record short movies for sharing with friends.</desc>
   </info>
 
-  <title>동영상 녹화하기</title>
+  <title>Record a video</title>
 
-  <p>웹카메라로 동영상을 녹화하려면:</p>
+  <p>To record a video using your webcam:</p>
 
   <steps>
     <item>
-      <p><gui>동영상</gui> 모드에 있음을 확인하세요. 동영상 모드에 있는 경우, 화면 왼쪽의 <gui style="button">동영상</gui> 단추가 선택됩니다.</p>
+      <p>Make sure that you are in <gui>Video mode</gui>. If you are, the button
+      in the middle of the window will say <gui style="button">Record a
+      Video</gui>.</p>
+      <p>You can switch to <gui>Video mode</gui> by clicking the button in the
+      main window or by selecting
+      <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>.</p>
     </item>
     <item>
-      <p>하단 패널 중앙에 있는<gui style="button">웹카메라로 동영상을 녹화합니다</gui> 단추를 누르거나, <key>스페이스</key> 키를 눌러 동영상 녹화를 시작하세요.</p>
+      <p>Click <gui style="button">Record a Video</gui>, or press the
+      <key>Space</key> key. <app>Cheese</app> will start recording a video
+      using your webcam.</p>
     </item>
     <item>
-     <p>녹화를 멈추려면, 동일한 단추를 다시 한 번 누르세요. <key>Esc</key> 또는<key>스페이스</key> 키를 눌러 녹화를 멈출 수 도 있습니다.</p>
+     <p>To stop recording, click <gui>Stop Recording</gui> or press
+     <key>Esc</key>.</p>
     </item>
   </steps>
 
-  <p>동영상은 WebM(<file>.webm</file>) 형식으로 저장됩니다.</p>
+  <p>Videos are saved in the Ogg Theora (<file>.ogv</file>) format.</p>
 
-  <p>녹화를 중지한 후, 동영상이 <app>치즈</app> 창 하단의 사진 스트림에 자동으로 나타날 것 입니다. 그곳에서, 동영상을 <link xref="photo-view">열거나</link> 삭제하실 수 있습니다.</p>
+  <p>After you have stopped recording, the video will automatically appear in
+  the photo stream at the bottom of the <app>Cheese</app> window. From there,
+  you can <link xref="photo-view">play back the video</link>, upload it to a
+  social network, post it on your blog or YouTube channel, or share it with
+  friends by <link href="help:gnome-help/net-default-email">email</link>.</p>
 
-  <p>다른 운영체제(윈도우나 맥오에스 등)를 사용하는 사람과 동영상을 공유하는데 문제가 있으면, <link href="help:gnome-help/video-sending">다른 형식으로 변환</link>해야 할 수도 있습니다.</p>
+  <p>If you have problems sharing a video with people using other operating
+  systems (like Windows or Mac OS), you may need to
+  <link href="help:gnome-help/video-sending">convert it to a different
+  format</link>.</p>
 
 </page>

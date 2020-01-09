@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-delete" xml:lang="zh-CN">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="zh-CN">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>移除不想再保留的照片和视频。</desc>
   
@@ -55,18 +51,14 @@
       <p>在<app>茄子</app>窗口底部的照片集里面找到您想要删除的照片或视频。</p>
     </item>
     <item>
-      <p>Right-click it and select <gui>Delete</gui>.<!-- Alternatively, click it
-      once to select it and press the <key>Delete</key> key.--></p>
+      <p>右键点击，选择<gui>删除</gui>。或者，单击想要删除的照片或视频，选中后按下 <key>Delete</key> 键。</p>
     </item>
     <item>
-      <p>You will be asked if you want to permanently delete it. Confirm by
-      clicking <gui>Delete</gui>; you will not be able to recover the photo
-      or video.</p>
+      <p>此时，程序将询问您是否真的要永久删除它，单击<gui>删除</gui>确认。已删除的照片将无法恢复。</p>
     </item>
   </steps>
 
   <p>如果您不确定是否要永久删除这些照片或视频，您可以右键点击它，选择<gui>移入回收站</gui>。这会将它移动到计算机的<gui>回收站</gui>文件夹。</p>
-
   <note>
     <p>茄子没有自己单独的<gui>回收站</gui>文件夹，您无法在<app>茄子</app>软件中来访问计算机上的<gui>回收站</gui>文件夹。</p>
   </note>

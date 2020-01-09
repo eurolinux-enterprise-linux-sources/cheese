@@ -5,23 +5,19 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email its:translate="no">yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
-    <credit type="author copyright editor">
+    <credit type="editor">
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
-      <years>2011, 2013</years>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Capture several photos with one button press in <gui>Burst</gui> mode. Change your pose in between each shot!</desc>
+    <desc>El <gui>Mode seqüència</gui> fa diverses fotos seguides. Canvieu la vostra posició a cada foto.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Joan Duran</mal:name>
@@ -48,69 +44,39 @@
     </mal:credit>
   </info>
 
-  <title>Take photos in quick succession</title>
+  <title>Com fer diverses fotos en una seqüència ràpida</title>
 
-  <p>Use <gui>Burst</gui> mode to automatically take several photos in a row.
-  It is particularly fun if you change your pose in between photos! To use
-  <gui>Burst</gui> mode:</p>
+  <p>Podeu utilitzar el <gui>Mode seqüència</gui> per fer automàticament diverses fotos amb una petita pausa entre foto i foto. És especialment divertit si canvieu de posició entre foto i foto. Per utilitzar el <gui>Mode seqüència</gui>:</p>
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Burst</gui> mode. If you are, the
-      <gui style="button">Burst</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Si ara feu clic a <gui>Seqüència</gui> el botó <gui>Fes una foto</gui> ara diu <gui>Fes diverses fotos</gui>.</p>
+      <p>De manera alternativa, feu clic a <guiseq><gui>Cheese</gui><gui>Seqüència</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Take multiple photos using a
-      webcam</gui> button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to start taking photos.</p>
-      <p>By default, four photos will be taken, with a one second delay and a
-      countdown between photos.</p>
-    </item>
-    <item>
-      <p>To stop recording, press the same button again. You can also press the
-      <key>Esc</key> or <key>Space</key> key to stop recording.</p>
+      <p>Feu clic a <gui>Fes diverses fotos</gui> o premeu la <key>barra espaiadora</key>.</p>
+      <p>Per defecte, es fan quatre fotos, amb un compte enrere de tres segons entre foto i foto.</p>
     </item>
   </steps>
 
+  <p>Premeu <key>Esc</key> si en qualsevol moment voleu aturar el <app>Cheese</app> de fer més fotos.</p>
+
 <section id="burst-preferences">
-  <title>Change <gui>Burst</gui> preferences</title>
-
+  <title>Com canviar quantes fotos es faran i el temps d'espera entre elles</title>
   <p>Podeu canviar quantes fotos es dispararan en cada seqüència i el temps entre fotos:</p>
-
   <steps>
     <item>
       <p>Select
-      <guiseq><gui style="menu">Cheese</gui><gui style="menuitem">Preferences</gui><gui style="tab">Capture</gui></guiseq>.</p>
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Edit the preference settings:</p>
-      <terms>
-        <item>
-          <title>Countdown</title>
-          <p>Countdown from three before the photo is taken.</p>
-        </item>
-        <item>
-          <title>Fire flash</title>
-          <p>Your screen will flash when a photo is taken.</p>
-        </item>
-        <item>
-          <title>Number of photos</title>
-          <p>The number of photos that will be taken in a single burst.</p>
-        </item>
-        <item>
-          <title>Delay between photos (seconds)</title>
-          <p>The delay between two photos. If you have the <gui>Countdown</gui>
-          enabled, then this delay needs to be set to over four seconds for it
-          to have any effect.</p>
-          <!--<p>The delay between the last photo and the start of the next
-          countdown. If <gui>Countdown</gui> is disabled, this is the delay
-          between photos.</p>-->
-        </item>
-      </terms>
+      <p>Canvieu les opcions des del <gui>Mode seqüència</gui> i feu clic a <gui>Tanca</gui>.</p>
     </item>
   </steps>
 
+  <note>
+    <p>L'interval es mesura entre l'última foto feta i el començament del temporitzador per a la següent foto, no entre foto i foto.</p>
+  </note>
 </section>
 
 </page>

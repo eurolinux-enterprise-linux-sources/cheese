@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,51 +22,39 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Použijte svoji webovou kameru k pořízení snímků místo videí.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Lucas Lommer</mal:name>
-      <mal:email>llommer@svn.gnome.org</mal:email>
-      <mal:years>2010</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Martin Jablečník</mal:name>
-      <mal:email>martin.jablecnik@seznam.cz</mal:email>
-      <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Marek Černocký</mal:name>
-      <mal:email>marek@manet.cz</mal:email>
-      <mal:years>2013, 2014</mal:years>
-    </mal:credit>
+    <desc>Use your webcam to take photos instead of videos.</desc>
   </info>
 
-  <title>Jak pořídit fotky</title>
+  <title>Take photos using a webcam</title>
 
-  <p>Webové kamery mohou být použity k pořízení statických fotografií stejně dobře, jako k nahrávání videí. Když chcete pořídit snímek:</p>
+  <p>Webcams can be used to take still photos as well as videos. To take a
+  photo:</p>
 
   <steps>
     <item>
-      <p>Ujistěte se, že jste přepnutí v režimu <gui>fotek</gui>. Pokud tomu tak je, je vybráno tlačítko <gui style="button">Fotka</gui> po levé straně obrazovky.</p>
+      <p>Make sure that the mode <gui style="menuitem">Photo</gui> is selected
+      in the <gui style="menu">Cheese</gui> menu.</p>
     </item>
     <item>
-      <p>Klikněte na tlačítko <gui style="button">Pořídit fotku pomocí webové kamery</gui> uprostřed spodního panelu nebo zmáčkněte <key>mezerník</key> a pořídí se snímek.</p>
+      <p>Click <gui>Take a Photo</gui>. Alternatively, you can press the
+      capture button on the webcam or the <key>Space</key> key.</p>
     </item>
     <item>
-      <p>Proběhne krátké odpočítávání, následované bleskem, a pak se snímek objeví v panelu snímků ve spodní části okna.</p>
+      <p>There will be a short countdown, followed by a flash, and the photo
+      will appear in the photo stream.</p>
     </item>
   </steps>
 
-  <p>Fotky v panelu fotek jsou automaticky ukládány do složky <file>Obrázky/Webkamera</file> ve vaší domovské složce. Formát ukládání je JPEG (<file>.jpg</file>).</p>
+  <p>The photos in the photo stream are automatically saved in the
+  <file>/Pictures/Webcam</file> folder in your home folder. They are saved
+  using the JPEG (<file>.jpg</file>) format.</p>
 
-  <p>Pro zrušení pořizení snímku po kliknutí na <gui>Pořídit snímek</gui>, zmáčkněte před koncem odpočítávání <key>Esc</key>.</p>
+  <p>To cancel taking a photo after you have clicked <gui>Take a Photo</gui>,
+  press <key>Esc</key> before the countdown finishes.</p>
 
   <note>
-    <p>Pro pořízení více snímků v rychlém sledu, použijte <link xref="burst-mode">režim <gui>Série snímků</gui></link>.</p>
+    <p>To take multiple photos in rapid succession, use
+    <link xref="burst-mode">burst mode</link>.</p>
   </note>
 
 </page>

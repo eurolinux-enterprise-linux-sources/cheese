@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-delete" xml:lang="ca">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="ca">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Com suprimir les fotos i els vídeos que ja no voleu conservar.</desc>
   
@@ -55,18 +51,14 @@
       <p>Cerqueu la foto o el vídeo que voleu suprimir a la seqüència d'imatges de la part inferior de la finestra del <app>Cheese</app>.</p>
     </item>
     <item>
-      <p>Right-click it and select <gui>Delete</gui>.<!-- Alternatively, click it
-      once to select it and press the <key>Delete</key> key.--></p>
+      <p>Feu clic amb el botó secundari i seleccioneu <gui>Suprimeix</gui>. També hi podeu fer clic un cop per seleccionar el fitxer i prémer la tecla <key>Suprimir</key>.</p>
     </item>
     <item>
-      <p>You will be asked if you want to permanently delete it. Confirm by
-      clicking <gui>Delete</gui>; you will not be able to recover the photo
-      or video.</p>
+      <p>Us preguntarà si la voleu suprimir per sempre. Confirmeu fent clic a <gui>Suprimeix</gui>; no podreu recuperar la foto.</p>
     </item>
   </steps>
 
   <p>Si no esteu segurs de voler suprimir la foto o el vídeo de manera definitiva, podeu fer-hi clic amb el botó secundari i seleccionar <gui>Mou-lo a la paperera</gui>. Això enviarà el fitxer a la <gui>Paperera</gui> de l'ordinador.</p>
-
   <note>
     <p>El Cheese no té la seva pròpia <gui>Paperera</gui> i no podeu accedir a la  <gui>Paperera</gui> de l'ordinador des del propi <app>Cheese</app>.</p>
   </note>

@@ -5,28 +5,24 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email its:translate="no">yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
-    <credit type="author copyright editor">
+    <credit type="editor">
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
-      <years>2011, 2013</years>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Haga varias fotos pulsando sólo un botón en modo <gui>Ráfaga</gui>. Cambie su postura entre ellas.</desc>
+    <desc>El <gui>Modo ráfaga</gui> toma varias fotos seguidas. Cambie su postura entre ellas.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2011 - 2017</mal:years>
+      <mal:years>2011, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -36,58 +32,38 @@
     </mal:credit>
   </info>
 
-  <title>Hacer fotos en una rápida sucesión</title>
+  <title>Tomar varias fotos muy seguidas</title>
 
-  <p>Puede usar el modo <gui>Ráfaga</gui> para tomar automáticamente varias fotos de una vez. Es particularmente divertido si cambia su pose entre las fotos. Para usar el modo <gui>Ráfaga</gui>:</p>
+  <p>Puede usar el <gui>Modo ráfaga</gui> para tomar automáticamente varias fotos de una vez, con una pequeña pausa entre cada toma. Es particularmente divertido si cambiar su pose entre las fotos. Para usar el <gui>Modo ráfaga</gui>:</p>
 
   <steps>
     <item>
-      <p>Asegúrese de que está en modo <gui>Ráfaga</gui>. Si lo está, el botón <gui style="button">Ráfaga</gui> estará seleccionado en la parte izquierda de la pantalla.</p>
+      <p>Pulse <gui>Ráfaga</gui>, el botón <gui>Tomar una foto</gui> cambiará a <gui>Tomar múltiples fotos</gui>.</p>
+      <p>Alternativamente, pulse <guiseq><gui>Cheese</gui><gui>Ráfaga</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Pulse el botón <gui style="button">Tomar múltiples fotos usando una cámara web</gui> en el medio del panel inferior o pulse la tecla <key>Espacio</key> para empezar a hacer las fotos.</p>
-      <p>Se tomarán cuatro fotos de forma predeterminada, con un retardo de un segundo entre cada foto.</p>
-    </item>
-    <item>
-      <p>Para detener la grabación, pulse el mismo botón otra vez. También puede pulsar las teclas <key>Esc</key> o <key>Space</key> para detener la grabación.</p>
+      <p>Pulse <gui>Tomar múltiples fotos</gui> o pulse la <key>barra espaciadora</key>.</p>
+      <p>Se tomarán cuatro fotos de forma predeterminada, con un retardo de tres segundos entre cada cuenta atrás que verá antes de que se tome cada foto.</p>
     </item>
   </steps>
+
+  <p>En cualquier momento, pulse <key>Esc</key> si quiere que <app>Cheese</app> deje de tomar fotos.</p>
 
 <section id="burst-preferences">
-  <title>Cambiar las preferencias de la <gui>Ráfaga</gui></title>
-
+  <title>Cambiar cuántas fotos se toman y el retardo entre ellas</title>
   <p>Puede cambiar cúantas fotos se toman un cada ráfaga y el tiempo de retardo entre las fotos:</p>
-
   <steps>
     <item>
-      <p>Seleccione <guiseq><gui style="menu">Cheese</gui><gui style="menuitem">Preferencias</gui><gui style="tab">Capturar</gui></guiseq>.</p>
+      <p>Seleccione <guiseq><gui>Cheese</gui><gui>Preferencias</gui><gui>Capturar</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Editar la configuración de las preferencias:</p>
-      <terms>
-        <item>
-          <title>Cuenta atrás</title>
-          <p>Cuenta atrás antes de hacer la foto.</p>
-        </item>
-        <item>
-          <title>Disparar flash</title>
-          <p>Su pantalla parpadeará cuando se tome una foto.</p>
-        </item>
-        <item>
-          <title>Número de fotos</title>
-          <p>El número de fotos que se harán en una única ráfaga.</p>
-        </item>
-        <item>
-          <title>Retardo entre fotos (segundos)</title>
-          <p>El retardo entre dos fotos. Si tiene activada la <gui>Cuenta atrás</gui> el retardo se debe configurar por encima de 4 segundos para que haga efecto.</p>
-          <!--<p>The delay between the last photo and the start of the next
-          countdown. If <gui>Countdown</gui> is disabled, this is the delay
-          between photos.</p>-->
-        </item>
-      </terms>
+      <p>Cambiae las opciones bajo <gui>Modo ráfaga</gui> y pulse <gui>Cerrar</gui>.</p>
     </item>
   </steps>
 
+  <note>
+    <p>El retardo es entre la última foto tomada y el comienzo de la cuenta atrás para la siguiente foto, no entre las dos fotos.</p>
+  </note>
 </section>
 
 </page>

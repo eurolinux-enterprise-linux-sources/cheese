@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#include "cheese-config.h"
 
 #include <stdlib.h>
 #include <glib/gi18n.h>
@@ -206,6 +206,8 @@ videoformat_create (void)
 int
 main(int argc, gchar *argv[])
 {
+    g_type_init ();
+
     g_test_init (&argc, &argv, NULL);
 
     if (!cheese_init (&argc, &argv))

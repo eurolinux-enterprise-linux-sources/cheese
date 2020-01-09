@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,36 +17,47 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Use a súa cámara web para gravar curtametraxes para compartir cos seus amigos.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Fran Dieguez</mal:name>
       <mal:email>frandieguez@gnome.org</mal:email>
-      <mal:years>2013.</mal:years>
+      <mal:years>2011,2012.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leandro Regueiro</mal:name>
+      <mal:email>leandro.regueiro@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
     </mal:credit>
   </info>
 
-  <title>Gravar un vídeo</title>
+  <title>Gravar un vídeo</title>
 
   <p>Para gravar un vídeo usando a súa cámara web:</p>
 
   <steps>
     <item>
-      <p>Asegúrese que está no <gui>Modo vídeo</gui>. Se xa está nel, o botón <gui style="button">Vídeo</gui> na banda dereita da pantalla estará seleccionado.</p>
+      <p>Make sure that you are in <gui>Video mode</gui>. If you are, the button
+      in the middle of the window will say <gui style="button">Record a
+      Video</gui>.</p>
+      <p>You can switch to <gui>Video mode</gui> by clicking the button in the
+      main window or by selecting
+      <guiseq><gui>Cheese</gui><gui>Video</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Prema <gui style="button">Gravar un vídeo usando a cámara web</gui> no medio do panel inferior  ou prema a tecla <key>Espazo</key> para iniciar a gravación.</p>
+      <p>Click <gui style="button">Record a Video</gui>, or press the
+      <key>Space</key> key. <app>Cheese</app> will start recording a video
+      using your webcam.</p>
     </item>
     <item>
-     <p>Para deter a gravación, prema o mesmo botón de novo. Tamén pode usar a tecla <key>Esc</key> ou <key>Barra espaciadora</key> para o mesmo.</p>
+     <p>Para deter a gravación prema <gui>Deter gravación</gui> ou prema <key>Escape</key>.</p>
     </item>
   </steps>
 
-  <p>Os vídeos gárdanse en formato WebM (<file>.webm</file>).</p>
+  <p>Os vídeos gárdanse en ormato Ogg Theora (<file>.ogv</file>).</p>
 
-  <p>Despois de deter a gravación, o vídeo aparecerá automaticamente na colección de fotos na parte inferior da xanela de <app>Cheese</app>. Desde alí pode <link xref="photo-view">abrir</link> ou eliminar o vídeo.</p>
+  <p>Despois de deter a gravación, o vídeo aparecerá automaticamente na colección de fotos na parte inferior da xanela de <app>Cheese</app>. Desde alí, pode <link xref="photo-view">reproducir o vídeo</link>, subilo a unha rede social, envialo ao seu blogue ou canle de YouTube, ou compartilo cos seus amigos por <link href="help:gnome-help/net-default-email">correo electrónico</link>.</p>
 
   <p>Se ten problemas ao compartir un vídeo cos amigos usando outros sistemas operativos (como Windows ou Mac OS) deberá <link href="help:gnome-help/video-sending">convertelos a un formato diferente</link>.</p>
 

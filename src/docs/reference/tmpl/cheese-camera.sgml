@@ -1,0 +1,293 @@
+<!-- ##### SECTION Title ##### -->
+CheeseCamera
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT CheeseCameraClass ##### -->
+<para>
+
+</para>
+
+@photo_saved: 
+@photo_taken: 
+@video_saved: 
+@state_flags_changed: 
+
+<!-- ##### STRUCT CheeseCamera ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL CheeseCamera::photo-saved ##### -->
+<para>
+
+</para>
+
+@cheesecamera: the object which received the signal.
+
+<!-- ##### SIGNAL CheeseCamera::photo-taken ##### -->
+<para>
+
+</para>
+
+@cheesecamera: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL CheeseCamera::state-flags-changed ##### -->
+<para>
+
+</para>
+
+@cheesecamera: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL CheeseCamera::video-saved ##### -->
+<para>
+
+</para>
+
+@cheesecamera: the object which received the signal.
+
+<!-- ##### ARG CheeseCamera:device-node ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCamera:format ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCamera:num-camera-devices ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCamera:video-texture ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION cheese_camera_new ##### -->
+<para>
+
+</para>
+
+@video_texture: 
+@camera_device_node: 
+@x_resolution: 
+@y_resolution: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_camera_devices ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_current_video_format ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_video_formats ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_set_video_format ##### -->
+<para>
+
+</para>
+
+@camera: 
+@format: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_selected_device ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_set_device_by_device_node ##### -->
+<para>
+
+</para>
+
+@camera: 
+@file: 
+
+
+<!-- ##### FUNCTION cheese_camera_set_effect ##### -->
+<para>
+
+</para>
+
+@camera: 
+@effect: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_balance_property_range ##### -->
+<para>
+
+</para>
+
+@camera: 
+@property: 
+@min: 
+@max: 
+@def: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_set_balance_property ##### -->
+<para>
+
+</para>
+
+@camera: 
+@property: 
+@value: 
+
+
+<!-- ##### FUNCTION cheese_camera_get_recorded_time ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_connect_effect_texture ##### -->
+<para>
+
+</para>
+
+@camera: 
+@effect: 
+@texture: 
+
+
+<!-- ##### FUNCTION cheese_camera_play ##### -->
+<para>
+
+</para>
+
+@camera: 
+
+
+<!-- ##### FUNCTION cheese_camera_stop ##### -->
+<para>
+
+</para>
+
+@camera: 
+
+
+<!-- ##### FUNCTION cheese_camera_start_video_recording ##### -->
+<para>
+
+</para>
+
+@camera: 
+@filename: 
+
+
+<!-- ##### FUNCTION cheese_camera_stop_video_recording ##### -->
+<para>
+
+</para>
+
+@camera: 
+
+
+<!-- ##### FUNCTION cheese_camera_switch_camera_device ##### -->
+<para>
+
+</para>
+
+@camera: 
+
+
+<!-- ##### FUNCTION cheese_camera_take_photo ##### -->
+<para>
+
+</para>
+
+@camera: 
+@filename: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_take_photo_pixbuf ##### -->
+<para>
+
+</para>
+
+@camera: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_toggle_effects_pipeline ##### -->
+<para>
+
+</para>
+
+@camera: 
+@active: 
+
+
+<!-- ##### ENUM CheeseCameraError ##### -->
+<para>
+
+</para>
+
+@CHEESE_CAMERA_ERROR_UNKNOWN: 
+@CHEESE_CAMERA_ERROR_ELEMENT_NOT_FOUND: 
+@CHEESE_CAMERA_ERROR_NO_DEVICE: 
+
+<!-- ##### FUNCTION cheese_camera_setup ##### -->
+<para>
+
+</para>
+
+@camera: 
+@uuid: 
+@error: 
+
+

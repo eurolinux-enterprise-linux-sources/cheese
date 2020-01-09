@@ -5,88 +5,54 @@
     <link type="guide" xref="index#main" group="#first"/>
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-15" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
       <email its:translate="no">yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
-    <credit type="author copyright editor">
+    <credit type="editor">
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
-      <years>2011, 2013</years>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Capture several photos with one button press in <gui>Burst</gui> mode. Change your pose in between each shot!</desc>
+    <desc><gui>Način zaporednega zajemanja</gui> hitro zajame več slik. Med vsako sliko spremenite svojo pozo!</desc>
   </info>
 
-  <title>Take photos in quick succession</title>
+  <title>Zajem več fotografij v hitrem zaporedju</title>
 
-  <p>Use <gui>Burst</gui> mode to automatically take several photos in a row.
-  It is particularly fun if you change your pose in between photos! To use
-  <gui>Burst</gui> mode:</p>
+  <p><gui>Način zaporednega zajemanja</gui> lahko uporabite za zajem več fotografij hkrati s kratkimi presledki vmes. To je še posebno zabavno, če med fotografiranjem spremenite svojo pozo! Za uporabo <gui>Načina zaporednega zejamanja</gui>:</p>
 
   <steps>
     <item>
-      <p>Make sure that you are in <gui>Burst</gui> mode. If you are, the
-      <gui style="button">Burst</gui> button will be selected on the left side
-      of the screen.</p>
+      <p>Kliknite <gui>Zaporedno zajemanje</gui>. Na gumbu <gui>Zajemi fotografijo</gui> bo sedaj pisalo <gui>Zajemi več fotografij</gui>.</p>
+      <p>Namesto tega lahko kliknete <guiseq><gui>Cheese</gui><gui>Zaporedni zajem</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Click the <gui style="button">Take multiple photos using a
-      webcam</gui> button in the middle of the bottom panel, or press the
-      <key>Space</key> key, to start taking photos.</p>
-      <p>By default, four photos will be taken, with a one second delay and a
-      countdown between photos.</p>
-    </item>
-    <item>
-      <p>To stop recording, press the same button again. You can also press the
-      <key>Esc</key> or <key>Space</key> key to stop recording.</p>
+      <p>Kliknite <gui>Zajemi več fotografij</gui> ali pritisnite <key>preslednico</key>.</p>
+      <p>Privzeto bodo posnete štiri fotografije s tri sekunde dolgim zamikom in odštevanjem med fotografijami.</p>
     </item>
   </steps>
 
+  <p>Kadarkoli lahko pritisnete <key>Esc</key>, če želite, da<app>Cheese</app> neha z zajemanjem fotografij.</p>
+
 <section id="burst-preferences">
-  <title>Change <gui>Burst</gui> preferences</title>
-
+  <title>Sprememba števila zajetih fotografij in zamika med njimi</title>
   <p>Število zajetih fotografij v načinu zaporednega zajemanja in razmik med njimi lahko spremenite:</p>
-
   <steps>
     <item>
       <p>Select
-      <guiseq><gui style="menu">Cheese</gui><gui style="menuitem">Preferences</gui><gui style="tab">Capture</gui></guiseq>.</p>
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Edit the preference settings:</p>
-      <terms>
-        <item>
-          <title>Countdown</title>
-          <p>Countdown from three before the photo is taken.</p>
-        </item>
-        <item>
-          <title>Fire flash</title>
-          <p>Your screen will flash when a photo is taken.</p>
-        </item>
-        <item>
-          <title>Number of photos</title>
-          <p>The number of photos that will be taken in a single burst.</p>
-        </item>
-        <item>
-          <title>Delay between photos (seconds)</title>
-          <p>The delay between two photos. If you have the <gui>Countdown</gui>
-          enabled, then this delay needs to be set to over four seconds for it
-          to have any effect.</p>
-          <!--<p>The delay between the last photo and the start of the next
-          countdown. If <gui>Countdown</gui> is disabled, this is the delay
-          between photos.</p>-->
-        </item>
-      </terms>
+      <p>Spremenite možnosti pod <gui>Način zaporednega zajemanja</gui> in kliknite <gui>Zapri</gui>.</p>
     </item>
   </steps>
 
+  <note>
+    <p>Zamik je čas med zadnjo zajeto fotografijo in začetkom odštevanja za naslednjo fotografijo, ne med zajemom dveh fotografij.</p>
+  </note>
 </section>
 
 </page>

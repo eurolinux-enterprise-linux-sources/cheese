@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,14 +18,12 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Atur saturasi, kontras, kecerahan, dan hue untuk membuat foto dan video nampak lebih baik.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Andika Triwidada</mal:name>
       <mal:email>andika@gmail.com</mal:email>
-      <mal:years>2012, 2013, 2014</mal:years>
+      <mal:years>2012</mal:years>
     </mal:credit>
   </info>
 
@@ -36,37 +33,38 @@
 
   <steps>
     <item>
-      <p>Pilih <guiseq><gui>Cheese</gui><gui>Preferensi</gui><gui>Gambar</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Ubah penggeser untuk menemukan pengaturan terbaik bagi webcam Anda.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Klik <gui>Tutup</gui> dan periksalah apakah pratinjau nampak lebih baik.</p>
+     <p>Klik <gui>Tutup</gui> dan periksa apakah foto dan video nampak lebih baik.</p>
     </item>
   </steps>
 
   <figure>
     <title>Opsi lain di bawah <gui>Properti gambar</gui> (kiri ke kanan): menerapkan kecerahan, kontras, hue, dan saturasi</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Kecerahan</title>
-      <p>Menaikkan kecerahan akan membuat foto dan video lebih terang. Namun, bila Anda berada di ruang gelap, menaikkan kecerahan bisa membuat gambar terlihat lebih kasar.</p>
+     <title>Kecerahan</title>
+     <p>Menaikkan kecerahan akan membuat foto dan video lebih terang. Namun, bila Anda berada di ruang gelap, menaikkan kecerahan bisa membuat gambar terlihat lebih kasar.</p>
     </item>
     <item>
-      <title>Kontras</title>
-      <p>Mengatur kontras yang lebih tinggi akan menaikkan perbedaan antara warna gelap dan terang. Bila gambar nampak pudar, cobalah menaikkan kontras.</p>
+     <title>Kontras</title>
+     <p>Mengatur kontras yang lebih tinggi akan menaikkan perbedaan antara warna gelap dan terang. Bila gambar nampak pudar, cobalah menaikkan kontras.</p>
     </item>
     <item>
-      <title>Hue</title>
-      <p>Menguba hue dari gambar akan menambah nada warna kepadanya. Bila gambar nampaknya berwarna salah (sebagai contoh, terlalu kuning), cobalah mengubah hue.</p>
+     <title>Hue</title>
+     <p>Menguba hue dari gambar akan menambah nada warna kepadanya. Bila gambar nampaknya berwarna salah (sebagai contoh, terlalu kuning), cobalah mengubah hue.</p>
     </item>
     <item>
-      <title>Saturasi</title>
-      <p>Mengurangi saturasi akan membuat gambar kurang berwarna-warni. Bila warna nampak terlalu tajam, kurangi saturasi.</p>
+     <title>Saturasi</title>
+     <p>Mengurangi saturasi akan membuat gambar kurang berwarna-warni. Bila warna nampak terlalu tajam, kurangi saturasi.</p>
     </item>
   </terms>
 

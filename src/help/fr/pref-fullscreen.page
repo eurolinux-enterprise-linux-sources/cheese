@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pref-fullscreen" xml:lang="fr">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="full-screen" xml:lang="fr">
   <info>
+    <revision version="3.6" date="2012-05-09" status="stub"/>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.6" date="2012-05-09" status="stub"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
-
+	
     <credit type="author">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Activer et désactiver le mode plein écran</desc>
   
@@ -56,31 +52,23 @@
       <mal:email>mickael.albertus@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>naybnet</mal:name>
-      <mal:email>naybnet@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Alain Lojewski</mal:name>
-      <mal:email>allomervan@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
   </info>
 
   <title>Plein écran</title>
 
-  <p>Pour activer ou désactiver le mode plein écran :</p>
+  <p>Pour activer le mode plein écran :</p>
 
   <steps>
     <item><p>Sélectionnez <guiseq><gui>Cheese</gui><gui>Plein écran</gui></guiseq></p></item>
   </steps>
 
-  <p>Si vous ne pouvez pas afficher le menu <gui style="menu">Cheese</gui> en mode plein écran, bougez la souris ou touchez votre écran tactile.</p>
+  <p>Pour désactiver le mode plein écran :</p>
+
+  <steps>
+    <item><p>Sélectionnez <gui>Quitter le mode plein écran</gui></p></item>
+  </steps>
 
   <note style="tip">
-    <p>Vous pouvez aussi activer et désactiver le mode plein écran en appuyant sur la touche <key>F11</key>.</p>
+    <p>Vous pouvez aussi activer et désactiver le mode plein écran en appuyant sur la touche <key>F11</key></p>
   </note>
 </page>

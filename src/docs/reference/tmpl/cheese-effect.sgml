@@ -1,0 +1,114 @@
+<!-- ##### SECTION Title ##### -->
+CheeseEffect
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT CheeseEffect ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG CheeseEffect:control-valve ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseEffect:name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseEffect:pipeline-desc ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION cheese_effect_new ##### -->
+<para>
+
+</para>
+
+@name: 
+@pipeline_desc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_effect_get_name ##### -->
+<para>
+
+</para>
+
+@effect: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_effect_get_pipeline_desc ##### -->
+<para>
+
+</para>
+
+@effect: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_effect_enable_preview ##### -->
+<para>
+
+</para>
+
+@effect: 
+
+
+<!-- ##### FUNCTION cheese_effect_disable_preview ##### -->
+<para>
+
+</para>
+
+@effect: 
+
+
+<!-- ##### FUNCTION cheese_effect_is_preview_connected ##### -->
+<para>
+
+</para>
+
+@effect: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_effect_load_effects ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_effect_load_from_file ##### -->
+<para>
+
+</para>
+
+@filename: 
+@Returns: 
+
+

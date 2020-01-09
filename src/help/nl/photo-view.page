@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="photo-view" xml:lang="nl">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-view" xml:lang="nl">
   <info>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Foto's en video's zullen automatisch verschijnen in de fotoreeks.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Photos and videos will automatically appear in the photo stream.</desc>
   </info>
 
 
-  <title>Een foto of video die u heeft (op)genomen bekijken</title>
+  <title>View a photo or video that you took</title>
 
-  <p>Nadat u een foto of video heeft (op)genomen, zal deze verschijnen in de fotoreeks aan de onderkant van het venster. U kunt er rechts op klikken en daarna klikken op <gui style="menuitem">Openen</gui> om het in de foto- of videotoepassing te openen.</p>
+  <p>After you take a photo or record a video, it will appear in the photo
+  stream at the bottom of the window.</p>
 
-<!-- TODO: This is a bug, it doesn't work right now.
   <p>If you want to see a bigger version of a photo, or to play a video,
-  double-click it. This will open it in the default photo viewer or video
-  player.</p>-->
+  double-click it. This will open it in the default photo viewer or video player.</p>
 
-  <p>Alle foto's en video's in de fotoreeks worden opgeslagen in de mappen <file>Afbeeldingen/Webcam</file> en <file>Video's/Webcam</file> in uw persoonlijke map.</p>
+  <p>All of the photos and videos in the photo stream are saved in the
+  <guiseq><gui>Pictures</gui><gui>Webcam</gui></guiseq> or
+  <guiseq><gui>Videos</gui><gui>Webcam</gui></guiseq> folders in your user folder.</p>
 
 </page>

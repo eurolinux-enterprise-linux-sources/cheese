@@ -1,871 +1,1173 @@
 # Czech translation for cheese help.
 # Copyright (C) 2010 cheese's COPYRIGHT HOLDER
 # This file is distributed under the same license as the cheese help.
-#
 # Lucas Lommer <llommer@svn.gnome.org>, 2010.
-# Martin Jablečník <martin.jablecnik@seznam.cz>, 2012.
-# Marek Černocký <marek@manet.cz>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: cheese master\n"
-"POT-Creation-Date: 2017-06-28 17:20+0000\n"
-"PO-Revision-Date: 2014-02-28 08:07+0100\n"
-"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"POT-Creation-Date: 2010-03-26 10:57+0000\n"
+"PO-Revision-Date: 2010-03-26 16:55+0100\n"
+"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
 
-#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
-msgctxt "_"
-msgid "translator-credits"
-msgstr ""
-"Lucas Lommer <llommer@svn.gnome.org>, 2010\n"
-"Martin Jablečník <martin.jablecnik@seznam.cz>, 2012\n"
-"Marek Černocký <marek@manet.cz>, 2013, 2014"
-
-#. (itstool) path: credit/name
-#: C/burst-mode.page:14 C/effects-apply.page:13 C/index.page:12
-#: C/introduction.page:15 C/photo-delete.page:13 C/photo-save.page:13
-#: C/photo-take.page:19 C/photo-view.page:13 C/pref-countdown.page:14
-#: C/pref-flash.page:14 C/pref-image-properties.page:15
-#: C/pref-resolution.page:13 C/video-record.page:14
-msgid "Julita Inca"
-msgstr "Julita Inca"
-
-#. (itstool) path: credit/years
-#: C/burst-mode.page:16 C/effects-apply.page:15 C/index.page:14
-#: C/introduction.page:17 C/photo-delete.page:15 C/photo-save.page:15
-#: C/photo-take.page:21 C/photo-view.page:15 C/pref-countdown.page:16
-#: C/pref-flash.page:16 C/pref-image-properties.page:17
-#: C/pref-resolution.page:15 C/video-record.page:16
-msgid "2011"
-msgstr "2011"
-
-#. (itstool) path: credit/name
-#: C/burst-mode.page:19 C/effects-apply.page:18 C/index.page:17
-#: C/introduction.page:20 C/photo-delete.page:18 C/photo-save.page:18
-#: C/photo-take.page:24 C/photo-view.page:18 C/pref-countdown.page:19
-#: C/pref-flash.page:19 C/pref-fullscreen.page:12
-#: C/pref-image-properties.page:20 C/pref-resolution.page:18
-#: C/video-record.page:19
-msgid "Ekaterina Gerasimova"
-msgstr "Ekaterina Gerasimova"
-
-#. (itstool) path: credit/years
-#: C/burst-mode.page:21
-msgid "2011, 2013"
-msgstr "2011, 2013"
-
-#. (itstool) path: info/desc
-#: C/burst-mode.page:26
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:214(None)
 msgid ""
-"Capture several photos with one button press in <gui>Burst</gui> mode. "
-"Change your pose in between each shot!"
+"@@image: 'figures/cheese-main.jpg'; md5=fbe9e9d1c9edb74f2db4ca25119f1c8b"
 msgstr ""
-"Pořiďte několik snímků jediným zmáčknutím tlačítka v režimu <gui>snímání v "
-"sérii</gui>. Mezi každým snímkem změňte svoji pózu!"
+"@@image: 'figures/cheese-main.jpg'; md5=fbe9e9d1c9edb74f2db4ca25119f1c8b"
 
-#. (itstool) path: page/title
-#: C/burst-mode.page:29
-msgid "Take photos in quick succession"
-msgstr "Jak pořídit <gui>sérii</gui> několika snímků v rychlém sledu"
-
-#. (itstool) path: page/p
-#: C/burst-mode.page:31
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:231(None)
 msgid ""
-"Use <gui>Burst</gui> mode to automatically take several photos in a row. It "
-"is particularly fun if you change your pose in between photos! To use "
-"<gui>Burst</gui> mode:"
+"@@image: 'figures/cheese-wide.jpg'; md5=c2db63840f221557a7a4bbdde96847bc"
 msgstr ""
-"Použijte režim <gui>série snímků</gui> k automatickému pořízení několik "
-"snímků v řadě. To je obzvlášť zábavné, když mezi snímky měníte svou polohu a "
-"výraz! Pro použití režimu <gui>série snímků</gui>:"
+"@@image: 'figures/cheese-wide.jpg'; md5=c2db63840f221557a7a4bbdde96847bc"
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:37
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:253(None)
 msgid ""
-"Make sure that you are in <gui>Burst</gui> mode. If you are, the <gui style="
-"\"button\">Burst</gui> button will be selected on the left side of the "
-"screen."
+"@@image: 'figures/cheese-effects.jpg'; md5=cf2e23befd055fa0bed70b19f19657c9"
 msgstr ""
-"Ujistěte se, že jste přepnutí v režimu <gui>snímání v sérii</gui>. Pokud "
-"tomu tak je, je vybráno tlačítko <gui style=\"button\">Série</gui> po levé "
-"straně obrazovky."
+"@@image: 'figures/cheese-effects.jpg'; md5=cf2e23befd055fa0bed70b19f19657c9"
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:42
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:344(None)
 msgid ""
-"Click the <gui style=\"button\">Take multiple photos using a webcam</gui> "
-"button in the middle of the bottom panel, or press the <key>Space</key> key, "
-"to start taking photos."
+"@@image: 'figures/cheese-fullscreen.jpg'; "
+"md5=7836db68a654278e984a554fccd09283"
 msgstr ""
-"Klikněte na tlačítko <gui style=\"button\">Pořídit více snímků pomocí webové "
-"kamery</gui> uprostřed spodního panelu nebo zmáčkněte <key>mezerník</key> a "
-"spustí se snímání."
+"@@image: 'figures/cheese-fullscreen.jpg'; "
+"md5=7836db68a654278e984a554fccd09283"
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:45
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:441(None)
 msgid ""
-"By default, four photos will be taken, with a one second delay and a "
-"countdown between photos."
+"@@image: 'figures/cheese-preferences.jpg'; "
+"md5=ebcfbcb6cb2ed034304c0410a34eb07c"
 msgstr ""
-"Standardně je nastaveno pořízení čtyř snímků s prodlevou jedné sekundy a "
-"odpočítáváním mezi snímky."
+"@@image: 'figures/cheese-preferences.jpg'; "
+"md5=ebcfbcb6cb2ed034304c0410a34eb07c"
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:49 C/video-record.page:45
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/cheese.xml:563(None)
 msgid ""
-"To stop recording, press the same button again. You can also press the "
-"<key>Esc</key> or <key>Space</key> key to stop recording."
+"@@image: 'figures/cheese-share.jpg'; md5=8b94ccb434e68608677814d3666d08cf"
 msgstr ""
-"Pro ukončení snímání zmáčkněte to samé tlačítko znovu. Můžete také použít "
-"klávesu <key>Esc</key> nebo <key>mezerník</key>."
+"@@image: 'figures/cheese-share.jpg'; md5=8b94ccb434e68608677814d3666d08cf"
 
-#. (itstool) path: section/title
-#: C/burst-mode.page:55
-msgid "Change <gui>Burst</gui> preferences"
-msgstr "Změna předvoleb <gui>série snímků</gui>"
+#: C/cheese.xml:25(title)
+msgid "<application>Cheese</application> Manual"
+msgstr "Příručka aplikace <application>Cheese</application>"
 
-#. (itstool) path: section/p
-#: C/burst-mode.page:57
+#: C/cheese.xml:27(para)
 msgid ""
-"You can change how many photos will be taken in each burst and the length of "
-"the delay between the photos:"
+"<application>Cheese</application> uses your webcam to take photos and "
+"videos, applies fancy special effects and lets you share the fun with others."
 msgstr ""
-"Množství pořizovaných snímků v sérii a prodlevu mezi nimi můžete změnit:"
+"<application>Cheese</application> využívá webkameru k zaznamenávání fotek a "
+"videí, aplikuje na ně zvláštní efekty a umožňuje sdílení s ostatními."
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:62
+#: C/cheese.xml:33(year)
+msgid "2007-2009"
+msgstr "2007-2009"
+
+#: C/cheese.xml:34(holder)
+msgid "daniel g. siegel (dgsiegel@gnome.org)"
+msgstr "daniel g. siegel (dgsiegel@gnome.org)"
+
+#: C/cheese.xml:35(holder)
+msgid "Jaap A. Haitsma (jaap@haitsma.org)"
+msgstr "Jaap A. Haitsma (jaap@haitsma.org)"
+
+#: C/cheese.xml:36(holder)
+msgid "Filippo Argiolas (fargiolas@gnome.org)"
+msgstr "Filippo Argiolas (fargiolas@gnome.org)"
+
+#: C/cheese.xml:52(publishername)
+msgid "Felix Kaser (f.kaser@gmx.net)"
+msgstr "Felix Kaser (f.kaser@gmx.net)"
+
+#: C/cheese.xml:2(para)
 msgid ""
-"Select <guiseq><gui style=\"menu\">Cheese</gui><gui style=\"menuitem"
-"\">Preferences</gui><gui style=\"tab\">Capture</gui></guiseq>."
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
 msgstr ""
-"Vyberte <guiseq><gui style=\"menu\">Cheese</gui> <gui style=\"menuitem"
-"\">Předvolby</gui> <gui style=\"tab\">Snímání</gui></guiseq>."
+"Máte právo kopírovat, distribuovat a/nebo upravovat tento dokument v souladu "
+"s licencí GNU Free Documentation License (GFDL), verze 1.1 nebo jakékoliv "
+"pozdější vydané Free Software Foundation bez neměnných sekcí, textů přebalu "
+"vpředu nebo vzadu. Kopii licence GFDL naleznete pod <ulink type=\"help\" url="
+"\"ghelp:fdl\">tímto odkazem</ulink> nebo v souboru COPYING-DOCS dodávaném s "
+"touto příručkou."
 
-#. (itstool) path: item/p
-#: C/burst-mode.page:66
-msgid "Edit the preference settings:"
-msgstr "Upravte nastavení předvoleb:"
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:69
-msgid "Countdown"
-msgstr "Odpočet"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:70
-msgid "Countdown from three before the photo is taken."
-msgstr "Odpočítávání od tří do okamžiku pořízení snímku."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:73
-msgid "Fire flash"
-msgstr "Spustit blesk"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:74
-msgid "Your screen will flash when a photo is taken."
-msgstr "Při pořizování smímku obrazovka bíle zableskne."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:77
-msgid "Number of photos"
-msgstr "Počet snímků"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:78
-msgid "The number of photos that will be taken in a single burst."
-msgstr "Počet snímků, které se pořídí v jedné sérii."
-
-#. (itstool) path: item/title
-#: C/burst-mode.page:81
-msgid "Delay between photos (seconds)"
-msgstr "Prodleva mezi snímky (v sekundách)"
-
-#. (itstool) path: item/p
-#: C/burst-mode.page:82
+#: C/cheese.xml:12(para)
 msgid ""
-"The delay between two photos. If you have the <gui>Countdown</gui> enabled, "
-"then this delay needs to be set to over four seconds for it to have any "
-"effect."
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
 msgstr ""
-"Prodleva mezi dvěma fotkami. Pokud máte zapnuto <gui>odpočítávání</gui>, "
-"musí být prodleva nastavena na více než čtyři sekundy, aby se projevila."
+"Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod "
+"licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, "
+"musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
 
-#. (itstool) path: info/desc
-#: C/effects-apply.page:24
+#: C/cheese.xml:19(para)
 msgid ""
-"Add fun effects to your photos and videos, like turning yourself green or "
-"distorting the picture like a funhouse mirror."
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
 msgstr ""
-"Přidejte zábavné efekty ke svým snímkům a videím, třeba změnu barev nebo "
-"deformaci obrazu jak v zakřiveném zrcadle."
+"Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou "
+"ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a "
+"členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
+"jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s "
+"velkým písmenem na začátku."
 
-#. (itstool) path: page/title
-#: C/effects-apply.page:28
-msgid "Apply effects to photos and videos"
-msgstr "Jak použít na snímky a videa efekty"
-
-#. (itstool) path: page/p
-#: C/effects-apply.page:30
-msgid "You can apply fun, interesting effects to your photos and videos:"
-msgstr "Na své snímky a videa můžete použít zábavné a zajímavé efekty:"
-
-#. (itstool) path: item/p
-#: C/effects-apply.page:34
-msgid "Click <gui style=\"button\">Effects</gui>."
-msgstr "Klikněte na <gui style=\"button\">Efekty</gui>."
-
-#. (itstool) path: item/p
-#: C/effects-apply.page:37
+#: C/cheese.xml:35(para)
 msgid ""
-"Select the effect you want to use by clicking one of the options or select "
-"<gui>No Effect</gui> if you don't want to use one."
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"Vyberte efekt, který chcete použít, kliknutím na jednu z možností, nebo "
-"vyberte <gui>Bez efektů</gui>, pokud nechcete použít žádný."
+"DOKUMENT JE POSKYTOVÁN V PODOBĚ \"JAK JE\" BEZ ZÁRUKY V  JAKÉKOLIV PODOBĚ, "
+"NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
+"VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO "
+"NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, "
+"NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO "
+"JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO "
+"JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY "
+"ČI SLUŽBY. TOTO PROHLÁŠENÍ  O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO "
+"LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI "
+"ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
 
-#. (itstool) path: page/p
-#: C/effects-apply.page:42
+#: C/cheese.xml:55(para)
 msgid ""
-"<app>Cheese</app> offers 35 effects, of which only 9 are shown on the first "
-"page. Click the back and forward arrows next to <gui style=\"button"
-"\">Effects</gui> to navigate to the other pages."
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"<app>Cheese</app> nabízí 35 efektů, z kterých je pouze 9 zobrazeno na první "
-"stránce. Pro zobrazení dalších efektů klikněte na šipky zpět nebo vpřed "
-"vedle tlačítka <gui style=\"button\">Efekty</gui> ."
+"ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN "
+"(VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, "
+"KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO "
+"UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN "
+"ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ "
+"ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY "
+"DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO "
+"JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE "
+"K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
+"TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
 
-#. (itstool) path: figure/title
-#: C/effects-apply.page:47
+#: C/cheese.xml:28(para)
 msgid ""
-"Some of the effects, from left to right: Sepia, Shagadelic, Sobel (first "
-"row), Waveform, X-Ray, Warp (second row)"
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
 msgstr ""
-"Některé z efektů, zleva doprava: Sépiová, Shagadelic, Kontury (první řádek), "
-"Osciloskop, Rentgen, Deformace (druhý řádek)"
+"DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
+"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
 
-#. (itstool) path: info/desc
-#: C/index.page:23
+#: C/cheese.xml:62(firstname)
+msgid "Joshua"
+msgstr "Joshua"
+
+#: C/cheese.xml:63(surname)
+msgid "Henderson"
+msgstr "Henderson"
+
+#: C/cheese.xml:64(email)
+msgid "joshhendo@gmail.com"
+msgstr "joshhendo@gmail.com"
+
+#: C/cheese.xml:67(firstname)
+msgid "Jaap"
+msgstr "Jaap"
+
+#: C/cheese.xml:68(surname)
+msgid "Haitsma"
+msgstr "Haitsma"
+
+#: C/cheese.xml:69(email)
+msgid "jaap@haitsma.org"
+msgstr "jaap@haitsma.org"
+
+#: C/cheese.xml:72(firstname)
+msgid "Felix"
+msgstr "Felix"
+
+#: C/cheese.xml:73(surname)
+msgid "Kaser"
+msgstr "Kaser"
+
+#: C/cheese.xml:74(email)
+msgid "f.kaser@gmx.net"
+msgstr "f.kaser@gmx.net"
+
+#: C/cheese.xml:94(revnumber)
+msgid "0.1"
+msgstr "0.1"
+
+#: C/cheese.xml:95(date)
+msgid "2007-12-04"
+msgstr "4. 12. 2007"
+
+#: C/cheese.xml:97(para) C/cheese.xml:108(para) C/cheese.xml:122(para)
+#: C/cheese.xml:136(para)
+msgid "Jaap A. Haitsma <email>jaap@haitsma.org</email>"
+msgstr "Jaap A. Haitsma <email>jaap@haitsma.org</email>"
+
+#: C/cheese.xml:100(para) C/cheese.xml:114(para) C/cheese.xml:128(para)
+#: C/cheese.xml:145(para)
+msgid "Jaap A. Haitsma"
+msgstr "Jaap A. Haitsma"
+
+#: C/cheese.xml:105(revnumber)
+msgid "0.2"
+msgstr "0.2"
+
+#: C/cheese.xml:106(date)
+msgid "2008-01-12"
+msgstr "12. 1. 2008"
+
+#: C/cheese.xml:111(para) C/cheese.xml:125(para) C/cheese.xml:139(para)
+msgid "Joshua Henderson <email>joshhendo@gmail.com</email>"
+msgstr "Joshua Henderson <email>joshhendo@gmail.com</email>"
+
+#: C/cheese.xml:119(revnumber)
+msgid "0.3"
+msgstr "0.3"
+
+#: C/cheese.xml:120(date)
+msgid "2008-08-20"
+msgstr "20. 8. 2008"
+
+#: C/cheese.xml:133(revnumber)
+msgid "0.4"
+msgstr "0.4"
+
+#: C/cheese.xml:134(date)
+msgid "2009-07-15"
+msgstr "15. 7. 2009"
+
+#: C/cheese.xml:142(para) C/cheese.xml:153(para)
+msgid "Felix Kaser <email>f.kaser@gmx.net</email>"
+msgstr "Felix Kaser <email>f.kaser@gmx.net</email>"
+
+#: C/cheese.xml:150(revnumber)
+msgid "0.5"
+msgstr "0.5"
+
+#: C/cheese.xml:151(date)
+msgid "2009-09-14"
+msgstr "14. 9. 2009"
+
+#: C/cheese.xml:156(para)
+msgid "Felix Kaser"
+msgstr "Felix Kaser"
+
+#: C/cheese.xml:163(title)
+msgid "Feedback"
+msgstr "Zpětná vazba"
+
+#: C/cheese.xml:164(para)
 msgid ""
-"Cheese lets you take photos and videos using your webcam. You can even add "
-"special effects!"
+"To report a bug or make a suggestion regarding the Cheese application or "
+"this manual, follow the directions in the <ulink url=\"http://projects.gnome."
+"org/cheese/\" type=\"http\"><application>Cheese</application> project page</"
+"ulink>."
 msgstr ""
-"Cheese umožňuje pořizovat snímky a videa pomocí webové kamery. Můžete také "
-"přidat speciální efekty!"
+"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
+"Cheese nebo této příručce, postupujte dle instrukcí na <ulink url=\"http://"
+"projects.gnome.org/cheese/\" type=\"http\">stránce projektu "
+"<application>Cheese</application> project page</ulink>."
 
-#. (itstool) path: page/title
-#: C/index.page:28
-msgid "<_:media-1/> Cheese Webcam Application"
-msgstr "<_:media-1/> Fotobudka Cheese"
+#: C/cheese.xml:0(application)
+msgid "Cheese"
+msgstr "Cheese"
 
-#. (itstool) path: section/title
-#: C/index.page:33
-msgid "Main features"
-msgstr "Hlavní funkce"
+#: C/cheese.xml:178(primary) C/cheese.xml:191(tertiary)
+msgid "cheese"
+msgstr "cheese"
 
-#. (itstool) path: section/title
-#: C/index.page:37
-msgid "Preferences"
-msgstr "Předvolby"
-
-#. (itstool) path: section/title
-#: C/index.page:41
-msgid "Common problems and questions"
-msgstr "Běžné problémy a dotazy"
-
-#. (itstool) path: info/desc
-#: C/introduction.page:26
-msgid "Introduction to the <app>Cheese</app> webcam application."
-msgstr "Úvod do aplikace <app>Cheese</app> pro webovou kameru."
-
-#. (itstool) path: page/title
-#: C/introduction.page:29
+#: C/cheese.xml:184(title)
 msgid "Introduction"
 msgstr "Úvod"
 
-#. (itstool) path: page/p
-#: C/introduction.page:31
+#: C/cheese.xml:190(secondary)
+msgid "Manual"
+msgstr "Příručka"
+
+#: C/cheese.xml:194(para)
 msgid ""
-"<app>Cheese</app> is a webcam application that lets you take photos and "
-"record videos using your webcam. You can take multiple photos in quick "
-"succession using the <link xref=\"burst-mode\"><gui>Burst</gui> mode</link> "
-"and apply <link xref=\"effects-apply\">special <gui>Effects</gui></link> to "
-"add a personal touch to them."
+"Cheese uses your webcam to take photos and videos, applies fancy special "
+"effects and lets you share the fun with others."
 msgstr ""
-"<app>Cheese</app> je aplikace pro práci s webovou kamerou, díky které můžete "
-"pořizovat snímky a nahrávat video ze svojí webkamery. Můžete pořídit sérii "
-"fotek v rychlém sledu pomocí <link xref=\"burst-mode\">režimu <gui>Série "
-"snímků</gui></link> a použít <link xref=\"effects-apply\">speciální "
-"<gui>Efekty</gui></link>, které dají snímkům osobitý ráz."
+"Cheese využívá webkameru k zaznamenávání fotek a videí, aplikuje na ně "
+"zvláštní efekty a umožňuje sdílení s ostatními."
 
-#. (itstool) path: page/p
-#: C/introduction.page:37
+#: C/cheese.xml:202(title)
+msgid "Usage"
+msgstr "Použití"
+
+#: C/cheese.xml:203(para)
 msgid ""
-"By default, <app>Cheese</app> starts in <gui>Photo</gui> mode, ready to "
-"<link xref=\"photo-take\">take a photo</link>. You need to switch to "
-"<gui>Video</gui> mode to <link xref=\"video-record\">record a video</link>."
+"The main screen of Cheese supports two different layouts at the moment. The "
+"default looks like the screenshot below, it has the preview image centered "
+"and the thumbnail slideshow below."
 msgstr ""
-"Standardně aplikace <app>Cheese</app> začíná v režimu <gui>Fotka</gui>, "
-"připravena <link xref=\"take-photo\">pořídit snímek</link>. Pro <link xref="
-"\"record-video\">nahrávání videa</link> se musíte přepnout do režimu "
-"<gui>Video</gui>."
+"Hlavní okno aplikace Chees v současné době podporuje dvě rozložení elementů. "
+"Výchozí vzhled vypadá jako snímek níže, náhled obrázku je uprostřed a pruh s "
+"náhledy pod ním."
 
-#. (itstool) path: page/p
-#: C/introduction.page:41
+#: C/cheese.xml:210(title)
+msgid "Cheese screenshot"
+msgstr "Snímek obrazovky aplikace Cheese"
+
+#: C/cheese.xml:220(para)
 msgid ""
-"<app>Cheese</app> works with most webcams, but some older webcams may not be "
-"supported."
+"Especially for Cheese-users with small displays, like the ones in netbooks, "
+"we have designed another view. It is more horizontally aligned, in order to "
+"fit better on small widescreen displays. The wide-view is shown in the "
+"screenshot below."
 msgstr ""
-"<app>Cheese</app> umí pracovat s většinou webových kamer, přesto některé, "
-"hlavně starší, modely nemusí být podporovány."
+"Pro uživatele aplikace Chees s malými obrazovkami, jako mají netbooky, jsme "
+"navrhli jiné rozložení. Je zarovnáno vodorovně tak, aby se lépe hodilo pro "
+"malé širokoúhlé obrazovky. Snímek rozložení na širokoúhlé obrazovce je "
+"zobrazen níže."
 
-#. (itstool) path: p/link
-#: C/legal.xml:5
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+#: C/cheese.xml:227(title)
+msgid "Cheese wide screenshot"
+msgstr "Širokoúhlý snímek aplikace Cheese"
 
-#. (itstool) path: license/p
-#: C/legal.xml:4
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Tato práce je licencována pod <_:link-1/>."
-
-#. (itstool) path: info/desc
-#: C/photo-delete.page:24
-msgid "Remove photos and videos that you no longer want to keep."
-msgstr "Odstraňte snímky a videa, které už nechcete dále uchovávat."
-
-#. (itstool) path: page/title
-#: C/photo-delete.page:27
-msgid "Delete a photo or video"
-msgstr "Jak snímek či video smazat"
-
-#. (itstool) path: page/p
-#: C/photo-delete.page:29
-msgid "If you no longer want a photo or video, you can permanently delete it:"
-msgstr ""
-"Jestliže už nechcete dále uchovávat snímek nebo video, můžete ho trvale "
-"smazat:"
-
-#. (itstool) path: item/p
-#: C/photo-delete.page:33
+#: C/cheese.xml:237(para)
 msgid ""
-"Find the photo or video that you want to delete in the photo stream at the "
-"bottom of the <app>Cheese</app> window."
+"Cheese uses the photo mode by defaults, but you can change this to use the "
+"video or burst mode if desired."
 msgstr ""
-"Najděte snímek nebo video, které chcete smazat, v panelu snímků ve spodní "
-"části okna <app>Cheese</app>."
+"Ve výchozím nastavení používá Cheese režim snímků ale lze jej změnit na "
+"režim videa nebo snímání v sérii."
 
-#. (itstool) path: item/p
-#: C/photo-delete.page:37
-msgid "Right-click it and select <gui>Delete</gui>."
-msgstr "Klikněte pravým tlačítkem a vyberte <gui>Smazat</gui>."
+#: C/cheese.xml:243(title)
+msgid "Effects"
+msgstr "Efekty"
 
-#. (itstool) path: item/p
-#: C/photo-delete.page:41
+#: C/cheese.xml:249(title)
+msgid "Cheese effects screenshot"
+msgstr "Snímek efektů aplikace Cheese"
+
+#: C/cheese.xml:244(para)
 msgid ""
-"You will be asked if you want to permanently delete it. Confirm by clicking "
-"<gui>Delete</gui>; you will not be able to recover the photo or video."
+"To apply effects to the input of your webcam, click the button labelled "
+"<guibutton>Effects</guibutton>. When you then go to the effects window, you "
+"will see a window similar to the image below. <placeholder-1/>"
 msgstr ""
-"Budete dotázáni, jestli jej opravdu chcete smazat. Potvrďte kliknutím na "
-"<gui>Smazat</gui>. Pozor, smazání je trvalé a fotka nebo video již nepůjde "
-"vrátit zpět."
+"Pokud chcete na vstup webkamery aplikovat efekty, klepněte na tlačítko s "
+"popiskem <guibutton>Efekty</guibutton>. Když přejdete do okna efektů, "
+"zobrazí se něco podobného jako na snímku níže. <placeholder-1/>"
 
-#. (itstool) path: page/p
-#: C/photo-delete.page:47
+#: C/cheese.xml:261(para)
 msgid ""
-"If you are not sure whether you want to permanently delete the photo or "
-"video, you can right click it and select <gui>Move to Trash</gui> instead. "
-"This will move it to the computer's <gui>Trash</gui> folder."
+"You can apply some really cool effects to your photos too! Just choose from "
+"the several different effects available and click its corresponding button "
+"to apply it to your photo. Selecting multiple effects will apply all the "
+"effects to your image. For example, if you select <guibutton>Hulk</"
+"guibutton> and <guibutton>Vertical Flip</guibutton>, the input from the "
+"webcam will be altered to have a green shade and be upside down. To disable "
+"all effects, just click on the <guibutton>No Effect</guibutton> button."
 msgstr ""
-"Jestli si nejste jisti, zda chcete snímek nebo video smazat trvale, můžete "
-"po kliknutí pravým tlačítkem vybrat <gui>Přesunout do koše</gui>. Tak bude "
-"odpovídající soubor přesunut do složky <gui>Odpadkový koš</gui>"
+"Na fotky také mlžete použít některé úžasné efekty! Prostě vyberte několik "
+"různých dostupných efektů a klepněte na odpovídající tlačítka k jejich "
+"aplikaci. Pokud jich vyberete více, budou na snímek použity všechny. "
+"Například, pokud vyberete efekt <guibutton>Hulk</guibutton> a "
+"<guibutton>Svislé překlopení</guibutton>, bude vstup webkamery stínován do "
+"zelena a svisle překlopen. Pokud chcete použití efektů vypnout, klepněte na "
+"talčítko <guibutton>Bez efektů</guibutton>."
 
-#. (itstool) path: note/p
-#: C/photo-delete.page:52
+#: C/cheese.xml:272(para)
 msgid ""
-"Cheese does not have its own <gui>Trash</gui> folder and you cannot access "
-"your computer's <gui>Trash</gui> folder from within <app>Cheese</app>."
+"To return to the preview of your webcam, just push the button labelled "
+"<guibutton>Effects</guibutton> again. This will toggle the Effects menu and "
+"bring you back to the normal view."
 msgstr ""
-"Cheese nemá vlastní složku <gui>Odpadkový koš</gui> a do složky "
-"<gui>Odpadkový koš</gui> vašeho počitače není z aplikace <app>Cheese</app> "
-"přímý přístup."
+"Na náhled vstupu webkamery se vrátíte prostě tak, že znovu klepnete na "
+"tlačítko <guibutton>Efekty</guibutton>. To vypne nabídku efektů a navrátí "
+"vás do normálního zobrazení."
 
-#. (itstool) path: info/desc
-#: C/photo-save.page:24
-msgid "Save a photo or video to a different folder."
-msgstr "Uložte si snímek nebo video do jiné složky."
+#: C/cheese.xml:280(title)
+msgid "Photo Mode"
+msgstr "Režim snímků"
 
-#. (itstool) path: page/title
-#: C/photo-save.page:27
-msgid "Save a photo or video"
-msgstr "Jak snímek či video uložit"
-
-#. (itstool) path: page/p
-#: C/photo-save.page:29
+#: C/cheese.xml:281(para)
 msgid ""
-"By default, Cheese saves the photos and videos in the <file>Webcam</file> "
-"folder in your user's <file>Photo</file> or <file>Videos</file> folder of "
-"your home folder."
+"Photo mode is the default mode for Cheese. When not in photo mode, click the "
+"button that shows the icon of a single photo or select it from the menu: "
+"<menuchoice><guimenu>Cheese</guimenu><guimenuitem>Photo</guimenuitem></"
+"menuchoice> to change to photo mode. Photo mode will take a single photo "
+"every time the button labelled <guibutton>Take a photo</guibutton> or the "
+"<keycap>Spacebar</keycap> key is pressed, and will save to disk."
 msgstr ""
-"Standardně Cheese ukládá snímky a videa do složky <file>Webkamera</file> ve "
-"složce <file>Obrázky</file> nebo <file>Videa</file> ve vaší domovské složce."
+"Režim snímků je výchozím režimem aplikace Cheese. Pokud nejste v režimu "
+"snímků, klepněte na tlačítko s ikonou jedné fotky nebo zvolte z nabídky "
+"<menuchoice><guimenu>Cheese</guimenu><guimenuitem>Snímek</guimenuitem></"
+"menuchoice> a aplikace bude do tohoto režimu přepnuta. Režim snímků pořídí a "
+"uloží vždy jeden snímek, kdykoliv klepnete na tlačítko <guibutton>Pořídit "
+"snímek</guibutton> nebo stisknete <keycap>Mezerník</keycap>."
 
-#. (itstool) path: page/p
-#: C/photo-save.page:33
+#: C/cheese.xml:293(title)
+msgid "Video Mode"
+msgstr "Režim videa"
+
+#: C/cheese.xml:294(para)
 msgid ""
-"To save an image to a different location, right-click the image in the photo "
-"stream and click <gui>Save As…</gui>. Then, choose where you want to save "
-"the image."
+"Video mode is a mode that allows you to take short videos using the webcam. "
+"When not in video mode, click the button that shows the icon of a film roll "
+"or select it from the menu: <menuchoice><guimenu>Cheese</"
+"guimenu><guimenuitem>Video</guimenuitem></menuchoice> to change to video "
+"mode. Video mode will start recording a video every time the button labelled "
+"<guibutton>Start Recording</guibutton> or the <keycap>Spacebar</keycap> is "
+"pressed. The video will stop recording and save to disk when the button "
+"labelled <guibutton>Stop Recording</guibutton> or the <keycap>Spacebar</"
+"keycap> is pressed."
 msgstr ""
-"Pro uložení obrázku na jiné místo, klikněte na obrázek pravým tlačítkem v "
-"panelu snímků a klikněte na <gui>Uložit jako…</gui> Pak vyberte, kam chcete "
-"soubor uložit."
+"Režim videa umožňuje pořizovat pomocí webkamery krátká videa. Pokud nejste v "
+"režimu videa, klepněte na tlačítko s ikonou filmového pásu nebo zvolte z "
+"nabídky <menuchoice><guimenu>Cheese</guimenu><guimenuitem>Video</"
+"guimenuitem></menuchoice> a aplikace bude do tohoto režimu přepnuta. V "
+"režimu videa započne záznam vždy, když klepnete na tlačítko "
+"<guibutton>Spustit nahrávání</guibutton> nebo stisknete <keycap>Mezerník</"
+"keycap>. Zastavení záznamu videa a jeho uložení provedete klepnutím na "
+"tlačítko <guibutton>Zastavit nahrávání</guibutton> nebo stisknete "
+"<keycap>Mezerník</keycap>."
 
-#. (itstool) path: page/p
-#: C/photo-save.page:37
+#: C/cheese.xml:306(para)
 msgid ""
-"A new copy of the image will be saved in the new location. The old version "
-"will remain in the <file>Webcam</file> folder."
+"The video mode does not look much different from the photo mode, except that "
+"the button labelled <guibutton>Take a photo</guibutton> will say "
+"<guibutton>Start Recording</guibutton> or <guibutton>Stop Recording</"
+"guibutton>, and the button with the film roll icon is pushed in, whereas the "
+"other mode buttons (photo and burst) are not."
 msgstr ""
-"Nová kopie se uloží na novém místě. Stará verze zůstane ve složce "
-"<file>Webkamera</file>."
+"Režim videa se moc neliší od režimu snímků až na to, že namísto tlačítka "
+"<guibutton>Pořídit snímek</guibutton> je tlačítko <guibutton>Spustit "
+"nahrávání</guibutton> či <guibutton>Zastavit nahrávání</guibutton> a je "
+"stisknuto tlačítko s ikonou filmového pásu, na rozdíl od tlačítek ostatních "
+"režimů (snímky a snímání v sérii)."
 
-#. (itstool) path: info/desc
-#: C/photo-take.page:30
-msgid "Use your webcam to take photos instead of videos."
-msgstr "Použijte svoji webovou kameru k pořízení snímků místo videí."
+#: C/cheese.xml:316(title)
+msgid "Burst Mode"
+msgstr "Režim snímání v sérii"
 
-#. (itstool) path: page/title
-#: C/photo-take.page:33
-msgid "Take photos"
-msgstr "Jak pořídit fotky"
-
-#. (itstool) path: page/p
-#: C/photo-take.page:35
+#: C/cheese.xml:317(para)
 msgid ""
-"Webcams can be used to take still photos as well as videos. To take a photo:"
+"In burst mode you can take more pictures in a row. It works exactly like the "
+"photo mode, except that it takes a series of pictures. When you are not in "
+"burst mode, click the button that shows the icon of several pictures in a "
+"row or select it from the menu: <menuchoice><guimenu>Cheese</"
+"guimenu><guimenuitem>Burst</guimenuitem></menuchoice> to change to burst "
+"mode. Burst mode will start to take a series of pictures with an interval of "
+"some seconds in between photos when the button labelled <guibutton>Take "
+"Multiple Photos</guibutton> or the <keycap>Spacebar</keycap> key is pressed. "
+"The delay and amount of pictures to take can be set in the preferences "
+"dialog. For more information please see <xref linkend=\"preferences\"/>."
 msgstr ""
-"Webové kamery mohou být použity k pořízení statických fotografií stejně "
-"dobře, jako k nahrávání videí. Když chcete pořídit snímek:"
+"V režimu snímání v sérii lze zaznamenat několik snímků za sebou. Režim "
+"pracuje stejně jako režim snímků až na to, že bude zaznamenáno snímků více. "
+"Pokud nejste v režimu snímání v sérii, klepněte na tlačítko s ikonou s řadou "
+"fotek nebo zvolte z nabídky <menuchoice><guimenu>Cheese</"
+"guimenu><guimenuitem>Série</guimenuitem></menuchoice> a aplikace bude do "
+"tohoto režimu přepnuta. Režim snímání v sérii pořídí několik snímků vždy, "
+"když klepnete na tlačítko <guibutton>Pořídit vícenásobné snímky</guibutton> "
+"nebo stisknete <keycap>Mezerník</keycap>. Prodlevu mezi jednotlivými snímky "
+"lze nastavit v okně předvoleb. Více informací popisuje <xref linkend="
+"\"preferences\"/>."
 
-#. (itstool) path: item/p
-#: C/photo-take.page:40
+#: C/cheese.xml:331(para)
 msgid ""
-"Make sure that you are in <gui>Photo</gui> mode. If you are, the <gui style="
-"\"button\">Photo</gui> button will be selected on the left side of the "
-"screen."
+"All modes can be used in fullscreen. To do this, click the "
+"<menuchoice><guimenu>Cheese</guimenu><guimenuitem>Fullscreen</guimenuitem></"
+"menuchoice> menu to enter fullscreen mode, or press the <keycap>F11</keycap> "
+"key. To exit fullscreen mode, press the <keycap>Esc</keycap> or the "
+"<keycap>F11</keycap> keys."
 msgstr ""
-"Ujistěte se, že jste přepnutí v režimu <gui>fotek</gui>. Pokud tomu tak je, "
-"je vybráno tlačítko <gui style=\"button\">Fotka</gui> po levé straně "
-"obrazovky."
+"Všechny režimy mohou být použity v režimu na celou obrazovku. Pokud chcete "
+"na celou obrazovku přepnout, zvolte z nabídky <menuchoice><guimenu>Cheese</"
+"guimenu><guimenuitem>Celá obrazovka</guimenuitem></menuchoice> nebo "
+"stiskněte klávesu <keycap>F11</keycap>. Režim na celou obrazovku ukončíte "
+"pomocí klávesy <keycap>Esc</keycap>nebo opět klávesou <keycap>F11</keycap>."
 
-#. (itstool) path: item/p
-#: C/photo-take.page:45
+#: C/cheese.xml:340(title)
+msgid "Cheese fullscreen screenshot"
+msgstr "Snímek aplikace Cheese v režimu na celou obrazovku"
+
+#: C/cheese.xml:354(title)
+msgid "Working with photos and videos"
+msgstr "Práce s fotkami a videi"
+
+#: C/cheese.xml:356(title)
+msgid "Taking a photo"
+msgstr "Pořízení snímku"
+
+#: C/cheese.xml:357(para)
+msgid "To take a photo with Cheese, be sure to be in the “Photo” mode."
+msgstr ""
+"Pokud chcete pořídit pomocí aplikace Cheese snímek, ujistěte se, že jste v "
+"režimu snímků."
+
+#: C/cheese.xml:361(para)
 msgid ""
-"Click the <gui style=\"button\">Take a photo using a webcam</gui> button in "
-"the middle of the bottom panel, or press the <key>Space</key> key, to take "
-"the photo."
+"It's easy to take photos with special effects. Just click the button "
+"labelled <guibutton>Effects</guibutton>, and click on the effects desired as "
+"described in <xref linkend=\"using-effects\"/>. You should now have the "
+"effects that you chose applied to the webcam input. Press the effects button "
+"again to get back to the normal view."
 msgstr ""
-"Klikněte na tlačítko <gui style=\"button\">Pořídit fotku pomocí webové "
-"kamery</gui> uprostřed spodního panelu nebo zmáčkněte <key>mezerník</key> a "
-"pořídí se snímek."
+"Pořizovat snímky spolu se zvláštními efekty je snadné. Stačí klepnout na "
+"tlačítko <guibutton>Efekty</guibutton> a následně na požadované efekty tak, "
+"jak popisuje <xref linkend=\"using-effects\"/>. V tomto okamžiku by měly být "
+"efekty aplikovány na vstup webkamery. Opětovným klepnutím na tlačítko "
+"<guibutton>Efekty</guibutton> se vrátíte do normálního zobrazení."
 
-#. (itstool) path: item/p
-#: C/photo-take.page:50
+#: C/cheese.xml:369(para)
 msgid ""
-"There will be a short countdown, followed by a flash, and the photo will "
-"appear in the photo stream."
+"To take a photo, press the button labelled <guibutton>Take a photo</"
+"guibutton> or press the <keycap>spacebar</keycap> key. Alternatively, you "
+"can also use the webcam capture button, if your webcam has one. You will "
+"then see <application>Cheese</application> count down from 3 or instantly "
+"take the photo, depending on your settings. When the photo is taken, your "
+"entire screen will flash white, and the photo that was just taken will "
+"appear in the photo stream at the bottom of the program's window. To abort "
+"the countdown you can use the <keycap>Esc</keycap> key."
 msgstr ""
-"Proběhne krátké odpočítávání, následované bleskem, a pak se snímek objeví v "
-"panelu snímků ve spodní části okna."
+"Pokud chcete pořídit snímek, klepněte na tlačítko <guibutton>Pořídit snímek</"
+"guibutton> nebo stiskněte <keycap>Mezerník</keycap>. Také můžete použít "
+"tlačítko na webkameře, pokud nějaké má. <application>Cheese</application> "
+"bude následně odpočítávat od tří nebo okamžitě pořídí snímek, v závislosti "
+"na vašem nastavení. Po pořízení snímku okno aplikace bíle problikne a právě "
+"pořízený snímek bude zobrazen v pruhu náhledů v dolní části okna. Odpočet "
+"můžete zrušit stisknutím klávesy <keycap>Esc</keycap>."
 
-#. (itstool) path: page/p
-#: C/photo-take.page:55
+#: C/cheese.xml:382(title)
+msgid "Recording a video"
+msgstr "Záznam videa"
+
+#: C/cheese.xml:383(para)
 msgid ""
-"The photos in the photo stream are automatically saved in the <file>Pictures/"
-"Webcam</file> folder in your home folder. They are saved using the JPEG "
-"(<file>.jpg</file>) format."
+"To record a video in Cheese, make sure that the <guibutton>Video</guibutton> "
+"button has been pressed."
 msgstr ""
-"Fotky v panelu fotek jsou automaticky ukládány do složky <file>Obrázky/"
-"Webkamera</file> ve vaší domovské složce. Formát ukládání je JPEG (<file>.jpg</"
-"file>)."
+"Pokud chcete pořídit pomocí aplikace Cheese video, ujistěte se, že jste v je "
+"stisknuto tlačítko <guibutton>Video</guibutton>."
 
-#. (itstool) path: page/p
-#: C/photo-take.page:59
+#: C/cheese.xml:388(para)
 msgid ""
-"To cancel taking a photo after you have clicked <gui>Take a Photo</gui>, "
-"press <key>Esc</key> before the countdown finishes."
+"To start recording a video, press the button labelled <guibutton>Start "
+"Recording</guibutton> or press the <keycap>Spacebar</keycap> key. "
+"Alternatively, you can also use the webcam capture button, if your webcam "
+"has one. To stop recording just press the same button, now labelled "
+"<guibutton>Stop Recording</guibutton>, and the recording will stop and the "
+"video saved."
 msgstr ""
-"Pro zrušení pořizení snímku po kliknutí na <gui>Pořídit snímek</gui>, "
-"zmáčkněte před koncem odpočítávání <key>Esc</key>."
+"Pokud chcete začít záznam videa, klepněte na tlačítko <guibutton>Spustit "
+"nahrávání</guibutton> nebo stiskněte <keycap>Mezerník</keycap>. Také můžete "
+"použít tlačítko na webkameře, pokud nějaké má. Záznam videa zastavíte "
+"opětovným klepnutím na stejné tlačítko, nyní nadepsané <guibutton>Zastavit "
+"nahrávání</guibutton>, a video bude uloženo."
 
-#. (itstool) path: note/p
-#: C/photo-take.page:63
+#: C/cheese.xml:397(para)
 msgid ""
-"To take multiple photos in rapid succession, use <link xref=\"burst-mode"
-"\"><gui>Burst</gui> mode</link>."
+"If your video appears to be jerky or has a low frame rate (only updating the "
+"picture every few seconds), it does not mean that the recording has a "
+"similar frame rate. In many cases, the recorded file will have a better "
+"frame rate."
 msgstr ""
-"Pro pořízení více snímků v rychlém sledu, použijte <link xref=\"burst-mode"
-"\">režim <gui>Série snímků</gui></link>."
+"Pokud se video bude zdát ošklivé nebo s nízkou frekvencí snímků (obraz se "
+"obnovuje jednou za pár sekund), neznamená to, že záznam je skutečně takový. "
+"V mnoha případech má uložený soubor lepší hodnoty frekvence snímků."
 
-#. (itstool) path: info/desc
-#: C/photo-view.page:24
-msgid "Photos and videos will automatically appear in the photo stream."
-msgstr "Snímky a videa se automaticky objeví v panelu snímků."
+#: C/cheese.xml:406(title)
+msgid "Taking a series of pictures in burst mode"
+msgstr "Pořízení více snímků v režimu snímání v sérii"
 
-#. (itstool) path: page/title
-#: C/photo-view.page:29
-msgid "View a photo or video that you took"
-msgstr "Jak si prohlédnout pořízené snímky a videa"
-
-#. (itstool) path: page/p
-#: C/photo-view.page:31
+#: C/cheese.xml:407(para)
 msgid ""
-"After you take a photo or record a video, it will appear in the photo stream "
-"at the bottom of the window. You can right-click it and press <gui style="
-"\"menuitem\">Open</gui> to open it in the photo viewer or video player "
-"application."
+"To take more than one picture over some time you can use the burst mode. "
+"Burst mode can be set up in the preferences dialog where you can also set "
+"the amount of pictures you want to take and the delay in seconds between "
+"them. You can find more information about that in <xref linkend=\"preferences"
+"\"/>."
 msgstr ""
-"Po pořízení snímku nebo nahrání videa se fotka či video objeví v panelu "
-"snímků ve spodní části okna. Můžete na něj kliknout pravým tlačítkem a "
-"zmáčknout <gui style=\"menuitem\">Otevřít</gui>. Tím jej otevřete v "
-"prohlížeči fotografií nebo přehrávači videa."
+"Pokud chcete pořídit více snímků během určitého času, použijte režim snímání "
+"v sérii. Vlastnosti tohoto režimu lze upravit v okně předvoleb, kde lze "
+"nastavit počet snímků v sérii a prodleva mezi nimi. Více informací popisuje "
+"<xref linkend=\"preferences\"/>."
 
-#. (itstool) path: page/p
-#: C/photo-view.page:41
+#: C/cheese.xml:414(para)
 msgid ""
-"All of the photos and videos in the photo stream are saved in the "
-"<file>Pictures/Webcam</file> or <file>Videos/Webcam</file> folders in your "
-"user folder."
+"To start the burst mode, press the button labelled <guibutton>Take Multiple "
+"Photos</guibutton> or press the <keycap>Spacebar</keycap> key. "
+"Alternatively, you can also use the webcam capture button, if your webcam "
+"has one. To stop the burst capture you can use the <keycap>Esc</keycap> key."
 msgstr ""
-"Všechny snímky a videa v panelu snímků máte uloženy ve složce <file>Obrázky/"
-"Webkamera</file> nebo <file>Videa/Webkamera</file> ve své domovské složce."
+"Režim snímání v sérii spustíte klepnutím na tlačítko <guibutton>Pořídit "
+"vícenásobné snímky</guibutton> nebo stisknutím <keycap>Mezerníku</keycap>. "
+"Také můžete použít tlačítko na webkameře, pokud nějaké má. Záznam snímků "
+"zastavíte stisknutím klávesy <keycap>Esc</keycap>."
 
-#. (itstool) path: info/desc
-#: C/pref-countdown.page:25
-msgid "Remove the countdown so that photos are taken instantly."
-msgstr "Zrušte odpočítávání, aby se snímky pořizovaly okamžitě."
+#: C/cheese.xml:424(title)
+msgid "Setting up Cheese"
+msgstr "Nastavení aplikace Cheese"
 
-#. (itstool) path: page/title
-#: C/pref-countdown.page:28
-msgid "Disable the <gui>Countdown</gui>"
-msgstr "Jak zrušit <gui>odpočítávání</gui>"
+#: C/cheese.xml:427(title)
+msgid "The preferences dialog"
+msgstr "Okno předvoleb"
 
-#. (itstool) path: page/p
-#: C/pref-countdown.page:30
+#: C/cheese.xml:428(para)
 msgid ""
-"By default, <app>Cheese</app> counts down from three before taking a photo. "
-"You can disable this feature by selecting <guiseq><gui>Cheese</"
-"gui><gui>Preferences</gui><gui>Capture</gui></guiseq> and unchecking "
-"<gui>Countdown</gui>."
+"The preferences dialog allows you to set up some webcam specific parameters "
+"and parameters specific to the burst mode. If you have more than one webcam "
+"or video device attached to your system, the preferences dialog allows you "
+"to choose which one you would like to use for Cheese and what resolution the "
+"image should have. Use the sliders to play around with the brightness, "
+"contrast, saturation and hue values to find the best for your webcam."
 msgstr ""
-"<app>Cheese</app> s výchozím nastavením provádí před pořízením snímku "
-"odpočítávání. To můžete vypnout tak, že vyberete <guiseq><gui>Cheese</"
-"gui><gui>Předvolby</gui><gui>Snímání</gui></guiseq> a zrušíte zaškrtnutí "
-"políčka <gui>Odpočítávání</gui>."
+"Okno předvoleb vám umožňuje nastavit některé specifické volby webkamery a "
+"volby režimu snímků. Pokud je k vašemu systému připojeno více webkamer nebo "
+"snímacích zařízení, v předvolbách máte možnost vybrat to, které chcete s "
+"palikací Cheese použít a s jakým rozlišením snímků. Táhla použijte k "
+"nastavení svitu, kontrastu, nasycení a hodnot barev, aby bylo dosaženo co "
+"nejlepší kvality."
 
-#. (itstool) path: info/desc
-#: C/pref-flash.page:25
-msgid "Stop the screen from flashing white when taking a photo."
-msgstr "Vypněte bílý záblesk během pořízování snímku"
+#: C/cheese.xml:437(title)
+msgid "Cheese preferences screenshot"
+msgstr "Snímek okna předvoleb aplikace Cheese"
 
-#. (itstool) path: page/title
-#: C/pref-flash.page:28
-msgid "Disable the flash"
-msgstr "Jak vypnout blesk"
-
-#. (itstool) path: page/p
-#: C/pref-flash.page:30
+#: C/cheese.xml:447(para)
 msgid ""
-"When you take a photo with Cheese, the computer screen briefly turns white."
+"The parameters for the burst mode can be set in the preferences dialog as "
+"well. You only have to adjust the values for the number of photos you wish "
+"to take and the delay in seconds between each picture taken."
 msgstr ""
-"Když s aplikací Cheese pořizujete snímek, tak počítačová obrazovka na chvíli "
-"zbělá."
+"Parametry režimu snímání v sérii lze nastavit v okně předvoleb. Můžete zde "
+"nastavit, kolik snímků bude v sérii pořízeno a jaká bude mezi nimi prodleva, "
+"v sekundách."
 
-#. (itstool) path: page/p
-#: C/pref-flash.page:33
+#: C/cheese.xml:455(title)
+msgid "GConf settings"
+msgstr "Nastavení GConf"
+
+#: C/cheese.xml:456(para)
 msgid ""
-"To disable this feature, select <guiseq><gui>Cheese</gui><gui>Preferences</"
-"gui><gui>Capture</gui></guiseq> and uncheck <gui>Fire flash</gui>."
+"It's possible to define where Cheese stores the captured media (photos and "
+"videos). These settings are stored in GConf. You can change the settings "
+"with the <command>gconf-editor</command>, application. There you have to "
+"select /apps/cheese in the tree on the left. Then you can set the "
+"<guilabel>video_path</guilabel> and <guilabel>photo_path</guilabel> to the "
+"location you prefer. There you can also set other parameters for Cheese, but "
+"you should use the preferences dialog for a controlled access."
 msgstr ""
-"Tuto funkci můžet vypnout tak, že vyberte <guiseq><gui>Cheese</"
-"gui><gui>Předvolby</gui><gui>Snímání</gui></guiseq> a zrušíte zaškrtnutí "
-"políčka <gui>Spusit blesk</gui>."
+"Lze nastavit, kam bude aplikace Cheese ukládat zaznamenané snímky a videa. "
+"Toto nastavení je uloženo v systému GConf a lze jej změnit pomocí aplikace "
+"<command>gconf-editor</command>. v ní vyberte ve stromu vlevo /apps/cheese, "
+"kde můžete upravit hodnoty klíčů <guilabel>video_path</guilabel> a "
+"<guilabel>photo_path</guilabel> na cesty, které chcete použít. Také zde "
+"můžete upravit jiná nastavení aplikace Cheese, ale pro ty byste měli raději "
+"použít okno předvoleb."
 
-#. (itstool) path: info/desc
-#: C/pref-fullscreen.page:18
-msgid "Enable and disable fullscreen mode"
-msgstr "Zapněte nebo vypněte režim celé obrazovky"
-
-#. (itstool) path: page/title
-#: C/pref-fullscreen.page:21
-msgid "Fullscreen"
-msgstr "Celá obrazovka"
-
-#. (itstool) path: page/p
-#: C/pref-fullscreen.page:23
-msgid "To enable or disable the fullscreen mode:"
-msgstr "Když chcete vypnout nebo zapnout režim celé obrazovky:"
-
-#. (itstool) path: item/p
-#: C/pref-fullscreen.page:26
-msgid "Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq>"
-msgstr "Vyberte <guiseq><gui>Cheese</gui><gui>Celá obrazovka</gui></guiseq>"
-
-#. (itstool) path: page/p
-#: C/pref-fullscreen.page:29
+#: C/cheese.xml:465(para)
 msgid ""
-"If you cannot see the <gui style=\"menu\">Cheese</gui> menu in fullscreen "
-"mode, move your mouse or tap your touchscreen."
+"Attention: Be careful while using GConf to change your settings! If you are "
+"not completely sure about what you are doing, you should ask someone who "
+"knows!"
 msgstr ""
-"Pokud v režimu celé obrazovky nevidíte nabídku <gui style=\"menu\">Cheese</"
-"gui>, pohněte myší nebo klepněte na svou dotykovou obrazovku."
+"Upozornění: Buďte opatrní při práci s nastaveními v systémemu GConf! Pokud "
+"si nejste jisti co děláte, zeptejte se raději někoho, kdo to ví!"
 
-#. (itstool) path: note/p
-#: C/pref-fullscreen.page:33
+#: C/cheese.xml:472(title)
+msgid "Sharing Photos and Videos"
+msgstr "Sdílení snímků a videí"
+
+#: C/cheese.xml:475(title)
+msgid "Viewing a photo or video"
+msgstr "Prohlížení snímků a videí"
+
+#: C/cheese.xml:476(para)
 msgid ""
-"You can also enable and disable fullscreen mode by pressing <key>F11</key>."
+"To view a video or photo that has been taken, locate it in the photo stream "
+"and double click it. Alternatively, you can right click on it and select "
+"<guimenuitem>Open</guimenuitem>. This will then open the file in the default "
+"application for that file type."
 msgstr ""
-"Režim celé obrazovky můžete zapnout nebo vypnout také zmáčknutím <key>F11</"
-"key>."
+"Pořízené video nebo snímek zobrazíte tak, že v pruhu náhledů na vybranou "
+"položku poklepáte. Také na ni můžete klepnout pravým tlačítkem a zvolit "
+"<guimenuitem>Otevřít</guimenuitem>. To spustí výchozí aplikaci pro tento typ "
+"média zobrazí ho."
 
-#. (itstool) path: info/desc
-#: C/pref-image-properties.page:26
+#: C/cheese.xml:484(title)
+msgid "Saving photos and videos to an alternate location"
+msgstr "Ukládání snímků a videí do jiného umístění"
+
+#: C/cheese.xml:485(para)
 msgid ""
-"Adjust the saturation, contrast, brightness and hue to make photos and "
-"videos look better."
+"To save a photo to an alternate place on your system where you can easily "
+"find them, find the photo or video that you wish to save in the photo "
+"stream, right click on it and select <guimenuitem>Save As</guimenuitem> from "
+"the pop-up menu. This will bring up a standard <guilabel>Save File</"
+"guilabel> dialog that will allow you to save it to a new location as well as "
+"rename it if you so wish to do."
 msgstr ""
-"Přizpůsobte si sytost barev, kontrast, jas a odstín pro lepší snímky a videa"
+"Pokud chcete uložit snímek do jiného umístění v systému, kde jej snadno "
+"najdete, vyberte požadovaný z náhledů, klepněte na něj pravým tlačítkem a "
+"zvolte z kontextové nabídky položku <guimenuitem>Uložit jako</guimenuitem>. "
+"Objeví se okno <guilabel>Uložit soubor</guilabel> s možností uložení a v něm "
+"můžete vybrat nové umístění a, pokud chcete, změnit název souboru."
 
-#. (itstool) path: page/title
-#: C/pref-image-properties.page:29
-msgid "My photos and videos look wrong"
-msgstr "Moje snímky a videa vypadají hrozně"
+#: C/cheese.xml:495(title)
+msgid "Deleting a photo"
+msgstr "Odstranění snímku"
 
-#. (itstool) path: page/p
-#: C/pref-image-properties.page:31
+#: C/cheese.xml:496(para)
 msgid ""
-"If your photos or videos are too dark or the colors seem to be wrong, try "
-"adjusting their saturation, contrast, brightness and hue:"
+"To delete a photo from the photo stream, locate the photo you wish to delete "
+"in the photo stream, left click on it once and press the <keycap>delete</"
+"keycap> button on your keyboard. Alternatively, you can right click on it "
+"and select <guimenuitem>Delete</guimenuitem> from the pop-up menu."
 msgstr ""
-"Jestliže jsou vaše snímky nebo videa moc tmavé nebo mají nesprávné barvy, "
-"zkuste u nich upravit sytost barev, kontrast, jas a odstín:"
+"Pokud chcete z pruhu náhledů nějaký snímek odstranit, vyberte jedním "
+"klepnutím požadovaný a stiskněte klávesu <keycap>delete</keycap>. Také na "
+"něj můžete klepnout pravým tlačítkem a vybrat z kontextové nabídky "
+"<guimenuitem>Odstranit</guimenuitem>."
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:36
+#: C/cheese.xml:503(para)
 msgid ""
-"Select <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></"
-"guiseq>."
+"You will be asked if you wish to delete it from the photo stream. To "
+"confirm, press the button labelled <guibutton>Move to Trash</guibutton>."
 msgstr ""
-"Vyberte <guiseq><gui>Cheese</gui><gui>Předvolby</gui><gui>Obraz</gui></"
-"guiseq>."
+"Budete dotázání, zda si opravdu přejete snímek z náhledů odstranit. Akci "
+"potvrdíte klepnutím na tlačítko <guibutton>Přesunout do koše</guibutton>."
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:40
-msgid "Move the sliders to find the best settings for your webcam."
-msgstr "Použijte táhla k nalezení nejlepšího nastavení své webové kamery."
-
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:43
-msgid "Click <gui>Close</gui> and check to see if the preview looks better."
-msgstr ""
-"Klikněte na <gui>Zavřít</gui> a ujistěte se, jestli to vypadá lépe než před "
-"tím."
-
-#. (itstool) path: figure/title
-#: C/pref-image-properties.page:49
+#: C/cheese.xml:509(para)
 msgid ""
-"Different options under <gui>Image properties</gui> (left to right): "
-"applying brightness, contrast, hue and saturation"
+"This will move the image to the \"trash\", as well as remove from your photo "
+"stream. This will not remove the photo from your computer. To remove it from "
+"your system, you will need to empty your trash."
 msgstr ""
-"Různé nastavení pod položkou <gui>Obraz</gui> (zleva do prava): použití "
-"jasu, kontrastu, odstínu a sytosti barev"
+"To přesune snímek do „Koše“ a zároveň jej odstraní z pruhu náhledů. Samotný "
+"snímek to z počítače neodstraní, to provedete tak, že vysypete koš."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:56
-msgid "Brightness"
-msgstr "Jas"
+#: C/cheese.xml:518(title)
+msgid "Send a photo by e-mail"
+msgstr "Odeslání snímku e-mailem"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:57
+#: C/cheese.xml:519(para)
 msgid ""
-"Increasing the brightness will make the photos and videos lighter. However, "
-"if you are in a dark room, increasing the brightness might make the image "
-"look more noisy."
+"Photos can be directly emailed from Cheese. You will need to have the "
+"default mail client set up with an email account. To email a photo, locate "
+"the photo in the photo stream, right click on it and select "
+"<guimenuitem>Send by Mail</guimenuitem>."
 msgstr ""
-"S vyšším jasem vytvoříme snímky a videa prosvětlenější. Pokud jste však v "
-"tmavé místnosti, může zvýšení jasu způsobit v obrazu větší šum."
+"Snímky lze odesílat e-mailem přímo z aplikace Cheese. Musíte mít však "
+"nastaven výchozí poštovní program a v něm účet elektronické pošty. Snímek "
+"odešlete tak, že jej vzberete y náhledů, klepnete na něj pravým tlačítkem a "
+"zvolíte položku <guimenuitem>Poslat poštou</guimenuitem>."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:62
-msgid "Contrast"
-msgstr "Kontrast"
-
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:63
+#: C/cheese.xml:526(para)
 msgid ""
-"Setting a higher contrast will increase the difference between darker and "
-"lighter colors. If the image looks washed out, try increasing the contrast."
+"This will open the default mail client (for example, Evolution) and a new "
+"email message will be created with the photo you selected as an attachment."
 msgstr ""
-"Nastavením vyššího kontrastu vzroste rozdíl mezi tmavými a světlými barvami. "
-"Jestliže obraz vypadá mdle, zkuste zvýšit kontrast."
+"Tato akce otevře výchozího klienta elektronické pošty (například Evolution) "
+"a v něm novou zprávu se snímkem jako přílohou."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:68
-msgid "Hue"
-msgstr "Odstín"
+#: C/cheese.xml:533(title)
+msgid "Set as Account Photo"
+msgstr "Nastavit jako fotografii účtu"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:69
+#: C/cheese.xml:534(para)
 msgid ""
-"Changing the hue of the image will add a tint to it. If image seems to be "
-"the wrong color (for example, too yellow), try changing the hue."
+"To set a photo as your account photo (which can be viewed from the "
+"<menuchoice><guimenu>System</guimenu><guimenuitem>Preferences</"
+"guimenuitem><guimenuitem>About Me</guimenuitem></menuchoice> menu, and the "
+"login window with a list of user names with photos), locate the photo that "
+"you wish to use in Cheese, right click on it and select <guimenuitem>Set as "
+"Account Photo</guimenuitem>."
 msgstr ""
-"Změnou odstínu obrazu změníte tónování barev. Pokud má obraz nesprávné barvy "
-"(například moc žluté), zkuste změnit odstín."
+"Pokud chcete nastavit snímek jako obrázku vašeho účtu (který vidíte v okně "
+"<menuchoice><guimenu>Systém</guimenu><guimenuitem>Volby</"
+"guimenuitem><guimenuitem>O mně</guimenuitem></menuchoice> a v seznamu "
+"uživatelů přihlašovacího okna), vyberte z náhledů, klepněte na něj pravým "
+"tlačítkem a zvolte <guimenuitem>Nastavit jako fotografii účtu</guimenuitem>."
 
-#. (itstool) path: item/title
-#: C/pref-image-properties.page:73
-msgid "Saturation"
-msgstr "Sytost barev"
+#: C/cheese.xml:544(title)
+msgid "Export a photo to F-Spot"
+msgstr "Export snímků do aplikace F-Spot"
 
-#. (itstool) path: item/p
-#: C/pref-image-properties.page:74
+#: C/cheese.xml:545(para)
 msgid ""
-"Reducing the saturation makes the image less colorful. If colors seem too "
-"harsh, reduce the saturation."
+"To export a photo to F-Spot, locate the photo in your photo stream, right "
+"click on it and select <guimenuitem>Export to F-Spot</guimenuitem>. You will "
+"then be prompted by F-Spot if you wish to import the photos that are being "
+"sent to it."
 msgstr ""
-"Snižováním sytosti vytváříte obraz s menším důrazem barev. Jestliže jsou "
-"barvy moc ostré, snižte sytost barev."
+"Pokud chcete exportovat snímek do aplikace F-Spot, vyberte jej z pruhu "
+"náhledů, klepněte na něj pravým tlačítkem a zvolte <guimenuitem>Export do "
+"aplikace F-Spot</guimenuitem>. Následně budete aplikací F-Spot dotázáni, zda "
+"si přejete odeslaný snímek importovat."
 
-#. (itstool) path: info/desc
-#: C/pref-resolution.page:24
+#: C/cheese.xml:552(para)
 msgid ""
-"The resolution of a video or photo determines how much detail you can see in "
-"it, changing it will affect the file size."
+"Depending on the version of Cheese that you are currently using, F-Spot may "
+"prompt you to import the entire photo stream."
 msgstr ""
-"Rozlišení videa nebo snímku určuje, kolik detailů na něm můžeme vidět. "
-"Změnou rozlišení ovlivníme velikost souboru."
+"V závislosti na verzi aplikace Cheese, kterou používáte, se vás může F-Spot "
+"dotázat na import celého pruhu náhledů."
 
-#. (itstool) path: page/title
-#: C/pref-resolution.page:29
-msgid "Change the capture resolution of your webcam"
-msgstr "Jak změnit rozlišení snímání webkamery"
+#: C/cheese.xml:559(title)
+msgid "Cheese sharing screenshot"
+msgstr "Snímek sdílení v plikaci Cheese"
 
-#. (itstool) path: page/p
-#: C/pref-resolution.page:31
+#: C/cheese.xml:580(title)
+msgid "Frequently Asked Questions"
+msgstr "Často kladené otázky"
+
+#: C/cheese.xml:586(title)
+msgid "The video is sluggish/has a slow response. What can I do?"
+msgstr "Video je lenivé nebo má pomalé odezvy. Co dělat?"
+
+#: C/cheese.xml:587(para)
 msgid ""
-"Higher resolution generally means better quality images, but photos and "
-"videos with higher resolution take up more space on your hard disk. High "
-"resolution videos, in particular, take up a lot of space."
+"You may have set \"<literal>ximagesink</literal>\" (<guilabel>X Window "
+"System (No Xv)</guilabel>) as video-output. This means that your CPU is "
+"doing all the work. Change it to \"<literal>xvimagesink</literal>"
+"\" (<guilabel>X Window System (X11/XShm/Xv)</guilabel>) in order to let your "
+"graphics card do the work."
 msgstr ""
-"Vyšší rozlišení hlavně znamená lepší kvalitu obrazu, ale snímky a videa s "
-"vyšším rozlišením zabírají více místa na disku. Zejména videa s vysokým "
-"rozlišením zaberou hodně místa"
+"Možná máte nastaven „<literal>ximagesink</literal>“ (<guilabel>X Window "
+"System (bez Xv)</guilabel>) na video-output. to znamená, že procesor dělá "
+"veškerou práci. Změňte „<literal>ximagesink</literal>“ (<guilabel>X Window "
+"System (X11/XShm/Xv)</guilabel>) tak, aby tuto práci dělala grafická karta."
 
-#. (itstool) path: page/p
-#: C/pref-resolution.page:35
+#: C/cheese.xml:593(para)
 msgid ""
-"If you want your images to take up less disk space, reduce the resolution of "
-"your webcam. If you want better quality images, increase the resolution. To "
-"change the webcam resolution:"
+"To change this setting, run the <command>gstreamer-properties</command> "
+"command, click the <guilabel>Video</guilabel> tab and change the appropriate "
+"setting."
 msgstr ""
-"Jestli chcete, aby vaše snímky zabíraly méně místa na disku, snižte "
-"rozlišení své webové kamery. Jesli chcete lepší kvalitu snímků, rozlišení "
-"zvyšte. Změnu rozlišení provedete následovně:"
+"Toto nastavení lze změnit, když spustíte příkaz <command>gstreamer-"
+"properties</command>, klepnete na kartu <guilabel>Video</guilabel> a "
+"upravíte příslušné nastavení."
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:41
+#: C/cheese.xml:601(title)
 msgid ""
-"Select <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></"
-"guiseq>."
-msgstr ""
-"Vyberte <guiseq><gui>Cheese</gui><gui>Předvolby</gui><gui>Webkamera</gui></"
-"guiseq>."
+"I have a Mac with iSight and a ATI graphics card, and the colors are weird."
+msgstr "Mám Mac s kartami iSight a ATI a barvy jsou podivné."
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:45
+#: C/cheese.xml:602(para)
 msgid ""
-"Choose a different resolution from the drop-down list. Some webcams only "
-"support one resolution, so you may not have a choice."
+"This is a problem with the ATI graphics card, though there is a work around. "
+"Change the video-output to custom and insert the following: "
+"\"<literal>ffmpegcolorspace ! video/x-raw-yuv,format=(fourcc)YV12 ! "
+"ffmpegcolorspace ! xvimagesink</literal>\"."
 msgstr ""
-"Zvolte jiné rozlišení z rozbalovací nabídky. Některé webové kamery poskytují "
-"pouze jedno rozlišení, takže možná nebudete mít nic na výběr."
+"Tohle je problém týkající se grafických karet ATI, ale existuje řešení. "
+"Změňte video-output na vlastní a zadejte následující: "
+"„<literal>ffmpegcolorspace ! video/x-raw-yuv,format=(fourcc)YV12 ! "
+"ffmpegcolorspace ! xvimagesink</literal>“."
 
-#. (itstool) path: item/p
-#: C/pref-resolution.page:49
-msgid "Press <gui>Close</gui>."
-msgstr "Zmáčkněte <gui>Zavřít</gui>."
-
-#. (itstool) path: info/desc
-#: C/video-record.page:25
-msgid "Use your webcam to record short movies for sharing with friends."
-msgstr ""
-"Použijte svou webovou kameru k zaznamenání krátkých filmů a sdílejte je se "
-"svými přáteli."
-
-#. (itstool) path: page/title
-#: C/video-record.page:29
-msgid "Record a video"
-msgstr "Jak nahrávat video"
-
-#. (itstool) path: page/p
-#: C/video-record.page:31
-msgid "To record a video using your webcam:"
-msgstr "Když chcete svoji webovou kamerou nahrát video:"
-
-#. (itstool) path: item/p
-#: C/video-record.page:35
+#: C/cheese.xml:608(para)
 msgid ""
-"Make sure that you are in <gui>Video</gui> mode. If you are, the <gui style="
-"\"button\">Video</gui> button will be selected on the left side of the "
-"screen."
+"To change this setting, run the <command>gstreamer-properties</command> "
+"command, click the <guilabel>Video</guilabel> tab and select custom from the "
+"drop down menu."
 msgstr ""
-"Ujistěte se, že jste v režimu <gui>video</gui>. Pokud jste, bude po levé "
-"straně obrazovky vybráno tlačítko <gui style=\"button\">Video</gui>."
+"Toto nastavení lze změnit, když spustíte příkaz <command>gstreamer-"
+"properties</command>, klepnete na kartu <guilabel>Video</guilabel> a zvolíte "
+"Vlastní z rozbalovacího seznamu."
 
-#. (itstool) path: item/p
-#: C/video-record.page:40
+#: C/cheese.xml:616(title)
 msgid ""
-"Click the <gui style=\"button\">Record a video using a webcam</gui> button "
-"in the middle of the bottom panel, or press the <key>Space</key> key, to "
-"start recording the video."
+"My webcam works with gstreamer, but does not work with <application>Cheese</"
+"application>. What's wrong?"
 msgstr ""
-"Klikněte na tlačítko <gui style=\"button\">Nahrát video pomocí webové "
-"kamery</gui> uprostřed spodního panelu nebo zmáčkněte <key>mezerník</key> a "
-"video se začne nahrávat."
+"Moje kamera funguje s gstreamerem, ale ne s aplikací <application>Cheese</"
+"application>. Co je špatně?"
 
-#. (itstool) path: page/p
-#: C/video-record.page:50
-msgid "Videos are saved in the WebM (<file>.webm</file>) format."
-msgstr "Videa jsou ukládána ve formátu WebM (<file>.webm</file>)."
-
-#. (itstool) path: page/p
-#: C/video-record.page:52
+#: C/cheese.xml:617(para)
 msgid ""
-"After you have stopped recording, the video will automatically appear in the "
-"photo stream at the bottom of the <app>Cheese</app> window. From there, you "
-"can <link xref=\"photo-view\">open</link> or delete the video."
+"Using the <command>gstreamer-properties</command> mentioned in the above "
+"question, try changing from <guilabel>xvimagesink</guilabel> to "
+"<guilabel>ximagesink</guilabel> or vice-versa. If this still does not work, "
+"run <command>cheese --verbose</command> on the command line and copy the "
+"logging into a bug report in our <ulink url=\"http://bugzilla.gnome.org/"
+"browse.cgi?product=cheese\" type=\"http\"> bug tracker</ulink>."
 msgstr ""
-"Po zastavení nahrávání se video automaticky objeví v panelu snímků ve spodní "
-"části okna <app>Cheese</app>. Odtud jej můžete <link xref=\"photo-view"
-"\">otevřít</link> nebo smazat."
+"Pomocí nástroje <command>gstreamer-properties</command>, o kterém je psáno v "
+"otázce výše, zaměňte <guilabel>xvimagesink</guilabel> za "
+"<guilabel>ximagesink</guilabel> nebo naopak. Pokud to nepomůže, spusťte z "
+"příkazové řádky příkaz <command>cheese --verbose</command> a výstup vložte "
+"do hlášení o chybě v <ulink url=\"http://bugzilla.gnome.org/browse.cgi?"
+"product=cheese\" type=\"http\">nástroji pro sledování chyb</ulink>."
 
-#. (itstool) path: page/p
-#: C/video-record.page:56
+#: C/cheese.xml:628(title)
 msgid ""
-"If you have problems sharing a video with people using other operating "
-"systems (like Windows or Mac OS), you may need to <link href=\"help:gnome-"
-"help/video-sending\">convert it to a different format</link>."
+"My webcam works with other programs such as Ekiga, Camorama, but not with "
+"<application>Cheese</application>. What's wrong?"
 msgstr ""
-"V případě, že máte problémy se sdílením videa s lidmi užívající jiný "
-"operační systém (například Windows nebo Mac OS), můžete <link href=\"help:"
-"gnome-help/video-sending\">jej převést do jiného formátu</link>."
+"Moje kamera funguje s ostatními aplikacemi jako Ekiga nebo Camorama, ale ne "
+"s aplikací <application>Cheese</application>. Co je špatně?"
+
+#: C/cheese.xml:629(para)
+msgid ""
+"See if your webcam works when testing it in <command>gstreamer-properties</"
+"command>. If it works there, but not in <application>Cheese</application>, "
+"please file a bug report in our <ulink url=\"http://bugzilla.gnome.org/"
+"browse.cgi?product=cheese\" type=\"http\"> bug tracker</ulink>."
+msgstr ""
+"Presvědčte se se, zda vaše kamera funguje při testování v nástroji "
+"<command>gstreamer-properties</command>. Pokud ano, ale v aplikaci "
+"<application>Cheese</application> nikoliv, oznamte prosím chybu v <ulink url="
+"\"http://bugzilla.gnome.org/browse.cgi?product=cheese\" type=\"http"
+"\">nástroji pro sledování chyb</ulink>."
+
+#: C/cheese.xml:639(title)
+msgid ""
+"Where does <application>Cheese</application> store my photos and videos?"
+msgstr ""
+"Kde uchovává aplikace <application>Cheese</application> mé snímky a videa?"
+
+#: C/cheese.xml:640(para)
+msgid ""
+"Cheese stores your pictures in a folder called Webcam inside the XDG-"
+"Directory set for Pictures (in most distributions its ~/Pictures/Webcam). "
+"The same applies for Videos: ~/Videos/Webcam. XDG is a standard to declare "
+"default folders in your system. You can find more information about XDG "
+"<ulink url=\"http://standards.freedesktop.org/basedir-spec/basedir-spec-0.6."
+"html\" type=\"http\">here</ulink>."
+msgstr ""
+"Cheese uchovává vaše snímky ve složce nazvané Webcam uvnitř adresáře XDG "
+"nastaveném na Pictures (ve většině distribucí to je ~/Pictures/Webcam). To "
+"samé platí pro videa: ~/Videos/Webcam. XDG je standard určený k definování "
+"výchozích složek v systému. Více informací o XDG naleznete <ulink url="
+"\"http://standards.freedesktop.org/basedir-spec/basedir-spec-0.6.html\" type="
+"\"http\">zde</ulink>."
+
+#: C/cheese.xml:648(para)
+msgid ""
+"If the XDG-Path is not set on your System, cheese has a fallback solution: "
+"it will store both your pictures and videos in ~/.gnome2/cheese/media. This "
+"is the default directory for your media if you have an older version of "
+"<application>Cheese</application>."
+msgstr ""
+"Pokud nejsou cesty XDG v systému nastaveny, Cheese to řeší následovně: "
+"ukládá snímky i videa do adresáře ~/.gnome2/cheese/media. To je také výchozí "
+"umístení, pokud používáte starší verzi aplikace <application>Cheese</"
+"application>."
+
+#: C/cheese.xml:654(para)
+msgid "How to set an alternate path is described in <xref linkend=\"gconf\"/>."
+msgstr "Jak nastavit jiná umístění popisuje <xref linkend=\"gconf\"/>."
+
+#: C/cheese.xml:659(para)
+msgid ""
+"Attention: leave this settings blank if you want <application>Cheese</"
+"application> to use the default directories."
+msgstr ""
+"Upozornění: ponechte toto nastavení prázdné, pokud si přejete použít výchozí "
+"adresáře."
+
+#: C/cheese.xml:663(para)
+msgid ""
+"You can also save your pictures to an alternate location from within Cheese. "
+"Please see <xref linkend=\"saving\"/> for information on this."
+msgstr ""
+"Snímky lze ukládat z aplikace Cheese i do jiného umístění. Informace o této "
+"možnosti popisuje <xref linkend=\"saving\"/>."
+
+#: C/cheese.xml:671(title)
+msgid ""
+"My Quickcam Express doesn't work with <application>Cheese</application>..."
+msgstr ""
+"Má Quickcam Express nepracuje s aplikací <application>Cheese</application>…"
+
+#: C/cheese.xml:672(para)
+msgid ""
+"or gstreamer, and I see errors like \"Not enough buffers. We got 1, we want "
+"at least 2\" in the <application>Cheese</application> output. With driver "
+"\"qc-usb\"."
+msgstr ""
+"nebo s gstreamerem a ve výstupu aplikace <application>Cheese</application> "
+"vidím chyby jako „Not enough buffers. We got 1, we want at least 2“. S "
+"ovladačem „qc-usb“."
+
+#: C/cheese.xml:677(para)
+msgid ""
+"Try running <command>qcset /dev/video0 compat=dblbuf</command> to enable "
+"double buffer compatibility mode, then restart <application>Cheese</"
+"application>."
+msgstr ""
+"Zkuste spustit příkaz <command>qcset /dev/video0 compat=dblbuf</command> pro "
+"nastavení režimu kompatibility dvojnásobné vyrovnávací paměti a pak "
+"restartujte aplikaci <application>Cheese</application>."
+
+#: C/cheese.xml:684(title)
+msgid "\"No Camera Found\" Error Message"
+msgstr "Chybové hlášení „Nenalezena žádná kamera!“"
+
+#: C/cheese.xml:685(para)
+msgid ""
+"\"When I launch Cheese, I get the message 'No Camera Found' but I have my "
+"webcam plugged into my computer\"."
+msgstr ""
+"„Když spustím Cheese, zobrazí se zpráva 'Nenalezena žádná kamera!', ale má "
+"kamera je připojena k počítači“."
+
+#: C/cheese.xml:688(para)
+msgid ""
+"There are many situations that can cause this, and the exact problem that is "
+"causing it needs to be isolated. If possible, try each of the following to "
+"try and get your webcam working:"
+msgstr ""
+"Existuje mnoho situací, které toto mohou způsobit, a je potřeba určit "
+"problém. Pokud můžete, vyzkoušejte následující ke zprovoznění kamery:"
+
+#: C/cheese.xml:694(para)
+msgid ""
+"Plug your webcam into another computer. If it works there, then it is a "
+"problem with the connection to your computer, or the operating system if it "
+"was a different one on the other computer. Check the ports on your computer "
+"(try another one) and consult support for your particular operating system."
+msgstr ""
+"Připojte kameru k jinému počítači. Pokud tam funguje, problém je s "
+"připojením kamery k počítači nebo v operačním systému, pokud ten druhý je "
+"jiný než tento. Zkontrolujte porty počítače (zkuste jiný port) a konzultujte "
+"problém s podporou svého operačního systému."
+
+#: C/cheese.xml:702(para)
+msgid ""
+"See if your camera is being detected by your computer. On Linux, open up the "
+"terminal or console and type \"dmesg\" before you plug in your webcam. "
+"Notice the most recent entries, and then plug in your webcam. Type \"dmesg\" "
+"again and see if the most recent entries differ. If the message mentions a "
+"USB device being detected, and your webcam is the only USB device that has "
+"been changed, then your computer is detecting your webcam fine. If not, then "
+"test to see if the webcam is working on another computer. This may only work "
+"with USB webcams."
+msgstr ""
+"Zjistěte, zda váš počítač dokáže kameru detekovat. V operačním systému Linux "
+"otevřete terminál nebo konzolu a spusťte příkaz „dmesg“ před zapojením "
+"kamery. Prohlédněte si výstup, zapojte kameru a spusťte „dmesg“ znovu. "
+"Zkontrolujte, zda se výstup změnil. Pokud ve výstupu naleznete informaci o "
+"detekci zařízení USB a pokud je vaše kamera jediným zařízením USB, které se "
+"změnilo, váš systém kameru detekuje. V opačném případě zkontorlujte, zda "
+"kamera pracuje s jiným počítačem. Toto funguje pouze s kamerami připojenými "
+"přes rozhraní USB."
+
+#: C/cheese.xml:712(para)
+msgid ""
+"As Cheese uses the gstreamer backend, it is most likely because gstreamer is "
+"not detecting the webcam (or gstreamer has become corrupt). Please contact "
+"support for the particular operating system that you are running with as "
+"many details as possible. For Ubuntu, please use the <ulink url=\"http://"
+"ubuntuforums.org/\" type=\"http\">Ubuntu Forums</ulink>."
+msgstr ""
+"Protože Cheese využívá gstreamer jako podpůrnou vrstvu, pravděpodobně je "
+"problém v tom, že gstreamer nedokáže kameru detekovat (nebo je poškozen). "
+"Kontaktujte prosím podporu svého operačního systému a dodejte co možná "
+"nejvíce podrobností. Uživatelé distribuce Ubuntu by měli použít <ulink url="
+"\"http://ubuntuforums.org/\" type=\"http\">Ubuntu Forums</ulink>."
+
+#: C/cheese.xml:723(title)
+msgid "Which cameras are supported?"
+msgstr "Jaké kamery jsou podporovány?"
+
+#: C/cheese.xml:724(para)
+msgid ""
+"Cheese uses gstreamer for video grabbing. So in principle Cheese supports "
+"any camera that works with GStreamer. That should be any camera which "
+"supports video4linux or video4linux2."
+msgstr ""
+"Cheese využívá pro záznam videa gstreamer, takže, v zásadě, libovolná kamera "
+"pracující s gstreamerem je podporována i aplikací Cheese. To jsou všechny "
+"kamery podporující video4linux nebo video4linux2."
+
+#: C/cheese.xml:733(title)
+msgid "About"
+msgstr "O aplikaci"
+
+#: C/cheese.xml:734(para)
+msgid ""
+"Cheese was initially written by Daniel G. Siegel <email>dgsiegel@gnome.org</"
+"email>. as a Google Summer of Code project. Later, Jaap A. Haitsma "
+"<email>jaap@haitsma.org</email> and others joined Daniel to improve it. To "
+"find more information about Cheese, please visit the <ulink url=\"http://"
+"projects.gnome.org/cheese\" type=\"http\"><application>Cheese</application> "
+"web page</ulink>."
+msgstr ""
+"Aplikaci Cheese původně vytvořil Daniel G. Siegel <email>dgsiegel@gnome.org</"
+"email> jako projekt Google Summer of Code. Později se k němu připojil Jaap "
+"A. Haitsma <email>jaap@haitsma.org</email> a další, aby aplikaci vylepšili. "
+"Více informací o aplikaci Cheese naleznete na <ulink url=\"http://projects."
+"gnome.org/cheese\" type=\"http\">stránce projektu <application>Cheese</"
+"application></ulink>."
+
+#: C/cheese.xml:742(para)
+msgid ""
+"To report a bug or make a suggestion regarding this application, you can "
+"file a bug in our <ulink url=\"http://bugzilla.gnome.org/browse.cgi?"
+"product=cheese\" type=\"http\"> bug tracker</ulink>."
+msgstr ""
+"Pokud chcete oznámit chybu nebo navrhnout vylepšení této aplikace, můžete "
+"přidat hlášení o chybě do příslušné sekce <ulink url=\"http://bugzilla.gnome."
+"org/browse.cgi?product=vinagre\" type=\"http\"> nástroje pro sledování chyb</"
+"ulink>."
+
+#: C/cheese.xml:748(para)
+msgid ""
+"This program is distributed under the terms of the GNU General Public "
+"license as published by the Free Software Foundation; either version 2 of "
+"the License, or (at your option) any later version. A copy of this license "
+"can be found at the <ulink url=\"http://www.gnu.org/licenses/gpl.html\" type="
+"\"http\">GNU site</ulink>, or in the file COPYING included with the source "
+"code of this program."
+msgstr ""
+"Tento program je šířen podle ustanovení GNU General Public License, vydávané "
+"Free Software Foundation; a to buď verze 2 této licence anebo (podle "
+"vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete "
+"na <ulink url=\"http://www.gnu.org/licenses/gpl.html\" type=\"http\">stránce "
+"projektu GNU</ulink> nebo v souboru COPYING přiloženém ke zdrojovým kódům "
+"tohoto programu."
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/cheese.xml:0(None)
+msgid "translator-credits"
+msgstr "Lucas Lommer <llommer@svn.gnome.org>, 2010"

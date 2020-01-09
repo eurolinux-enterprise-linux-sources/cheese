@@ -1,63 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="effects-apply" xml:lang="cs">
-
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="cs">
   <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
     <link type="guide" xref="index#main"/>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
-
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Přidejte zábavné efekty ke svým snímkům a videím, třeba změnu barev nebo deformaci obrazu jak v zakřiveném zrcadle.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Lucas Lommer</mal:name>
-      <mal:email>llommer@svn.gnome.org</mal:email>
-      <mal:years>2010</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Martin Jablečník</mal:name>
-      <mal:email>martin.jablecnik@seznam.cz</mal:email>
-      <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Marek Černocký</mal:name>
-      <mal:email>marek@manet.cz</mal:email>
-      <mal:years>2013, 2014</mal:years>
-    </mal:credit>
+    <desc>Add fun effects to your photos and videos, like turning yourself green
+    or distorting the picture like a funhouse mirror.</desc>
   </info>
 
-  <title>Jak použít na snímky a videa efekty</title>
+  <title>Apply effects to photos and videos</title>
 
-  <p>Na své snímky a videa můžete použít zábavné a zajímavé efekty:</p>
-
+  <p>You can apply fun, interesting effects to your photos and videos:</p>
   <steps>
+    <item><p>Click <gui>Effects</gui>.</p></item>
     <item>
-      <p>Klikněte na <gui style="button">Efekty</gui>.</p>
+     <p>Select the effect you want to use by clicking one of the options.</p>
+     <p>If you like, you can select multiple effects. For example, if you select
+     <gui>Hulk</gui> and <gui>Kung-Fu</gui>, the video will be altered to have a
+     green shade and will show a repeated image.</p>
     </item>
     <item>
-      <p>Vyberte efekt, který chcete použít, kliknutím na jednu z možností, nebo vyberte <gui>Bez efektů</gui>, pokud nechcete použít žádný.</p>
+     <p>Click <gui>Effects</gui> to hide the effects menu and return to the
+     normal view.</p>
     </item>
   </steps>
 
-  <p><app>Cheese</app> nabízí 35 efektů, z kterých je pouze 9 zobrazeno na první stránce. Pro zobrazení dalších efektů klikněte na šipky zpět nebo vpřed vedle tlačítka <gui style="button">Efekty</gui> .</p>
+  <p><app>Cheese</app> offers 34 effects, of which only 9 are shown on the first
+  page. Click <gui>Next Effects</gui> and <gui>Previous Effects</gui> to
+  navigate to the other pages.</p>
 
   <figure>
-    <title>Některé z efektů, zleva doprava: Sépiová, Shagadelic, Kontury (první řádek), Osciloskop, Rentgen, Deformace (druhý řádek)</title>
-    <media its:translate="no" type="image" src="figures/effects.png" width="529" height="264"/>
+    <title>Some of the effects, from left to right: Bulge, Edge and Mirror</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
   </figure>
+
+  <note style="tip"><p>To deselect all effects, click <gui>Effects</gui> and
+  select <gui>No Effect</gui>.</p></note>
 
 </page>

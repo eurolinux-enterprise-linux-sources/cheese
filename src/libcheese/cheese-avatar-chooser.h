@@ -17,13 +17,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CHEESE_AVATAR_CHOOSER_H_
-#define CHEESE_AVATAR_CHOOSER_H_
+#ifndef _CHEESE_AVATAR_CHOOSER_H_
+#define _CHEESE_AVATAR_CHOOSER_H_
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
+
+#define CHEESE_TYPE_AVATAR_CHOOSER (cheese_avatar_chooser_get_type ())
+#define CHEESE_AVATAR_CHOOSER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), CHEESE_TYPE_AVATAR_CHOOSER, \
+                                                                           CheeseAvatarChooser))
+#define CHEESE_AVATAR_CHOOSER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), CHEESE_TYPE_AVATAR_CHOOSER, \
+                                                                        CheeseAvatarChooserClass))
+#define CHEESE_IS_AVATAR_CHOOSER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CHEESE_TYPE_AVATAR_CHOOSER))
+#define CHEESE_IS_AVATAR_CHOOSER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), CHEESE_TYPE_AVATAR_CHOOSER))
+#define CHEESE_AVATAR_CHOOSER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CHEESE_TYPE_AVATAR_CHOOSER, \
+                                                                          CheeseAvatarChooserClass))
+
+typedef struct _CheeseAvatarChooserPrivate CheeseAvatarChooserPrivate;
+typedef struct _CheeseAvatarChooserClass CheeseAvatarChooserClass;
+typedef struct _CheeseAvatarChooser CheeseAvatarChooser;
+
+/**
+ * CheeseAvatarChooserClass:
+ *
+ * Use the accessor functions below.
+ */
+struct _CheeseAvatarChooserClass
+{
+  /*< private >*/
+  GtkDialogClass parent_class;
+};
 
 /**
  * CheeseAvatarChooser:
@@ -34,15 +59,14 @@ struct _CheeseAvatarChooser
 {
   /*< private >*/
   GtkDialog parent_instance;
-  void *unused;
+  CheeseAvatarChooserPrivate *priv;
 };
 
-#define CHEESE_TYPE_AVATAR_CHOOSER (cheese_avatar_chooser_get_type ())
-G_DECLARE_FINAL_TYPE (CheeseAvatarChooser, cheese_avatar_chooser, CHEESE, AVATAR_CHOOSER, GtkDialog)
+GType cheese_avatar_chooser_get_type (void) G_GNUC_CONST;
 
 GtkWidget *cheese_avatar_chooser_new (void);
 GdkPixbuf *cheese_avatar_chooser_get_picture (CheeseAvatarChooser *chooser);
 
 G_END_DECLS
 
-#endif /* CHEESE_AVATAR_CHOOSER_H_ */
+#endif /* _CHEESE_AVATAR_CHOOSER_H_ */

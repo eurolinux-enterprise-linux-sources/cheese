@@ -4,10 +4,10 @@
 namespace Cheese
 {
   [CCode (cheader_filename = "cheese.h")]
-  public static bool init([CCode (array_length_cname = "argc", array_length_pos = 0.5)] ref unowned string[]? argv);
+  public static bool init([CCode (array_length_pos = 0.9)] ref unowned string[] argv);
 
   [CCode (cheader_filename = "cheese-gtk.h")]
-  public static bool gtk_init([CCode (array_length_cname = "argc", array_length_pos = 0.5)] ref unowned string[]? argv);
+  public static bool gtk_init([CCode (array_length_pos = 0.9)] ref unowned string[] argv);
 
   [CCode (cheader_filename = "cheese-effect.h")]
   public class Effect : GLib.Object
@@ -33,22 +33,23 @@ namespace Cheese
   public class Camera : GLib.Object
   {
     [CCode (has_construct_function = false)]
-    public Camera (Clutter.Actor video_texture, string camera_device_node, int x_resolution, int y_resolution);
+    public Camera (Clutter.Texture video_texture, string camera_device_node, int x_resolution, int y_resolution);
     public bool                        get_balance_property_range (string property, double min, double max, double def);
     public unowned GLib.PtrArray       get_camera_devices ();
     public unowned Cheese.VideoFormat  get_current_video_format ();
     public int                         get_num_camera_devices ();
     public unowned Cheese.CameraDevice get_selected_device ();
-    public GLib.List<unowned Cheese.VideoFormat> get_video_formats ();
+    public unowned GLib.List           get_video_formats ();
     public bool                        has_camera ();
     public void                        play ();
     public void                        set_balance_property (string property, double value);
-    public void                        set_device (Cheese.CameraDevice device);
+    public void                        set_device_by_device_node (string file);
+    public void                        set_device_by_uuid (string uuid);
     public void                        set_effect (Cheese.Effect effect);
     public void                        toggle_effects_pipeline (bool active);
-    public void                        connect_effect_texture (Cheese.Effect effect, Clutter.Actor texture);
+    public void                        connect_effect_texture (Cheese.Effect effect, Clutter.Texture texture);
     public void                        set_video_format (Cheese.VideoFormat format);
-    public void                        setup (Cheese.CameraDevice? device = null) throws GLib.Error;
+    public void                        setup (string udi) throws GLib.Error;
     public void                        start_video_recording (string filename);
     public void                        stop ();
     public void                        stop_video_recording ();
@@ -74,15 +75,19 @@ namespace Cheese
   {
     [CCode (has_construct_function = false)]
     public CameraDevice (string uuid, string device_node, string name, int v4lapi_version) throws GLib.Error;
-    public Cheese.VideoFormat get_best_format ();
-    public Gst.Caps get_caps_for_format (Cheese.VideoFormat format);
-    public GLib.List<unowned Cheese.VideoFormat> get_format_list ();
+    public unowned Cheese.VideoFormat get_best_format ();
+    public unowned Gst.Caps           get_caps_for_format (Cheese.VideoFormat format);
+    public unowned string             get_device_node ();
+    public unowned GLib.List          get_format_list ();
+    public unowned string             get_uuid ();
     public unowned string             get_name ();
-    public Gst.Element                get_src ();
+    public unowned string             get_src ();
     [NoAccessorMethod]
-    public Gst.Device device {get; construct;}
+    public uint v4l_api_version {get; construct;}
+    public string device_node {get; construct;}
     [NoAccessorMethod]
-    public string name {get;}
+    public string uuid {owned get; construct;}
+    public string name {get; construct;}
   }
 
   [CCode (cheader_filename = "cheese-camera-device-monitor.h")]
@@ -91,8 +96,8 @@ namespace Cheese
     [CCode (has_construct_function = false)]
     public CameraDeviceMonitor ();
     public void                coldplug ();
-    public virtual signal void added (Gst.Device device);
-    public virtual signal void removed (Gst.Device device);
+    public virtual signal void added (string uuid, string device_file, string product_name, uint api_version);
+    public virtual signal void removed (string id);
   }
 
 
@@ -102,7 +107,7 @@ namespace Cheese
     [CCode (cname = "cheese_fileutil_new", has_construct_function = false)]
     public FileUtil ();
     [CCode (cname = "cheese_fileutil_get_new_media_filename")]
-    public string get_new_media_filename (Cheese.MediaMode mode);
+    public unowned string get_new_media_filename (Cheese.MediaMode mode);
     [CCode (cname = "cheese_fileutil_get_photo_path")]
     public unowned string get_photo_path ();
     [CCode (cname = "cheese_fileutil_get_video_path")]
@@ -120,11 +125,27 @@ namespace Cheese
   }
 
   [Compact]
-  [CCode (type_id = "CHEESE_TYPE_VIDEO_FORMAT", cheader_filename = "cheese-camera-device.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free")]
+  [CCode (type_id = "CHEESE_TYPE_VIDEO_FORMAT", cheader_filename = "cheese-camera-device.h")]
   public class VideoFormat
   {
     public int height;
     public int width;
+  }
+  [CCode (cprefix = "CHEESE_CAMERA_EFFECT_", has_type_id = false, cheader_filename = "cheese-camera.h")]
+  public enum CameraEffect
+  {
+    NO_EFFECT,
+    MAUVE,
+    NOIR_BLANC,
+    SATURATION,
+    HULK,
+    VERTICAL_FLIP,
+    HORIZONTAL_FLIP,
+    SHAGADELIC,
+    VERTIGO,
+    EDGE,
+    DICE,
+    WARP
   }
   [CCode (cprefix = "CHEESE_MEDIA_MODE_", has_type_id = false, cheader_filename = "cheese-fileutil.h")]
   public enum MediaMode

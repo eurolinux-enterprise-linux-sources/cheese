@@ -3,9 +3,8 @@
 
   <info>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="candidate"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,45 +16,32 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <desc>The resolution of a video or photo determines how much detail you can
+    see in it, changing it will affect the file size.</desc>
 
-    <desc>Rozlišení videa nebo snímku určuje, kolik detailů na něm můžeme vidět. Změnou rozlišení ovlivníme velikost souboru.</desc>
-
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Lucas Lommer</mal:name>
-      <mal:email>llommer@svn.gnome.org</mal:email>
-      <mal:years>2010</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Martin Jablečník</mal:name>
-      <mal:email>martin.jablecnik@seznam.cz</mal:email>
-      <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Marek Černocký</mal:name>
-      <mal:email>marek@manet.cz</mal:email>
-      <mal:years>2013, 2014</mal:years>
-    </mal:credit>
   </info>
 
-  <title>Jak změnit rozlišení snímání webkamery</title>
+  <title>Change the capture resolution of your webcam</title>
 
-  <p>Vyšší rozlišení hlavně znamená lepší kvalitu obrazu, ale snímky a videa s vyšším rozlišením zabírají více místa na disku. Zejména videa s vysokým rozlišením zaberou hodně místa</p>
+  <p>Higher resolution generally means better quality images, but photos and
+  videos with higher resolution take up more space on your hard disk. High
+  resolution videos, in particular, take up a lot of space.</p>
 
-  <p>Jestli chcete, aby vaše snímky zabíraly méně místa na disku, snižte rozlišení své webové kamery. Jesli chcete lepší kvalitu snímků, rozlišení zvyšte. Změnu rozlišení provedete následovně:</p>
+  <p>If you want your images to take up less disk space, reduce the resolution
+  of your webcam. If you want better quality images, increase the resolution. To
+  change the webcam resolution:</p>
 
   <steps>
     <item>
-      <p>Vyberte <guiseq><gui>Cheese</gui><gui>Předvolby</gui><gui>Webkamera</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Zvolte jiné rozlišení z rozbalovací nabídky. Některé webové kamery poskytují pouze jedno rozlišení, takže možná nebudete mít nic na výběr.</p>
+      <p>Choose a different resolution from the drop-down list. Some webcams
+      only support one resolution, so you may not have a choice.</p>
     </item>
     <item>
-      <p>Zmáčkněte <gui>Zavřít</gui>.</p>
+      <p>Press <gui>Close</gui>.</p>
     </item>
   </steps>
 

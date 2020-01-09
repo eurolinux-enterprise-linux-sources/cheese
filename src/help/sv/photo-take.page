@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,39 +22,39 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Använd din webbkamera för att ta foton istället för videor.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
+    <desc>Use your webcam to take photos instead of videos.</desc>
   </info>
 
-  <title>Ta foton</title>
+  <title>Take photos using a webcam</title>
 
-  <p>Webbkameror kan användas för att ta såväl stillbilder som videor. För att ta ett foto:</p>
+  <p>Webcams can be used to take still photos as well as videos. To take a
+  photo:</p>
 
   <steps>
     <item>
-      <p>Säkerställ att du är i <gui>Foto</gui>-läge. Om du är det kommer <gui style="button">Foto</gui>-knappen att vara markerad på vänster sida av skärmen.</p>
+      <p>Make sure that the mode <gui style="menuitem">Photo</gui> is selected
+      in the <gui style="menu">Cheese</gui> menu.</p>
     </item>
     <item>
-      <p>Klicka på knappen <gui style="button">Ta ett foto med en webbkamera</gui> i mitten av bottenpanelen, eller tryck på <key>Blanksteg</key>-tangenten, för att ta fotot.</p>
+      <p>Click <gui>Take a Photo</gui>. Alternatively, you can press the
+      capture button on the webcam or the <key>Space</key> key.</p>
     </item>
     <item>
-      <p>En kort nedräkning inleds, åtföljd av en blixt varpå fotot kommer att visas i fotoströmmen.</p>
+      <p>There will be a short countdown, followed by a flash, and the photo
+      will appear in the photo stream.</p>
     </item>
   </steps>
 
-  <p>Fotona i fotoströmmen sparas automatiskt i mappen <file>Bilder/Webbkamera</file> i din hemmapp. De sparas i JPEG-format (<file>.jpg</file>).</p>
+  <p>The photos in the photo stream are automatically saved in the
+  <file>/Pictures/Webcam</file> folder in your home folder. They are saved
+  using the JPEG (<file>.jpg</file>) format.</p>
 
-  <p>För att avbryta tagning av ett foto efter att du klickat på <gui>Ta ett foto</gui>, tryck på <key>Esc</key> innan nedräkningen avslutas.</p>
+  <p>To cancel taking a photo after you have clicked <gui>Take a Photo</gui>,
+  press <key>Esc</key> before the countdown finishes.</p>
 
   <note>
-    <p>För att ta flera foton i snabb följd, använd <link xref="burst-mode"><gui>Bildsekvens</gui>-läge</link>.</p>
+    <p>To take multiple photos in rapid succession, use
+    <link xref="burst-mode">burst mode</link>.</p>
   </note>
 
 </page>

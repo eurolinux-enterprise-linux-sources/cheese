@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,8 +17,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Ajustando a saturação, o contraste, o brilho e a matiz para melhorar a aparência de fotos e vídeos.</desc>
   
@@ -44,19 +41,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013, 2016</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Rafael Ferreira</mal:name>
-      <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Felipe Braga</mal:name>
-      <mal:email>fbobraga@gmail.com</mal:email>
-      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
@@ -66,37 +51,38 @@
 
   <steps>
     <item>
-      <p>Selecione <guiseq><gui>Cheese</gui><gui>Preferências</gui><gui>Imagem</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Mova os ajustes deslizantes para encontrar melhores configurações para a sua webcam.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Clique em <gui>Fechar</gui> e veja se a imagem fica melhor.</p>
+     <p>Clique em <gui>Fechar</gui> para verificar se as fotos e vídeos ficam melhores.</p>
     </item>
   </steps>
 
   <figure>
-    <title>Diferentes opções nos ajustes da <gui>imagem</gui> (da esquerda para a direita): aplicar brilho, contraste, matiz e saturação</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <title>Diferentes opções em <gui>Propriedades da imagem</gui> (da esquerda para a direita): aplicar brilho, contraste, matiz e saturação</title>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Brilho</title>
-      <p>Aumentar o brilho fará com que as fotos e vídeos fiquem mais claros. Entretanto, se você estiver em uma sala escura, aumentar o brilho poderá fazer com a que a imagem pareça mais ruidosa.</p>
+     <title>Brilho</title>
+     <p>Aumentar o brilho fará com que as fotos e vídeos fiquem mais claros. Entretanto, se você estiver em uma sala escura, aumentar o brilho poderá fazer com a que a imagem pareça mais ruidosa.</p>
     </item>
     <item>
-      <title>Contraste</title>
-      <p>Definir um contraste maior aumentará a diferença entre cores mais escuras e cores mais claras. Se a imagem parecer desbotada, tente aumentar o contraste.</p>
+     <title>Contraste</title>
+     <p>Definir um contraste maior aumentará a diferença entre cores mais escuras e cores mais claras. Se a imagem parecer desbotada, tente aumentar o contraste.</p>
     </item>
     <item>
-      <title>Matiz</title>
-      <p>Mudar a matiz da imagem adicionará uma tonalidade a ela. Se a imagem parece ser da cor errada (por exemplo, amarela demais), tente mudar a matiz.</p>
+     <title>Matiz</title>
+     <p>Mudar a matiz da imagem adicionará uma tonalidade a ela. Se a imagem parece ser da cor errada (por exemplo, amarela demais), tente mudar a matiz.</p>
     </item>
     <item>
-      <title>Saturação</title>
-      <p>Reduzir a saturação tornará a imagem menos colorida. Se as cores parecem berrantes demais, reduza a saturação.</p>
+     <title>Saturação</title>
+     <p>Reduzir a saturação tornará a imagem menos colorida. Se as cores parecem berrantes demais, reduza a saturação.</p>
     </item>
   </terms>
 

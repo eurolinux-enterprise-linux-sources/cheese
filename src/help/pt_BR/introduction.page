@@ -7,7 +7,6 @@
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.6" date="2012-05-09" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,8 +17,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Introdução ao aplicativo de webcam <app>Cheese</app>.</desc>
   
@@ -44,25 +41,17 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Enrico Nicoletto</mal:name>
       <mal:email>liverig@gmail.com</mal:email>
-      <mal:years>2013, 2016</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Rafael Ferreira</mal:name>
-      <mal:email>rafael.f.f1@gmail.com</mal:email>
       <mal:years>2013</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Felipe Braga</mal:name>
-      <mal:email>fbobraga@gmail.com</mal:email>
-      <mal:years>2015</mal:years>
     </mal:credit>
   </info>
 
   <title>Introdução</title>
 
-  <p>O <app>Cheese</app> é um aplicativo de webcam que permite a você tirar fotos e gravar vídeos usando sua webcam. Você pode tirar várias fotos sucessivas rapidamente usando o <link xref="burst-mode">modo <gui>Contínuo</gui></link> e aplicando <link xref="effects-apply"><gui>Efeitos</gui>especiais</link> para adicionar um toque pessoal a elas.</p>
+  <p><app>Cheese</app> is a webcam application that lets you take photos and
+  record videos using your webcam. You can take multiple photos in quick
+  succession using the <link xref="burst-mode"><gui>Burst</gui> mode</link> and
+  apply <link xref="effects-apply">special <gui>Effects</gui></link> to add a
+  personal touch to them.</p>
 
   <p>Por padrão, o <app>Cheese</app> inicia no modo <gui>Foto</gui>, pronto para <link xref="photo-take">tirar uma foto</link>. Você precisa alternar para o modo <gui>Vídeo</gui> para <link xref="video-record">gravar um vídeo</link>.</p>
 

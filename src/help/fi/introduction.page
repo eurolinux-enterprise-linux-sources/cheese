@@ -7,7 +7,6 @@
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.6" date="2012-05-09" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,23 +18,22 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Johdanto <app>Muikku</app>-valokuvakopin käyttöön.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sami Jaktholm</mal:name>
-      <mal:email>sjakthol@outlook.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
+    <desc>Introduction to the <app>Cheese</app> webcam application.</desc>
   </info>
 
   <title>Johdanto</title>
 
-  <p><app>Muikku</app> on web-kamerasovellus, jolla voi web-kameran avulla kuvata valokuvia ja videoita. <link xref="burst-mode"><gui>Sarjakuvatilassa</gui></link> voi ottaa  useita kuvia perä jälkeen ja niihin voi lisätä persoonallisuutta <link xref="effects-apply"><gui>erikoistehosteiden</gui></link> avulla.</p>
+  <p><app>Cheese</app> is a webcam application that lets you take photos and
+  record videos using your webcam. You can take multiple photos in quick
+  succession using the <link xref="burst-mode"><gui>Burst</gui> mode</link> and
+  apply <link xref="effects-apply">special <gui>Effects</gui></link> to add a
+  personal touch to them.</p>
 
-  <p>Oletuksena <app>Muikku</app> käynnistyy <gui>valokuvatilaan</gui> valmiina <link xref="photo-take">valokuvien ottamiseen</link>. <link xref="video-record">Videoita voi nauhoittaa</link> <gui>videotilassa</gui>.</p>
+  <p>By default, <app>Cheese</app> starts in <gui>Photo</gui> mode, ready to
+  <link xref="photo-take">take a photo</link>. You need to switch to
+  <gui>Video</gui> mode to <link xref="video-record">record a video</link>.</p>
 
-  <p><app>Muikku</app> tukee useimpia web-kameroita, mutta joidenkin vanhempien mallien kanssa saattaa esiintyä yhteensopivuusongelmia.</p>
+  <p><app>Cheese</app> works with most webcams, but some older webcams may not
+  be supported.</p>
 
 </page>

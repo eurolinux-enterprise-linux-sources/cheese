@@ -1,0 +1,133 @@
+<!-- ##### SECTION Title ##### -->
+CheeseCameraDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT CheeseCameraDevice ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG CheeseCameraDevice:device-node ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCameraDevice:name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCameraDevice:uuid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG CheeseCameraDevice:v4l-api-version ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT CheeseVideoFormat ##### -->
+<para>
+
+</para>
+
+@width: 
+@height: 
+
+<!-- ##### FUNCTION cheese_camera_device_new ##### -->
+<para>
+
+</para>
+
+@uuid: 
+@device_node: 
+@name: 
+@v4l_api_version: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_name ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_uuid ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_device_node ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_best_format ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_caps_for_format ##### -->
+<para>
+
+</para>
+
+@device: 
+@format: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_format_list ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION cheese_camera_device_get_src ##### -->
+<para>
+
+</para>
+
+@device: 
+@Returns: 
+
+

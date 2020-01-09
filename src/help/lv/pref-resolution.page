@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="pref-resolution" xml:lang="lv">
+
+  <info>
+    <link type="guide" xref="index#preferences"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Video vai fotogrāfijas izšķirtspēja nosaka cik sīki to var apskatīt; mainot izšķirtspēju, mainīsies arī faila izmērs.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Tīmekļa kameras uzņemšanas izšķirtspējas mainīšana</title>
+
+  <p>Lielāka izšķirtspēja, galvenokārt, nozīme augstākas kvalitātes attēlus, bet foto un video ar lielāku izšķirtspēju aizņem vairāk vietas uz cietā diska. Augstas izšķirtspējas video aizņem īpaši daudz vietas.</p>
+
+  <p>Ja vēlaties, lai attēli aizņemtu mazāk vietas cietajā diskā, samaziniet tīmekļa kameras uzņemšanas izšķirtspēju. Ja vēlaties labākas kvalitātes attēlus, palieliniet izšķirtspēju. Lai nomainītu tīmekļa kameras uzņemšanas izšķirtspēju:</p>
+
+  <steps>
+    <item>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Izvēlaties citu izšķirtspēju no nolaižamā saraksta. Dažas tīmekļa kameras atbalsta tikai tikai vienu izšķirtspēju, tāpēc jums var arī nebūt izvēles.</p>
+    </item>
+    <item>
+      <p>Press <gui>Close</gui>.</p>
+    </item>
+  </steps>
+
+</page>

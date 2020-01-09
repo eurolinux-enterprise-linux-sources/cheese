@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,8 +18,6 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Prilagodite nasičenost, kontrast, svetlost in odtenek in naredite fotografije in videoposnetke videti bolje.</desc>
   </info>
 
@@ -30,39 +27,38 @@
 
   <steps>
     <item>
-      <p>Select
-      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Move the sliders to find the best settings for your webcam.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Click <gui>Close</gui> and check to see if the preview looks
-      better.</p>
+     <p>Kliknite <gui>Zapri</gui> in preverite ali so fotografije in videi videti bolje.</p>
     </item>
   </steps>
 
   <figure>
     <title>Različne možnosti pod <gui>Lastnosti slike</gui> (od leve proti desni): sprememba svetosti, kontrasta, odteka in nasičenja</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Svetlost</title>
-      <p>Povečanje svetlosti bo naredilo fotografije in videoposnetke svetlejše. Če ste v temni sobi, bo povečanje svetlosti morda povzročilo več šuma na sliki.</p>
+     <title>Svetlost</title>
+     <p>Povečanje svetlosti bo naredilo fotografije in videoposnetke svetlejše. Če ste v temni sobi, bo povečanje svetlosti morda povzročilo več šuma na sliki.</p>
     </item>
     <item>
-      <title>Kontrast</title>
-      <p>Nastavitev višjega kontrasta bo povečala razliko med temnejšimi in svetlejšimi barvami. Če je slika videti izprano, poskusite s povečanjem kontrasta.</p>
+     <title>Kontrast</title>
+     <p>Nastavitev višjega kontrasta bo povečala razliko med temnejšimi in svetlejšimi barvami. Če je slika videti izprano, poskusite s povečanjem kontrasta.</p>
     </item>
     <item>
-      <title>Odtenek</title>
-      <p>Sprememba odtenka slike, ji bo dodala barvo. Če je slika videti napačne barve (na primer preveč rumena), poskusite s spremembo odtenka.</p>
+     <title>Odtenek</title>
+     <p>Sprememba odtenka slike, ji bo dodala barvo. Če je slika videti napačne barve (na primer preveč rumena), poskusite s spremembo odtenka.</p>
     </item>
     <item>
-      <title>Nasičenost</title>
-      <p>Zmanjšanje nasičenost naredi sliko manj barvito. Če so barve preveč izrazite, zmanjšajte nasičenost.</p>
+     <title>Nasičenost</title>
+     <p>Zmanjšanje nasičenost naredi sliko manj barvito. Če so barve preveč izrazite, zmanjšajte nasičenost.</p>
     </item>
   </terms>
 

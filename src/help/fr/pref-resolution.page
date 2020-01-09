@@ -3,9 +3,8 @@
 
   <info>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="candidate"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -16,8 +15,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>La définition d'une vidéo ou d'une photo détermine la quantité de détails qu'elle contient ; la modifier affecte la taille du fichier.</desc>
 
@@ -63,35 +60,24 @@
       <mal:email>mickael.albertus@gmail.com</mal:email>
       <mal:years>2013</mal:years>
     </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>naybnet</mal:name>
-      <mal:email>naybnet@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Alain Lojewski</mal:name>
-      <mal:email>allomervan@gmail.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
   </info>
 
   <title>Modification de la définition de capture de votre webcam</title>
 
   <p>Une plus haute définition permet généralement d'obtenir des images de meilleure qualité, mais les photos et les vidéos avec une plus haute définition prennent plus de place sur le disque dur, particulièrement pour les vidéos.</p>
 
-  <p>Si vous voulez que vos photos prennent moins de place sur le disque, réduisez la définition de votre webcam. Si vous voulez des images de meilleure qualité, augmentez la définition. Pour modifier la définition de la webcam :</p>
+  <p>Si vous voulez que vos photos prennent moins de place sur le disque, réduisez la définition de votre webcam. Si vous voulez des images de meilleur qualité, augmentez la définition. Pour modifier la définition de la webcam :</p>
 
   <steps>
     <item>
-      <p>Sélectionnez <guiseq><gui>Cheese</gui><gui>Préférences</gui><gui>Webcam</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
     </item>
     <item>
       <p>Choisissez une définition différente dans la liste déroulante. Certaines webcams ne prennent en charge qu'une seule définition, il est donc possible que vous n'ayez pas le choix.</p>
     </item>
     <item>
-      <p>Cliquez sur <gui>Fermer</gui>.</p>
+      <p>Press <gui>Close</gui>.</p>
     </item>
   </steps>
 

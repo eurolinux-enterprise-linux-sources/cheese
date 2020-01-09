@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,55 +18,50 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Kuvien ja videoiden parantaminen muuttamalla niiden värikylläisyyttä, kontrastia, kirkkautta ja värisävyä.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sami Jaktholm</mal:name>
-      <mal:email>sjakthol@outlook.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
+    <desc>Adjust the saturation, contrast, brightness and hue to make photos and videos look better.</desc>
   </info>
 
-  <title>Kuvat ja videot näyttävät vääriltä</title>
+  <title>My photos and videos look wrong</title>
 
-  <p>Jos kuvat tai videot ovat liian pimeitä tai värit vaikuttavat oudoilta, niiden värikylläisyyttä, kontrastia, kirkkautta ja värisävyä voi muuttaa seuraavasti:</p>
+  <p>If your photos or videos are too dark or the colors seem to be wrong, try
+  adjusting their saturation, contrast, brightness and hue:</p>
 
   <steps>
     <item>
-      <p>Valitse <guiseq><gui>Muikku</gui><gui>Asetukset</gui><gui>Kuva</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Etsi parhaat asetukset siirtämällä liukusäätimiä.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Click <gui>Close</gui> and check to see if the preview looks
-      better.</p>
+     <p>Click <gui>Close</gui> and check to see if the photos and videos look
+     better.</p>
     </item>
   </steps>
 
   <figure>
-    <title><gui>Kuvan ominaisuudet</gui> sisältää seuraavat valinnat (vasemmalta oikealle): kirkkaus, kontrasti, värisävy ja värikylläisyys</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <title>Different options under <gui>Image properties</gui> (left to right):
+    applying brightness, contrast, hue and saturation</title>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Kirkkaus</title>
-      <p>Kirkkauden kasvattaminen lisää kuviin ja videoihin valoisuutta. Jos kuvaus tapahtuu hämärässä huoneessa, tämä saattaa muuttaa kuvat epätarkoiksi.</p>
+     <title>Brightness</title>
+     <p>Increasing the brightness will make the photos and videos lighter. However, if you are in a dark room, increasing the brightness might make the image look more noisy.</p>
     </item>
     <item>
-      <title>Kontrasti</title>
-      <p>Korkeampi kontrasti korostaa tummien ja vaaleiden värien eroja. Jos kuvat näyttävät ylivalottuneilta, kasvata kontrastia.</p>
+     <title>Contrast</title>
+     <p>Setting a higher contrast will increase the difference between darker and lighter colors. If the image looks washed out, try increasing the contrast.</p>
     </item>
     <item>
-      <title>Värisävy</title>
-      <p>Värisävyä muuttamalla kuviin voi lisätä halutun värisen vivahteen. Jos kuvan värit näyttävät vääriltä (esimerkiksi liian keltainen), muuta värisävyä.</p>
+     <title>Hue</title>
+     <p>Changing the hue of the image will add a tint to it. If image seems to be the wrong color (for example, too yellow), try changing the hue.</p>
     </item>
     <item>
-      <title>Värikylläisyys</title>
-      <p>Värikylläisyyden vähentäminen vähentää kuvassa esiintyviä värejä. Jos värit ovat liian räikeitä, pienennä värikylläisyyttä.</p>
+     <title>Saturation</title>
+     <p>Reducing the saturation makes the image less colorful. If colors seem too harsh, reduce the saturation.</p>
     </item>
   </terms>
 

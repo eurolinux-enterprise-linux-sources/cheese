@@ -23,7 +23,6 @@
 #ifndef __CHEESE_CAMERA_DEVICE_MONITOR_H__
 #define __CHEESE_CAMERA_DEVICE_MONITOR_H__
 
-#include <gio/gio.h>
 #include <glib-object.h>
 #include <cheese-camera-device.h>
 
@@ -52,7 +51,7 @@ struct _CheeseCameraDeviceMonitor
 {
   /*< private >*/
   GObject parent;
-  void *unused;
+  CheeseCameraDeviceMonitorPrivate *priv;
 };
 
 /**
@@ -68,19 +67,13 @@ struct _CheeseCameraDeviceMonitorClass
   GObjectClass parent_class;
 
   /*< public >*/
-  void (*added)   (CheeseCameraDeviceMonitor *monitor,
-                   CheeseCameraDevice        *device);
-  void (*removed) (CheeseCameraDeviceMonitor *monitor,
-                   CheeseCameraDevice        *device);
+  void (*added)(CheeseCameraDeviceMonitor *monitor,
+                CheeseCameraDevice        *device);
+  void (*removed)(CheeseCameraDeviceMonitor *monitor, const gchar *uuid);
 };
 
-GType                      cheese_camera_device_monitor_get_type (void);
+GType                      cheese_camera_device_monitor_get_type (void) G_GNUC_CONST;
 CheeseCameraDeviceMonitor *cheese_camera_device_monitor_new (void);
-void                       cheese_camera_device_monitor_new_async (GCancellable       *cancellable,
-                                                                   GAsyncReadyCallback callback,
-                                                                   gpointer            user_data);
-CheeseCameraDeviceMonitor *cheese_camera_device_monitor_new_finish (GAsyncResult *result,
-                                                                    GError      **error);
 void                       cheese_camera_device_monitor_coldplug (CheeseCameraDeviceMonitor *monitor);
 
 G_END_DECLS

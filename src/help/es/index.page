@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" type="guide" style="task" id="index" xml:lang="es">
-
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" style="task" id="index" xml:lang="es">
   <info>
-    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
-      <email its:translate="no">yrazes@gmail.com</email>
+      <email>yrazes@gmail.com</email>
       <years>2011</years>
     </credit>
+
     <credit type="author">
       <name>Ekaterina Gerasimova</name>
-      <email its:translate="no">kittykat3756@gmail.com</email>
+      <email>kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Cheese le permite hacer fotografías y grabar vídeos usando su cámara web. También puede añadir efectos especiales.</desc>
 
@@ -23,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2011 - 2017</mal:years>
+      <mal:years>2011, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -33,7 +30,7 @@
     </mal:credit>
   </info>
 
-  <title><media type="image" mime="image/png" src="figures/cheese.png" height="40" its:translate="no"/> Aplicación de cámara web Cheese</title>
+  <title><media type="image" mime="image/png" src="figures/cheese.png" width="40" height="40"> </media> Fotomatón de cámara web Cheese</title>
  
   <section id="main">
     <title>Características principales</title>

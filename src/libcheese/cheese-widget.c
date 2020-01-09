@@ -17,9 +17,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#include "cheese-config.h"
 
-#include <glib/gi18n-lib.h>
+#include <glib/gi18n.h>
 #include <clutter-gst/clutter-gst.h>
 
 #include "cheese-widget.h"
@@ -54,19 +54,7 @@ enum
 
 static GParamSpec *properties[PROP_LAST];
 
-/**
- * CheeseWidget:
- *
- * Use the accessor functions below.
- */
-struct _CheeseWidget
-{
-  /*< private >*/
-  GtkNotebook parent_instance;
-  void *unused;
-};
-
-typedef struct
+struct _CheeseWidgetPrivate
 {
   GtkWidget *spinner;
   GtkWidget *screen;
@@ -76,9 +64,15 @@ typedef struct
   CheeseCamera *webcam;
   CheeseWidgetState state;
   GError *error;
-} CheeseWidgetPrivate;
+};
 
-G_DEFINE_TYPE_WITH_PRIVATE (CheeseWidget, cheese_widget, GTK_TYPE_NOTEBOOK)
+#define CHEESE_WIDGET_GET_PRIVATE(o)                     \
+  (G_TYPE_INSTANCE_GET_PRIVATE ((o), CHEESE_TYPE_WIDGET, \
+                                CheeseWidgetPrivate))
+
+G_DEFINE_TYPE (CheeseWidget, cheese_widget, GTK_TYPE_NOTEBOOK);
+
+void setup_camera (CheeseWidget *widget);
 
 static GdkPixbuf *
 cheese_widget_load_pixbuf (GtkWidget  *widget,
@@ -184,10 +178,7 @@ static void
 cheese_widget_set_problem_page (CheeseWidget *widget,
                                 const char   *icon_name)
 {
-    CheeseWidgetPrivate *priv = cheese_widget_get_instance_private (widget);
-
-    priv->state = CHEESE_WIDGET_STATE_ERROR;
-    g_object_notify_by_pspec (G_OBJECT (widget), properties[PROP_STATE]);
+  CheeseWidgetPrivate *priv = widget->priv;
 
   gtk_notebook_set_current_page (GTK_NOTEBOOK (widget), PROBLEM_PAGE);
   g_object_set_data_full (G_OBJECT (priv->problem),
@@ -199,9 +190,10 @@ cheese_widget_set_problem_page (CheeseWidget *widget,
 static void
 cheese_widget_init (CheeseWidget *widget)
 {
-    CheeseWidgetPrivate *priv = cheese_widget_get_instance_private (widget);
+  CheeseWidgetPrivate *priv = widget->priv = CHEESE_WIDGET_GET_PRIVATE (widget);
   GtkWidget           *box;
   ClutterActor        *stage, *frame;
+  ClutterConstraint   *constraint;
   ClutterColor black = { 0x00, 0x00, 0x00, 0xff };
 
   priv->state = CHEESE_WIDGET_STATE_NONE;
@@ -224,16 +216,17 @@ cheese_widget_init (CheeseWidget *widget)
 
   /* Webcam page */
   priv->screen = gtk_clutter_embed_new ();
-  gtk_widget_set_size_request (priv->screen, 460, 345);
   stage = gtk_clutter_embed_get_stage (GTK_CLUTTER_EMBED (priv->screen));
-  clutter_actor_set_background_color (stage, &black);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &black);
   frame = totem_aspect_frame_new ();
 
-  priv->texture = clutter_actor_new ();
+  priv->texture = clutter_texture_new ();
+  clutter_actor_set_size (priv->texture, 400, 300);
   totem_aspect_frame_set_child (TOTEM_ASPECT_FRAME (frame), priv->texture);
 
-  clutter_actor_set_layout_manager (stage, clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_FILL, CLUTTER_BIN_ALIGNMENT_FILL));
-  clutter_actor_add_child (stage, frame);
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), frame);
+  constraint = clutter_bind_constraint_new (stage, CLUTTER_BIND_SIZE, 0.0);
+  clutter_actor_add_constraint_with_name (frame, "size", constraint);
 
   gtk_widget_show (priv->screen);
   clutter_actor_show (priv->texture);
@@ -253,7 +246,7 @@ cheese_widget_init (CheeseWidget *widget)
 static void
 cheese_widget_finalize (GObject *object)
 {
-    CheeseWidgetPrivate *priv = cheese_widget_get_instance_private (CHEESE_WIDGET (object));
+  CheeseWidgetPrivate *priv = ((CheeseWidget *) object)->priv;
 
   g_clear_object (&priv->settings);
   g_clear_object (&priv->webcam);
@@ -265,11 +258,9 @@ static void
 cheese_widget_get_property (GObject *object, guint prop_id,
                             GValue *value, GParamSpec *pspec)
 {
-    CheeseWidgetPrivate *priv;
+  CheeseWidgetPrivate *priv = ((CheeseWidget *) object)->priv;
 
   g_return_if_fail (CHEESE_IS_WIDGET (object));
-
-    priv = cheese_widget_get_instance_private (CHEESE_WIDGET (object));
 
   switch (prop_id)
   {
@@ -282,86 +273,66 @@ cheese_widget_get_property (GObject *object, guint prop_id,
   }
 }
 
-/*
- * webcam_state_changed:
- * @camera: the camera on which there was a state change
- * @state: the new state
- * @widget: the widget which should be updated
- *
- * Handle the state of the @camera changing, and update @widget accordingly,
- * such as by displaying an error.
- */
-static void
-webcam_state_changed (CheeseCamera *camera, GstState state,
-                      CheeseWidget *widget)
-{
-    if (state == GST_STATE_NULL)
-    {
-        cheese_widget_set_problem_page (widget, "error");
-        /* TODO: Handle other cases. */
-    }
-}
-
-static void
+void
 setup_camera (CheeseWidget *widget)
 {
-    CheeseWidgetPrivate *priv = cheese_widget_get_instance_private (widget);
-    gchar *webcam_device;
-    gint x_resolution;
-    gint y_resolution;
+  CheeseWidgetPrivate *priv = widget->priv;
+  gchar *webcam_device = NULL;
+  gint x_resolution;
+  gint y_resolution;
+  gdouble brightness;
+  gdouble contrast;
+  gdouble saturation;
+  gdouble hue;
 
-    x_resolution = g_settings_get_int (priv->settings, "photo-x-resolution");
-    y_resolution = g_settings_get_int (priv->settings, "photo-y-resolution");
-    webcam_device = g_settings_get_string (priv->settings, "camera");
+  g_settings_get (priv->settings, "photo-x-resolution", "i", &x_resolution);
+  g_settings_get (priv->settings, "photo-y-resolution", "i", &y_resolution);
+  g_settings_get (priv->settings, "camera",       "s", &webcam_device);
+  g_settings_get (priv->settings, "brightness",   "d", &brightness);
+  g_settings_get (priv->settings, "contrast",     "d", &contrast);
+  g_settings_get (priv->settings, "saturation",   "d", &saturation);
+  g_settings_get (priv->settings, "hue",          "d", &hue);
 
-    priv->webcam = cheese_camera_new (priv->texture,
-                                      webcam_device, x_resolution,
-                                      y_resolution);
+  gdk_threads_enter ();
+  priv->webcam = cheese_camera_new (CLUTTER_TEXTURE (priv->texture),
+                                    webcam_device,
+                                    x_resolution,
+                                    y_resolution);
+  gdk_threads_leave ();
 
-    g_free (webcam_device);
+  g_free (webcam_device);
 
-    cheese_camera_setup (priv->webcam, NULL, &priv->error);
+  cheese_camera_setup (priv->webcam, NULL, &priv->error);
 
-    gtk_spinner_stop (GTK_SPINNER (priv->spinner));
+  gdk_threads_enter ();
 
-    if (priv->error != NULL)
-    {
-        cheese_widget_set_problem_page (CHEESE_WIDGET (widget), "error");
-    }
-    else
-    {
-        gdouble brightness;
-        gdouble contrast;
-        gdouble saturation;
-        gdouble hue;
+  gtk_spinner_stop (GTK_SPINNER (priv->spinner));
 
-        brightness = g_settings_get_double (priv->settings, "brightness");
-        contrast = g_settings_get_double (priv->settings, "contrast");
-        saturation = g_settings_get_double (priv->settings, "saturation");
-        hue = g_settings_get_double (priv->settings, "hue");
+  if (priv->error != NULL)
+  {
+    priv->state = CHEESE_WIDGET_STATE_ERROR;
+    g_object_notify_by_pspec (G_OBJECT (widget), properties[PROP_STATE]);
+    cheese_widget_set_problem_page (CHEESE_WIDGET (widget), "error");
+  }
+  else
+  {
+    cheese_camera_set_balance_property (priv->webcam, "brightness", brightness);
+    cheese_camera_set_balance_property (priv->webcam, "contrast", contrast);
+    cheese_camera_set_balance_property (priv->webcam, "saturation", saturation);
+    cheese_camera_set_balance_property (priv->webcam, "hue", hue);
+    priv->state = CHEESE_WIDGET_STATE_READY;
+    g_object_notify_by_pspec (G_OBJECT (widget), properties[PROP_STATE]);
+    cheese_camera_play (priv->webcam);
+    gtk_notebook_set_current_page (GTK_NOTEBOOK (widget), WEBCAM_PAGE);
+  }
 
-        cheese_camera_set_balance_property (priv->webcam, "brightness",
-                                            brightness);
-        cheese_camera_set_balance_property (priv->webcam, "contrast", contrast);
-        cheese_camera_set_balance_property (priv->webcam, "saturation",
-                                            saturation);
-        cheese_camera_set_balance_property (priv->webcam, "hue", hue);
-
-        priv->state = CHEESE_WIDGET_STATE_READY;
-        g_object_notify_by_pspec (G_OBJECT (widget), properties[PROP_STATE]);
-        g_signal_connect (priv->webcam, "state-flags-changed",
-                          G_CALLBACK (webcam_state_changed), widget);
-        cheese_camera_play (priv->webcam);
-        gtk_notebook_set_current_page (GTK_NOTEBOOK (widget), WEBCAM_PAGE);
-    }
+  gdk_threads_leave ();
 }
 
 static void
 cheese_widget_realize (GtkWidget *widget)
 {
-    CheeseWidgetPrivate *priv;
-
-    priv = cheese_widget_get_instance_private (CHEESE_WIDGET (widget));
+  CheeseWidgetPrivate *priv = ((CheeseWidget *) widget)->priv;
 
   GTK_WIDGET_CLASS (cheese_widget_parent_class)->realize (widget);
 
@@ -384,6 +355,9 @@ cheese_widget_class_init (CheeseWidgetClass *klass)
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
   object_class->finalize = cheese_widget_finalize;
+#if 0
+  object_class->set_property = cheese_widget_set_property;
+#endif
   object_class->get_property = cheese_widget_get_property;
   widget_class->realize      = cheese_widget_realize;
 
@@ -405,6 +379,8 @@ cheese_widget_class_init (CheeseWidgetClass *klass)
                                               G_PARAM_STATIC_STRINGS);
 
   g_object_class_install_properties (object_class, PROP_LAST, properties);
+
+  g_type_class_add_private (klass, sizeof (CheeseWidgetPrivate));
 }
 
 /**
@@ -424,13 +400,9 @@ cheese_widget_new (void)
 GSettings *
 cheese_widget_get_settings (CheeseWidget *widget)
 {
-    CheeseWidgetPrivate *priv;
-
   g_return_val_if_fail (CHEESE_WIDGET (widget), NULL);
 
-    priv = cheese_widget_get_instance_private (widget);
-
-    return priv->settings;
+  return widget->priv->settings;
 }
 
 /*
@@ -442,13 +414,9 @@ cheese_widget_get_settings (CheeseWidget *widget)
 GObject *
 cheese_widget_get_camera (CheeseWidget *widget)
 {
-    CheeseWidgetPrivate *priv;
-
   g_return_val_if_fail (CHEESE_WIDGET (widget), NULL);
 
-    priv = cheese_widget_get_instance_private (widget);
-
-    return G_OBJECT (priv->webcam);
+  return G_OBJECT (widget->priv->webcam);
 }
 
 /*
@@ -460,13 +428,9 @@ cheese_widget_get_camera (CheeseWidget *widget)
 GtkWidget *
 cheese_widget_get_video_area (CheeseWidget *widget)
 {
-    CheeseWidgetPrivate *priv;
-
   g_return_val_if_fail (CHEESE_WIDGET (widget), NULL);
 
-    priv = cheese_widget_get_instance_private (widget);
-
-    return priv->screen;
+  return widget->priv->screen;
 }
 
 /**
@@ -486,7 +450,7 @@ cheese_widget_get_error (CheeseWidget *widget, GError **error)
 
   g_return_if_fail (CHEESE_WIDGET (widget));
 
-    priv = cheese_widget_get_instance_private (widget);
+  priv = (widget)->priv;
 
   g_propagate_error (error, priv->error);
 

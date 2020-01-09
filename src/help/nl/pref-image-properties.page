@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -19,54 +18,50 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Verzadiging, contrast, helderheid en kleurtint aanpassen om foto's en video's er beter te laten uitzien.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Justin van Steijn</mal:name>
-      <mal:email>jvs@fsfe.org</mal:email>
-      <mal:years>2015, 2016, 2017.</mal:years>
-    </mal:credit>
+    <desc>Adjust the saturation, contrast, brightness and hue to make photos and videos look better.</desc>
   </info>
 
-  <title>Mijn foto's en video's zien er niet goed uit</title>
+  <title>My photos and videos look wrong</title>
 
-  <p>Als uw foto's of video's te donker zijn of als de kleuren niet goed lijken, probeer dan de verzadiging, contrast, helderheid en kleurtint te wijzigen:</p>
+  <p>If your photos or videos are too dark or the colors seem to be wrong, try
+  adjusting their saturation, contrast, brightness and hue:</p>
 
   <steps>
     <item>
-      <p>Selecteer <guiseq><gui>Cheese</gui><gui>Voorkeuren</gui><gui>Beeldcorrectie</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Beweeg de schuivers om de beste instellingen voor uw webcam te vinden.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Klik op <gui>Sluiten</gui> en controleer of het beeld er beter uitziet.</p>
+     <p>Click <gui>Close</gui> and check to see if the photos and videos look
+     better.</p>
     </item>
   </steps>
 
   <figure>
-    <title>Verschillende opties onder <gui>Beeldcorrecties</gui> (links naar rechts): het toepassen van verzadiging, contrast, helderheid en kleurtint</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <title>Different options under <gui>Image properties</gui> (left to right):
+    applying brightness, contrast, hue and saturation</title>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Helderheid</title>
-      <p>Het verhogen van de helderheid zal uw foto's en video's lichter maken. Als u echter in een donkere ruimte bent, kan het verhogen van de helderheid het beeld meer ruis geven.</p>
+     <title>Brightness</title>
+     <p>Increasing the brightness will make the photos and videos lighter. However, if you are in a dark room, increasing the brightness might make the image look more noisy.</p>
     </item>
     <item>
-      <title>Contrast</title>
-      <p>Het instellen van een hoger contrast zal het verschil tussen donkere en lichtere kleuren verhogen. Als de afbeelding er verkleurd uit ziet, probeer dan het contrast te verhogen.</p>
+     <title>Contrast</title>
+     <p>Setting a higher contrast will increase the difference between darker and lighter colors. If the image looks washed out, try increasing the contrast.</p>
     </item>
     <item>
-      <title>Kleurtint</title>
-      <p>Het wijzigen van de kleurtint van de afbeelding zal een tint eraan toevoegen. Als de afbeelding de verkeerde kleur lijkt te hebben (bijvoorbeeld te geel), probeer dan de kleurtint te wijzigen.</p>
+     <title>Hue</title>
+     <p>Changing the hue of the image will add a tint to it. If image seems to be the wrong color (for example, too yellow), try changing the hue.</p>
     </item>
     <item>
-      <title>Verzadiging</title>
-      <p>Het verminderen van de verzadiging maakt de afbeelding minder kleurig. Als de kleuren te hard zijn, verminder dan de verzadiging.</p>
+     <title>Saturation</title>
+     <p>Reducing the saturation makes the image less colorful. If colors seem too harsh, reduce the saturation.</p>
     </item>
   </terms>
 

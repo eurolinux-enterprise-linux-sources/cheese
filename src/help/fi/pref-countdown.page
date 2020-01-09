@@ -6,7 +6,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-19" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="final"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,19 +17,14 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
-    <desc>Ennen valokuvan ottoa tapahtuvan lähtölaskennan poistaminen käytöstä.</desc>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sami Jaktholm</mal:name>
-      <mal:email>sjakthol@outlook.com</mal:email>
-      <mal:years>2014</mal:years>
-    </mal:credit>
+    <desc>Remove the countdown so that photos are taken instantly.</desc>
   </info>
 
-  <title>Disable the <gui>Countdown</gui></title>
+  <title>Disable the <gui>Countdown</gui> before photos are taken</title>
 
-  <p>Oletuksena <app>Muikku</app> suorittaa kolmosesta alkavan lähtölaskennan ennen valokuvan ottamista. Tämän ominaisuuden voi poistaa käytöstä valitsemalla <guiseq><gui>Muikku</gui><gui>Asetukset</gui><gui>Ota kuva</gui></guiseq> ja poistamalla valinnan kohdasta <gui>Lähtölaskenta</gui>.</p>
+  <p>By default, <app>Cheese</app> counts down from three before taking a
+  photo. You can disable this feature by selecting
+  <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Capture</gui></guiseq>
+  and unchecking <gui>Countdown</gui>.</p>
 
 </page>

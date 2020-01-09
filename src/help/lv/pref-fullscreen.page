@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="full-screen" xml:lang="lv">
+  <info>
+    <revision version="3.6" date="2012-05-09" status="stub"/>
+    <link type="guide" xref="index#preferences"/>
+	
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <desc>Enable and disable fullscreen mode</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dāgs Ādams Grīnbergs</mal:name>
+      <mal:email>pepels1ns@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Fullscreen</title>
+
+  <p>To enable the fullscreen mode:</p>
+
+  <steps>
+    <item><p>Select <guiseq><gui>Cheese</gui><gui>Fullscreen</gui></guiseq></p></item>
+  </steps>
+
+  <p>To disable the fullscreen mode:</p>
+
+  <steps>
+    <item><p>Select <gui>Leave Fullscreen</gui></p></item>
+  </steps>
+
+  <note style="tip">
+    <p>You can also enable and disable fullscreen mode by pressing <key>F11</key></p>
+  </note>
+</page>

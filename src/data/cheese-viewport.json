@@ -1,19 +1,14 @@
 [
 {
   "id": "video_preview",
-  "type": "ClutterActor",
+  "type": "ClutterTexture",
   "child::x-align": "CLUTTER_BIN_ALIGNMENT_CENTER",
-  "child::y-align": "CLUTTER_BIN_ALIGNMENT_CENTER",
-  "content-gravity": "CLUTTER_CONTENT_GRAVITY_RESIZE_ASPECT",
-  "x-expand": true,
-  "y-expand": true,
-  "min-height":75,
-  "min-width":100
+  "child::y-align": "CLUTTER_BIN_ALIGNMENT_CENTER"
 },
 {
   "id": "background",
-  "type": "ClutterActor",
-  "background-color": "Black",
+  "type": "ClutterRectangle",
+  "color": "Black",
   "x": 0,
   "y": 0,
   "width":768,
@@ -50,7 +45,7 @@
 },
 {
   "id": "viewport_layout",
-  "type": "ClutterActor",
+  "type": "ClutterBox",
   "children":
   [
     'video_preview',

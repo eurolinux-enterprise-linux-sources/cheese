@@ -7,7 +7,6 @@
     <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -18,8 +17,6 @@
       <name>Ekaterina Gerasimova</name>
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
-
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Com ajustar la saturació, el contrast, la brillantor i el to per fer que les fotos i els vídeos quedin millor.</desc>
   
@@ -54,39 +51,38 @@
 
   <steps>
     <item>
-      <p>Select
-      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
+     <p>Select
+     <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Image</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Move the sliders to find the best settings for your webcam.</p>
+     <p>Move the sliders to find the best settings for your webcam.</p>
     </item>
     <item>
-      <p>Click <gui>Close</gui> and check to see if the preview looks
-      better.</p>
+     <p>Feu clic a <gui>Tanca</gui> i comproveu si les fotos o els vídeos es veuen millor.</p>
     </item>
   </steps>
 
   <figure>
     <title>Diferents opcions des de <gui>Propietats de la foto</gui> (d'esquerra a dreta): aplicant brillantor, contrast, to i saturació</title>
-    <media its:translate="no" type="image" src="figures/image-properties.png" width="800" height="150"/>
+    <media type="image" src="figures/image-properties.png" width="800" height="150"/>
   </figure>
 
   <terms>
     <item>
-      <title>Brillantor</title>
-      <p>L'increment de la brillantor aclarirà les fotos i els vídeos. Tot i així, si esteu en una habitació fosca, incrementar la brillantor pot provocar que aparegui molt de soroll a la imatge.</p>
+     <title>Brillantor</title>
+     <p>L'increment de la brillantor aclarirà les fotos i els vídeos. Tot i així, si esteu en una habitació fosca, incrementar la brillantor pot provocar que aparegui molt de soroll a la imatge.</p>
     </item>
     <item>
-      <title>Contrast</title>
-      <p>Si establiu un contrast més alt s'incrementarà la diferència entre els colors clars i els foscos. Si la imatge sembla descolorida, proveu d'incrementar el contrast.</p>
+     <title>Contrast</title>
+     <p>Si establiu un contrast més alt s'incrementarà la diferència entre els colors clars i els foscos. Si la imatge sembla descolorida, proveu d'incrementar el contrast.</p>
     </item>
     <item>
-      <title>To</title>
-      <p>Si canvieu el to de la imatge li afegireu tint. Si la imatge sembla tenir un color estrany (per exemple, massa grogosa), proveu de canviar el to.</p>
+     <title>To</title>
+     <p>Si canvieu el to de la imatge li afegireu tint. Si la imatge sembla tenir un color estrany (per exemple, massa grogosa), proveu de canviar el to.</p>
     </item>
     <item>
-      <title>Saturació</title>
-      <p>Si reduïu la saturació la imatge apareixerà amb menys color. Si el color sembla massa fort, reduïu la saturació.</p>
+     <title>Saturació</title>
+     <p>Si reduïu la saturació la imatge apareixerà amb menys color. Si el color sembla massa fort, reduïu la saturació.</p>
     </item>
   </terms>
 

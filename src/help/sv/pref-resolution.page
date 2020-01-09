@@ -3,9 +3,8 @@
 
   <info>
     <link type="guide" xref="index#preferences"/>
-    <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
-    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="candidate"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -17,33 +16,32 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <desc>The resolution of a video or photo determines how much detail you can
+    see in it, changing it will affect the file size.</desc>
 
-    <desc>Upplösningen för en video eller ett foto bestämmer hur många detaljer du kan se i den, och att ändra den kommer att påverka filstorleken.</desc>
-
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Sebastian Rasmussen</mal:name>
-      <mal:email>sebras@gmail.com</mal:email>
-      <mal:years>2016</mal:years>
-    </mal:credit>
   </info>
 
-  <title>Ändra fångstupplösningen för din webbkamera</title>
+  <title>Change the capture resolution of your webcam</title>
 
-  <p>Högre upplösning innebär allmänt högre kvalitet för bilder, men foton och videor med högre upplösning tar upp mer plats på din hårddisk. Särskilt videor med högre upplösning tar upp mycket plats.</p>
+  <p>Higher resolution generally means better quality images, but photos and
+  videos with higher resolution take up more space on your hard disk. High
+  resolution videos, in particular, take up a lot of space.</p>
 
-  <p>Om du vill att dina bilder ska ta upp mindre diskutrymme, reducera upplösningen för din webbkamera. Om du vill ha bättre kvalitet på bilderna, öka upplösningen. För att ändra webbkamerans upplösning:</p>
+  <p>If you want your images to take up less disk space, reduce the resolution
+  of your webcam. If you want better quality images, increase the resolution. To
+  change the webcam resolution:</p>
 
   <steps>
     <item>
-      <p>Välj <guiseq><gui>Cheese</gui><gui>Inställningar</gui><gui>Webbkamera</gui></guiseq>.</p>
+      <p>Select
+      <guiseq><gui>Cheese</gui><gui>Preferences</gui><gui>Webcam</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Välj en annan upplösning från rullgardinsmenyn. Vissa webbkameror har bara stöd för en upplösning, så du kanske inte har något val.</p>
+      <p>Choose a different resolution from the drop-down list. Some webcams
+      only support one resolution, so you may not have a choice.</p>
     </item>
     <item>
-      <p>Tryck på <gui>Stäng</gui>.</p>
+      <p>Press <gui>Close</gui>.</p>
     </item>
   </steps>
 

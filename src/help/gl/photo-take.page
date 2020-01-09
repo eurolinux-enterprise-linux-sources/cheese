@@ -11,7 +11,6 @@
     <revision pkgversion="3.0" date="2011-08-25" status="candidate"/>
     <revision pkgversion="3.1" date="2011-09-05" status="review"/>
     <revision pkgversion="3.8" date="2013-04-15" status="review"/>
-    <revision pkgversion="3.12" date="2014-02-21" status="review"/>
 
     <credit type="author copyright">
       <name>Julita Inca</name>
@@ -23,39 +22,50 @@
       <email its:translate="no">kittykat3756@gmail.com</email>
     </credit>
 
-    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
-
     <desc>Usar a súa cámara web para tomar fotos no lugar de vídeos.</desc>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Fran Dieguez</mal:name>
       <mal:email>frandieguez@gnome.org</mal:email>
-      <mal:years>2013.</mal:years>
+      <mal:years>2011,2012.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leandro Regueiro</mal:name>
+      <mal:email>leandro.regueiro@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
     </mal:credit>
   </info>
 
-  <title>Sacar fotos</title>
+  <title>Take photos using a webcam</title>
 
-  <p>As cámaras web poden usarse para tomar fotos, así como vídeos. Para tomar unha foto:</p>
+  <p>Webcams can be used to take still photos as well as videos. To take a
+  photo:</p>
 
   <steps>
     <item>
-      <p>Asegúrese que está en modo <gui>Foto</gui>. Se é así, o botón <gui>Foto</gui> estará seleccionado na pantalla.</p>
+      <p>Make sure that the mode <gui style="menuitem">Photo</gui> is selected
+      in the <gui style="menu">Cheese</gui> menu.</p>
     </item>
     <item>
-      <p>Prema o botón <gui style="button">Sacar unha foto usando a cámara web</gui> no medio do panel inferior ou prema a tecla <key>Espazo</key>.</p>
+      <p>Click <gui>Take a Photo</gui>. Alternatively, you can press the
+      capture button on the webcam or the <key>Space</key> key.</p>
     </item>
     <item>
-      <p>Haberá unha pequena conta atrás, seguida dun flash e logo aparecerá a foto na tira de fotos.</p>
+      <p>There will be a short countdown, followed by a flash, and the photo
+      will appear in the photo stream.</p>
     </item>
   </steps>
 
-  <p>As fotos na tira de fotos gárdanse automaticamente no cartafol <file>Pictures/Webcam</file> do seu cartafol persoal. Gardaranse no formato JPEG (<file>.jpg</file>).</p>
+  <p>The photos in the photo stream are automatically saved in the
+  <file>/Pictures/Webcam</file> folder in your home folder. They are saved
+  using the JPEG (<file>.jpg</file>) format.</p>
 
   <p>Para cancelar a toma dunha foto despois de que premeu <gui>Tomar unha foto</gui> prema <key>Esc</key> antes de que a conta atrás remate.</p>
 
   <note>
-    <p>Para tomar varias fotos rapidamente, use o <link xref="burst-mode"><gui>Modo ráfaga</gui> </link>.</p>
+    <p>To take multiple photos in rapid succession, use
+    <link xref="burst-mode">burst mode</link>.</p>
   </note>
 
 </page>
