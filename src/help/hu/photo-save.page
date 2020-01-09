@@ -30,10 +30,10 @@
 
   <title>Fénykép vagy videó mentése</title>
 
-  <p>Alapesetben a Csííz a fényképeket és videókat a saját mappájában lévő <file>Képek/Webcam</file> vagy <file>Videók/Webcam</file> mappákba menti.</p>
+  <p>Alapesetben a Csííz a fényképeket és videókat a felhasználó saját mappájában lévő <file>Képek</file> vagy <file>Videók</file> mappák <file>Webcam</file> almappájába menti.</p>
 
   <p>Egy kép másik helyre mentéséhez kattintson a jobb egérgombbal a fényképsávon, és válassza a <gui>Mentés másként</gui> menüpontot. Ezután válassza ki, hogy hová szeretné menteni a képet.</p>
 
-  <p>A kép új másolata elmentésre kerül az új helyre. A régi változat megmarad a <file>Képek/Webcam</file> vagy <file>Videók/Webcam</file> mappában.</p>
+  <p>A kép új másolata elmentésre kerül az új helyre. A régi változat megmarad a <file>Webcam</file> mappában.</p>
 
 </page>

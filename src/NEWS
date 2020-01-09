@@ -1,9 +1,136 @@
 ChangeLog for Cheese
 --------------------
 
-version 3.22.1
+version 3.28.0
+  - Add new device monitor methods to documentation
+  - monitor: Implement GAsyncInitable interface
+    Monitor initialization may block if external camera is connected,
+    probably due to some kernel bug. It causes freezes for applications,
+    which is not acceptable. Let's implement GAsyncInitable interface,
+    so it can be initialized asynchronously.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=782627
+  - Remove the OMF file
+    It’s a gnome-doc-utils/ScrollKeeper leftover.
+  - help: Remove unused blurry images (screenshots?) that bloat the
+    tarball
   - Added/Updated Translations
+    - af, courtesy of Pieter Schalk Schoeman
+    - ca@valencia, courtesy of Xavi Ivars
+    - eo, courtesy of Anders JONSSON
+    - et, courtesy of Mart Raudsepp
+    - fa, courtesy of Arash Mousavi
+    - hi, courtesy of G Karunakar
     - hr, courtesy of gogo
+    - is, courtesy of Sveinn í Felli
+    - ja, courtesy of Jiro Matsuzawa
+    - ne, courtesy of Pawan Chitrakar
+  - Added/Updated Documentation
+    - el, courtesy of Efstathios Iosifidis
+    - fr, courtesy of Charles Monzat
+    - gl, courtesy of marcos
+    - nl, courtesy of Justin van Steijn
+    - pl, courtesy of Piotr Drąg
+
+version 3.26.0
+  - Added/Updated Translations
+    - bg, courtesy of Alexander Shopov
+    - da, courtesy of "Last-Translator: scootergrisen\n"
+    - es, courtesy of Daniel Mustieles
+    - gl, courtesy of Fran Dieguez
+    - ko, courtesy of Changwoo Ryu
+    - lo, courtesy of "Last-Translator: \n"
+    - ml, courtesy of ബാലശങ്കർ സി
+    - nl, courtesy of Hannie Dumoleyn
+  - Added/Updated Documentation
+    - ko, courtesy of Changwoo Ryu
+
+version 3.25.90
+  - Remove camera service
+    It was an experiment, but in future PipeWire will be used instead, so it
+    is no longer needed.
+  - Remove some unused configuration variables
+  - Correctly select the given camera device
+    Due to a bug in the VAPI file the code would pass a string to the camera
+    setup routine instead of a CameraDevice object. As the setup routine
+    already has code to automatically select an appropriate device based on
+    the name passing an argument is not even required.
+
+    Note that the --device parameter might be somewhat confusing as it
+    refers to the devices name and not to the /dev/videoX device file.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=777047
+  - Fix bug 773526
+    Fix bug 773526 to use consisent language about the user's home folder.
+    Fix <files> tag to be used around one folder and not multiple folders.
+    Update last sentence to shorten and simplify it.
+  - camera-device: limit width and height
+    Set a limit on the width and height or else we might end scanning and
+    overflowing forever.
+  - camera-device: handle fraction ranges
+    Add support for fraction ranges
+  - camera: remove dead instance variables
+    https://bugzilla.gnome.org/show_bug.cgi?id=780021
+  - Added/Updated Translations
+    - ne, courtesy of Pawan Chitrakar
+    - pl, courtesy of Piotr Drąg
+    - tr, courtesy of Emin Tufan Çetin
+  - Added/Updated Documentation
+    - cs, courtesy of Marek Černocký
+    - de, courtesy of Christian Kirbach
+    - es, courtesy of Daniel Mustieles
+    - hu, courtesy of Gabor Kelemen
+    - id, courtesy of Andika Triwidada
+    - pl, courtesy of Piotr Drąg
+    - pt_BR, courtesy of Rafael Fontenelle
+    - sv, courtesy of Anders Jonsson
+
+version 3.24.0
+  - Fix build with new vala
+  - camera: don't use hardcoded format
+    Use gst_caps_fixate() to select the best format instead of trying to
+    filter out a hardcoded format. Some cameras might not produce this
+    format and thus fail to work.
+  - Use Unicode in translatable strings
+    See https://developer.gnome.org/hig/stable/typography.html
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=772263
+  - Added/Updated Translations
+    - be, courtesy of Yuras Shumovich
+    - ca, courtesy of Gil Forcada
+    - cs, courtesy of Marek Černocký
+    - da, courtesy of scootergrisen
+    - de, courtesy of Paul Seyfert
+    - el, courtesy of Efstathios Iosifidis
+    - es, courtesy of Daniel Mustieles
+    - eu, courtesy of Iñaki Larrañaga Murgoitio
+    - fi, courtesy of Jiri Grönroos
+    - fr, courtesy of Charles Monzat
+    - fur, courtesy of Fabio Tomat
+    - gl, courtesy of Fran Dieguez
+    - hr, courtesy of gogo
+    - hu, courtesy of Gabor Kelemen
+    - id, courtesy of Kukuh Syafaat
+    - is, courtesy of Sveinn í Felli
+    - it, courtesy of Milo Casagrande
+    - kk, courtesy of Baurzhan Muftakhidinov
+    - ko, courtesy of Changwoo Ryu
+    - lt, courtesy of Moo
+    - lv, courtesy of Rūdolfs Mazurs
+    - nb, courtesy of Kjartan Maraas
+    - oc, courtesy of Cédric Valmary (totenoc.eu)
+    - pl, courtesy of Piotr Drąg
+    - pt_BR, courtesy of Rafael Fontenelle
+    - pt, courtesy of Tiago Santos
+    - ru, courtesy of Yuri Myasoedov
+    - sk, courtesy of Dušan Kazik
+    - sl, courtesy of Matej Urbančič
+    - sr, courtesy of Мирослав Николић
+    - sr@latin, courtesy of Miroslav Nikolić
+    - sv, courtesy of Anders Jonsson
+    - uk, courtesy of Daniel Korostil
+    - vi, courtesy of Trần Ngọc Quân
+    - zh_TW, courtesy of Cheng-Chia Tseng
 
 version 3.22.0
 version 3.21.92

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Object Hierarchy: Cheese Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Cheese Reference Manual">
 <link rel="up" href="index.html" title="Cheese Reference Manual">
 <link rel="prev" href="cheese.html" title="cheese">
 <link rel="next" href="api-index-full.html" title="API Index">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -23,28 +23,28 @@
 <div class="titlepage"><div><div><h1 class="title">
 <a name="object-tree"></a>Object Hierarchy</h1></div></div></div>
 <pre class="screen">
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
-    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkWidget.html#GtkWidget-struct">GtkWidget</a>
-    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkContainer.html#GtkContainer-struct">GtkContainer</a>
-    <span class="lineart">│</span>           <span class="lineart">├──</span> <a href="http://developer.gnome.org/gtk3/GtkBin.html#GtkBin-struct">GtkBin</a>
-    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="http://developer.gnome.org/gtk3/GtkWindow.html#GtkWindow-struct">GtkWindow</a>
-    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="http://developer.gnome.org/gtk3/GtkDialog.html#GtkDialog-struct">GtkDialog</a>
+    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">├──</span> <a href="../gobject/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
+    <span class="lineart">│</span>           <span class="lineart">├──</span> GtkBin
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">├──</span> GtkWindow
+    <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> GtkDialog
     <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CheeseAvatarChooser.html" title="CheeseAvatarChooser">CheeseAvatarChooser</a>
     <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CheeseFlash.html" title="CheeseFlash">CheeseFlash</a>
     <span class="lineart">│</span>           <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CheeseAvatarWidget.html" title="CheeseAvatarWidget">CheeseAvatarWidget</a>
-    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk3/GtkNotebook.html#GtkNotebook-struct">GtkNotebook</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkNotebook
     <span class="lineart">│</span>               <span class="lineart">╰──</span> <a class="link" href="CheeseWidget.html" title="CheeseWidget">CheeseWidget</a>
     <span class="lineart">├──</span> <a class="link" href="CheeseCameraDevice.html" title="CheeseCameraDevice">CheeseCameraDevice</a>
     <span class="lineart">├──</span> <a class="link" href="CheeseCameraDeviceMonitor.html" title="CheeseCameraDeviceMonitor">CheeseCameraDeviceMonitor</a>
     <span class="lineart">├──</span> <a class="link" href="CheeseCamera.html" title="CheeseCamera">CheeseCamera</a>
     <span class="lineart">├──</span> <a class="link" href="CheeseEffect.html" title="CheeseEffect">CheeseEffect</a>
     <span class="lineart">╰──</span> <a class="link" href="CheeseFileUtil.html" title="CheeseFileUtil">CheeseFileUtil</a>
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-Boxed-Types.html">GBoxed</a>
+    <a href="/home/david/gnome/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> <a class="link" href="CheeseCameraDevice.html#CheeseVideoFormat">CheeseVideoFormat</a>
 </pre>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

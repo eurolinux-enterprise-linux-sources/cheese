@@ -30,10 +30,10 @@
 
   <title>Spara ett foto eller en video</title>
 
-  <p>Som standard sparar Cheese foton och videor i mapparna <file>Bilder/Webcam</file> och <file>Video/Webcam</file> i din användarmapp.</p>
+  <p>Som standard sparar Cheese foton och videor i mappen <file>Webbkamera</file> i mapparna <file>Foton</file> och <file>Video</file> i hemmappen för din användare.</p>
 
   <p>För att spara en bild på en annan plats, högerklicka på bilden i fotoströmmen och klicka på <gui>Spara som…</gui>. Välj sedan var du vill spara bilden.</p>
 
-  <p>En ny kopia av bilden kommer att sparas på den nya platsen. Den gamla versionen kommer att förbli i <file>Bilder/Webcam</file>- eller <file>Video/Webcam</file>-mappen.</p>
+  <p>En ny kopia av bilden kommer att sparas på den nya platsen. Den gamla versionen kommer att förbli i <file>Webbkamera</file>-mappen.</p>
 
 </page>

@@ -1,11 +1,820 @@
-commit 175b692743d8079a48d2d18113d8e07da8c2d4f3
+commit 355c121cd032837cad1bd54e1a560afc0712acba
 Author: David King <amigadave@amigadave.com>
-Date:   Mon Oct 10 21:55:38 2016 +0100
+Date:   Mon Mar 12 13:29:22 2018 +0000
 
-    Update NEWS for 3.22.1 release
+    Update NEWS for 3.28.0 release
 
 M	NEWS
 M	configure.ac
+
+commit 671d27c97e64cf6581f661a80cbdf68340b7a3a0
+Author: David King <amigadave@amigadave.com>
+Date:	Mon Mar 12 13:17:11 2018 +0000
+
+    Add new device monitor methods to documentation
+
+M	docs/reference/cheese-sections.txt
+M	libcheese/cheese-gtk.symbols
+
+commit 673ad8a03ca9d16caf3ccbcfa64bb9cb948bba2b
+Author: Jiro Matsuzawa <jmatsuzawa@gnome.org>
+Date:	Sat Mar 10 01:05:18 2018 +0000
+
+    Update Japanese translation
+
+M	po/ja.po
+
+commit 72a56f95a695dd52c1934905c8364c2860af76b7
+Author: gogo <trebelnik2@gmail.com>
+Date:	Wed Mar 7 16:26:22 2018 +0000
+
+    Update Croatian translation
+
+M	po/hr.po
+
+commit efa35e4b25c203ac92b59950e112120ae76a4d4b
+Author: Ondrej Holy <oholy@redhat.com>
+Date:	Thu Nov 2 09:45:33 2017 +0100
+
+    monitor: Implement GAsyncInitable interface
+
+    Monitor initialization may block if external camera is connected,
+    probably due to some kernel bug. It causes freezes for applications,
+    which is not acceptable. Let's implement GAsyncInitable interface,
+    so it can be initialized asynchronously.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=782627
+
+M	libcheese/cheese-camera-device-monitor.c
+M	libcheese/cheese-camera-device-monitor.h
+
+commit 7b1e1b343791d933a50a63bd79a22526c62832b0
+Author: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>
+Date:	Sat Feb 24 11:46:56 2018 +0000
+
+    Update Esperanto translation
+
+M	po/eo.po
+
+commit 40cc15dc826ab4480c51192e89f76ac893103b51
+Author: Marcos Lans <marcoslansgarza@gmail.com>
+Date:	Wed Feb 21 22:04:03 2018 +0000
+
+    Update Galician translation
+
+M	help/gl/gl.po
+
+commit 5c2978bb864a49ed00b68bbf9a7e2c27a4bd79fd
+Author: Justin van Steijn <jvs@fsfe.org>
+Date:	Wed Feb 21 21:47:54 2018 +0000
+
+    Update Dutch translation
+
+M	help/nl/nl.po
+
+commit 6a0bd53644941e977c6a10e0f1f9e885151eacff
+Author: Mart Raudsepp <leio@gentoo.org>
+Date:	Thu Feb 8 23:47:40 2018 +0000
+
+    Update Estonian translation
+
+M	po/et.po
+
+commit 78e445106a3f6f2181a4b62b5d8bcda879838b86
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Thu Feb 8 03:22:59 2018 +0100
+
+    Update Polish translation
+
+M	help/pl/pl.po
+
+commit bb86137d32b1634897a50b420f73a19ab4cdb7f1
+Author: Pieter Schalk Schoeman <pieter@sonbesie.co.za>
+Date:	Mon Feb 5 16:42:16 2018 +0000
+
+    Update Afrikaans translation
+
+M	po/af.po
+
+commit 1d24ca5672f94bd1924b919f540fd8bcdf341378
+Author: Pieter Schalk Schoeman <pieter@sonbesie.co.za>
+Date:	Mon Feb 5 16:40:34 2018 +0000
+
+    Update Afrikaans translation
+
+M	po/af.po
+
+commit c808bed88be58936369561fada0f1434b9f203b2
+Author: Pieter Schalk Schoeman <pieter@sonbesie.co.za>
+Date:	Mon Dec 18 14:54:42 2017 +0000
+
+    Update Afrikaans translation
+
+M	po/af.po
+
+commit 470b6f8fc3618d79b7be06d90f166ef7f0a585d6
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Mon Dec 4 19:58:19 2017 +0100
+
+    Remove the OMF file
+
+    It’s a gnome-doc-utils/ScrollKeeper leftover.
+
+D	help/cheese.omf.in
+
+commit 54e2f32718d7e21597e8da589c604f8d2889cd48
+Author: Guntupalli Karunakar <karunakar@indlinux.org>
+Date:	Thu Nov 9 18:14:37 2017 +0000
+
+    Update Hindi translation
+
+M	po/hi.po
+
+commit 9068fa251825934e81c6bac543079ab51e599b50
+Author: Charles Monzat <superboa@hotmail.fr>
+Date:	Sat Oct 21 17:51:58 2017 +0000
+
+    Update French translation
+
+M	help/fr/fr.po
+
+commit 5fd3767f0e511a7ad88f854698421005606d0ec9
+Author: Pawan Chitrakar <chautari@gmail.com>
+Date:	Sun Oct 15 11:45:17 2017 +0000
+
+    Update Nepali translation
+
+M	po/ne.po
+
+commit b06878709d7e1e6ef6534907cb0a548b8bdd7085
+Author: Xavi Ivars <xavi.ivars@gmail.com>
+Date:	Thu Oct 5 13:33:08 2017 +0200
+
+    [l10n] Updated Catalan (Valencian) translation
+
+M	po/ca@valencia.po
+
+commit 4a13ada4ebb60555d5676287deb61a0c776448a9
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:	Mon Oct 2 10:36:47 2017 +0000
+
+    Update Icelandic translation
+
+M	po/is.po
+
+commit 3bdbd1b9fe692fb6f3f584134e39655dd649bbce
+Author: Efstathios Iosifidis <eiosifidis@gnome.org>
+Date:	Mon Sep 25 21:27:19 2017 +0000
+
+    Update Greek translation
+
+M	help/el/el.po
+
+commit 3e276f43bba83577bbbacaa3c7f3f7b21b1d9608
+Author: Fran Dieguez <frandieguez@gnome.org>
+Date:	Mon Sep 25 13:17:17 2017 +0000
+
+    Update Galician translation
+
+M	help/gl/gl.po
+
+commit 4d61fbd8ff83fc48bfa556e0ab88954dd942a013
+Author: Arash Mousavi <mousavi.arash@gmail.com>
+Date:	Fri Sep 22 22:14:56 2017 +0330
+
+    Update Persian translations
+
+M	po/fa.po
+
+commit 9c0d248f993521785ebe4e0ea014ff69e2420813
+Author: Andre Klapper <a9016009@gmx.de>
+Date:	Sun Sep 17 11:59:43 2017 +0200
+
+    help: Remove unused blurry images (screenshots?) that bloat the
+    tarball
+
+D	help/C/figures/cheese-delete.png
+D	help/C/figures/cheese-effects.png
+D	help/C/figures/cheese-introduction.png
+D	help/C/figures/cheese-record.png
+D	help/C/figures/cheese-save.png
+D	help/C/figures/cheese-take.png
+D	help/C/figures/settings.png
+M	help/Makefile.am
+
+commit f07159dfe505b93571158c496787597802bc5cda
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Sat Sep 16 00:13:14 2017 +0200
+
+    Update Polish help translation
+
+M	help/pl/pl.po
+
+commit 41843aad67d56918587543aec22ba15cfef25ebc
+Author: David King <amigadave@amigadave.com>
+Date:	Mon Sep 11 22:14:25 2017 +0100
+
+    Update NEWS for 3.26.0 release
+
+M	NEWS
+M	configure.ac
+
+commit f0bb0b9aec97986417aba9d800814ea7cab5e4d0
+Author: Changwoo Ryu <cwryu@debian.org>
+Date:	Sun Sep 3 18:01:55 2017 +0000
+
+    Update Korean translation
+
+M	help/ko/ko.po
+
+commit f440d202b01e5b30bf5949e35ce54b3d832fd169
+Author: Changwoo Ryu <cwryu@debian.org>
+Date:	Sun Sep 3 18:01:40 2017 +0000
+
+    Update Korean translation
+
+M	po/ko.po
+
+commit 2c90def3a3f84a9a216015ba37a65fe8b1ff72d5
+Author: Alexander Shopov <ash@kambanaria.org>
+Date:	Sat Sep 2 09:30:54 2017 +0300
+
+    Updated Bulgarian translation
+
+M	po/bg.po
+
+commit 810f9f4c95fa4e60e933fb5c5aaf86990e845c09
+Author: Ask Hjorth Larsen <asklarsen@gmail.com>
+Date:	Sat Aug 26 16:25:14 2017 +0200
+
+    Updated Danish translation
+
+M	po/da.po
+
+commit 79031d351af78bbec54ff19e5747404e1162a12e
+Author: hanniedu <hannie@ubuntu-nl.org>
+Date:	Thu Aug 24 11:26:31 2017 +0200
+
+    Updated Dutch translation Master 3.26
+
+M	po/nl.po
+
+commit 803b2246eac31f1576ffb8b15bd93bdc2592fa26
+Author: Fran Dieguez <frandieguez@gnome.org>
+Date:	Thu Aug 10 09:54:59 2017 +0000
+
+    Update Galician translation
+
+M	po/gl.po
+
+commit 0ba62cb78cab6ee8702a85e10329938c4d9a4fc2
+Author: Saikeo Kavhanxay <kavhanxay@hotmail.com>
+Date:	Thu Aug 10 02:43:44 2017 +0000
+
+    Add Lao translation
+
+M	po/LINGUAS
+A	po/lo.po
+
+commit aa20dd25248d71d11c961f321db2d61166d65f5c
+Author: Jeremy Bicha <jbicha@ubuntu.com>
+Date:	Tue Aug 8 23:40:56 2017 -0400
+
+    Fix Spanish translation header
+
+M	po/es.po
+
+commit a5823c053a919b5208ccaf6d864b91903c4df3d3
+Author: Anish Sheela <aneesh.nl@gmail.com>
+Date:	Tue Aug 8 07:01:22 2017 +0000
+
+    Update Malayalam translation
+
+M	po/ml.po
+
+commit 2803aca0648bd13de7ba80bf34f367a58a9be46d
+Author: David King <amigadave@amigadave.com>
+Date:	Tue Aug 8 06:57:36 2017 +0100
+
+    Update NEWS for 3.25.90 release
+
+M	NEWS
+M	configure.ac
+
+commit e55d38a41961522f7470cec72c7629b8dd4091df
+Author: David King <amigadave@amigadave.com>
+Date:	Mon Jul 31 12:40:30 2017 +0100
+
+    Remove camera service
+
+    It was an experiment, but in future PipeWire will be used instead,
+    so it
+    is no longer needed.
+
+M	.gitignore
+D	COPYING.GPL3
+M	Makefile.am
+M	configure.ac
+D	data/org.gnome.Camera.service.in
+D	data/org.gnome.Camera.xml
+D	service/gc-application.c
+D	service/gc-application.h
+D	service/gc-camera-client.c
+D	service/gc-camera-client.h
+D	service/gc-camera-manager.c
+D	service/gc-camera-manager.h
+D	service/gc-client-monitor.c
+D	service/gc-client-monitor.h
+D	service/gc-main.c
+D	tests/test-service-client.c
+
+commit 910d8eaa5db17f2e8906d9171b23346ff0c9a34e
+Author: David King <amigadave@amigadave.com>
+Date:	Mon Jul 31 12:37:38 2017 +0100
+
+    Remove some unused configuration variables
+
+M	Makefile.am
+M	src/vapi/config.vapi
+
+commit 9f8c62638d6e687e5cc1fe88f090e03f42942b1d
+Author: Pawan Chitrakar <chautari@gmail.com>
+Date:	Thu Jul 27 10:28:20 2017 +0000
+
+    Update Nepali translation
+
+M	po/ne.po
+
+commit b132ae0cdb013f2eea171ff0a17cf83cdeb54080
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	Wed Jul 26 08:00:22 2017 +0000
+
+    Update Spanish translation
+
+M	help/es/es.po
+
+commit 70f9aef5964aac1ad55bf1f29f7fe703b00eb2ba
+Author: Marek Černocký <marek@manet.cz>
+Date:	Sat Jul 1 12:10:04 2017 +0200
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+
+commit d4d3a95b0d494ffa0a7c45a33f7913cccff1bcd8
+Author: Gábor Kelemen <kelemeng@openscope.org>
+Date:	Sat Jun 17 21:49:35 2017 +0000
+
+    Update Hungarian translation
+
+M	help/hu/hu.po
+
+commit d146355f1e218981e81c44c8cdac7a461009ca54
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Sat Jun 10 21:58:33 2017 +0200
+
+    Add Polish help translation
+
+M	help/Makefile.am
+A	help/pl/pl.po
+M	po/pl.po
+
+commit c8c75796ff3e723d77bd68dec3fe91a072b36fc4
+Author: Benjamin Berg <bberg@redhat.com>
+Date:	Fri Apr 21 11:59:39 2017 +0200
+
+    Correctly select the given camera device
+
+    Due to a bug in the VAPI file the code would pass a string to
+    the camera
+    setup routine instead of a CameraDevice object. As the setup routine
+    already has code to automatically select an appropriate device
+    based on
+    the name passing an argument is not even required.
+
+    Note that the --device parameter might be somewhat confusing as it
+    refers to the devices name and not to the /dev/videoX device file.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=777047
+
+M	src/cheese-application.vala
+M	src/vapi/cheese-common.vapi
+
+commit 05657bd5428839f533cac2141efa69bba78bf8c4
+Author: Emin Tufan Çetin <etcetin@gmail.com>
+Date:	Sun May 14 09:53:15 2017 +0000
+
+    Update Turkish translation
+
+M	po/tr.po
+
+commit 5dc70f4ae4f2cbbdfc56591fe369d76f904adc44
+Author: Christian Kirbach <Christian.Kirbach@gmail.com>
+Date:	Sat May 13 18:12:32 2017 +0000
+
+    Update German translation
+
+M	help/de/de.po
+
+commit 0f7d7310469f2124cb5c7f28eeb5b01687446ae8
+Author: Andika Triwidada <atriwidada@gnome.org>
+Date:	Fri May 5 12:56:35 2017 +0000
+
+    Update Indonesian translation
+
+M	help/id/id.po
+
+commit 6bdba55a4ac206d5f66817b598d3039244bf8cf5
+Author: Rafael Fontenelle <rafaelff@gnome.org>
+Date:	Wed Apr 12 15:19:25 2017 +0000
+
+    Update Brazilian Portuguese translation
+
+M	help/pt_BR/pt_BR.po
+
+commit 7252a5f76cd7ab1ac0419add1791a31f0e787ceb
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	Sun Apr 9 19:28:07 2017 +0000
+
+    Update Swedish translation
+
+M	help/sv/sv.po
+
+commit 810a3c3e8797481914c78c8d5977a8c619c44fb5
+Author: Paul Cutler <paul.r.cutler@gmail.com>
+Date:	Sun Mar 19 15:19:50 2017 -0500
+
+    Fix bug 773526
+
+    Fix bug 773526 to use consisent language about the user's home folder.
+    Fix <files> tag to be used around one folder and not multiple folders.
+    Update last sentence to shorten and simplify it.
+
+M	help/C/photo-save.page
+
+commit 4d3b1a02402effef91beb29788e706a4a3ea4b99
+Author: Wim Taymans <wtaymans@redhat.com>
+Date:	Tue Apr 4 15:35:01 2017 +0200
+
+    camera-device: limit width and height
+
+    Set a limit on the width and height or else we might end scanning and
+    overflowing forever.
+
+M	libcheese/cheese-camera-device.c
+
+commit b49d0f35bd4edf59c5a0510f58c2fb6c6a68e693
+Author: Wim Taymans <wtaymans@redhat.com>
+Date:	Tue Apr 4 15:34:23 2017 +0200
+
+    camera-device: handle fraction ranges
+
+    Add support for fraction ranges
+
+M	libcheese/cheese-camera-device.c
+
+commit 4e848805f902fea301373cebac2b2ac2ba746d64
+Author: Sébastien Wilmet <sebastien.wilmet@uclouvain.be>
+Date:	Tue Mar 14 10:24:45 2017 +0100
+
+    camera: remove dead instance variables
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=780021
+
+M	libcheese/cheese-camera.c
+
+commit e0f4befb62bb02522a364251e1be429942a1d446
+Author: David King <amigadave@amigadave.com>
+Date:	Mon Mar 20 22:57:03 2017 +0000
+
+    Update NEWS for 3.24.0 release
+
+M	NEWS
+M	configure.ac
+
+commit 51482efd4f9d71d2e925037128f45eabd0e93b5e
+Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
+Date:	Sat Mar 18 22:00:42 2017 +0200
+
+    Update Latvian translation
+
+M	po/lv.po
+
+commit 5b1651011ed2a4f0857debaf319b7e06327e95c5
+Author: Yuri Myasoedov <ymyasoedov@yandex.ru>
+Date:	Mon Mar 13 21:06:35 2017 +0400
+
+    Updated Russian translation
+
+M	po/ru.po
+
+commit 6b50b781ce0a44ceda07ee1e1d5816cc737a417c
+Author: Jordi Mas <jmas@softcatala.org>
+Date:	Sun Mar 12 22:49:23 2017 +0100
+
+    Update Catalan translation
+
+M	po/ca.po
+
+commit b94a8fb4010e560e1b73d5371d7d782b702c03a7
+Author: Trần Ngọc Quân <vnwildman@gmail.com>
+Date:	Sat Mar 11 08:27:35 2017 +0700
+
+    Updated Vietnamese translation
+
+    Signed-off-by: Trần Ngọc Quân <vnwildman@gmail.com>
+
+M	po/vi.po
+
+commit 615e43ee52bcea2939e14a6416addce18ebb736c
+Author: Aurimas Černius <aurisc4@gmail.com>
+Date:	Sat Mar 4 17:28:37 2017 +0200
+
+    Updated Lithuanian translation
+
+M	po/lt.po
+
+commit 41d9a77ae33b7c151b2b43ae26b0c8850bfb772d
+Author: Changwoo Ryu <cwryu@debian.org>
+Date:	Sat Mar 4 03:42:29 2017 +0000
+
+    Update Korean translation
+
+M	po/ko.po
+
+commit b570bfdd8f626572a509386741ccfe5dab60b15a
+Author: Yuras Shumovich <shumovichy@gmail.com>
+Date:	Fri Mar 3 17:17:13 2017 +0000
+
+    Update Belarusian translation
+
+M	po/be.po
+
+commit f48a34a25d653acd9d1b4fbda85a38fe0953f4ef
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:	Wed Mar 1 11:41:07 2017 +0000
+
+    Update Icelandic translation
+
+    (cherry picked from commit 7a5a59a0c32b46655cd91f09c0f8874c957eddc6)
+
+M	po/is.po
+
+commit ab0e92222def84e0073edf045283fc38fab782c5
+Author: Fran Dieguez <frandieguez@gnome.org>
+Date:	Sun Feb 26 21:24:09 2017 +0000
+
+    Update Galician translation
+
+M	po/gl.po
+
+commit d3cf06a1c53891099dbbedb580d1ac66bcd3b615
+Author: Javier Jardón <jjardon@gnome.org>
+Date:	Sun Feb 26 11:55:42 2017 +0000
+
+    Fix build with new vala
+
+    vala change:
+    https://git.gnome.org/browse/vala/commit/?id=ddca99ea2f25b9a734831589ec209df5322520a4
+
+    Build error:
+    http://build.gnome.org/continuous/buildmaster/builds/2017/02/26/48/build/log-cheese.txt
+
+M	src/cheese-preferences.vala
+
+commit caa5486dd3c3d0ebed773cd38a22bb1d95f8d57a
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	Sun Feb 26 07:29:14 2017 +0100
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 2d358a2c01b977a99f06fe9f5a2f5e2b79917541
+Author: Daniel Korostil <ted.korostiled@gmail.com>
+Date:	Thu Feb 23 16:47:39 2017 +0200
+
+    Updated Ukrainian translation
+
+M	po/uk.po
+
+commit 44b505fe4d26dc0502108f72e848ec8ebeee08d6
+Author: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>
+Date:	Thu Feb 23 10:58:36 2017 +0000
+
+    Update Chinese (Taiwan) translation
+
+M	po/zh_TW.po
+
+commit 512de3f3277fc89504f4d25507b43045ed034712
+Author: Milo Casagrande <milo@ubuntu.com>
+Date:	Tue Feb 21 17:04:59 2017 +0000
+
+    Update Italian translation
+
+M	po/it.po
+
+commit 011f278381ebf07b459134ca4bd090561be9a007
+Author: Alexandre Franke <alexandre.franke@gmail.com>
+Date:	Tue Feb 21 14:06:46 2017 +0000
+
+    Update French translation
+
+M	po/fr.po
+
+commit 08229f387878e22873e65f1373a0f7345e2476ab
+Author: Ask Hjorth Larsen <asklarsen@gmail.com>
+Date:	Thu Feb 16 13:34:15 2017 +0100
+
+    Updated Danish translation
+
+M	po/da.po
+
+commit ee8aead17c1da1b3f06b23b2b0fa01ce334dc3eb
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	Tue Feb 14 09:08:12 2017 +0100
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit bb2e2f3f07260a95d50b1ad199e413982bb79159
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:	Mon Feb 13 16:29:01 2017 +0000
+
+    Update Indonesian translation
+
+M	po/id.po
+
+commit 3a5785ae80ed88754ab38d74e2ae3ceff4a1c986
+Author: Inaki Larranaga Murgoitio <dooteo@zundan.com>
+Date:	Sun Feb 5 17:18:21 2017 +0100
+
+    Update Basque language
+
+M	po/eu.po
+
+commit 07c140b5dfebf5860c6e34108fa718417fbed09d
+Author: Wim Taymans <wtaymans@redhat.com>
+Date:	Wed Feb 1 17:17:47 2017 +0100
+
+    camera: don't use hardcoded format
+
+    Use gst_caps_fixate() to select the best format instead of trying to
+    filter out a hardcoded format. Some cameras might not produce this
+    format and thus fail to work.
+
+M	libcheese/cheese-camera.c
+
+commit 60818c03c77d075e6f10f011276dfbf7df04f5a5
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	Sat Jan 7 15:48:59 2017 +0000
+
+    Update Slovak translation
+
+M	po/sk.po
+
+commit 30b1259f16baae080583c1e13121e4856893509e
+Author: Rafael Fontenelle <rafaelff@gnome.org>
+Date:	Wed Jan 4 02:32:16 2017 +0000
+
+    Update Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 97e585ceb96a502e1937a1c74d71857fcde79ee1
+Author: Tiago Santos <tiagofsantos81@sapo.pt>
+Date:	Mon Jan 2 09:53:53 2017 +0000
+
+    Update Portuguese translation
+
+M	po/pt.po
+
+commit c346a1b2baa79a1588bc7bbcdc3bc401ce7408ea
+Author: Jiri Grönroos <jiri.gronroos@iki.fi>
+Date:	Sun Dec 25 13:09:17 2016 +0000
+
+    Update Finnish translation
+
+M	po/fi.po
+
+commit a6e72b365fa35772a556d6852796ee8c03999810
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:	Sat Dec 24 17:29:35 2016 +0000
+
+    Update Kazakh translation
+
+M	po/kk.po
+
+commit 8a7a0c802844bdd8a0d8a89882b16dd08280a883
+Author: Efstathios Iosifidis <eiosifidis@gnome.org>
+Date:	Sat Dec 24 09:14:24 2016 +0000
+
+    Update Greek translation
+
+M	po/el.po
+
+commit cdf32bd32a33af8ec9dae7a1e43c8ccc3024fdf9
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	Thu Dec 22 20:00:22 2016 +0100
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit cb8c5b478cf8f01e6ec179a99ada96891f4380ba
+Author: Gábor Kelemen <kelemeng@openscope.org>
+Date:	Thu Dec 8 21:57:59 2016 +0000
+
+    Update Hungarian translation
+
+M	po/hu.po
+
+commit 78b7b6234d0dfb0e47dbe8283e447abfc885a703
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:	Sun Dec 4 13:33:35 2016 +0000
+
+    Update Occitan translation
+
+M	po/oc.po
+
+commit f8e8d318b2b16e4b8e4e615e714f036dc41da77f
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	Mon Nov 28 13:51:21 2016 +0000
+
+    Update Swedish translation
+
+M	po/sv.po
+
+commit 785b7728059414e2d5beb50da85e99431cb41d73
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	Sun Nov 20 17:15:38 2016 +0100
+
+    Updated Norwegian bokmål translation.
+
+M	po/nb.po
+
+commit d869e31393c5c34e240222528b6cae46fd458558
+Author: gogo <trebelnik2@gmail.com>
+Date:	Thu Nov 17 11:02:46 2016 +0000
+
+    Update Croatian translation
+
+M	po/hr.po
+
+commit 7b3e818b349b233fb8c05deab03c913e3bdec2aa
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Wed Nov 16 12:51:31 2016 +0100
+
+    Update Polish translation
+
+M	po/pl.po
+
+commit 989eaf9358c0c8c60e8a3e4cf66271dde7de7c1b
+Author: Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>
+Date:	Mon Nov 14 10:47:56 2016 +0000
+
+    Update German translation
+
+M	po/de.po
+
+commit 92b3cb77bdafc6f874ebb13de6f0c9af964943ac
+Author: Marek Černocký <marek@manet.cz>
+Date:	Sat Nov 12 11:54:18 2016 +0100
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 6fa3923513f915925aca9023fb63440227d4781c
+Author: Fabio Tomat <f.t.public@gmail.com>
+Date:	Thu Nov 10 17:50:33 2016 +0000
+
+    Update Friulian translation
+
+M	po/fur.po
+
+commit 159ca2bc8f59d66d3b340810cf018a45e64d3e96
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	Thu Nov 10 16:24:51 2016 +0100
+
+    Use Unicode in translatable strings
+
+    See https://developer.gnome.org/hig/stable/typography.html
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=772263
+
+M	data/org.gnome.Cheese.gschema.xml
+
+commit 924369c58cd864c9c0196836fae40565ac7c53ea
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:	Tue Oct 11 08:36:36 2016 +0000
+
+    Update Icelandic translation
+    (cherry picked from commit ae52c48bef55ee64c4f9b22de3c040a1c0df271c)
+
+M	po/is.po
 
 commit 109674f0d646010c2f42ff2b61322bf750d24aa4
 Author: gogo <trebelnik2@gmail.com>
@@ -8959,7 +9768,7 @@ Date:	Tue Jul 17 22:58:42 2012 +0800
     This reverts commit bb7f852c935c0a8603b8f22f4e5d9cfd6a176c74.
 
     Conflicts:
-	po/zh_CN.po
+	    po/zh_CN.po
 
 M	help/zh_CN/zh_CN.po
 M	po/zh_CN.po
@@ -13291,7 +14100,7 @@ Date:	Thu May 19 17:42:52 2011 +0200
 
     Conflicts:
 
-	libcheese/cheese-camera-device.c
+	    libcheese/cheese-camera-device.c
 
 M	libcheese/cheese-camera-device.c
 
@@ -17367,14 +18176,14 @@ Date:	Fri Jul 16 23:18:44 2010 +0200
 M	NEWS
 
 commit e8c6fd9af58568320d35c908e035b77bf2324d2d
-Merge: c7295c9 18ad285
+Merge: c7295c92 18ad2855
 Author: daniel g. siegel <dgsiegel@gnome.org>
 Date:	Fri Jul 16 22:59:54 2010 +0200
 
     Merge branch 'three-point-oh'
 
     Conflicts:
-	help/Makefile.am
+	    help/Makefile.am
 
 commit 18ad2855fabaed2f8175bc5f7e1af677ac36f2fa
 Author: Yuvaraj Pandian T <yuvipanda@gmail.com>
@@ -19109,7 +19918,7 @@ Date:	Thu May 27 15:48:27 2010 +0530
 
     Conflicts:
 
-	data/cheese-ui.xml
+	    data/cheese-ui.xml
 
 D	data/cheese-ui.xml
 M	data/cheese.ui
@@ -19986,7 +20795,7 @@ M	configure.ac
 M	libcheese/Makefile.am
 
 commit 79d773de2c3e16113f84375e708d55c63830ce83
-Merge: 37557b0 be6e8e3
+Merge: 37557b09 be6e8e3d
 Author: Bastien Nocera <hadess@hadess.net>
 Date:	Tue Feb 9 14:18:56 2010 +0000
 
@@ -24298,7 +25107,7 @@ R100	help/ChangeLog	help/ChangeLog.pre-git
 R100	po/ChangeLog	po/ChangeLog.pre-git
 
 commit 9fc46c6ebb25248bb983cb0053f1e728d5f674d8
-Merge: 2791248 b36b6c9
+Merge: 2791248a b36b6c93
 Author: Filippo Argiolas <filippo.argiolas@gmail.com>
 Date:	Tue May 5 00:20:09 2009 +0200
 

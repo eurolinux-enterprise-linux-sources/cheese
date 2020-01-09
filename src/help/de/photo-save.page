@@ -42,7 +42,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Christian Kirbach</mal:name>
       <mal:email>christian.kirbach@gmail.com</mal:email>
-      <mal:years>2013, 2015</mal:years>
+      <mal:years>2013, 2015,2017</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -66,10 +66,10 @@
 
   <title>Ein Foto oder ein Video speichern</title>
 
-  <p>Standardmäßig speichert Cheese die Fotos und Videos in den Unterordnern <file>Bilder/Webcam</file> und <file>Videos/Webcam</file> Ihres persönlichen Ordners.</p>
+  <p>Standardmäßig speichert Cheese die Fotos und Videos im Unterordner <file>Webcam</file> unter dem Ordner <file>Bilder</file> oder <file>Videos</file> Ihres persönlichen Ordners.</p>
 
   <p>Um ein Foto an einem anderen Ort zu speichern, klicken Sie mit der rechten Maustaste auf das Bild in der Fotostrecke und wählen Sie <gui>Speichern unter …</gui>. Anschließend wählen Sie aus, wohin Sie das Bild speichern wollen.</p>
 
-  <p>Eine neue Kopie des Bildes wird am neuen Ort gespeichert. Die alte Version bleibt im Ordner <file>Bilder/Webcam</file> oder im Ordner <file>Videos/Webcam</file> bestehen.</p>
+  <p>Eine neue Kopie des Bildes wird am neuen Ort gespeichert. Die alte Version verbleibt im Ordner <file>Webcam</file>.</p>
 
 </page>

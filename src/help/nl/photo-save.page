@@ -20,14 +20,20 @@
     <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
 
     <desc>Een foto of video opslaan in een andere map.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Justin van Steijn</mal:name>
+      <mal:email>jvs@fsfe.org</mal:email>
+      <mal:years>2015, 2016, 2017.</mal:years>
+    </mal:credit>
   </info>
 
   <title>Een foto of video opslaan</title>
 
-  <p>Standaard zal Cheese de foto's en video's in de mappen <file>Afbeeldingen/Webcam</file> en <file>Video's/Webcam</file> in uw persoonlijke map opslaan.</p>
+  <p>Standaard zal Cheese de foto's en video's in de map <file>Webcam</file> opslaan, in de mappen <file>Afbeeldingen</file> en <file>Video's</file> in uw persoonlijke map.</p>
 
   <p>Om een foto of video op een andere locatie op te slaan, rechtsklik erop in de fotoreeks en klik op <gui>Opslaan als…</gui>. Kies vervolgens waar u de foto of video wilt opslaan.</p>
 
-  <p>Een nieuwe kopie van de foto of video zal worden opgeslagen op de nieuwe locatie. De oude versie zal in de map <file>Afbeeldingen/Webcam</file> of <file>Video's/Webcam</file> blijven.</p>
+  <p>Een nieuwe kopie van de foto of video zal worden opgeslagen op de nieuwe locatie. De oude versie zal in de map <file>Webcam</file> blijven.</p>
 
 </page>

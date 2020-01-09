@@ -25,6 +25,12 @@
       <mal:email>sukso96100@gmail.com</mal:email>
       <mal:years>2015.</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Changwoo Ryu</mal:name>
+      <mal:email>cwryu@debian.org</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
   </info>
 
   <title><media type="image" mime="image/png" src="figures/cheese.png" height="40" its:translate="no"/> 치즈 웹카메라 프로그램</title>

@@ -26,12 +26,18 @@
       <mal:email>sukso96100@gmail.com</mal:email>
       <mal:years>2015.</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Changwoo Ryu</mal:name>
+      <mal:email>cwryu@debian.org</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
   </info>
 
 
   <title>찍은 사진과 비디오 보기</title>
 
-  <p>사진을 찍으시거나 동영상을 녹화하신 후, 창 하단의 사진 스트림에 찍거나 녹화한 것이 나타날 것 입니다. 좌클릭 하시거나 <gui style="menuitem">열기</gui> 를 눌러 사진 뷰어 또는 동영상 플레이어 프로그램에서 열으실 수 있습니다.</p>
+  <p>사진을 찍으시거나 동영상을 녹화하신 후, 창 하단의 사진 스트림에 찍거나 녹화한 것이 나타날 것 입니다. 마우스 오른쪽 단추를 눌러 <gui style="menuitem">열기</gui>에서 사진 보기 또는 동영상 플레이어 프로그램에서 여실 수 있습니다.</p>
 
 <!-- TODO: This is a bug, it doesn't work right now.
   <p>If you want to see a bigger version of a photo, or to play a video,

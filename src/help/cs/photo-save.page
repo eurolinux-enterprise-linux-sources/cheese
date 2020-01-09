@@ -42,10 +42,10 @@
 
   <title>Jak snímek či video uložit</title>
 
-  <p>Standardně Cheese ukládá snímky a videa do složky <file>Obrázky/Webcam</file> a <file>Videa/Webcam</file> ve vaší domovské složce.</p>
+  <p>Standardně Cheese ukládá snímky a videa do složky <file>Webkamera</file> ve složce <file>Obrázky</file> nebo <file>Videa</file> ve vaší domovské složce.</p>
 
   <p>Pro uložení obrázku na jiné místo, klikněte na obrázek pravým tlačítkem v panelu snímků a klikněte na <gui>Uložit jako…</gui> Pak vyberte, kam chcete soubor uložit.</p>
 
-  <p>Na novém místě se uloží nová kopie. Stará verze zůstane ve složce <file>Obrázky/Webcam</file> nebo <file>Videa/Webcam</file>.</p>
+  <p>Nová kopie se uloží na novém místě. Stará verze zůstane ve složce <file>Webkamera</file>.</p>
 
 </page>

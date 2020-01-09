@@ -28,6 +28,12 @@
       <mal:email>sukso96100@gmail.com</mal:email>
       <mal:years>2015.</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Changwoo Ryu</mal:name>
+      <mal:email>cwryu@debian.org</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
   </info>
 
   <title>소개</title>
@@ -36,6 +42,6 @@
 
   <p>기본적으로, <app>치즈</app>는 <link xref="photo-take">사진을 찍을</link> 준비가 된. <gui>사진</gui> 모드로 시작합니다. <link xref="video-record">동영상을 녹화</link> 하시려면 <gui>동영상</gui> 모드로 바꾸셔야 합니다.</p>
 
-  <p><app>치즈</app> 는 대부분의 웹캡과 작동하지만, 일부 오래된 웹카메라을 지원되지 않을 수 있습니다.</p>
+  <p><app>치즈</app>는 대부분의 웹캡과 작동하지만, 일부 오래된 웹카메라을 지원되지 않을 수 있습니다.</p>
 
 </page>

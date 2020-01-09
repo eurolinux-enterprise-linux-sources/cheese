@@ -24,7 +24,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2011 - 2014</mal:years>
+      <mal:years>2011 - 2017</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -36,10 +36,10 @@
 
   <title>Guardar una foto o un vídeo</title>
 
-  <p>De manera predeterminada Cheese guarda las fotos y vídeos en las carpetas <file>Imágenes/Webcam</file> y <file>Vídeos/Webcam</file> dentro de su carpeta personal.</p>
+  <p>De manera predeterminada, Cheese guarda las fotos y vídeos en las carpetas <file>Webcam</file> en las carpetas <file>Fotos</file> o <file>Vídeos</file> dentro de su carpeta personal.</p>
 
   <p>Para guardar una imagen en una ubicación diferente pulse con el botón derecho del ratón sobre la colección de imágenes y pulse <gui>Guardar como…</gui>. Después, elija dónde quiere guardar la imagen.</p>
 
-  <p>Se guardará una copia nueva de la imagen en la nueva ubicación. La versión anterior seguirá permaneciendo en las carpeta <file>Imágenes/Webcam</file> o <file>Vídeos/Webcam</file>.</p>
+  <p>Se guardará una copia nueva de la imagen en la nueva ubicación. La versión anterior seguirá permaneciendo en la carpeta <file>Webcam</file>.</p>
 
 </page>

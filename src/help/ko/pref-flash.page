@@ -27,12 +27,18 @@
       <mal:email>sukso96100@gmail.com</mal:email>
       <mal:years>2015.</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Changwoo Ryu</mal:name>
+      <mal:email>cwryu@debian.org</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
   </info>
 
   <title>플래시 비활성화 하기</title>
 
   <p>치즈로 사진을 찍을 때, 컴퓨터 화면이 잠시 하얗게 변합니다.</p>
 
-  <p>이 기능을 끄려면, <guiseq><gui>치즈</gui><gui>기본 설정</gui><gui>찍기</gui></guiseq> 를 선택하시고, <gui>플래시 켜기</gui> 체크를 해제하세요.</p>
+  <p>이 기능을 끄려면, <guiseq><gui>치즈</gui><gui>기본 설정</gui><gui>찍기</gui></guiseq>를 선택하시고, <gui>플래시 켜기</gui> 체크를 해제하세요.</p>
 
 </page>

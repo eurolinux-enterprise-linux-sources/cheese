@@ -26,6 +26,12 @@
       <mal:email>sukso96100@gmail.com</mal:email>
       <mal:years>2015.</mal:years>
     </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Changwoo Ryu</mal:name>
+      <mal:email>cwryu@debian.org</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
   </info>
 
   <title>사진과 동영상에 효과 적용하기</title>
@@ -34,10 +40,10 @@
 
   <steps>
     <item>
-      <p><gui style="button">효과</gui> 를 누르세요.</p>
+      <p><gui style="button">효과</gui>를 누르세요.</p>
     </item>
     <item>
-      <p>옵션 중 시하나를 것을 클릭하셔서 사용하고자 하시는 효과를 선택 하시거나, 사용하기를 원치 않으신 경우, <gui>효과 없음</gui>을 선택하세요.</p>
+      <p>옵션 중 하나를 눌러 사용하려는 효과를 선택 하시거나, 효과를 사용하지 않으려면 <gui>효과 없음</gui>을 선택하세요.</p>
     </item>
   </steps>
 

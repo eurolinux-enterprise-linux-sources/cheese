@@ -1,14 +1,12 @@
 Name:           cheese
 Epoch:          2
-Version:        3.22.1
-Release:        2%{?dist}
+Version:        3.28.0
+Release:        1%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Cheese
-Source0:        https://download.gnome.org/sources/%{name}/3.22/%{name}-%{version}.tar.xz
-# https://bugzilla.redhat.com/show_bug.cgi?id=1444760
-Patch0:         cheese-3.22.1-fix-device-commandline.patch
+Source0:        https://download.gnome.org/sources/%{name}/3.28/%{name}-%{version}.tar.xz
 
 BuildRequires:  chrpath
 BuildRequires:  desktop-file-utils
@@ -18,14 +16,14 @@ BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  itstool
 BuildRequires:  libXtst-devel
-BuildRequires:  vala-devel
+BuildRequires:  vala
 BuildRequires:  pkgconfig(clutter-1.0)
 BuildRequires:  pkgconfig(clutter-gst-3.0)
 BuildRequires:  pkgconfig(clutter-gtk-1.0)
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(gnome-desktop-3.0)
+BuildRequires:  pkgconfig(gnome-desktop-3.0) >= 3.27.90
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
@@ -44,18 +42,11 @@ Requires: gnome-video-effects
 Cheese is a Photobooth-inspired GNOME application for taking pictures and
 videos from a webcam. It can also apply fancy graphical effects.
 
-%package camera-service
-Summary:        Webcam D-Bus service
-License:        GPLv3+
-Requires:       %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
-
-%description camera-service
-This package contains a D-Bus service needed for applications that
-want to display a webcam dialog in their interface.
-
 %package libs
 Summary:        Webcam display and capture widgets
 License:        GPLv2+
+# Camera service was removed upstream in 3.25.90
+Obsoletes: cheese-camera-service < 2:3.25.90
 
 %description libs
 This package contains libraries needed for applications that
@@ -73,7 +64,6 @@ for writing applications that require a webcam display widget.
 
 %prep
 %setup -q
-%patch0 -p1
 
 
 %build
@@ -134,11 +124,6 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_datadir}/dbus-1/services/org.gnome.Cheese.service
 %{_mandir}/man1/cheese.1*
 
-%files camera-service
-%license COPYING.GPL3
-%{_libexecdir}/gnome-camera-service
-%{_datadir}/dbus-1/services/org.gnome.Camera.service
-
 %files -f %{name}.lang libs
 %license COPYING
 %{_libdir}/libcheese.so.*
@@ -157,6 +142,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 2:3.28.0-1
+- Update to 3.28.0
+- Resolves: #1567170
+
 * Thu Oct 19 2017 David King <dking@redhat.com> - 3.22.1-2
 - Fix a device argument crash (#1444760)
 

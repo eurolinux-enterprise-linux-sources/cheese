@@ -1,7 +1,7 @@
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.64])
 AC_INIT([Cheese],
-        [3.22.1],
+        [3.28.0],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=cheese],
         [cheese],
         [https://wiki.gnome.org/Apps/Cheese])
@@ -48,8 +48,8 @@ GNOME_COMPILE_WARNINGS([maximum])
 # - If binary compatibility has been broken (eg removed or changed interfaces)
 #   change to C+1:0:0
 # - If the interface is the same as the previous version, change to C:R+1:A
-AC_SUBST([LIBCHEESE_LT_VERSION], [8:8:0])
-AC_SUBST([LIBCHEESE_GTK_LT_VERSION], [25:8:0])
+AC_SUBST([LIBCHEESE_LT_VERSION], [8:10:0])
+AC_SUBST([LIBCHEESE_GTK_LT_VERSION], [26:0:1])
 
 #*******************************************************************************
 # Internationalization
@@ -101,7 +101,6 @@ PKG_CHECK_EXISTS([$GNOME_VIDEO_EFFECTS_REQUIRED],
 
 # GLib programs.
 AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
-AC_SUBST([GDBUS_CODEGEN], [`$PKG_CONFIG --variable gdbus_codegen gio-2.0`])
 
 # Recommend some runtime GStreamer plugins.
 AC_PATH_PROGS([GST_INSPECT], [gst-inspect-1.0], [notfound])

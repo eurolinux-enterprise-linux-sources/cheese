@@ -60,10 +60,10 @@
 
   <title>Salvando uma foto ou vídeo</title>
 
-  <p>Por padrão, o Cheese salva as fotos e vídeos nas pastas <file>Imagens/Webcam</file> e <file>Vídeos/Webcam</file> na sua pasta de usuário.</p>
+  <p>Por padrão, o Cheese salva as fotos e vídeos na pasta <file>Webcam</file> dentro da pasta <file>Fotos</file> ou <file>Vídeos</file> de sua pasta pessoal.</p>
 
   <p>Para salvar uma imagem em um local diferente, clique com o botão direito na imagem que está no painel de fotos e pressionar a opção <gui>Salvar como</gui> do menu de contexto, e escolha onde você quer salvá-lo.</p>
 
-  <p>Uma nova cópia da imagem será salva no local escolhido. A versão antiga continuará na pasta <file>Imagens/Webcam</file> ou <file>Vídeos/Webcam</file>.</p>
+  <p>Uma nova cópia da imagem será salva no local escolhido. A versão antiga continuará na pasta <file>Webcam</file>.</p>
 
 </page>

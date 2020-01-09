@@ -280,6 +280,16 @@ cheese_camera_device_get_highest_framerate (const GValue *framerate,
       }
     }
   }
+  else if (GST_VALUE_HOLDS_FRACTION_RANGE (framerate))
+  {
+    const GValue *val = gst_value_get_fraction_range_max (framerate);
+
+    if (GST_VALUE_HOLDS_FRACTION (val))
+    {
+      *numerator = gst_value_get_fraction_numerator (val);
+      *denominator = gst_value_get_fraction_denominator (val);
+    }
+  }
 }
 
 /*
@@ -461,6 +471,11 @@ cheese_camera_device_update_format_table (CheeseCameraDevice *device)
         min_width = 160;
       if (min_height < 120)
         min_height = 120;
+
+      if (max_width > 5120)
+        max_width = 5120;
+      if (max_height > 3840)
+        max_height = 3840;
 
       cur_width  = min_width;
       cur_height = min_height;

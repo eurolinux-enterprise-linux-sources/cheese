@@ -30,10 +30,10 @@
 
   <title>Simpan foto atau video</title>
 
-  <p>Secara baku, Cheese menyimpan foto dan video di dalam folder <file>Pictures/Webcam</file> dan <file>Videos/Webcam</file> dalam folder pengguna Anda.</p>
+  <p>Secara baku, Cheese menyimpan foto dan video di dalam folder <file>Webcam</file> di dalam folder <file>Photo</file> atau <file>Videos</file> dalam folder pengguna Anda.</p>
 
   <p>Untuk menyimpan gambar ke lokasi lain, klik kanan pada gambar di stream foto dan klik <gui>Simpan Sebagai…</gui>. Lalu, pilih di mana Anda ingin menyimpan gambar.</p>
 
-  <p>Salinan baru dari gambar akan disimpan di lokasi baru. Versi lama akan tetap di folder <file>Pictures/Webcam</file> atau <file>Videos/Webcam</file>.</p>
+  <p>Salinan baru dari gambar akan disimpan di lokasi baru. Versi lama akan tetap di folder <file>Webcam</file>.</p>
 
 </page>

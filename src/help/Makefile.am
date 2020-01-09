@@ -4,15 +4,8 @@ HELP_ID = cheese
 
 HELP_MEDIA = \
 	figures/cheese.png \
-	figures/cheese-delete.png \
-	figures/cheese-effects.png \
-	figures/cheese-introduction.png \
-	figures/cheese-record.png \
-	figures/cheese-save.png \
-	figures/cheese-take.png \
 	figures/effects.png \
-	figures/image-properties.png \
-	figures/settings.png
+	figures/image-properties.png
 
 HELP_FILES = \
 	burst-mode.page \
@@ -31,4 +24,4 @@ HELP_FILES = \
 	pref-resolution.page \
 	video-record.page
 
-HELP_LINGUAS = ca cs de el es fi fr gl hu id ko nl pt_BR ru sl sv zh_CN
+HELP_LINGUAS = ca cs de el es fi fr gl hu id ko nl pl pt_BR ru sl sv zh_CN

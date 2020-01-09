@@ -62,7 +62,7 @@
     </item>
   </steps>
 
-  <p>Fotky v panelu fotek jsou automaticky ukládány do složky <file>Obrázky/Webcam</file> ve vaší domovské složce. Formát ukládání je JPEG (<file>.jpg</file>).</p>
+  <p>Fotky v panelu fotek jsou automaticky ukládány do složky <file>Obrázky/Webkamera</file> ve vaší domovské složce. Formát ukládání je JPEG (<file>.jpg</file>).</p>
 
   <p>Pro zrušení pořizení snímku po kliknutí na <gui>Pořídit snímek</gui>, zmáčkněte před koncem odpočítávání <key>Esc</key>.</p>
 
